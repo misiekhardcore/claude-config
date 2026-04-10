@@ -5,6 +5,19 @@ description: Review an implementation against its issue requirements. Spawns a r
 
 You are leading the review phase. Your goal is to thoroughly review the implementation and produce actionable findings.
 
+## Configuration
+
+- **Standard reviews**: dispatch reviewers with `model: "sonnet"` to get a genuinely different analytical perspective from the implementing session.
+- **Deep reviews**: dispatch reviewers with `model: "opus"` for maximum analytical depth.
+- The lead agent (you) always runs on the session's current model.
+
+## Context Isolation
+
+Reviewers must operate with fresh context, independent of the implementing session. Before dispatching reviewers:
+
+1. **Prepare the review package** — run `git diff main...HEAD` and capture the output. If a GitHub issue exists, run `gh issue view <number>` and capture its acceptance criteria. This package is the sole input to reviewers.
+2. **Reviewer preamble** — include this in every reviewer's dispatch: "You are reviewing code you did not write. Base your review ONLY on the diff and acceptance criteria provided below. Do not reference or assume any implementation context beyond what is explicitly given to you."
+
 ## Phase 0 — Scope Assessment
 
 Before starting, classify the review scope:
@@ -41,7 +54,7 @@ Decision tree:
    - **Performance reviewer** — activate when the diff touches database queries or data access patterns (e.g., `query`, `findAll`, `SELECT`, `JOIN`, `index`). Trigger on file paths matching `**/db/**`, `**/queries/**` or database-related content — NOT on generic JS iteration methods like `forEach` or `map`.
    - **Migration reviewer** — activate when the diff includes schema changes or data migrations. Trigger on file paths matching `**/migrations/**`, `**/db/**` or content matching `CREATE TABLE`, `ALTER TABLE`, `addColumn`, `migration`.
 
-3. **Spawn a review team** using TeamCreate with the base reviewers plus any activated conditional reviewers:
+3. **Spawn a review team** using TeamCreate with `model: "sonnet"` and the base reviewers plus any activated conditional reviewers. Include the reviewer preamble from Context Isolation above in each reviewer's instructions.
    - **Correctness reviewer** (always-on) — checks that the implementation satisfies every acceptance criterion, handles edge cases, and has no logical errors.
    - **Standards reviewer** (always-on) — checks code style, naming, patterns, test quality, and adherence to project conventions.
    - **Security reviewer** (conditional) — checks for authentication/authorization bugs, injection vulnerabilities, secret exposure, and unsafe data handling.
@@ -76,7 +89,7 @@ Decision tree:
 
 1. Read the GitHub issue and its acceptance criteria.
 
-2. **Spawn an extended review team** using TeamCreate with all specialists active:
+2. **Spawn an extended review team** using TeamCreate with `model: "opus"` and all specialists active. Include the reviewer preamble from Context Isolation above in each reviewer's instructions.
    - **Correctness reviewer** — checks acceptance criteria, edge cases, logical errors
    - **Standards reviewer** — checks code style, naming, patterns, test quality
    - **Security reviewer** — checks for vulnerabilities: injection, auth bypass, data exposure, insecure defaults, OWASP top 10 concerns

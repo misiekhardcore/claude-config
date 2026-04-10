@@ -36,6 +36,7 @@ Single-pass extraction. Work through these steps yourself:
    - **No overlap** → create new doc
 4. Write the solution doc (see Knowledge Tracks and Output Format below)
 5. Verify discoverability: check if CLAUDE.md or project-level instructions mention `.claude/docs/solutions/`. If not, suggest adding a line like: `Check .claude/docs/solutions/ for known issues and patterns before debugging.` Do not modify CLAUDE.md automatically — present the suggestion to the user.
+6. **Staleness check** — scan existing docs in `.claude/docs/solutions/` for conflicts with or supersession by the new learning. If the new doc contradicts or replaces an existing one, flag it for consolidation (do not auto-delete — present the conflict to the user).
 
 ### Full
 
@@ -54,6 +55,7 @@ Single-pass extraction. Work through these steps yourself:
 4. Synthesize team findings into a solution doc.
 
 5. Verify discoverability: check if CLAUDE.md or project-level instructions mention `.claude/docs/solutions/`. If not, suggest adding a line like: `Check .claude/docs/solutions/ for known issues and patterns before debugging.` Do not modify CLAUDE.md automatically — present the suggestion to the user.
+6. **Staleness check** — scan existing docs in `.claude/docs/solutions/` for conflicts with or supersession by the new learning. If the new doc contradicts or replaces an existing one, flag it for consolidation (do not auto-delete — present the conflict to the user).
 
 ## Output
 

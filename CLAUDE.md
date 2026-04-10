@@ -35,6 +35,15 @@ Each skill spawns specialist teams and uses /grill-me for interactive decision-m
 | /review       | Code review — correctness + standards specialists                          |
 | /verify       | QA verification — per-criterion pass/fail with evidence                    |
 | /grill-me     | Base Q&A engine — relentless interviewing on any topic                     |
+| /wrap-up      | End-of-session assumptions audit — surfaces decisions and follow-ups       |
+| /prune        | Audit rules and solution docs for staleness                                |
+
+@plugins-reference.md
+
+## Maintenance
+
+- Before ending long sessions, run `/wrap-up` to surface assumptions
+- Run `/prune` monthly or after major refactors to audit rules and solution docs
 
 ## Scripts CLI
 
