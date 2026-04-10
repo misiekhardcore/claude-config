@@ -1,0 +1,4 @@
+node_modules
+plugins/marketplaces
+plugins/**/*cache
+plugins/installed_plugins.json

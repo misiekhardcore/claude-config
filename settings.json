@@ -1,0 +1,90 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "effortLevel": "high",
+  "enabledPlugins": {
+    "chrome-devtools-mcp@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "claude-hud@claude-hud": true,
+    "claude-md-management@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "vercel@claude-plugins-official": true,
+    "worktrunk@worktrunk": true
+  },
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "extraKnownMarketplaces": {
+    "claude-hud": {
+      "source": {
+        "repo": "jarrodwatts/claude-hud",
+        "source": "github"
+      }
+    },
+    "worktrunk": {
+      "source": {
+        "repo": "max-sixty/worktrunk",
+        "source": "github"
+      }
+    }
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "$HOME/.claude/hooks/rtk-rewrite.sh",
+            "type": "command"
+          }
+        ],
+        "matcher": "Bash"
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "command": "bash $HOME/.claude/hooks/log-session-cost.sh",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ]
+  },
+  "model": "opus[1m]",
+  "permissions": {
+    "allow": [
+      "Agent",
+      "Bash",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Read",
+      "Edit",
+      "Write",
+      "Skill",
+      "TeamCreate",
+      "Update",
+      "WebSearch",
+      "WebFetch",
+      "mcp__*"
+    ],
+    "defaultMode": "acceptEdits"
+  },
+  "statusLine": {
+    "command": "bash -c 'export COLUMNS=$(tput cols 2>/dev/null || echo ${COLUMNS:-120}); plugin_dir=$(ls -d \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"/plugins/cache/claude-hud/claude-hud/*/ 2>/dev/null | awk -F/ '\"'\"'{ print $(NF-1) \"\\t\" $(0) }'\"'\"' | sort -t. -k1,1n -k2,2n -k3,3n -k4,4n | tail -1 | cut -f2-); exec \"$HOME/.bun/bin/bun\" --env-file /dev/null \"${plugin_dir}src/index.ts\"'",
+    "type": "command"
+  },
+  "teammateMode": "tmux",
+  "voiceEnabled": true
+}

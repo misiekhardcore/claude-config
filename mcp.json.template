@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "deepwiki": {
+      "_comment": "Open-source project documentation — free, no API key required",
+      "command": "npx",
+      "args": ["-y", "@deepwiki/mcp"]
+    }
+  }
+}
