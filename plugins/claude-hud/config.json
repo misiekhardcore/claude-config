@@ -4,7 +4,7 @@
   "gitStatus": {
     "enabled": true,
     "showDirty": true,
-    "showAheadBehind": false,
+    "showAheadBehind": true,
     "showFileStats": false
   },
   "display": {
@@ -13,6 +13,12 @@
     "showTodos": true,
     "showDuration": true,
     "showConfigCounts": true,
-    "showTokenBreakdown": true
+    "showTokenBreakdown": true,
+    "showUsage": true,
+    "showProject": true,
+    "showSpeed": true,
+    "showSessionName": true,
+    "showSessionTokens": true,
+    "usageBarEnabled": true
   }
 }

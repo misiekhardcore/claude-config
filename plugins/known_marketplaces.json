@@ -5,7 +5,7 @@
       "repo": "anthropics/claude-plugins-official"
     },
     "installLocation": "/home/michal/.claude/plugins/marketplaces/claude-plugins-official",
-    "lastUpdated": "2026-04-10T14:59:18.525Z"
+    "lastUpdated": "2026-04-10T18:45:37.051Z"
   },
   "worktrunk": {
     "source": {
@@ -13,7 +13,7 @@
       "repo": "max-sixty/worktrunk"
     },
     "installLocation": "/home/michal/.claude/plugins/marketplaces/worktrunk",
-    "lastUpdated": "2026-03-17T16:23:34.331Z"
+    "lastUpdated": "2026-04-10T18:26:17.553Z"
   },
   "claude-hud": {
     "source": {

@@ -34,7 +34,7 @@ for file in "${files[@]}"; do
 done
 
 # ── Symlink directories ──────────────────────────────────────────────────────
-dirs=(hooks skills)
+dirs=(hooks skills plugins)
 
 for dir in "${dirs[@]}"; do
 	src="$SCRIPT_DIR/$dir"
@@ -55,6 +55,24 @@ for dir in "${dirs[@]}"; do
 	ln -s "$src" "$dest"
 	echo "linked: $dest -> $src"
 done
+
+# ── Install plugins from custom marketplaces ─────────────────────────────────
+if command -v claude &>/dev/null; then
+	echo ""
+	echo "Installing plugins..."
+
+	# Add custom marketplaces (idempotent — skips if already present)
+	claude plugin marketplace add jarrodwatts/claude-hud 2>/dev/null || true
+	claude plugin marketplace add max-sixty/worktrunk 2>/dev/null || true
+
+	# Install plugins from custom marketplaces
+	claude plugin install claude-hud@claude-hud 2>/dev/null || true
+	claude plugin install worktrunk@worktrunk 2>/dev/null || true
+
+	echo "plugins installed"
+else
+	echo "skip: claude CLI not found — install plugins manually with 'claude plugin install'"
+fi
 
 # ── Generate templated configs ────────────────────────────────────────────────
 templates=(mcp.json.template)
@@ -77,3 +95,11 @@ for tmpl in "${templates[@]}"; do
 	envsubst <"$src" >"$dest"
 	echo "generated: $dest (from $tmpl)"
 done
+
+# ── Optional CLI tools ──────────────────────────────────────────────────────
+echo ""
+printf "[?] Install optional CLI tools (RTK, rudel, pi-self-learning)? (y/N) "
+read -r reply
+if [[ "$reply" =~ ^[Yy]$ ]]; then
+	bash "$SCRIPT_DIR/install-tools.sh"
+fi
