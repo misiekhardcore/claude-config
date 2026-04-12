@@ -1,6 +1,7 @@
 ---
 name: compound
 description: Capture learnings from completed work into durable, searchable solution docs. Invoke when the user says "it's fixed", "that worked", "working now", or explicitly via /compound — also after a non-trivial debugging session or implementation concludes successfully. Turns ephemeral knowledge into reusable artifacts in .claude/docs/solutions/.
+model: sonnet
 ---
 
 You are leading the knowledge compounding phase. Your job is to capture what was just learned — the fix, the insight, the pattern — into a durable artifact that future agents and developers can discover and reuse.

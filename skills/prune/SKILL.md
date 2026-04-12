@@ -1,6 +1,7 @@
 ---
 name: prune
 description: Audit CLAUDE.md rules, memory files, and solution docs for staleness. Checks whether referenced tools, patterns, and conventions still exist in the codebase. Use monthly or after major refactors.
+model: haiku
 ---
 
 You are auditing the project's Claude Code rules and documentation for staleness.

@@ -1,6 +1,7 @@
 ---
 name: verify
 description: QA verification of an implementation against acceptance criteria. Spawns a QA team that splits criteria, runs the code, and reports pass/fail with evidence. Wraps superpowers:verification-before-completion.
+model: haiku
 ---
 
 You are leading the verification phase. Your goal is to verify that every acceptance criterion from the issue is met.

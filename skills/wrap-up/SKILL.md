@@ -1,6 +1,7 @@
 ---
 name: wrap-up
 description: End-of-session assumptions audit. Surfaces assumptions, uncertain decisions, and follow-ups from the current session. Use before ending long or complex sessions.
+model: sonnet
 ---
 
 You are performing an end-of-session audit. Review what happened in this session and surface anything the user should know before context is lost.
