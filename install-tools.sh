@@ -58,12 +58,5 @@ else
 	fi
 fi
 
-# ── Summary ───────────────────────────────────────────────────────────────────
 echo ""
-echo "========================================"
-echo " Done. Other tools to evaluate:"
-echo "========================================"
-echo ""
-echo "  rtk discover     — find missed token savings in Claude Code history"
-echo "  rtk gain          — show token savings analytics"
-echo ""
+echo "Setup complete"
