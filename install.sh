@@ -96,6 +96,13 @@ for tmpl in "${templates[@]}"; do
 	echo "generated: $dest (from $tmpl)"
 done
 
+# ── CodeGraph ────────────────────────────────────────────────────────────────
+echo ""
+echo "CodeGraph: run these once to enable semantic code search:"
+echo "  npm install -g @colbymchenry/codegraph"
+echo "  claude mcp add codegraph 'codegraph serve --mcp' -s user"
+echo "  Then in each project: codegraph init -i"
+
 # ── Optional CLI tools ──────────────────────────────────────────────────────
 echo ""
 printf "[?] Install optional CLI tools (RTK, rudel, pi-self-learning)? (y/N) "
