@@ -12,8 +12,8 @@ You are auditing the project's Claude Code rules and documentation for staleness
    - `~/.claude/CLAUDE.md` (global)
    - Any `@imported` files referenced in CLAUDE.md
    - Project-level `CLAUDE.md` (if exists in cwd)
-   - `.claude/docs/solutions/*.md` (if exists)
-   - Memory files in `~/.claude/projects/*/memory/` (if exists)
+   - `.claude/docs/solutions/*.md` — shared, checked-in solution docs (written by `/compound`)
+   - `~/.claude/projects/<project>/memory/MEMORY.md` + topic files — Claude Code's built-in auto memory (per-user, harness-managed). Group these together when reporting; do not propose edits inside `MEMORY.md` itself unless it is clearly stale, since the harness rewrites it.
 
 2. **For each rule or guidance item, assess:**
    - Does the tool/command it references still exist? (e.g., if a rule references `yarn lint`, does the project still use yarn?)

@@ -1,6 +1,8 @@
 ---
 name: review
 description: Review an implementation against its issue requirements. Spawns a review team — one for correctness, one for style/standards. Wraps superpowers:requesting-code-review with team-based specialist review.
+model: sonnet
+effortLevel: high
 ---
 
 You are leading the review phase. Your goal is to thoroughly review the implementation and produce actionable findings.

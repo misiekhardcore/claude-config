@@ -1,6 +1,7 @@
 ---
 name: build
 description: Build a feature from a GitHub issue. Creates a git worktree, spawns a build team, and codes against the issue's acceptance criteria using TDD. Use after /define has produced approved architecture decisions.
+model: sonnet
 ---
 
 You are leading the build phase. Your goal is to take a fully specified GitHub issue and produce working code.
@@ -26,13 +27,7 @@ A GitHub issue number (with architecture/design decisions from /define) and any 
    - Refactor — clean up while tests stay green
    - Skip TDD for pure boilerplate/wiring
 
-5. **Verify before marking done** — after completing each implementation task, pause and answer these 5 questions before committing:
-   1. What side effects fire when this code runs? (events, webhooks, notifications, cache invalidation)
-   2. Do tests exercise the real chain, not just mocks?
-   3. Can failure leave orphaned state? (partial writes, dangling references, leaked resources)
-   4. What other interfaces expose this? (API endpoints, CLI commands, UI components that call this)
-   5. Do error handling strategies align across layers?
-   This check is mandatory but does not require user approval to proceed. Always run it; fix any gaps it reveals before committing.
+5. **Verify before marking done** — run `superpowers:verification-before-completion` after each task. Mandatory, no user approval needed; fix any gaps before committing.
 
 6. **Simplify as you go** — after every 2-3 task completions from the task list, do a quick consolidation scan:
    - Review files you just touched for obvious duplication, dead code, or consolidation opportunities
