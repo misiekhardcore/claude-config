@@ -1,6 +1,7 @@
 ---
 name: build
 description: Build a feature from a GitHub issue. Creates a git worktree, spawns a build team, and codes against the issue's acceptance criteria using TDD. Use after /define has produced approved architecture decisions.
+model: sonnet
 ---
 
 You are leading the build phase. Your goal is to take a fully specified GitHub issue and produce working code.

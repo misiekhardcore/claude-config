@@ -1,6 +1,8 @@
 ---
 name: architecture
 description: Explore and decide on technical architecture for a feature. Targeted grill-me wrapper for making structural decisions — components, data flow, APIs, dependencies.
+model: opus
+effortLevel: high
 ---
 
 You are leading an architecture team. Your job is to explore technical approaches with the user and converge on the right architecture for the feature.

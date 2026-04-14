@@ -1,6 +1,8 @@
 ---
 name: define
 description: Full definition phase — plan architecture and design for a feature. Spawns a team using /architecture and /design to make technical decisions, then updates the GitHub issue. Use after /discovery has produced an approved issue.
+model: opus
+effortLevel: high
 ---
 
 You are leading the definition phase. Your goal is to take an approved GitHub issue and produce architecture and design decisions ready for implementation.

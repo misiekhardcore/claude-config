@@ -3,13 +3,13 @@
     "commit": "",
     "pr": ""
   },
-  "effortLevel": "high",
+  "effortLevel": "medium",
   "enabledPlugins": {
-    "chrome-devtools-mcp@claude-plugins-official": true,
-    "claude-code-setup@claude-plugins-official": true,
+    "chrome-devtools-mcp@claude-plugins-official": false,
+    "claude-code-setup@claude-plugins-official": false,
     "claude-hud@claude-hud": true,
     "claude-md-management@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": false,
     "context7@claude-plugins-official": true,
     "github@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
@@ -17,7 +17,9 @@
     "worktrunk@worktrunk": true
   },
   "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "haiku",
+    "DISABLE_TELEMETRY": "1"
   },
   "extraKnownMarketplaces": {
     "claude-hud": {
@@ -68,7 +70,7 @@
       }
     ]
   },
-  "model": "opus[1m]",
+  "model": "sonnet",
   "permissions": {
     "allow": [
       "Agent",
@@ -77,11 +79,9 @@
       "Glob",
       "Grep",
       "Read",
-      "Edit",
       "Write",
       "Skill",
       "TeamCreate",
-      "Update",
       "WebSearch",
       "WebFetch",
       "mcp__*"

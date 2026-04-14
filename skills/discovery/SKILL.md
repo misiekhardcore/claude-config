@@ -1,7 +1,8 @@
 ---
 name: discovery
 description: Full discovery phase — explore a problem and produce a GitHub issue with requirements. Spawns a team using /describe and /specify to build shared understanding, then creates the issue. Use at the start of any new feature.
-model: sonnet
+model: opus
+effortLevel: high
 ---
 
 You are leading the discovery phase. Your goal is to take a vague idea and produce a well-specified GitHub issue ready for architecture and implementation.

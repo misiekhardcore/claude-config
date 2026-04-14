@@ -4,8 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Implementation Rules
 
-- **Always use agent teams** for non-trivial implementation. Use `TeamCreate` to spawn teammates — assign each a separate sub-issue or file group to avoid conflicts. Only fall back to single-agent for trivial single-file fixes. When dispatching subagents, explicitly instruct them to use teams.
-- Respond concisely; no filler, no preamble
+- **Default to single-agent.** Use `TeamCreate` only for parallelizable work across 3+ independent files or sub-issues. Team overhead (per-agent system prompt, message passing, coordination) costs more than it saves on smaller tasks.
+- Respond concisely; no filler, no preamble.
+- Use the cheapest viable model. Skills set their own `model:` and `effortLevel:` — trust them.
 
 ## Feature Workflow
 
@@ -51,4 +52,4 @@ The `scripts` command is globally available (linked from `~/Projects/scripts`). 
 
 Run `scripts --help` or `scripts <command> --help` for details on available commands and options.
 
-@RTK.md
+RTK reference: `~/.claude/RTK.md` (read on demand — RTK is invoked transparently by the `rtk-rewrite.sh` PreToolUse hook).
