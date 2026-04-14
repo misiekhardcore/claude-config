@@ -1,6 +1,5 @@
 node_modules
 plugins/marketplaces
-plugins/**/*cache
 plugins/installed_plugins.json
-claude/plugins/known_marketplaces.json
-claude/plugins/claude-hud/.speed-cache.json
+plugins/known_marketplaces.json
+plugins/**/*cache*
