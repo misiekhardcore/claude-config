@@ -16,6 +16,10 @@ A GitHub issue number (with architecture/design decisions from /define) and any 
 
 2. **Create a git worktree** for the feature (`git worktree add`). Worktrees keep the main workspace clean and let teammates operate in isolation.
 
+   Immediately create `./NOTES.md` at the worktree root with the initial task list harvested from the issue. This is the living worklog for the phase — it survives unexpected session close and is the resume point if this session dies before `/wrap-up`. See `skills/_shared/notes-md-protocol.md`.
+
+   **On resume in an existing worktree**, read `./NOTES.md` *before* re-reading the issue — it has the latest in-flight state. Resume from its **Next action on resume** field.
+
 3. **Spawn an implementation team** using TeamCreate:
    - Assign each teammate a separate sub-issue or file group to avoid conflicts
    - Teammates communicate peer-to-peer, share discoveries, and flag potential conflicts
@@ -35,7 +39,9 @@ A GitHub issue number (with architecture/design decisions from /define) and any 
    - If found, create a micro-task to consolidate before proceeding to the next implementation task
    - Keep it lightweight: "scan for obvious duplication in files you just touched"
 
-7. Commit changes incrementally using semantic commit messages (`feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`).
+7. **Proactive compaction.** At ~60% context utilization, before starting a new sub-issue, or before reading 2+ large files: (a) flush the working set into `./NOTES.md` (current task, decisions, next action on resume), (b) emit a `Keep: / Drop:` preservation note, (c) run `/compact`, (d) verify with "summarize where we are and what's next" before issuing the next tool call. See `skills/_shared/compaction-protocol.md`.
+
+8. Commit changes incrementally using semantic commit messages (`feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`). Update `./NOTES.md` after each completed task — it is the resume point if the session dies unexpectedly.
 
 ## Output
 
@@ -50,3 +56,5 @@ A feature branch in a worktree with all acceptance criteria implemented, tests p
 - Do not open a PR — that happens after /implement completes the full cycle
 - Always run the 5-question verification check before marking a task done
 - Consolidation scans are lightweight — spend seconds, not minutes
+- Compaction is a build-time responsibility, not a wrap-up afterthought — run the compaction protocol proactively, do not wait for auto-compact
+- `./NOTES.md` is authoritative for in-flight state; if your recall disagrees with the file, trust the file

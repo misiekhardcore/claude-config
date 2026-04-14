@@ -19,7 +19,7 @@ A GitHub issue number (with architecture/design decisions from /define) and any 
 3. **Run /verify** — spawns QA team, verifies every acceptance criterion
 
 If /review or /verify report issues:
-- Feed findings back to /build for fixes
+- Feed findings back to /build for fixes — pass a **fix brief** (failing criteria + reviewer findings as `file:line` + prior architectural decisions). Do not forward the review/verify transcripts.
 - Re-run /review and /verify on the fixes
 - Repeat until both pass clean
 
@@ -47,3 +47,5 @@ When /review and /verify both pass with no issues:
 - Maximum 3 build→review→verify cycles before escalating to the user
 - Each cycle should address all findings from the previous cycle, not just some
 - Keep the user informed of cycle progress (which cycle, what was found, what was fixed)
+- The GitHub issue is the handoff artifact across phases; every sub-skill reads from and writes to it. See `skills/_shared/handoff-artifact.md`.
+- If `./NOTES.md` exists in the worktree at resume, `/build` reads it before the issue. Do not re-issue instructions already captured there.
