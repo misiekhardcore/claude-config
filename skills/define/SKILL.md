@@ -15,13 +15,11 @@ A GitHub issue number from /discovery (or provided by the user).
 
 1. Read the issue to understand the problem statement and acceptance criteria.
 
-2. **Dispatch a research team** using TeamCreate before the definition team begins:
-   - **Codebase research agent** — systematic scan of relevant code: technology stack, module structure, related implementations, naming conventions, existing patterns. Outputs a structured context brief.
-   - **Patterns/learnings agent** — searches `.claude/docs/solutions/` (if it exists), project documentation, past decision records, and — when local patterns are thin — external documentation via Context7 or web search for relevant prior art and lessons learned.
+2. **Dispatch a research team** (TeamCreate) before the definition team:
+   - **Codebase research agent** — scans tech stack, modules, related implementations, naming, existing patterns. Outputs a structured brief.
+   - **Patterns/learnings agent** — searches `.claude/docs/solutions/`, project docs, past decisions, and (when local patterns are thin) external sources via Context7. Skip external research when 3+ direct pattern examples exist; always run full research for security/payments/privacy.
 
-   **Gate rule**: skip external/web research when codebase research finds 3+ direct pattern examples. Always run full research for security, payments, privacy topics, or when local patterns are thin (fewer than 3 examples).
-
-   Research results are passed to both the architecture and design specialists as initial context.
+   The brief feeds both the architecture and design specialists as seed context.
 
 3. **Spawn a definition team** using TeamCreate with specialists:
    - **Architecture specialist** — runs /architecture to explore technical approaches, seeded with research output. Pass the research brief as input — the Architecture specialist skips its own research phase when a research brief is provided. Produces component diagrams, data flow, API design, dependency graphs.

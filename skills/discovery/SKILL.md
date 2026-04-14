@@ -9,20 +9,11 @@ You are leading the discovery phase. Your goal is to take a vague idea and produ
 
 ## Phase 0 — Scope Assessment
 
-Before starting, classify the task scope:
+Classify the task before dispatching:
 
-1. **Lightweight** — trivial fix, clear requirements, obvious solution path
-   - Fast-track: single agent runs /describe (Lightweight) then /specify (minimal) sequentially. No team dispatch.
-   - Create the issue directly after user approval.
-2. **Standard** — typical feature with some unknowns
-   - Current behavior: team with /describe and /specify specialists.
-3. **Deep** — complex cross-cutting change, security/auth/payments, architecture change, or multi-team impact
-   - Full team plus additional specialists for flow analysis and adversarial questioning.
-
-Decision tree:
-1. Is the fix already described in a bug report with clear repro steps AND touches one area? → Lightweight
-2. Does it cross module boundaries, touch auth/security/payments, or require architecture decisions? → Deep
-3. Otherwise → Standard
+- **Lightweight** — clear repro + single area. Single agent runs /describe (Lightweight) → minimal /specify → issue. No team.
+- **Standard** — typical feature with some unknowns. Team with /describe + /specify specialists.
+- **Deep** — cross-module, auth/security/payments, architecture-changing, or multi-team. Full team + flow analyst + adversarial questioner.
 
 ## Process
 
