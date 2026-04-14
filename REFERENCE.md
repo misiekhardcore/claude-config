@@ -29,6 +29,15 @@ rtk proxy <cmd>       # raw passthrough (debugging)
 
 See `~/.claude/RTK.md` for more.
 
-## Notes convention
+## Memory layout
 
-For multi-cycle implementations, write progress notes to `.claude/notes/<feature>.md`. Each cycle re-reads its own notes instead of carrying state through conversation. Delete the file when the feature is shipped.
+Two tiers, both already wired up — don't invent a third:
+
+| Location | Scope | Lifecycle | Loaded |
+|---|---|---|---|
+| `~/.claude/projects/<project>/memory/MEMORY.md` + topic files | Per-user, per-project. Built-in Claude Code "auto memory" | Claude self-curates; `/prune` audits | First ~200 lines / 25KB at session start; topic files on demand |
+| `<project>/.claude/docs/solutions/*.md` | Per-project, checked into git, shared with collaborators | `/compound` writes; `/prune` audits | Manual — discovered via the "check existing memory first" rule in CLAUDE.md |
+
+Auto memory is opaque to user skills (the harness owns the directory). To capture session findings deterministically, run `/compound` — it writes to `.claude/docs/solutions/`, deduplicates against existing docs, and is shared via git. To surface in-flight assumptions before context loss, run `/wrap-up` — its output stays in the conversation; persistence is left to auto memory.
+
+Disable auto memory with `claude --bare` if you need a clean session.
