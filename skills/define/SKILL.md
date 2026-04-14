@@ -32,8 +32,11 @@ A GitHub issue number from /discovery (or provided by the user).
    - Add design decisions as issue comments (with visuals)
    - Create sub-issues with GitHub relationships if the work decomposes
    - Define the dependency graph — identify what can be parallelized
+   - The issue comment is the handoff artifact. Treat it as the sole input to `/implement` — a fresh session will read it, not this conversation. Include all five handoff fields (Objectives, Constraints, Prior decisions, Evidence, Open questions). See `skills/_shared/handoff-artifact.md`.
 
 6. Present all decisions to the user for approval. Do not proceed until sign-off.
+
+7. After sign-off, instruct the user: "Start `/implement` in a fresh session; this one is closed." Do not call `/implement` from within `/define`.
 
 ## Rules
 

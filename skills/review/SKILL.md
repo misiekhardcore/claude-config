@@ -113,6 +113,8 @@ A structured review report with:
 - Which conditional reviewers were activated and why (Standard) or note that all were active (Deep)
 - Recommendations
 
+When returning findings to `/build`, package them as a **fix brief**: failing criteria + `file:line` findings + severity + confidence. No transcript — `/build` already has the full context and should not re-ingest the review session.
+
 ## Rules
 
 - Never fix issues during review — separation of concerns

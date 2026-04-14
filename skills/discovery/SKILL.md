@@ -45,13 +45,17 @@ Classify the task before dispatching:
 
 ### Issue Creation (all modes)
 
-1. **Create a GitHub issue** (`gh issue create`) with:
+1. **Create a GitHub issue** (`gh issue create`) with the five handoff fields so the issue is a self-contained brief for the next phase. See `skills/_shared/handoff-artifact.md`.
    - **Title** — concise feature description
-   - **Problem statement** — from /describe output
-   - **Acceptance criteria** — from /specify output, as a numbered list of testable scenarios
-   - **Scope** — explicit in/out boundaries
+   - **Objectives** — from /specify output, as a numbered list of testable acceptance criteria
+   - **Constraints** — explicit in/out scope boundaries, non-negotiable decisions surfaced during discovery
+   - **Prior decisions** — any decisions already made during discovery (one line each, with rationale)
+   - **Evidence** — links to design reviews, benchmarks, prior discussions
+   - **Open questions** — things `/define` must resolve, explicit (say "None" if there are none)
 
 2. Present the issue to the user for approval. Do not proceed until sign-off.
+
+3. After sign-off, tell the user to run `/define` in a fresh session. Do not call `/define` from within `/discovery` — the issue is the handoff artifact, and the next phase must start with clean context.
 
 ## Rules
 
