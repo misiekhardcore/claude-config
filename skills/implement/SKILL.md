@@ -48,4 +48,4 @@ When /review and /verify both pass with no issues:
 - Each cycle should address all findings from the previous cycle, not just some
 - Keep the user informed of cycle progress (which cycle, what was found, what was fixed)
 - The GitHub issue is the handoff artifact across phases; every sub-skill reads from and writes to it. See `skills/_shared/handoff-artifact.md`.
-- If `./NOTES.md` exists in the worktree at resume, `/build` reads it before the issue. Do not re-issue instructions already captured there.
+- In-phase state lives in `./NOTES.md` (read by `/build` on resume) and in the issue (cross-phase). Do not re-issue instructions already captured in either.

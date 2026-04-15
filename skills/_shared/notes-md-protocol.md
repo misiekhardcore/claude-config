@@ -1,22 +1,36 @@
-# NOTES.md — Living Worklog Protocol
+# NOTES.md — In-Phase Memory Tier
 
-Used by `/build` (primary), `/implement` (resume awareness), and `/wrap-up` (harvest) to maintain a durable in-phase scratchpad. The purpose is to survive **unexpected** session close mid-phase, when `/wrap-up` has not run and the issue was last touched at phase start.
+`NOTES.md` is the **rot-immune external memory** for in-phase state. Because in-context recall degrades as a session accumulates concepts, the model cannot trust its own memory of what it decided ten turns ago — `NOTES.md` is where that state lives durably, on disk, outside the rotting context.
 
-This file is reference material — read it on demand when a skill creates, updates, or harvests NOTES.md. Do not preload.
+This file is reference material — read it on demand when a skill creates, updates, or harvests `NOTES.md`. Do not preload.
+
+## Where it sits in the memory hierarchy
+
+Three tiers, no overlap:
+
+| Tier | Where | Lifetime | Authoritative for |
+|------|-------|----------|-------------------|
+| `TodoWrite` | In-context | This session only | Throwaway working scratchpad |
+| `NOTES.md` | Worktree-local file | This phase, across sessions | In-flight decisions, current task, open questions |
+| GitHub issue | Remote | Cross-phase | Acceptance criteria, prior-phase decisions, handoff state |
+
+`TodoWrite` is not mirrored into `NOTES.md` — they serve different roles. `TodoWrite` is the model's in-session task list and dies with the session; `NOTES.md` is durable in-phase memory the next session will read.
+
+When in-context recall disagrees with `NOTES.md`, **trust the file** — that's the whole point of having it.
 
 ## Location and lifecycle
 
-- **Path:** `<worktree-root>/NOTES.md`. One per worktree, one per feature.
-- **Created by `/build`** at the start of the phase, immediately after `git worktree add`.
-- **Updated by `/build`** after each completed task, each significant decision, and before any proactive `/compact`.
-- **Read on resume** by `/build` and `/implement` — before re-reading the issue.
-- **Harvested by `/wrap-up`** into the GitHub issue comment on clean exit.
-- **Left in place** after the phase ends. The next session resuming the same worktree should read it. It is cleaned up only when the worktree is removed (`wt remove`).
-- **Not committed to git.** Listed in `.gitignore` at the repo root.
+- **Path:** `<worktree-root>/NOTES.md`. Resolve with `git rev-parse --show-toplevel` if CWD is uncertain. One per worktree, one per feature.
+- **Created by `/build`** at the start of the phase, immediately after `git worktree add`, with the initial task list harvested from the issue.
+- **Updated by `/build`** after each completed task, each significant decision, and before any summarization-based `/compact`.
+- **Read on resume by `/build`** — before re-reading the issue.
+- **Harvested by `/wrap-up`** into a GitHub issue comment on clean exit.
+- **Left in place** after the phase ends. Cleanup happens when the worktree is removed (`wt remove` deletes the worktree directory and `NOTES.md` goes with it). Do not delete it from within a running phase.
+- **Not committed to git.** Anchored as `/NOTES.md` in `.gitignore` at the repo root.
 
 ## Required sections
 
-NOTES.md is a bullet list, not prose. Keep the whole file readable in one screen.
+`NOTES.md` is a bullet list, not prose. Keep the whole file readable in one screen — it should cost <1k tokens to re-read.
 
 ```markdown
 # NOTES — feat/<feature-slug>
@@ -26,8 +40,7 @@ NOTES.md is a bullet list, not prose. Keep the whole file readable in one screen
 
 ## Task list
 - [x] <done task>
-- [>] <in-progress task>
-- [ ] <pending task>
+- [ ] <pending or in-progress task — first unchecked item is the current one>
 - [!] <blocked task — with reason>
 
 ## Decisions made this session
@@ -43,32 +56,33 @@ NOTES.md is a bullet list, not prose. Keep the whole file readable in one screen
 
 ## Update cadence
 
-Update NOTES.md at these points (it is fast — bullet-level only):
+Update at these points (bullet-level only — fast):
 
 - **After each completed task** — flip the checkbox, log any decision that resulted from completing it.
 - **After each significant decision** — one line, with rationale.
-- **Before every proactive `/compact`** — flush the working set into NOTES.md *first*, so the preservation note can afford to be terse.
+- **Before any summarization-based `/compact`** — write the Keep list into the file *first*, so the post-compaction summary can be diffed against an external record.
 - **Before ending the session normally** — `/wrap-up` will harvest it.
 
-Do **not** update it for trivial moves (opening a file, running a test command). It is a checkpoint log, not a transcript.
+Do not update for trivial moves (opening a file, running a test command). It is a checkpoint log, not a transcript.
 
 ## Resume protocol
 
-On a fresh session in an existing worktree:
+On a fresh session in an existing worktree, `NOTES.md` exists ⇒ this is a resume:
 
 1. Read `./NOTES.md` first.
-2. Read the GitHub issue second (for acceptance criteria, constraints, and decisions from prior phases).
+2. Read the GitHub issue second (for cross-phase decisions and acceptance criteria).
 3. Resume from **Next action on resume** — or, if that field is stale, from the first unchecked item in the Task list.
-4. Before your first real action, update NOTES.md's **Current task** and **Next action on resume** to reflect the new session.
+4. Before your first real action, update **Current task** and **Next action on resume** to reflect the new session.
 
 ## Rules
 
-- **NOTES.md is authoritative for in-flight state.** If your recall disagrees with it, trust the file.
+- **`NOTES.md` is authoritative for in-flight state.** In-context recall is rot-degraded by the time the file matters; trust the file.
+- **The issue is authoritative for cross-phase state.** Acceptance criteria, locked architectural decisions, prior-phase handoff content live in the issue, not the file.
 - **Bullet-only. No prose.** The whole file should cost <1k tokens to re-read.
-- **Never commit it.** Add to `.gitignore` if not already there.
+- **Never commit it.** Listed as `/NOTES.md` in `.gitignore`.
 - **Never delete it automatically.** The owning session may archive it on clean exit; do not remove it from within a running phase.
-- **Complement to `TodoWrite`, not replacement.** `TodoWrite` is in-session task tracking for the current agent; NOTES.md is cross-session durable state for any agent (or human) resuming. Mirror significant state changes from `TodoWrite` into NOTES.md.
+- **Do not mirror `TodoWrite` continuously.** `TodoWrite` is the in-session scratchpad; `NOTES.md` is the durable memory tier. Different roles, no manual sync.
 
 ## Why
 
-Rules 1–4 from `.claude/docs/solutions/workflow-context-compacting.md` cover phase *boundaries* (via the GitHub issue) and sub-agent *isolation*. NOTES.md fills the remaining gap: a session that dies mid-build, before `/wrap-up` runs, must still be recoverable. A gitignored worktree-local worklog is the cheapest durable answer — the same pattern used by Anthropic's research harness (external memory files), Aider (`.aider.chat.md`), and OpenHands/Cursor scratchpads.
+Context rot makes in-context recall unreliable for long sessions, even when the window is nowhere near full. The fix is to externalize the state that the model needs to trust — onto disk, in a file the model re-reads on demand. A gitignored worktree-local worklog is the cheapest durable answer, the same shape used by Anthropic's research harness (external memory files), Aider (`.aider.chat.history.md`), and OpenHands/Cursor scratchpads. See `.claude/docs/solutions/workflow-context-compacting.md` for the full rationale.

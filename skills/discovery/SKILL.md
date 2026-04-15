@@ -45,8 +45,9 @@ Classify the task before dispatching:
 
 ### Issue Creation (all modes)
 
-1. **Create a GitHub issue** (`gh issue create`) with the five handoff fields so the issue is a self-contained brief for the next phase. See `skills/_shared/handoff-artifact.md`.
+1. **Create a GitHub issue** (`gh issue create`) as a self-contained brief for the next phase. See `skills/_shared/handoff-artifact.md` for the handoff field shape.
    - **Title** — concise feature description
+   - **Problem statement** — from /describe output: what the user is trying to do, why the current state is inadequate, who is affected. This is the framing the rest of the issue depends on.
    - **Objectives** — from /specify output, as a numbered list of testable acceptance criteria
    - **Constraints** — explicit in/out scope boundaries, non-negotiable decisions surfaced during discovery
    - **Prior decisions** — any decisions already made during discovery (one line each, with rationale)

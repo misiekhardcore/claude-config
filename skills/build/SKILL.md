@@ -39,7 +39,13 @@ A GitHub issue number (with architecture/design decisions from /define) and any 
    - If found, create a micro-task to consolidate before proceeding to the next implementation task
    - Keep it lightweight: "scan for obvious duplication in files you just touched"
 
-7. **Proactive compaction.** At ~60% context utilization, before starting a new sub-issue, or before reading 2+ large files: (a) flush the working set into `./NOTES.md` (current task, decisions, next action on resume), (b) emit a `Keep: / Drop:` preservation note, (c) run `/compact`, (d) verify with "summarize where we are and what's next" before issuing the next tool call. See `skills/_shared/compaction-protocol.md`.
+7. **Keep context focused.** Trigger on **concept shifts**, not on a percentage:
+   - Stale tool results in context after the work has moved on → clear them with **context editing** (verbatim — the default tool).
+   - About to read a large file or grep wide paths → delegate to a sub-agent that returns a focused report (the lead never accumulates the bulk).
+   - About to start a new sub-issue, or just spawned a sub-agent → natural reset point.
+   - If summarization-based `/compact` is unavoidable: flush the working set into `./NOTES.md` first, emit a `Keep: / Drop:` note, run `/compact`, then diff the post-compaction summary against the Keep list **in NOTES.md** before the next tool call.
+
+   See `skills/_shared/compaction-protocol.md`. Context editing first, sub-agents second, `/compact` last.
 
 8. Commit changes incrementally using semantic commit messages (`feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`). Update `./NOTES.md` after each completed task — it is the resume point if the session dies unexpectedly.
 
@@ -56,5 +62,5 @@ A feature branch in a worktree with all acceptance criteria implemented, tests p
 - Do not open a PR — that happens after /implement completes the full cycle
 - Always run the 5-question verification check before marking a task done
 - Consolidation scans are lightweight — spend seconds, not minutes
-- Compaction is a build-time responsibility, not a wrap-up afterthought — run the compaction protocol proactively, do not wait for auto-compact
+- Context hygiene is a build-time responsibility, not a wrap-up afterthought — trigger on concept shifts, not percentages, and never let auto-compact run unattended
 - `./NOTES.md` is authoritative for in-flight state; if your recall disagrees with the file, trust the file

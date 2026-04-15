@@ -1,22 +1,36 @@
-# Proactive Compaction Protocol — Shared
+# In-Phase Compaction Protocol — Shared
 
-Used by `/build` (and any other long-running phase skill) to compact in-place before context pressure causes silent losses. The rule is: compact **early**, **with a preservation note**, **then verify**.
+Used by `/build` (and any other long-running phase skill) to keep the working context focused on the current concept. The dominant problem this protocol addresses is **context rot** — attention dilution and stale-framing anchoring as a session accumulates unrelated tool outputs and reasoning paths — not running out of tokens.
 
 This file is reference material — read it on demand when the skill reaches a compaction step. Do not preload.
 
+## Tool order
+
+1. **Context editing first.** Clear stale tool results verbatim. This is rot-immune because nothing is paraphrased.
+2. **Sub-agent delegation second.** If the next bulk read can be delegated, the lead never accumulates the rot in the first place. See `workflow-context-compacting.md` rule 3.
+3. **Summarization-based `/compact` last.** Re-summarization compresses, but it also creates a new lower-fidelity anchor the model will over-attend to. Use only when conversation bulk (not tool output) is the source of pressure.
+
 ## When to trigger
 
-Compact proactively at any of these thresholds — whichever comes first:
+Trigger on **concept shifts**, not on a percentage:
 
-- **~60% context utilization.** Not the auto-compact threshold (~95%). Proactive means you still have headroom for the preservation note and the verification step.
-- **Before starting a new sub-issue or task-list item.** Natural boundary, easy to resume from.
-- **Before reading 2+ large files.** Large tool outputs bloat context faster than the model's own reasoning.
-- **Before spawning a reviewer/verifier/explorer sub-agent.** Sub-agents get a brief, not the transcript — so fresh context for the lead afterward is cheap.
-- **When the auto-compact warning appears.** Stop immediately, run this protocol, then continue. Never let auto-compact run unattended.
+- **The next planned action is unrelated to the last several tool results.** Stale results will distort the next decision — clear them.
+- **About to start a new sub-issue or task-list item.** Natural concept boundary.
+- **Just spawned a sub-agent.** The lead can drop the brief; the sub-agent's exploration is already isolated.
+- **About to read a large file or search wide paths.** Delegate to a sub-agent instead — don't compact, prevent.
+- **The auto-compact warning appears.** Stop immediately, run this protocol, then continue. Never let auto-compact run unattended.
 
-## The preservation note
+A percentage threshold is not used. Rot is a function of concept-mixing, not utilization. A session at 80% on one tight concept is healthier than a session at 30% spanning four.
 
-Always emit this before running `/compact`. Format:
+## Context editing — the default
+
+If the pressure is from tool outputs that have been superseded (file reads after edits, test runs from a previous attempt, doc lookups already internalized), use [context editing](https://platform.claude.com/docs/en/build-with-claude/context-editing) to clear them verbatim. Anthropic reports 84% token reduction in long-running workflows when context editing is used instead of summarization, and — more importantly — it doesn't introduce paraphrase artifacts.
+
+This is the default tool. Reach for `/compact` only when it can't fix the actual pressure source.
+
+## Summarization-based `/compact` — last resort
+
+When you must use it (conversation bulk, not tool output), always emit a preservation note and write the Keep list to `NOTES.md` *before* compacting. Format:
 
 ```
 /compact
@@ -30,24 +44,20 @@ Drop: <rejected alternatives>; <tool outputs already acted on>;
 
 **Keep** what the model can't reconstruct from the issue or `NOTES.md`. **Drop** anything large and replayable.
 
-## Verification step
+## Verification
 
 After compaction, run: `Summarize where we are and what the next step is.`
 
-Check the summary against your Keep list. If anything from Keep is missing, **restate it explicitly before the next tool call**. If the summary looks hollow, abort and re-read the issue + `./NOTES.md` before continuing.
-
-## Prefer context editing when appropriate
-
-If the pressure is from large tool outputs (not conversation), prefer [context editing](https://platform.claude.com/docs/en/build-with-claude/context-editing) — clear the stale tool results verbatim — over re-summarization. Anthropic reports 84% token reduction in long-running workflows when context editing is used instead of summarization. Re-summarization forces the model to paraphrase its own reasoning, which is where silent detail loss happens.
+Diff the summary against the Keep list **in NOTES.md**, not from memory — both the summary and the post-compact state draw from the same now-truncated context, so an in-context check has limited diagnostic power. If anything from the Keep list is missing, **restate it explicitly before the next tool call**. If the summary looks hollow, abort and re-read the issue + `./NOTES.md`.
 
 ## Rules
 
-- **Compact before it's urgent.** 60% is the target, not the ceiling.
-- **Never compact blindly.** Always emit the Keep/Drop note.
-- **Always verify after compacting.** One extra turn is cheap; silent detail loss is expensive.
-- **`./NOTES.md` is your backstop.** Flush the working set into it *before* compacting. If the compacted context comes back hollow, NOTES.md is how you recover.
+- **Context editing first, sub-agents second, `/compact` last.** Order matters — each step is more lossy than the previous.
+- **Trigger on concept shifts, not percentages.** Concept-mixing is the rot source.
+- **Never compact blindly.** If you reach `/compact`, always emit the Keep/Drop note.
+- **`NOTES.md` is the external check.** Write the Keep list there *before* compacting. The post-compaction summary is diffed against the file, not against in-context recall.
 - **Compaction is a build-time responsibility.** Do not defer it to `/wrap-up` — by then it's too late.
 
 ## Why
 
-In-place summarization can silently drop architectural decisions that only matter three steps later. A reset with a preservation note preserves the surviving content exact. See `.claude/docs/solutions/workflow-context-compacting.md` for the full Anthropic/OpenAI guidance.
+In-place summarization can silently drop architectural decisions that only matter three steps later — and the resulting summary becomes the new "early context" the model over-anchors on, recreating the rot pattern at a smaller scale. Context editing avoids both failure modes by deleting rather than paraphrasing. See `.claude/docs/solutions/workflow-context-compacting.md` for the full rationale.

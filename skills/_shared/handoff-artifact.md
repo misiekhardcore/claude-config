@@ -43,10 +43,19 @@ Post this as the issue body (new phase) or a pinned comment (mid-phase update). 
 - ...
 ```
 
+## Precedence
+
+Two persistent stores, no overlap:
+
+- **The issue is authoritative for cross-phase state** — acceptance criteria, locked architectural decisions, the handoff fields below.
+- **`NOTES.md` is authoritative for in-flight state within a phase** — current task, intra-phase decisions not yet promoted, working open questions. See `skills/_shared/notes-md-protocol.md`.
+
+When a phase ends, intra-phase state from `NOTES.md` that the next phase needs is **promoted** into the issue (typically by `/wrap-up`). Until promotion, the issue does not know about it. After promotion, the issue is the source of truth for that item.
+
 ## Rules
 
 - **Reset after posting.** Once the artifact is written, tell the user to start the next phase in a fresh session. Do not call the next skill from within the current one.
-- **The issue is the single source of truth.** If conversation recall disagrees with the issue, trust the issue.
+- **For cross-phase state, the issue wins.** If in-context recall disagrees with the issue, trust the issue.
 - **Never include secrets.** Evidence links should point to internal systems, not paste credentials.
 - **Never drop prior decisions to save space.** If the list is long, that's the workflow working — not a bug. Link to a sub-comment if scrolling is a problem.
 - **Open questions are mandatory.** If there are none, say so explicitly ("No open questions") — never omit the section.
