@@ -16,7 +16,7 @@ A GitHub issue number (with architecture/design decisions from /define) and any 
 
 2. **Create a git worktree** for the feature (`git worktree add`). Worktrees keep the main workspace clean and let teammates operate in isolation.
 
-   Immediately create `./NOTES.md` at the worktree root with the initial task list harvested from the issue. This is the living worklog for the phase — it survives unexpected session close and is the resume point if this session dies before `/wrap-up`. See `skills/_shared/notes-md-protocol.md`.
+   Before creating `./NOTES.md`, verify `/NOTES.md` is listed in the repo root `.gitignore`; add it there if missing. Then create `./NOTES.md` at the worktree root with the initial task list harvested from the issue. This is the living worklog for the phase — it survives unexpected session close and is the resume point if this session dies before `/wrap-up`. See `skills/_shared/notes-md-protocol.md`.
 
    **On resume in an existing worktree**, read `./NOTES.md` *before* re-reading the issue — it has the latest in-flight state. Resume from its **Next action on resume** field.
 

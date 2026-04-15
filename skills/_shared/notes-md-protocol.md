@@ -26,7 +26,7 @@ When in-context recall disagrees with `NOTES.md`, **trust the file** — that's 
 - **Read on resume by `/build`** — before re-reading the issue.
 - **Harvested by `/wrap-up`** into a GitHub issue comment on clean exit.
 - **Left in place** after the phase ends. Cleanup happens when the worktree is removed (`wt remove` deletes the worktree directory and `NOTES.md` goes with it). Do not delete it from within a running phase.
-- **Not committed to git.** Anchored as `/NOTES.md` in `.gitignore` at the repo root.
+- **Not committed to git.** Ensure `/NOTES.md` is gitignored at the repo root before creating it; add the entry if missing.
 
 ## Required sections
 
@@ -79,7 +79,7 @@ On a fresh session in an existing worktree, `NOTES.md` exists ⇒ this is a resu
 - **`NOTES.md` is authoritative for in-flight state.** In-context recall is rot-degraded by the time the file matters; trust the file.
 - **The issue is authoritative for cross-phase state.** Acceptance criteria, locked architectural decisions, prior-phase handoff content live in the issue, not the file.
 - **Bullet-only. No prose.** The whole file should cost <1k tokens to re-read.
-- **Never commit it.** Listed as `/NOTES.md` in `.gitignore`.
+- **Never commit it.** If `/NOTES.md` is not already in the repo root `.gitignore`, add it there before creating the file.
 - **Never delete it automatically.** The owning session may archive it on clean exit; do not remove it from within a running phase.
 - **Do not mirror `TodoWrite` continuously.** `TodoWrite` is the in-session scratchpad; `NOTES.md` is the durable memory tier. Different roles, no manual sync.
 
