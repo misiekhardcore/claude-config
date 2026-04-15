@@ -24,7 +24,7 @@ QA teammates must operate with fresh context, independent of the implementing se
 
 2. **Spawn a QA team** using TeamCreate:
    - Split acceptance criteria across teammates
-   - Each teammate is dispatched with the verification package (diff + AC + test commands) only — never the build transcript
+   - Each teammate is dispatched with the verification package (diff + AC + test commands) only — never the build session history
    - Each teammate verifies their assigned criteria independently
    - Teammates cross-verify each other's findings via messages
 
@@ -56,4 +56,4 @@ A QA report with:
 - Never fix issues during verification — separation of concerns
 - Every criterion must have evidence (not just "it works")
 - If any criterion fails, the report goes back to /build for fixes
-- Never forward build-session transcripts to QA teammates — they receive only the verification package (diff + AC + test commands)
+- Never forward build-session history to QA teammates — they receive only the verification package (diff + AC + test commands)

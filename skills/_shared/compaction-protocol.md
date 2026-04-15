@@ -30,7 +30,7 @@ This is the default tool. Reach for `/compact` only when it can't fix the actual
 
 ## Summarization-based `/compact` — last resort
 
-When you must use it (conversation bulk, not tool output), always emit a preservation note and write the Keep list to `NOTES.md` *before* compacting. Format:
+When you must use it (conversation bulk, not tool output), always emit a preservation note and write the Keep list to `.claude/NOTES.md` *before* compacting. Format:
 
 ```
 /compact
@@ -42,13 +42,13 @@ Drop: <rejected alternatives>; <tool outputs already acted on>;
 <API docs already internalized>; <exploration that led nowhere>.
 ```
 
-**Keep** what the model can't reconstruct from the issue or `NOTES.md`. **Drop** anything large and replayable.
+**Keep** what the model can't reconstruct from the issue or `.claude/NOTES.md`. **Drop** anything large and replayable.
 
 ## Verification
 
 After compaction, run: `Summarize where we are and what the next step is.`
 
-Diff the summary against the Keep list **in NOTES.md**, not from memory — both the summary and the post-compact state draw from the same now-truncated context, so an in-context check has limited diagnostic power. If anything from the Keep list is missing, **restate it explicitly before the next tool call**. If the summary looks hollow, abort and re-read the issue + `./NOTES.md`.
+Diff the summary against the Keep list **in `.claude/NOTES.md`**, not from memory — both the summary and the post-compact state draw from the same now-truncated context, so an in-context check has limited diagnostic power. If anything from the Keep list is missing, **restate it explicitly before the next tool call**. If the summary looks hollow, abort and re-read the issue + `./.claude/NOTES.md`.
 
 ## Rules
 

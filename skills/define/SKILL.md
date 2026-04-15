@@ -27,12 +27,12 @@ A GitHub issue number from /discovery (or provided by the user).
 
 4. The architecture specialist goes first. Once technical decisions are approved by the user, the design specialist (if applicable) works within those constraints.
 
-5. **Update the GitHub issue** with decisions:
-   - Add architecture decisions as issue comments
-   - Add design decisions as issue comments (with visuals)
-   - Create sub-issues with GitHub relationships if the work decomposes
-   - Define the dependency graph — identify what can be parallelized
-   - The issue comment is the handoff artifact. Treat it as the sole input to `/implement` — a fresh session will read it, not this conversation. Include all five handoff fields (Objectives, Constraints, Prior decisions, Evidence, Open questions). See `skills/_shared/handoff-artifact.md`.
+5. **Update the GitHub issue body** with decisions. The body is the handoff artifact — always update it in place, never post handoff state as a comment:
+   - If the body already has a `## /define` section, edit it. If not, append one.
+   - Record architecture decisions and design decisions (with visuals) inside that section.
+   - Create sub-issues with GitHub relationships if the work decomposes.
+   - Define the dependency graph — identify what can be parallelized.
+   - The updated body is the sole input to `/implement` — a fresh session will read it, not this conversation. Include all five handoff fields (Acceptance criteria, Constraints, Prior decisions, Evidence, Open questions). See `skills/_shared/handoff-artifact.md`.
 
 6. Present all decisions to the user for approval. Do not proceed until sign-off.
 

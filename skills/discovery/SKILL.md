@@ -52,7 +52,7 @@ Classify the task before dispatching:
    **(b) Handoff block** — the five fields below, in this order, matching `skills/_shared/handoff-artifact.md`. Field order is uniform across all phases so the next session can scan-read it.
 
    - **Title** — concise feature description
-   - **Objectives** — from /specify output, as a numbered list of testable acceptance criteria
+   - **Acceptance criteria** — from /specify output, as a numbered list of testable scenarios
    - **Constraints** — explicit in/out scope boundaries, non-negotiable decisions surfaced during discovery
    - **Prior decisions** — any decisions already made during discovery (one line each, with rationale)
    - **Evidence** — links to design reviews, benchmarks, prior discussions
