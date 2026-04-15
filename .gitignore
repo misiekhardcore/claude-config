@@ -3,3 +3,6 @@ plugins/marketplaces
 plugins/installed_plugins.json
 plugins/known_marketplaces.json
 plugins/**/*cache*
+
+# Per-worktree in-flight worklog — see skills/_shared/notes-md-protocol.md
+/NOTES.md
