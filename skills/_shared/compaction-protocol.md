@@ -52,11 +52,8 @@ Diff the summary against the Keep list **in NOTES.md**, not from memory — both
 
 ## Rules
 
-- **Context editing first, sub-agents second, `/compact` last.** Order matters — each step is more lossy than the previous.
-- **Trigger on concept shifts, not percentages.** Concept-mixing is the rot source.
-- **Never compact blindly.** If you reach `/compact`, always emit the Keep/Drop note.
-- **`NOTES.md` is the external check.** Write the Keep list there *before* compacting. The post-compaction summary is diffed against the file, not against in-context recall.
 - **Compaction is a build-time responsibility.** Do not defer it to `/wrap-up` — by then it's too late.
+- **Each step in the tool order is more lossy than the previous.** Reach for `/compact` only after context editing and delegation have been ruled out.
 
 ## Why
 

@@ -14,9 +14,7 @@ Three tiers, no overlap:
 | `NOTES.md` | Worktree-local file | This phase, across sessions | In-flight decisions, current task, open questions |
 | GitHub issue | Remote | Cross-phase | Acceptance criteria, prior-phase decisions, handoff state |
 
-`TodoWrite` is not mirrored into `NOTES.md` — they serve different roles. `TodoWrite` is the model's in-session task list and dies with the session; `NOTES.md` is durable in-phase memory the next session will read.
-
-When in-context recall disagrees with `NOTES.md`, **trust the file** — that's the whole point of having it.
+`TodoWrite` and `NOTES.md` are not mirrored — they serve different roles, and manual sync invites drift.
 
 ## Location and lifecycle
 
@@ -78,10 +76,7 @@ On a fresh session in an existing worktree, `NOTES.md` exists ⇒ this is a resu
 
 - **`NOTES.md` is authoritative for in-flight state.** In-context recall is rot-degraded by the time the file matters; trust the file.
 - **The issue is authoritative for cross-phase state.** Acceptance criteria, locked architectural decisions, prior-phase handoff content live in the issue, not the file.
-- **Bullet-only. No prose.** The whole file should cost <1k tokens to re-read.
-- **Never commit it.** If `/NOTES.md` is not already in the repo root `.gitignore`, add it there before creating the file.
 - **Never delete it automatically.** The owning session may archive it on clean exit; do not remove it from within a running phase.
-- **Do not mirror `TodoWrite` continuously.** `TodoWrite` is the in-session scratchpad; `NOTES.md` is the durable memory tier. Different roles, no manual sync.
 
 ## Why
 

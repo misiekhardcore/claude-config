@@ -46,15 +46,7 @@ Anthropic's harness team describes the tradeoff explicitly:
 
 Phases in this workflow are not just organizational — they are **concept boundaries**. Each phase has a different reasoning shape, and carrying one shape into the next is the dominant rot vector at this repo's scale. The GitHub issue **is** the handoff artifact. End each phase by updating the issue with the decisions and state the next phase needs, then start the next phase in a fresh session. Do not carry conversation history across `/discovery → /define`, `/define → /implement`, or `/build → /review`.
 
-What the artifact must contain (equivalent to Anthropic's "structured handoff artifact" and OpenAI's [`input_type` handoff metadata](https://openai.github.io/openai-agents-python/handoffs/)):
-
-- **Objectives** — acceptance criteria, unchanged from `/discovery`.
-- **Constraints** — files in scope, files out of scope, non-negotiable decisions from `/define`.
-- **Prior decisions** — "we chose X over Y because Z" entries, one line each.
-- **Evidence** — links to the commit/PR/logs that justify each decision.
-- **Open questions** — things the next phase must resolve, explicit.
-
-OpenAI's guidance is the same shape: "Use `input_type` when the handoff needs a small piece of model-generated metadata such as reason, language, priority, or summary" — not the whole transcript ([OpenAI Agents SDK: Handoffs](https://openai.github.io/openai-agents-python/handoffs/)).
+The artifact has a fixed shape (Objectives, Constraints, Prior decisions, Evidence, Open questions) defined canonically in `skills/_shared/handoff-artifact.md`. That shape mirrors Anthropic's "structured handoff artifact" and OpenAI's [`input_type` handoff metadata](https://openai.github.io/openai-agents-python/handoffs/) — small, structured, summary-shaped, not a transcript.
 
 ### 2. Within a phase, prefer context editing over summarization, and trigger on concept shifts
 
@@ -71,14 +63,7 @@ Summarization-based `/compact` is a **last resort**, not the headline tool. Re-s
 > "Overly aggressive compaction can result in the loss of subtle but critical context whose importance only becomes apparent later."
 > — same source
 
-Trigger compaction on **concept shifts**, not on a percentage:
-
-- The next planned action is unrelated to the last several tool results.
-- About to start a new sub-issue or task-list item.
-- Just finished spawning a sub-agent (the lead can drop the brief and the sub-agent's exploration is already isolated).
-- The auto-compact warning appears — stop, run the protocol, then continue.
-
-Always emit a **preservation note** before any summarization-based compaction (see [Examples](#examples)), and write the Keep list to `NOTES.md` *before* compacting so the post-compaction state can be diffed against an external record. The model's own "summarize where we are" is a sanity check, not a verification — both the summary and the post-compact state draw from the same now-truncated context.
+Trigger compaction on **concept shifts**, not on a percentage. `skills/_shared/compaction-protocol.md` enumerates the trigger conditions and the tool order (context editing → sub-agent delegation → summarization-based `/compact` last). The summary: never let auto-compact run unattended, always emit a preservation note when you do reach `/compact`, and write the Keep list to `NOTES.md` *before* compacting so the post-compaction state can be diffed against an external record. The model's own "summarize where we are" is a sanity check, not a verification — both the summary and the post-compact state draw from the same now-truncated context.
 
 ### 3. Delegate bulk tool output to sub-agents, not just exploration
 
@@ -114,23 +99,15 @@ A note on Opus 4.5/4.6 and "context anxiety": Anthropic reports they dropped con
 
 ## When to Use
 
-Apply rule (1) — reset + artifact — at every phase boundary, always. No exceptions.
-
-Apply rules (2) and (3) within a phase when any of the following triggers:
-
-- The next planned action is unrelated to the last several tool results (concept shift).
-- About to read a large file or search wide paths — delegate to a sub-agent.
-- About to spawn a reviewer, verifier, or architect sub-agent — pass the brief, not the transcript.
-- About to start a new sub-issue — natural reset point, take it.
-- `/wrap-up` is about to run — write its output into the issue, then reset.
-- Stale tool results are still in context for actions that have moved on — clear them via context editing before they distort the next decision.
-- Auto-compact warning appears — stop, run the protocol with a preservation note, then continue. Never let auto-compact run unattended.
+- **Rule 1 (reset + artifact)** applies at every phase boundary, always. No exceptions.
+- **Rules 2 and 3** apply within a phase whenever a concept shift occurs. See `skills/_shared/compaction-protocol.md` for the full trigger list and the tool-order decision (context editing → sub-agent → `/compact`).
+- **Rule 4** applies whenever `/wrap-up` runs at a phase boundary — its output goes into the issue before the session ends.
 
 ## Examples
 
-### Structured handoff artifact (for `/define → /implement`)
+### Structured handoff artifact — filled example
 
-Paste into the GitHub issue body or a pinned comment before resetting the session:
+A worked instance of the canonical template from `skills/_shared/handoff-artifact.md`, paste-ready into the issue body or a pinned comment before resetting the session:
 
 ```markdown
 ## Handoff: /define → /implement
@@ -157,8 +134,6 @@ Paste into the GitHub issue body or a pinned comment before resetting the sessio
 **Open questions**
 - Should empty result sets download an empty file or show a toast? (defer to /build, pick one and note it)
 ```
-
-This is exactly the "objectives + constraints + prior decisions + supporting evidence" shape OpenAI recommends for handoff metadata.
 
 ### Summarization-based `/compact` with preservation note
 
