@@ -14,7 +14,7 @@ You are performing an end-of-session audit. Review what happened in this session
    - **Scope changes** — anything you did beyond or short of what was originally asked
    - **Follow-ups** — work that remains, was deferred, or needs human verification
 
-   If `./NOTES.md` exists in the worktree, read it first — it is the authoritative worklog for this phase. Merge its **Decisions made this session** and **Open questions** into the audit so nothing is lost on reset.
+   Resolve the worktree root with `git rev-parse --show-toplevel` and check for `<root>/NOTES.md`. If it exists, read it first — it is the authoritative worklog for this phase. Merge its **Decisions made this session** and **Open questions** into the audit so nothing is lost on reset.
 
 2. For each item, note:
    - What the assumption/decision was
@@ -28,7 +28,19 @@ You are performing an end-of-session audit. Review what happened in this session
 
 ## Output
 
-Present the audit as a fenced markdown block labelled `paste into issue #N — handoff artifact`, so the user can copy it even if they decline the auto-post prompt:
+Present the audit as a fenced markdown block. Print the label `paste into issue #N — handoff artifact` (with the actual issue number substituted) on a line **immediately above** the opening fence, so the user can locate and copy the block even if they decline the auto-post prompt. The fence info string itself stays as `markdown`.
+
+Example shape (for issue #42):
+
+```
+paste into issue #42 — handoff artifact
+````markdown
+## Wrap-up — session handoff
+...
+````
+```
+
+The block contents:
 
 ````markdown
 ## Wrap-up — session handoff

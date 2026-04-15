@@ -7,7 +7,7 @@ This file is reference material — read it on demand when the skill reaches a c
 ## Tool order
 
 1. **Context editing first.** Clear stale tool results verbatim. This is rot-immune because nothing is paraphrased.
-2. **Sub-agent delegation second.** If the next bulk read can be delegated, the lead never accumulates the rot in the first place. See `workflow-context-compacting.md` rule 3.
+2. **Sub-agent delegation second.** If the next bulk read can be delegated, the lead never accumulates the rot in the first place. See `.claude/docs/solutions/workflow-context-compacting.md` rule 3.
 3. **Summarization-based `/compact` last.** Re-summarization compresses, but it also creates a new lower-fidelity anchor the model will over-attend to. Use only when conversation bulk (not tool output) is the source of pressure.
 
 ## When to trigger

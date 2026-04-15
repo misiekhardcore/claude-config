@@ -87,7 +87,7 @@ Sub-agent isolation is **structurally rot-proof**: the lead session never sees t
 > "Each subagent might explore extensively, using tens of thousands of tokens or more, but returns only a condensed, distilled summary of its work (often 1,000–2,000 tokens), achieving a clear separation of concerns where the detailed search context remains isolated within sub-agents, while the lead agent focuses on synthesizing and analyzing the results."
 > — [Effective context engineering for AI agents, Anthropic](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 
-The general rule: **anything that produces bulk tool output should run in a sub-agent that returns a distilled report**. The lead session stays on synthesis, where rot hurts most. Follow the existing CLAUDE.md split: Glob/Grep for directed lookups, sub-agents for anything broader.
+The general rule: **anything that produces bulk tool output should run in a sub-agent that returns a distilled report**. The lead session stays on synthesis, where rot hurts most. Use Glob/Grep for narrow, directed lookups, and use sub-agents for broader exploration or any task likely to generate large volumes of output.
 
 In this repo:
 
