@@ -28,6 +28,8 @@ Pick the lightest path that fits the task:
 
 Skill descriptions (loaded with the skills themselves) cover the building blocks: `/describe`, `/specify`, `/architecture`, `/design`, `/build`, `/review`, `/verify`, `/grill-me`, `/wrap-up`, `/prune`, `/compound`.
 
+For the full lifecycle walkthrough — prerequisites, outcomes, and handoffs for each step — see `docs/workflow.md`.
+
 @plugins-reference.md
 
 ## Wiki Knowledge Base
