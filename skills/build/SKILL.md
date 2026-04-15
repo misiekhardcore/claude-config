@@ -16,9 +16,9 @@ A GitHub issue number (with architecture/design decisions from /define) and any 
 
 2. **Create a git worktree** for the feature (`git worktree add`). Worktrees keep the main workspace clean and let teammates operate in isolation.
 
-   Before creating `./NOTES.md`, verify `/NOTES.md` is listed in the repo root `.gitignore`; add it there if missing. Then create `./NOTES.md` at the worktree root with the initial task list harvested from the issue. This is the living worklog for the phase — it survives unexpected session close and is the resume point if this session dies before `/wrap-up`. See `skills/_shared/notes-md-protocol.md`.
+   Before creating `./.claude/NOTES.md`, verify `/.claude/NOTES.md` is listed in the repo root `.gitignore`; add it there if missing. Then create `./.claude/NOTES.md` with the initial task list harvested from the issue. This is the living worklog for the phase — it survives unexpected session close and is the resume point if this session dies before `/wrap-up`. See `skills/_shared/notes-md-protocol.md`.
 
-   **On resume in an existing worktree**, read `./NOTES.md` *before* re-reading the issue — it has the latest in-flight state. Resume from its **Next action on resume** field.
+   **On resume in an existing worktree**, read `./.claude/NOTES.md` *before* re-reading the issue — it has the latest in-flight state. Resume from its **Next action on resume** field.
 
 3. **Spawn an implementation team** using TeamCreate:
    - Assign each teammate a separate sub-issue or file group to avoid conflicts
@@ -43,11 +43,11 @@ A GitHub issue number (with architecture/design decisions from /define) and any 
    - Stale tool results in context after the work has moved on → clear them with **context editing** (verbatim — the default tool).
    - About to read a large file or grep wide paths → delegate to a sub-agent that returns a focused report (the lead never accumulates the bulk).
    - About to start a new sub-issue, or just spawned a sub-agent → natural reset point.
-   - If summarization-based `/compact` is unavoidable: flush the working set into `./NOTES.md` first, emit a `Keep: / Drop:` note, run `/compact`, then diff the post-compaction summary against the Keep list **in NOTES.md** before the next tool call.
+   - If summarization-based `/compact` is unavoidable: flush the working set into `./.claude/NOTES.md` first, emit a `Keep: / Drop:` note, run `/compact`, then diff the post-compaction summary against the Keep list **in `.claude/NOTES.md`** before the next tool call.
 
    See `skills/_shared/compaction-protocol.md`. Context editing first, sub-agents second, `/compact` last.
 
-8. Commit changes incrementally using semantic commit messages (`feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`). Update `./NOTES.md` after each completed task — it is the resume point if the session dies unexpectedly.
+8. Commit changes incrementally using semantic commit messages (`feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`). Update `./.claude/NOTES.md` after each completed task — it is the resume point if the session dies unexpectedly.
 
 ## Output
 
@@ -63,4 +63,4 @@ A feature branch in a worktree with all acceptance criteria implemented, tests p
 - Always run the 5-question verification check before marking a task done
 - Consolidation scans are lightweight — spend seconds, not minutes
 - Context hygiene is a build-time responsibility, not a wrap-up afterthought — trigger on concept shifts, not percentages, and never let auto-compact run unattended
-- `./NOTES.md` is authoritative for in-flight state; if your recall disagrees with the file, trust the file
+- `./.claude/NOTES.md` is authoritative for in-flight state; if your recall disagrees with the file, trust the file

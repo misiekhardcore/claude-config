@@ -24,7 +24,7 @@ date: 2026-04-14
 
 ## Context
 
-This repo runs a multi-phase workflow — `/discovery` → `/define` → `/implement` (build → review → verify) → `/wrap-up` → `/compound` → `/prune`. The problem is not that the context window fills up; with 1M-token Opus that is rarely the binding constraint. The problem is **context rot**: the well-documented degradation in retrieval, reasoning, and instruction-following as unrelated concepts accumulate in a single session, even nominally well within the window.
+This repo runs a multi-phase workflow — `/discovery` → `/define` → `/implement` (build → review → verify) → `/wrap-up` → `/compound` → `/prune`. The problem is not that the context window fills up; even with large windows, that is rarely the binding constraint. The problem is **context rot**: the well-documented degradation in retrieval, reasoning, and instruction-following as unrelated concepts accumulate in a single session, even nominally well within the window.
 
 Two failure modes in this repo:
 
@@ -44,9 +44,9 @@ Anthropic's harness team describes the tradeoff explicitly:
 > "A reset provides a clean slate, at the cost of the handoff artifact having enough state for the next agent to pick up the work cleanly. This differs from compaction, where earlier parts of the conversation are summarized in place so the same agent can keep going on a shortened history."
 > — [Harness design for long-running apps, Anthropic Engineering](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
-Phases in this workflow are not just organizational — they are **concept boundaries**. Each phase has a different reasoning shape, and carrying one shape into the next is the dominant rot vector at this repo's scale. The GitHub issue **is** the handoff artifact. End each phase by updating the issue with the decisions and state the next phase needs, then start the next phase in a fresh session. Do not carry conversation history across `/discovery → /define`, `/define → /implement`, or `/build → /review`.
+Phases in this workflow are not just organizational — they are **concept boundaries**. Each phase has a different reasoning shape, and carrying one shape into the next is the dominant rot vector at this repo's scale. The GitHub issue **body** is the handoff artifact — always updated in place, never posted as a comment. End each phase by editing the issue body with the decisions and state the next phase needs, then start the next phase in a fresh session. Do not carry conversation history across `/discovery → /define`, `/define → /implement`, or `/build → /review`.
 
-The artifact has a fixed shape (Objectives, Constraints, Prior decisions, Evidence, Open questions) defined canonically in `skills/_shared/handoff-artifact.md`. That shape mirrors Anthropic's "structured handoff artifact" and OpenAI's [`input_type` handoff metadata](https://openai.github.io/openai-agents-python/handoffs/) — small, structured, summary-shaped, not a transcript.
+The artifact has a fixed shape (Acceptance criteria, Constraints, Prior decisions, Evidence, Open questions) defined canonically in `skills/_shared/handoff-artifact.md`. That shape mirrors Anthropic's "structured handoff artifact" and OpenAI's [`input_type` handoff metadata](https://openai.github.io/openai-agents-python/handoffs/) — small, structured, summary-shaped, not a transcript.
 
 ### 2. Within a phase, prefer context editing over summarization, and trigger on concept shifts
 
@@ -63,7 +63,7 @@ Summarization-based `/compact` is a **last resort**, not the headline tool. Re-s
 > "Overly aggressive compaction can result in the loss of subtle but critical context whose importance only becomes apparent later."
 > — same source
 
-Trigger compaction on **concept shifts**, not on a percentage. `skills/_shared/compaction-protocol.md` enumerates the trigger conditions and the tool order (context editing → sub-agent delegation → summarization-based `/compact` last). The summary: never let auto-compact run unattended, always emit a preservation note when you do reach `/compact`, and write the Keep list to `NOTES.md` *before* compacting so the post-compaction state can be diffed against an external record. The model's own "summarize where we are" is a sanity check, not a verification — both the summary and the post-compact state draw from the same now-truncated context.
+Trigger compaction on **concept shifts**, not on a percentage. `skills/_shared/compaction-protocol.md` enumerates the trigger conditions and the tool order (context editing → sub-agent delegation → summarization-based `/compact` last). The summary: never let auto-compact run unattended, always emit a preservation note when you do reach `/compact`, and write the Keep list to `.claude/NOTES.md` *before* compacting so the post-compaction state can be diffed against an external record. The model's own "summarize where we are" is a sanity check, not a verification — both the summary and the post-compact state draw from the same now-truncated context.
 
 ### 3. Delegate bulk tool output to sub-agents, not just exploration
 
@@ -77,13 +77,13 @@ The general rule: **anything that produces bulk tool output should run in a sub-
 In this repo:
 
 - `/review` already follows this pattern: fresh-context reviewers receive the diff, not the build history. Keep it that way.
-- `/verify` is invoked with only the acceptance criteria plus the running code, never the build transcript.
+- `/verify` is invoked with only the acceptance criteria plus the running code, never the build session history.
 - `/build` should delegate to an Explore sub-agent for any of: understanding an unfamiliar area of the codebase, parsing a long log, reading API docs, grepping wide paths. Ask for a focused report bounded by what the lead actually needs to make the next decision — not a fixed word limit.
-- Pass briefs, not transcripts. Sub-agents need objective + constraint + "what to report on" — not the conversation that led you to spawn them.
+- Pass briefs, not session history. Sub-agents need objective + constraint + "what to report on" — not the conversation that led you to spawn them.
 
-### 4. Write `/wrap-up` output into the issue before the session ends
+### 4. Write `/wrap-up` output into the issue body before the session ends
 
-`/wrap-up` surfaces assumptions, uncertainties, and follow-ups — but today that output stays in the conversation and is lost when the session ends. That defeats rule (1). Fix: whenever `/wrap-up` runs at a phase boundary, copy its output into the GitHub issue (or a PR comment) as the handoff artifact for the next phase. The captured content then survives the reset.
+`/wrap-up` surfaces assumptions, uncertainties, and follow-ups — but without persistence, that output stays in the conversation and is lost when the session ends. That defeats rule (1). Fix: whenever `/wrap-up` runs at a phase boundary, edit the GitHub issue **body** in place to append a `## Wrap-up — session handoff` section. The captured content then survives the reset and lives in the same scan-readable artifact as the rest of the phase state.
 
 ## Why
 
@@ -101,18 +101,18 @@ A note on Opus 4.5/4.6 and "context anxiety": Anthropic reports they dropped con
 
 - **Rule 1 (reset + artifact)** applies at every phase boundary, always. No exceptions.
 - **Rules 2 and 3** apply within a phase whenever a concept shift occurs. See `skills/_shared/compaction-protocol.md` for the full trigger list and the tool-order decision (context editing → sub-agent → `/compact`).
-- **Rule 4** applies whenever `/wrap-up` runs at a phase boundary — its output goes into the issue before the session ends.
+- **Rule 4** applies whenever `/wrap-up` runs at a phase boundary — its output is written into the issue body before the session ends.
 
 ## Examples
 
 ### Structured handoff artifact — filled example
 
-A worked instance of the canonical template from `skills/_shared/handoff-artifact.md`, paste-ready into the issue body or a pinned comment before resetting the session:
+A worked instance of the canonical template from `skills/_shared/handoff-artifact.md`, paste-ready into the issue body before resetting the session:
 
 ```markdown
 ## Handoff: /define → /implement
 
-**Objectives** (from /discovery, unchanged)
+**Acceptance criteria** (from /discovery, unchanged)
 - AC1: CSV export button appears on /reports for users with `reports.read`
 - AC2: Export respects current filters
 - AC3: File downloads within 5s for ≤50k rows
