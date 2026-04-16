@@ -9,6 +9,7 @@
     "claude-code-setup@claude-plugins-official": false,
     "claude-hud@claude-hud": true,
     "claude-md-management@claude-plugins-official": false,
+    "claude-obsidian@claude-obsidian-marketplace": true,
     "code-simplifier@claude-plugins-official": false,
     "context7@claude-plugins-official": true,
     "github@claude-plugins-official": true,
@@ -25,6 +26,12 @@
     "claude-hud": {
       "source": {
         "repo": "jarrodwatts/claude-hud",
+        "source": "github"
+      }
+    },
+    "claude-obsidian-marketplace": {
+      "source": {
+        "repo": "AgriciDaniel/claude-obsidian",
         "source": "github"
       }
     },

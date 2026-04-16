@@ -17,7 +17,7 @@ A GitHub issue number from /discovery (or provided by the user).
 
 2. **Dispatch a research team** (TeamCreate) before the definition team:
    - **Codebase research agent** — scans tech stack, modules, related implementations, naming, existing patterns. Outputs a structured brief.
-   - **Patterns/learnings agent** — searches `.claude/docs/solutions/`, project docs, past decisions, and (when local patterns are thin) external sources via Context7. Skip external research when 3+ direct pattern examples exist; always run full research for security/payments/privacy.
+   - **Patterns/learnings agent** — searches `memory/wiki/` (start with `hot.md` and `index.md`, then concepts/entities/sources), project docs, past decisions, and (when local patterns are thin) external sources via Context7. Skip external research when 3+ direct pattern examples exist; always run full research for security/payments/privacy.
 
    The brief feeds both the architecture and design specialists as seed context.
 

@@ -1,14 +1,14 @@
 ---
-problem_type: pattern
-module: workflow
-component: phase-handoff
-symptoms:
-  - model anchors on stale framings from earlier in a long session
-  - reviewer sub-agent receives bloated history and misses the point
-  - /implement re-litigates discovery-phase tradeoffs instead of writing code
-  - /wrap-up surfaces assumptions that were never persisted for the next phase
-  - retrieval and instruction-following degrade well before the context window fills
-root_cause: context rot — attention dilution and stale-framing anchoring as multiple unrelated concepts accumulate in a single session; no structured discipline for keeping the working context focused on the current concept
+type: concept
+title: "Context Hygiene Between Workflow Phases"
+complexity: intermediate
+domain: workflow
+aliases:
+  - "Workflow Context Compacting"
+  - "Phase Handoff"
+  - "Context Rot Mitigation"
+created: 2026-04-14
+updated: 2026-04-16
 tags:
   - workflow
   - context-management
@@ -16,8 +16,16 @@ tags:
   - handoff
   - compaction
   - sub-agents
-severity: medium
-date: 2026-04-14
+status: mature
+related:
+  - "[[Compounding Knowledge]]"
+  - "[[LLM Wiki Pattern]]"
+  - "[[concepts/_index]]"
+sources:
+  - "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+  - "https://www.anthropic.com/engineering/harness-design-long-running-apps"
+  - "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"
+  - "https://www.anthropic.com/news/context-management"
 ---
 
 # Context Hygiene Between Workflow Phases
@@ -171,9 +179,9 @@ This matches Anthropic's sub-agent pattern: the reviewer runs in isolation, retu
 
 ## See Also
 
-- `skills/compound/SKILL.md` — how learnings from a completed phase become durable solution docs (this file was written via that process).
+- `skills/compound/SKILL.md` — how learnings from a completed phase become durable wiki notes (this file was written via that process).
 - `skills/wrap-up/SKILL.md` — the end-of-session assumption audit; remember to persist its output per rule (4).
-- `REFERENCE.md` — memory tiers and how auto-memory differs from project-checked-in solution docs.
+- `REFERENCE.md` — memory tiers and how auto-memory differs from the `memory/` vault.
 - `CLAUDE.md` — "Check existing memory first" is what makes this doc discoverable at the start of the next phase.
 
 ## Sources

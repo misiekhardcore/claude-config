@@ -80,4 +80,4 @@ On a fresh session in an existing worktree, `.claude/NOTES.md` exists ⇒ this i
 
 ## Why
 
-Context rot makes in-context recall unreliable for long sessions, even when the window is nowhere near full. The fix is to externalize the state that the model needs to trust — onto disk, in a file the model re-reads on demand. A gitignored worktree-local worklog is the cheapest durable answer. See `.claude/docs/solutions/workflow-context-compacting.md` for the full rationale.
+Context rot makes in-context recall unreliable for long sessions, even when the window is nowhere near full. The fix is to externalize the state that the model needs to trust — onto disk, in a file the model re-reads on demand. A gitignored worktree-local worklog is the cheapest durable answer. See `memory/wiki/concepts/Context Hygiene Between Workflow Phases.md` for the full rationale.
