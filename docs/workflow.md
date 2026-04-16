@@ -46,7 +46,7 @@ Handoff between phases uses the **GitHub issue body** as the durable artifact �
 - **File:** `skills/define/SKILL.md`
 - **When:** After `/discovery`, for epics or architecturally significant work.
 - **Prerequisites:** An approved issue from `/discovery` with acceptance criteria.
-- **What it does:** Spawns research agents (codebase research + patterns/learnings scan against `.claude/docs/solutions/`), then dispatches:
+- **What it does:** Spawns research agents (codebase research + patterns/learnings scan against `memory/wiki/`, starting with `memory/wiki/hot.md` and `memory/wiki/index.md`), then dispatches:
   - `/architecture` (`skills/architecture/SKILL.md`) — codebase analyst + solution architect + devil's advocate converge on a technical approach, producing component diagrams, trade-off tables, and a sub-task dependency graph. Uses `/grill-me` (`skills/grill-me/SKILL.md`) to pin down open decisions with the user.
   - `/design` (`skills/design/SKILL.md`) — UX researcher + design proposer + a11y reviewer, only when the task has visual aspects. Produces prototypes, wireframes, and interaction flows.
 - **Outcome:** The issue body is updated in place with a `## /define` section containing architecture and design decisions, plus any sub-issues and their dependency graph. **User approval is required** before `/implement`.
@@ -70,8 +70,8 @@ Handoff between phases uses the **GitHub issue body** as the durable artifact �
 - **File:** `skills/compound/SKILL.md`
 - **When:** Automatically after a successful `/implement`, or when the user says "that worked".
 - **Prerequisites:** A recently-completed fix or feature with reusable learnings.
-- **What it does:** Ensures `.claude/docs/solutions/` exists, searches for overlap with existing docs, and either updates an existing entry or writes a new one using either **Bug Track** (Problem / Symptoms / What Didn't Work / Solution / Why It Works / Prevention) or **Knowledge Track** (Context / Guidance / Why / When / Examples) format. Performs a staleness check on related docs.
-- **Outcome:** A durable `.claude/docs/solutions/<module>-<desc>.md` capturing the learning. Never auto-deletes or overwrites without flagging.
+- **What it does:** Files the learning into the Obsidian vault at `memory/wiki/` (Karpathy LLM Wiki pattern, via the `claude-obsidian` plugin). Ensures `memory/wiki/concepts/` exists, searches the vault for overlap (starting at `index.md` and `hot.md`, then drilling into `concepts/`, `entities/`, `sources/`), and either updates an existing note or writes a new one using either **Bug Track** (Problem / Symptoms / What Didn't Work / Solution / Why It Works / Prevention) or **Knowledge Track** (Context / Guidance / Why / When / Examples). Appends an entry to `memory/wiki/log.md` and performs a staleness check against related notes. When the `claude-obsidian` plugin is active, prefers the plugin's `/save` flow — the plugin keeps frontmatter, cross-links, and the index in sync automatically.
+- **Outcome:** A durable wiki note at `memory/wiki/concepts/<Title Case Name>.md` with frontmatter matching `memory/WIKI.md` (type, domain, tags, related wikilinks, sources). Never auto-deletes or overwrites without flagging.
 
 ## Step 5 — `/wrap-up` (Sonnet) — *optional, end of session*
 
@@ -92,14 +92,15 @@ Handoff between phases uses the **GitHub issue body** as the durable artifact �
 
 - **File:** `skills/prune/SKILL.md`
 - **When:** Monthly, or after major refactors.
-- **What it does:** Audits `CLAUDE.md`, memory files, and `.claude/docs/solutions/*.md` for stale / superseded / unclear entries. Never auto-deletes — produces recommendations for user approval.
+- **What it does:** Audits `CLAUDE.md`, memory files, and `memory/wiki/**/*.md` for stale / superseded / unclear entries (semantic staleness; `wiki-lint` complements this for vault-structural health — orphans, broken wikilinks, missing frontmatter). Never auto-deletes — produces recommendations for user approval.
 
 ## Memory hierarchy
 
-Three tiers, no overlap:
+Four tiers, no overlap:
 
 | Tier | Location | Lifetime | Authoritative for |
 |---|---|---|---|
 | TodoWrite | In-context | Current session | Throwaway working scratchpad |
 | `./.claude/NOTES.md` | Worktree-local | This phase, across sessions | In-flight decisions, current task, open questions |
 | GitHub issue body | Remote | Cross-phase | Acceptance criteria, prior-phase decisions, handoff state |
+| Obsidian vault | `memory/wiki/` (git-tracked) | Durable, cross-feature | Compounded knowledge — bug-fix history, patterns, architectural insights (written by `/compound` or the plugin's `/save`) |
