@@ -17,7 +17,7 @@ A GitHub issue with problem statement and acceptance criteria (from /discovery).
 
 2. **Dispatch parallel research agents** using TeamCreate before the architecture team begins:
    - **Codebase research agent** — systematic scan of relevant code: technology stack, module structure, related implementations, naming conventions, existing patterns. Outputs a structured context brief.
-   - **Patterns/learnings agent** — searches `.claude/docs/solutions/` (if it exists), project documentation, past decision records, and — when local patterns are thin — external documentation via Context7 or web search for relevant prior art and lessons learned.
+   - **Patterns/learnings agent** — searches `memory/wiki/` (start with `memory/wiki/hot.md` and `memory/wiki/index.md`, then concepts/entities/sources), project documentation, past decision records, and — when local patterns are thin — external documentation via Context7 or web search for relevant prior art and lessons learned.
 
    **Gate rule**: skip external/web research when codebase research finds 3+ direct pattern examples. Always run full research for security, payments, privacy topics, or when local patterns are thin (fewer than 3 examples).
 
