@@ -37,7 +37,8 @@ All concept pages — ideas, patterns, and frameworks extracted from sources.
 ---
 
 ## Workflow & Context
-- [[Context Hygiene Between Workflow Phases]] — managing context rot across multi-phase workflows; reset + handoff artifact + context editing patterns
+
+Context-hygiene guidance for the multi-phase `/discovery → /define → /implement` workflow now lives inside the `claude-workflow` plugin — see `${CLAUDE_PLUGIN_ROOT}/docs/context-hygiene.md` (reachable via `claude plugin` installs).
 
 ---
 

@@ -1,26 +1,10 @@
 # claude-obsidian: Agent Instructions
 
-This repo is a Claude Code plugin **and** an Obsidian vault that builds persistent, compounding knowledge bases using Andrej Karpathy's LLM Wiki pattern. It works with **any AI coding agent** that supports the Agent Skills standard, including Codex CLI, OpenCode, and similar.
-
-Originally built for Claude Code, the skills now follow the cross-platform Agent Skills spec. Frontmatter uses only `name` and `description` (no Claude-specific extensions).
+This repo is a Claude Code plugin **and** an Obsidian vault that builds persistent, compounding knowledge bases using Andrej Karpathy's LLM Wiki pattern.
 
 ## Skills Discovery
 
-All skills live in `skills/<name>/SKILL.md`. Codex / OpenCode / other Agent Skills compatible agents will auto-discover them when you symlink the directory:
-
-```bash
-# Codex CLI
-ln -s "$(pwd)/skills" ~/.codex/skills/claude-obsidian
-
-# OpenCode
-ln -s "$(pwd)/skills" ~/.opencode/skills/claude-obsidian
-```
-
-Or run the bundled installer:
-
-```bash
-bash bin/setup-multi-agent.sh
-```
+All skills live in `skills/<name>/SKILL.md` and are auto-discovered by Claude Code via the plugin manifest.
 
 ## Available Skills
 
