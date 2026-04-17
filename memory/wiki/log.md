@@ -25,6 +25,12 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-17] ingest | vscode-gcode-extension solution docs
+- Source: `.claude/docs/solutions/` (7 files from vscode-gcode-extension project)
+- Pages created: [[fs-readdir-dirent-typing]], [[interface-extraction-import-type]], [[variable-formatting-utilities]], [[workspace-symbol-architecture]], [[lsp-file-watcher-linux]], [[server-provider-wiring-patterns]], [[visualizer-variable-resolution-pipeline]], [[vscode-gcode-extension]]
+- Pages updated: [[index]], [[hot]]
+- Key insight: Seven ADR-style solution docs from a VS Code LSP extension covering TypeScript typing traps, LSP wiring conventions, and a Linux file-watcher flake caused by parcel-watcher cold-start.
+
 ## [2026-04-08] save | claude-obsidian v1.4 Release Session
 - Type: session
 - Location: wiki/meta/claude-obsidian-v1.4-release-session.md

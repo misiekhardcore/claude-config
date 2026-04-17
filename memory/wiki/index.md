@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-08 | Total pages: 26 | Sources ingested: 2
+Last updated: 2026-04-17 | Total pages: 35 | Sources ingested: 3
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -47,6 +47,20 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[rvk7895-llm-knowledge-bases]] — 3-depth query system, Marp slides, parallel deep research (status: current)
 - [[kepano-obsidian-skills]] — official skills from Obsidian creator; defuddle, obsidian-bases (status: current)
 - [[Claudian-YishenTu]] — native Obsidian plugin embedding Claude Code; plan mode, @mention (status: current)
+- [[vscode-gcode-extension]] — VSCode LSP extension for G-code, 4-dialect CNC support, 3D visualizer (status: current)
+
+---
+
+## Solutions
+
+- [[fs-readdir-dirent-typing]] — pass `encoding: 'utf8'` with `withFileTypes` to fix Dirent generic typing
+- [[interface-extraction-import-type]] — use `import type` in interface files to eliminate source-level cycles
+- [[variable-formatting-utilities]] — RenameUtils is the single source for variable key formatting
+- [[workspace-symbol-architecture]] — four-layer Ctrl+T architecture with client-side enumeration
+- [[client-side-enumeration-pattern]] — server asks client to enumerate files via custom LSP request; honors files.exclude
+- [[lsp-file-watcher-linux]] — RelativePattern watcher avoids parcel-watcher cold-start flake on Linux
+- [[server-provider-wiring-patterns]] — server.ts conventions: .catch() on async, apply at init+change, logger DI
+- [[visualizer-variable-resolution-pipeline]] — VisualizerService resolves variables, not callers
 
 ---
 

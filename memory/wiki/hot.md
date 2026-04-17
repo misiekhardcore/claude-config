@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Hot Cache"
-updated: 2026-04-08T19:00:00
+updated: 2026-04-17T19:00:00
 tags:
   - meta
   - hot-cache
@@ -19,6 +19,7 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+2026-04-17: Ingested 7 vscode-gcode-extension solution docs into wiki/solutions/
 2026-04-08: v1.4.1 hotfix shipped, plugin confirmed installed and enabled
 
 ## Plugin State
@@ -62,7 +63,12 @@ There is no `claude plugin install github:owner/repo` shortcut. Both steps are r
 - v1.5.0 backlog: `/adopt` command, vault graph analysis in wiki-lint, semantic search via qmd, Marp output
 - `community` remote (`avalonreset-pro/claude-obsidian`) still has pre-rewrite history. Force-push needed next time that remote is configured.
 
+## Recent Ingest (2026-04-17)
+
+Ingested 7 solution docs from vscode-gcode-extension project (a VSCode LSP extension for G-code/CNC). Covers TypeScript typing patterns (Dirent generic disambiguation, interface import cycles), LSP infrastructure (file watching on Linux, workspace symbol architecture with client-side enumeration), server wiring conventions, and visualizer composition patterns.
+
 ## Repo Locations
 - Working: `~/Desktop/claude-obsidian/`
 - Public: https://github.com/AgriciDaniel/claude-obsidian
 - Community (private): https://github.com/avalonreset-pro/claude-obsidian
+- vscode-gcode-extension: `/home/michal/Projects/vscode-gcode-extension.feat-client-side-enumeration-138`
