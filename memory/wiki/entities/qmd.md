@@ -3,7 +3,7 @@ type: entity
 title: "qmd"
 entity_type: tool
 role: "Local search engine for markdown files"
-first_mentioned: "[[LLM Wiki — Karpathy Gist]]"
+first_mentioned: "[[llm-wiki-karpathy-gist]]"
 created: 2026-04-17
 updated: 2026-04-17
 tags:
@@ -22,7 +22,7 @@ sources:
 
 # qmd
 
-A local search engine for markdown files, recommended by [[Andrej Karpathy]] in the [[LLM Wiki — Karpathy Gist]] as the next step once an LLM wiki grows past the point where `index.md` alone is sufficient.
+A local search engine for markdown files, recommended by [[Andrej Karpathy]] in the [[llm-wiki-karpathy-gist|LLM Wiki — Karpathy Gist]] as the next step once an LLM wiki grows past the point where `index.md` alone is sufficient.
 
 ## What it does
 

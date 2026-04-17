@@ -110,7 +110,7 @@ None of these are required. The pattern runs on plain markdown files and `grep`.
 
 ## Historical Lineage
 
-The pattern is framed — in the [[LLM Wiki — Karpathy Gist|original gist]] — as a modern realization of [[Vannevar Bush]]'s [[Memex]] (1945). Bush had the intuition that *associations between documents* matter as much as the documents themselves, but human-maintained knowledge stores always rot because bookkeeping burden grows faster than value. LLMs collapse the bookkeeping cost, which is what makes the Memex finally buildable.
+The pattern is framed — in the [[llm-wiki-karpathy-gist|original gist]] — as a modern realization of [[Vannevar Bush]]'s [[Memex]] (1945). Bush had the intuition that *associations between documents* matter as much as the documents themselves, but human-maintained knowledge stores always rot because bookkeeping burden grows faster than value. LLMs collapse the bookkeeping cost, which is what makes the Memex finally buildable.
 
 ---
 

@@ -241,7 +241,7 @@ Four tiers, no overlap:
 
 | Tier | Location | Lifetime | Authoritative for |
 |---|---|---|---|
-| In-context | Working memory | Current turn | Active reasoning |
+| `TodoWrite` | In-context | This session only | Throwaway working scratchpad |
 | `./.claude/NOTES.md` | Worktree-local | This phase, across sessions | In-flight decisions, current task, open questions |
 | GitHub issue body | Remote | Cross-phase | Acceptance criteria, prior-phase decisions, handoff state |
 | Obsidian vault | `memory/wiki/` (git-tracked) | Durable, cross-feature | Compounded knowledge — bug-fix history, patterns, architectural insights (written by `/compound` or the plugin's `/save`) |

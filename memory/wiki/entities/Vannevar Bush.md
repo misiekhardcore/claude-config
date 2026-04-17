@@ -3,7 +3,7 @@ type: entity
 title: "Vannevar Bush"
 entity_type: person
 role: "Engineer, science administrator (1890–1974)"
-first_mentioned: "[[LLM Wiki — Karpathy Gist]]"
+first_mentioned: "[[llm-wiki-karpathy-gist]]"
 created: 2026-04-17
 updated: 2026-04-17
 tags:
