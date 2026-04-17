@@ -34,7 +34,10 @@ for file in "${files[@]}"; do
 done
 
 # ── Symlink directories ──────────────────────────────────────────────────────
-dirs=(hooks skills plugins memory)
+# Note: `skills` is intentionally omitted — workflow skills now come from the
+# claude-workflow plugin (installed below). Any personal one-off skills can live
+# directly under ~/.claude/skills/.
+dirs=(hooks plugins memory)
 
 for dir in "${dirs[@]}"; do
 	src="$SCRIPT_DIR/$dir"
@@ -75,11 +78,13 @@ if command -v claude &>/dev/null; then
 	claude plugin marketplace add jarrodwatts/claude-hud 2>/dev/null || true
 	claude plugin marketplace add max-sixty/worktrunk 2>/dev/null || true
 	claude plugin marketplace add AgriciDaniel/claude-obsidian 2>/dev/null || true
+	claude plugin marketplace add misiekhardcore/claude-workflow 2>/dev/null || true
 
 	# Install plugins from custom marketplaces
 	claude plugin install claude-hud@claude-hud 2>/dev/null || true
 	claude plugin install worktrunk@worktrunk 2>/dev/null || true
 	claude plugin install claude-obsidian@claude-obsidian-marketplace 2>/dev/null || true
+	claude plugin install claude-workflow@claude-workflow 2>/dev/null || true
 
 	echo "plugins installed"
 else
