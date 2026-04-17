@@ -25,7 +25,6 @@
     ],
     "defaultMode": "acceptEdits"
   },
-  "model": "sonnet",
   "hooks": {
     "PostToolUse": [
       {
@@ -98,7 +97,8 @@
       }
     }
   },
-  "effortLevel": "medium",
+  "effortLevel": "xhigh",
   "voiceEnabled": true,
-  "teammateMode": "tmux"
+  "teammateMode": "tmux",
+  "model": "opus"
 }
