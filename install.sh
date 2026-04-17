@@ -34,7 +34,7 @@ for file in "${files[@]}"; do
 done
 
 # ── Symlink directories ──────────────────────────────────────────────────────
-dirs=(hooks skills plugins)
+dirs=(hooks skills plugins memory)
 
 for dir in "${dirs[@]}"; do
 	src="$SCRIPT_DIR/$dir"
