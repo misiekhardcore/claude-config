@@ -15,6 +15,13 @@ related:
 
 # Operation Log
 
+## [2026-04-17] compound | Plugin Root Variable in Skills
+- Pages created: [[Plugin Root Variable in Skills]]
+- Pages updated: [[concepts/_index]], [[index]], [[hot]]
+- Source: claude-workflow PR #7 (stage #3 of plugin extraction, 17-skill migration)
+- Key insight: `${CLAUDE_PLUGIN_ROOT}` is officially guaranteed to expand only in hook commands and MCP server configs. In SKILL.md body text, Claude resolves it contextually — soft resolution, not documented. Pair the variable with a fallback pattern in `CLAUDE.md` pointing at the plugin cache glob so the plugin stays functional across Claude Code versions.
+
+
 Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.

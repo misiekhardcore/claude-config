@@ -37,10 +37,17 @@ All concept pages — ideas, patterns, and frameworks extracted from sources.
 ---
 
 ## Workflow & Context
-
 - [[Context Hygiene Between Workflow Phases]] — managing context rot across multi-phase workflows; reset + handoff artifact + context editing patterns
 
 ---
+
+## Claude Code Plugins & Skills
+
+- [[claude-skill-anatomy]] — skill file structure, frontmatter fields, directory layout
+- [[skill-invocation-model]] — manual vs automatic invocation, description field mechanics
+- [[skill-creation-patterns]] — 13 best practices for writing effective skills
+- [[skill-frontmatter-reference]] — complete YAML frontmatter field reference
+- [[Plugin Root Variable in Skills]] — where `${CLAUDE_PLUGIN_ROOT}` expands (hook/MCP vs skill body) and the fallback pattern for shared protocol references
 
 ## LSP & Language Tools
 
