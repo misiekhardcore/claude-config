@@ -8,7 +8,7 @@ aliases:
   - "Karpathy Wiki"
   - "Persistent Wiki"
 created: 2026-04-07
-updated: 2026-04-07
+updated: 2026-04-17
 tags:
   - concept
   - knowledge-management
@@ -19,9 +19,13 @@ related:
   - "[[Hot Cache]]"
   - "[[Compounding Knowledge]]"
   - "[[Andrej Karpathy]]"
+  - "[[Memex]]"
+  - "[[Vannevar Bush]]"
+  - "[[qmd]]"
   - "[[index]]"
   - "[[concepts/_index]]"
 sources:
+  - "[[llm-wiki-karpathy-gist]]"
 ---
 
 # LLM Wiki Pattern
@@ -90,8 +94,30 @@ At small scale (~100 sources, ~hundreds of pages), the index file is sufficient.
 
 ---
 
+## Tools and Extensions
+
+The gist calls out a few tools that fit cleanly into the pattern:
+
+- **[[qmd]]** — local hybrid BM25/vector search for markdown files. The recommended upgrade path when `index.md` alone is no longer enough to locate pages. Available as both CLI and MCP server.
+- **Marp** — markdown-based slide decks. A handy output format for query answers that deserve a presentation shape.
+- **Dataview** — Obsidian plugin that queries page frontmatter. If the LLM adds typed YAML to every page (this vault does), Dataview generates dynamic tables and indexes for free.
+- **Obsidian Web Clipper** — converts web articles to markdown, streamlining the raw-ingest pipeline.
+- **Obsidian graph view** — visual health check: hubs, orphans, and clusters at a glance. Complements [[wiki-lint]].
+
+None of these are required. The pattern runs on plain markdown files and `grep`.
+
+---
+
+## Historical Lineage
+
+The pattern is framed — in the [[llm-wiki-karpathy-gist|original gist]] — as a modern realization of [[Vannevar Bush]]'s [[Memex]] (1945). Bush had the intuition that *associations between documents* matter as much as the documents themselves, but human-maintained knowledge stores always rot because bookkeeping burden grows faster than value. LLMs collapse the bookkeeping cost, which is what makes the Memex finally buildable.
+
+---
+
 ## Connections
 
 See [[Compounding Knowledge]] for why the pattern produces more value over time.
 See [[Hot Cache]] for the session context optimization.
 See [[Andrej Karpathy]] for the pattern's origin.
+See [[Memex]] and [[Vannevar Bush]] for the intellectual lineage.
+See [[llm-wiki-karpathy-gist]] for the canonical source.

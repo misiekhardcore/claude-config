@@ -6,15 +6,35 @@ This file is reference material — read it on demand when a skill creates, upda
 
 ## Where it sits in the memory hierarchy
 
-Three tiers, no overlap:
+Four tiers, no overlap:
 
 | Tier | Where | Lifetime | Authoritative for |
 |------|-------|----------|-------------------|
 | `TodoWrite` | In-context | This session only | Throwaway working scratchpad |
-| `.claude/NOTES.md` | Worktree-local file | This phase, across sessions | In-flight decisions, current task, open questions |
+| `.claude/NOTES.md` | Worktree-local file (gitignored) | This phase, across sessions | In-flight decisions, current task, open questions |
 | GitHub issue | Remote | Cross-phase | Acceptance criteria, prior-phase decisions, handoff state |
+| Obsidian vault | `memory/wiki/` (git-tracked) | Durable, cross-feature | Compounded knowledge — patterns, bug-fix history, architectural insights |
 
 `TodoWrite` and `.claude/NOTES.md` are not mirrored — they serve different roles, and manual sync invites drift.
+
+## NOTES.md vs the vault's recency channels
+
+The `claude-obsidian` plugin ships its own running-memory mechanisms inside the vault. They look superficially similar to `.claude/NOTES.md` but serve a different purpose — keep the boundary sharp:
+
+| Artifact | Scope | Lifetime | Written by | Committed? |
+|---|---|---|---|---|
+| `.claude/NOTES.md` | One worktree, one feature | Ends when the worktree is removed | `/build` (scratch while coding) | No (gitignored) |
+| `memory/wiki/hot.md` | Whole repo, all work | Cross-session, curated recent context | `/save`, `/compound`, or manual edits | Yes |
+| `memory/wiki/meta/<session>.md` | One session's archive | Permanent | `/save` at session end (Karpathy-style session capture) | Yes |
+| `memory/wiki/log.md` | Whole repo | Permanent, append-only | Every `/save` or `/compound` emits a line | Yes |
+
+Rule of thumb:
+- **While working** — log to `.claude/NOTES.md`. It's phase-local scratch; nothing leaves the worktree.
+- **Between sessions on the same feature** — resume from `.claude/NOTES.md` (it's the authoritative in-flight state).
+- **Between features** — promote durable learnings to `memory/wiki/concepts/` via `/compound` (or the plugin's `/save`). That's what crosses the worktree boundary.
+- **Want a quick "what have I been working on lately" cache across the repo** — that's `memory/wiki/hot.md`, not NOTES.md. Hot cache is curated and committed; NOTES.md is raw and ephemeral.
+
+`/wrap-up` is the bridge: it harvests NOTES.md at clean exit and drafts a GitHub-issue comment, and it's the natural trigger point to ask whether anything in NOTES.md deserves promotion to the vault.
 
 ## Location and lifecycle
 
