@@ -31,12 +31,14 @@ See `~/.claude/RTK.md` for more.
 
 ## Memory layout
 
-Two tiers, both already wired up — don't invent a third:
+Two **curated memory** tiers, both already wired up — don't invent a third:
 
 | Location | Scope | Lifecycle | Loaded |
 |---|---|---|---|
 | `~/.claude/projects/<project>/memory/MEMORY.md` + topic files | Per-user, per-project. Built-in Claude Code "auto memory" | Claude self-curates; `/prune` audits | First ~200 lines / 25KB at session start; topic files on demand |
 | `<project>/memory/wiki/**/*.md` | Per-project Obsidian vault (Karpathy LLM Wiki pattern, via `claude-obsidian` plugin). Checked into git, shared with collaborators | `/compound` or `/save` writes; `/prune` and `wiki-lint` audit | Manual — `memory/wiki/hot.md` → `memory/wiki/index.md` → drill into `concepts/`, `entities/`, `sources/`. Discovered via the "check existing memory first" rule in CLAUDE.md |
+
+Curated memory is distinct from **in-flight working state**, which lives in `./.claude/NOTES.md` (worktree-local, gitignored, phase-scoped). See `skills/_shared/notes-md-protocol.md` for the boundary between NOTES.md and the vault's recency channels (`hot.md`, `meta/<session>.md`, `log.md`).
 
 Auto memory is opaque to user skills (the harness owns the directory). To capture session findings deterministically, run `/compound` — it writes a structured note into `memory/wiki/concepts/` (or the appropriate subdirectory), deduplicates against existing notes, and is shared via git. To surface in-flight assumptions before context loss, run `/wrap-up` — its output stays in the conversation; persistence is left to auto memory.
 
