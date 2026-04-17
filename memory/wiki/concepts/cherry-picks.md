@@ -104,7 +104,7 @@ sources:
 
 ### 11. obsidian-memory-mcp Integration
 **Source**: YuNaga224/obsidian-memory-mcp
-**What it is**: Connect the MCP server that stores Claude's memories as Markdown entities with `[[wikilinks]]` → they appear in Obsidian graph view automatically.
+**What it is**: Connect the MCP server that stores Claude's memories as Markdown entities with wikilinks — they appear in Obsidian graph view automatically.
 **How to add**: Point MEMORY_DIR to the wiki/entities/ directory — entity memory pages become proper wiki pages.
 
 ### 12. obsidian-bases Skill (from kepano)

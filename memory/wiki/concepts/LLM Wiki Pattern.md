@@ -102,7 +102,7 @@ The gist calls out a few tools that fit cleanly into the pattern:
 - **Marp** — markdown-based slide decks. A handy output format for query answers that deserve a presentation shape.
 - **Dataview** — Obsidian plugin that queries page frontmatter. If the LLM adds typed YAML to every page (this vault does), Dataview generates dynamic tables and indexes for free.
 - **Obsidian Web Clipper** — converts web articles to markdown, streamlining the raw-ingest pipeline.
-- **Obsidian graph view** — visual health check: hubs, orphans, and clusters at a glance. Complements [[wiki-lint]].
+- **Obsidian graph view** — visual health check: hubs, orphans, and clusters at a glance. Complements vault-lint capabilities.
 
 None of these are required. The pattern runs on plain markdown files and `grep`.
 

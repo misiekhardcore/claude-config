@@ -2,6 +2,7 @@
 type: meta
 title: "Wiki Index"
 updated: 2026-04-17
+created: 2026-04-17
 tags:
   - meta
   - index
@@ -10,8 +11,6 @@ related:
   - "[[overview]]"
   - "[[log]]"
   - "[[hot]]"
-  - "[[dashboard]]"
-  - "[[Wiki Map]]"
   - "[[concepts/_index]]"
   - "[[entities/_index]]"
   - "[[sources/_index]]"
@@ -28,7 +27,7 @@ related:
 
 Last updated: 2026-04-17 | Total pages: 40 | Sources ingested: 4
 
-Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
+Navigation: [[overview]] | [[log]] | [[hot]] | [[getting-started]]
 
 ---
 

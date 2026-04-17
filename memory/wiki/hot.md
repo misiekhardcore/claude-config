@@ -2,6 +2,7 @@
 type: meta
 title: "Hot Cache"
 updated: 2026-04-17T19:00:00
+created: 2026-04-17
 tags:
   - meta
   - hot-cache
@@ -9,11 +10,9 @@ status: evergreen
 related:
   - "[[index]]"
   - "[[log]]"
-  - "[[Wiki Map]]"
   - "[[getting-started]]"
   - "[[llm-wiki-karpathy-gist]]"
   - "[[LLM Wiki Pattern]]"
-  - "[[claude-obsidian-v1.4-release-session]]"
 ---
 
 # Recent Context
@@ -32,7 +31,7 @@ Navigation: [[index]] | [[log]] | [[overview]]
 - Source: `.raw/articles/llm-wiki-karpathy-2026-04-04.md` ([[llm-wiki-karpathy-gist]])
 - New pages: [[Memex]], [[Vannevar Bush]], [[qmd]], [[llm-wiki-karpathy-gist]]
 - Updated: [[LLM Wiki Pattern]] (added Tools & Extensions + Historical Lineage), [[Andrej Karpathy]] (linked gist as primary source)
-- Key takeaway: the gist explicitly frames the pattern as a [[Memex]] revival — LLMs finally solve the bookkeeping cost that killed human-maintained wikis.
+- Key takeaway: the gist explicitly frames the pattern as a Memex revival — LLMs finally solve the bookkeeping cost that killed human-maintained wikis.
 
 ## Plugin State
 - **Version**: 1.4.1 (installed, enabled, user scope)
@@ -48,7 +47,7 @@ claude plugin marketplace add AgriciDaniel/claude-obsidian
 claude plugin install claude-obsidian@claude-obsidian-marketplace
 ```
 
-There is no `claude plugin install github:owner/repo` shortcut. Both steps are required. Full session note: [[claude-obsidian-v1.4-release-session]].
+There is no `claude plugin install github:owner/repo` shortcut. Both steps are required. Full session note: [[pr-feedback-resolution-wiki-migration-2026-04-17]].
 
 ## Recent Release Cycle (v1.1 → v1.4.1)
 - **v1.1**: URL ingestion, vision ingestion, delta tracking manifest, 3 new skills (defuddle, obsidian-bases, obsidian-markdown), multi-depth query modes, PostToolUse auto-commit, removed invalid `allowed-tools` frontmatter field

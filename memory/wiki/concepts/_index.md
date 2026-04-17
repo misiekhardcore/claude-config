@@ -2,6 +2,7 @@
 type: meta
 title: "Concepts Index"
 updated: 2026-04-17
+created: 2026-04-17
 tags:
   - meta
   - index
@@ -10,8 +11,6 @@ domain: knowledge-management
 status: evergreen
 related:
   - "[[index]]"
-  - "[[dashboard]]"
-  - "[[Wiki Map]]"
   - "[[Hot Cache]]"
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"
@@ -35,9 +34,28 @@ All concept pages — ideas, patterns, and frameworks extracted from sources.
 
 ---
 
+## Workflow & Context
+
+- [[Context Hygiene Between Workflow Phases]] — managing context rot across multi-phase workflows; reset + handoff artifact + context editing patterns
+
+---
+
 ## LSP & Language Tools
 
 - [[gcode-lsp-architecture]] — Strict five-layer Lexer → Parser → AST → Services → Adapters pipeline; visitor/factory/strategy patterns
+
+---
+
+## TypeScript & Typing
+
+- [[TypeScript Typing Patterns]] — Advanced patterns for generic disambiguation, interface import cycles, and file-type utilities
+
+---
+
+## Integration & Tooling
+
+- [[Obsidian MCP Wiring]] — Integrating Obsidian vaults with Model Context Protocol servers
+- [[per-project-knowledge]] — Centralized vs. per-project vault strategies for multi-project knowledge management
 
 ---
 

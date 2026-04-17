@@ -11,14 +11,13 @@ related:
   - "[[index]]"
   - "[[hot]]"
   - "[[log]]"
-  - "[[dashboard]]"
   - "[[LLM Wiki Pattern]]"
 sources:
 ---
 
 # Wiki Overview
 
-Navigation: [[index]] | [[hot]] | [[log]] | [[dashboard]]
+Navigation: [[index]] | [[hot]] | [[log]]
 
 ---
 
@@ -55,12 +54,6 @@ Run `/wiki` to scaffold this vault for your own domain and replace this overview
 - Sources ingested: 3
 - Wiki pages: 30
 - Last activity: 2026-04-17 (ingested Karpathy's LLM Wiki gist)
-
----
-
-## Canvases
-
-- [[claude-obsidian-presentation]] — Full presentation: hero, overview, skills, architecture, Wiki vs RAG, visual demos (2026-04-07)
 
 ---
 

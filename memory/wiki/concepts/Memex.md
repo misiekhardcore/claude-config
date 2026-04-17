@@ -31,7 +31,7 @@ A conceptual personal knowledge device proposed by [[Vannevar Bush]] in the 1945
 The Memex is the explicit intellectual ancestor of the [[LLM Wiki Pattern]]. Both share three commitments:
 
 1. **Private and individual.** Curated by one person, for their own thinking. Not a public encyclopedia, not a shared knowledge graph.
-2. **Associations are first-class.** The trails between documents are as valuable as the documents. In Memex: mechanical links. In an LLM wiki: `[[wikilinks]]`, concept pages, and cross-references.
+2. **Associations are first-class.** The trails between documents are as valuable as the documents. In Memex: mechanical links. In an LLM wiki: wikilinks, concept pages, and cross-references.
 3. **Actively maintained.** The system is useful only because someone keeps it curated. Bush assumed a disciplined human. The LLM wiki assumes a patient agent.
 
 ## The part Bush couldn't solve
