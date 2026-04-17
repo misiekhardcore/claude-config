@@ -53,6 +53,7 @@ Context-hygiene guidance for the multi-phase `/discovery → /define → /implem
 ## LSP & Language Tools
 
 - [[gcode-lsp-architecture]] — Strict five-layer Lexer → Parser → AST → Services → Adapters pipeline; visitor/factory/strategy patterns
+- [[multi-root-workspace-per-folder-config]] — Reading VSCode settings and enumerating files per workspace folder; longest-prefix matching for overlapping roots
 
 ---
 

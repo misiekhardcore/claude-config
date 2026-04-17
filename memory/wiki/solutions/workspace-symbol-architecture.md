@@ -11,11 +11,12 @@ tags:
   - client-side-enumeration
 status: current
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-18
 related:
   - "[[variable-formatting-utilities]]"
   - "[[lsp-file-watcher-linux]]"
   - "[[server-provider-wiring-patterns]]"
+  - "[[multi-root-workspace-per-folder-config]]"
 ---
 
 # Workspace Symbol Architecture
@@ -70,5 +71,8 @@ Eventual-consistency model: watcher events unfiltered, next full rescan reconcil
 
 ## Known Limits
 
-- Single dialect per scan (no mixed-dialect workspace)
 - No `files.watcherExclude` support (only `files.exclude` and `search.exclude`)
+
+### Superseded
+
+- ~~Single dialect per scan (no mixed-dialect workspace)~~ — resolved by #141 (PR #149). Multi-root workspaces now index each folder with its own `gcode.dialect` and per-folder excludes. See [[multi-root-workspace-per-folder-config]] for the pattern.

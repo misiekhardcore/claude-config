@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Hot Cache"
-updated: 2026-04-17T19:00:00
+updated: 2026-04-18T00:00:00
 created: 2026-04-17
 tags:
   - meta
@@ -21,6 +21,8 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+2026-04-18: **Multi-Root Workspace Per-Folder Config** (issue #141, PR #149). Three patterns: (1) `vscode.workspace.getConfiguration(undefined, scope)` with folder URI for per-folder reads; (2) `vscode.RelativePattern` + folder-scoped excludes so `findFiles` applies per-folder ignore rules; (3) **longest-prefix matching** (not first-match) when resolving which root owns a file — critical for nested/overlapping roots. Supersedes the "Known Limits: single dialect per scan" entry on [[workspace-symbol-architecture]]. E2E coverage via `src/e2e/fixtures-multiroot/` (folder-a fanuc, folder-b linuxcnc). See [[multi-root-workspace-per-folder-config]].
+
 2026-04-17: **Structured Parse Error Location** (issue #146). Single `createParseError` factory wires 23+ parser raise sites to a 1-based `ErrorLocation`. `locationToRange` adapter converts to 0-based LSP Range at one site. Critical invariant: token-derived location must set `endColumn: token.col + token.value.length` — omitting it collapses diagnostic squiggles to zero-width. Visualizer error card propagates `location: ErrorLocation | null` through worker → reducer → EmptyMessage; forced `null` for non-PARSE_FAILURE kinds. See [[Structured Parse Error Location]].
 
 2026-04-17: **Plugin Root Variable in Skills** — captured from claude-workflow stage #3 (PR #7, 17-skill migration). Context7 docs confirm `${CLAUDE_PLUGIN_ROOT}` is officially expanded only in hook commands and MCP server configs; SKILL.md body references rely on Claude's contextual resolution, not documented guarantee. Fallback pattern (glob against `~/.claude/plugins/cache/<marketplace>/<plugin>/<version>/`) documented in the plugin's `CLAUDE.md` so skills remain functional across Claude Code versions. See [[Plugin Root Variable in Skills]].

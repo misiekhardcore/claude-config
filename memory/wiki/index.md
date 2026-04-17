@@ -27,7 +27,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-17 | Total pages: 45 | Sources ingested: 5
+Last updated: 2026-04-18 | Total pages: 46 | Sources ingested: 5
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -41,6 +41,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Memex]] — Bush's 1945 precursor to the LLM wiki pattern; associative trails between documents (status: developing)
 - [[cherry-picks]] — prioritized feature backlog from ecosystem research; 13 features to add to claude-obsidian (status: current)
 - [[gcode-lsp-architecture]] — Five-layer Lexer → Parser → AST → Services → Adapters pipeline for LSP extensions (status: current)
+- [[multi-root-workspace-per-folder-config]] — Per-folder `getConfiguration` scope, `RelativePattern` findFiles, longest-prefix root matching (status: current)
 - [[per-project-knowledge]] — centralized vs. per-project vault strategies for multi-project knowledge management (status: current)
 - [[claude-skill-anatomy]] — Structure of Claude Code skills: frontmatter, markdown body, supporting files, directory layout (status: evergreen)
 - [[skill-invocation-model]] — How Claude Code skills are triggered: user manual invocation vs. automatic Claude invocation (status: evergreen)

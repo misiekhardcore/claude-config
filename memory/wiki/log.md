@@ -15,6 +15,12 @@ related:
 
 # Operation Log
 
+## [2026-04-18] compound | Multi-Root Workspace Per-Folder Config (issue #141, PR #149)
+- Pages created: [[multi-root-workspace-per-folder-config]]
+- Pages updated: [[concepts/_index]], [[index]], [[workspace-symbol-architecture]] (superseded "Known Limits" single-dialect-per-scan), [[hot]]
+- From: vscode-gcode-extension `/claude-workflow:implement 141` cycle
+- Key insights: (1) `vscode.workspace.getConfiguration(undefined, scope)` for folder-scoped reads; (2) `vscode.RelativePattern` scopes `findFiles` per root so per-folder excludes apply; (3) longest-prefix matching (not first-match) when resolving which root owns a file — matters for nested/overlapping roots.
+
 ## [2026-04-17] compound | Structured Parse Error Location (issue #146)
 - Pages created: [[Structured Parse Error Location]]
 - Pages updated: [[G-code LSP Architecture]] (added reference to new errors module), [[hot]]
