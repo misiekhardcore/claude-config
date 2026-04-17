@@ -12,6 +12,8 @@ related:
   - "[[log]]"
   - "[[entities/_index]]"
   - "[[Andrej Karpathy]]"
+  - "[[llm-wiki-karpathy-gist]]"
+  - "[[claude-obsidian-ecosystem-research]]"
 ---
 
 # Sources Index
@@ -35,7 +37,8 @@ All source pages — summaries of ingested documents, transcripts, articles, and
 
 ## Articles
 
-<!-- Add article source pages here -->
+- [[llm-wiki-karpathy-gist]] — 2026-04-17 — Karpathy's canonical LLM Wiki gist (GitHub Gist, 5,000+ stars, 60+ comments)
+- [[claude-obsidian-ecosystem-research]] — 2026-04-08 — web research across 16+ Claude+Obsidian projects
 
 ---
 

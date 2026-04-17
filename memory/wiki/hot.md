@@ -11,6 +11,8 @@ related:
   - "[[log]]"
   - "[[Wiki Map]]"
   - "[[getting-started]]"
+  - "[[llm-wiki-karpathy-gist]]"
+  - "[[LLM Wiki Pattern]]"
   - "[[claude-obsidian-v1.4-release-session]]"
 ---
 
@@ -23,7 +25,14 @@ Navigation: [[index]] | [[log]] | [[overview]]
 2026-04-17: Ingested vscode-gcode-extension full architecture into wiki. Created [[gcode-lsp-architecture]] concept page, updated [[vscode-gcode-extension]] entity with full architecture details, created [[vscode-gcode-extension-architecture]] source summary.
 2026-04-17: Resolved 10 Copilot threads on PR #145 (parallel agents, commits 39e340a + 1cc5974), migrated solution docs to wiki/solutions/, discovered GraphQL is required to resolve threads (REST cannot). Session note: [[pr-feedback-resolution-wiki-migration-2026-04-17]].
 2026-04-17: Ingested 7 vscode-gcode-extension solution docs into wiki/solutions/
+2026-04-17: Ingested Karpathy's canonical LLM Wiki gist ([[llm-wiki-karpathy-gist]]). Added [[Memex]]/[[Vannevar Bush]] as the historical lineage, [[qmd]] as the recommended scaling-search tool. Refreshed [[LLM Wiki Pattern]] concept page with a Tools & Extensions section.
 2026-04-08: v1.4.1 hotfix shipped, plugin confirmed installed and enabled
+
+## Last Ingest
+- Source: `.raw/articles/llm-wiki-karpathy-2026-04-04.md` ([[llm-wiki-karpathy-gist]])
+- New pages: [[Memex]], [[Vannevar Bush]], [[qmd]], [[llm-wiki-karpathy-gist]]
+- Updated: [[LLM Wiki Pattern]] (added Tools & Extensions + Historical Lineage), [[Andrej Karpathy]] (linked gist as primary source)
+- Key takeaway: the gist explicitly frames the pattern as a [[Memex]] revival — LLMs finally solve the bookkeeping cost that killed human-maintained wikis.
 
 ## Plugin State
 - **Version**: 1.4.1 (installed, enabled, user scope)
