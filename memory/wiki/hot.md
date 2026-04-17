@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Hot Cache"
-updated: 2026-04-08T19:00:00
+updated: 2026-04-17
 tags:
   - meta
   - hot-cache
@@ -11,6 +11,8 @@ related:
   - "[[log]]"
   - "[[Wiki Map]]"
   - "[[getting-started]]"
+  - "[[llm-wiki-karpathy-gist]]"
+  - "[[LLM Wiki Pattern]]"
   - "[[claude-obsidian-v1.4-release-session]]"
 ---
 
@@ -19,7 +21,16 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
-2026-04-08: v1.4.1 hotfix shipped, plugin confirmed installed and enabled
+2026-04-17: Ingested Karpathy's canonical LLM Wiki gist ([[llm-wiki-karpathy-gist]]). Added [[Memex]]/[[Vannevar Bush]] as the historical lineage, [[qmd]] as the recommended scaling-search tool. Refreshed [[LLM Wiki Pattern]] concept page with a Tools & Extensions section.
+
+## Last Ingest
+- Source: `.raw/articles/llm-wiki-karpathy-2026-04-04.md` ([[llm-wiki-karpathy-gist]])
+- New pages: [[Memex]], [[Vannevar Bush]], [[qmd]], [[llm-wiki-karpathy-gist]]
+- Updated: [[LLM Wiki Pattern]] (added Tools & Extensions + Historical Lineage), [[Andrej Karpathy]] (linked gist as primary source)
+- Key takeaway: the gist explicitly frames the pattern as a [[Memex]] revival — LLMs finally solve the bookkeeping cost that killed human-maintained wikis.
+
+## Earlier: 2026-04-08
+v1.4.1 hotfix shipped, plugin confirmed installed and enabled
 
 ## Plugin State
 - **Version**: 1.4.1 (installed, enabled, user scope)

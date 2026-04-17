@@ -1,0 +1,26 @@
+{
+  "sources": {
+    ".raw/articles/llm-wiki-karpathy-2026-04-04.md": {
+      "hash": "3170c8503c18460434e7136a0baacaac",
+      "ingested_at": "2026-04-17",
+      "source_url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+      "pages_created": [
+        "wiki/sources/llm-wiki-karpathy-gist.md",
+        "wiki/concepts/Memex.md",
+        "wiki/entities/Vannevar Bush.md",
+        "wiki/entities/qmd.md"
+      ],
+      "pages_updated": [
+        "wiki/concepts/LLM Wiki Pattern.md",
+        "wiki/entities/Andrej Karpathy.md",
+        "wiki/concepts/_index.md",
+        "wiki/entities/_index.md",
+        "wiki/sources/_index.md",
+        "wiki/index.md",
+        "wiki/hot.md",
+        "wiki/log.md",
+        "wiki/overview.md"
+      ]
+    }
+  }
+}

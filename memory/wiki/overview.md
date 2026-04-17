@@ -2,7 +2,7 @@
 type: overview
 title: "Wiki Overview"
 created: 2026-04-07
-updated: 2026-04-07
+updated: 2026-04-17
 tags:
   - meta
   - overview
@@ -37,20 +37,24 @@ Run `/wiki` to scaffold this vault for your own domain and replace this overview
 - [[LLM Wiki Pattern]] — the core architecture
 - [[Hot Cache]] — session context mechanism
 - [[Compounding Knowledge]] — why the pattern works
+- [[Memex]] — Bush's 1945 precursor; explicit intellectual lineage
 
 **Entities seeded:**
 - [[Andrej Karpathy]] — originated the pattern
+- [[Vannevar Bush]] — proposed the Memex in 1945
+- [[qmd]] — local hybrid search, Karpathy's recommended scaling tool
 
 **Sources seeded:**
+- [[llm-wiki-karpathy-gist]] — Karpathy's canonical LLM Wiki gist (2026-04-17)
 - [[claude-obsidian-ecosystem-research]] — 16+ projects, 13 cherry-picks identified (2026-04-08)
 
 ---
 
 ## Current State
 
-- Sources ingested: 2
-- Wiki pages: 26
-- Last activity: 2026-04-08 (v1.4.1 shipped, release session filed)
+- Sources ingested: 3
+- Wiki pages: 30
+- Last activity: 2026-04-17 (ingested Karpathy's LLM Wiki gist)
 
 ---
 

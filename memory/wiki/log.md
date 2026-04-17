@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-04-08
+updated: 2026-04-17
 tags:
   - meta
   - log
@@ -24,6 +24,14 @@ Entry format: `## [YYYY-MM-DD] operation | Title`
 Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
+
+## [2026-04-17] ingest | LLM Wiki — Karpathy Gist
+- Type: gist (idea file)
+- Source: `.raw/articles/llm-wiki-karpathy-2026-04-04.md`
+- Summary: [[llm-wiki-karpathy-gist]]
+- Pages created: [[llm-wiki-karpathy-gist]], [[Memex]], [[Vannevar Bush]], [[qmd]]
+- Pages updated: [[LLM Wiki Pattern]], [[Andrej Karpathy]], [[index]], [[hot]], [[overview]], [[sources/_index]], [[entities/_index]], [[concepts/_index]]
+- Key insight: the gist is the canonical upstream for this vault's whole architecture. Adds historical lineage (Bush/Memex) and a concrete scaling tool (qmd) that had been implicit.
 
 ## [2026-04-08] save | claude-obsidian v1.4 Release Session
 - Type: session

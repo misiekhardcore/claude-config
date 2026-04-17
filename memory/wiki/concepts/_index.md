@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Concepts Index"
-updated: 2026-04-07
+updated: 2026-04-17
 tags:
   - meta
   - index
@@ -15,9 +15,7 @@ related:
   - "[[Hot Cache]]"
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"
-  - "[[LLM Wiki Pattern]]"
-  - "[[Hot Cache]]"
-  - "[[Compounding Knowledge]]"
+  - "[[Memex]]"
 ---
 
 # Concepts Index
@@ -33,6 +31,7 @@ All concept pages — ideas, patterns, and frameworks extracted from sources.
 - [[LLM Wiki Pattern]] — the core architecture for persistent, compounding knowledge bases
 - [[Hot Cache]] — ~500-word session context file, updated after every ingest
 - [[Compounding Knowledge]] — why the wiki grows more valuable over time, unlike RAG
+- [[Memex]] — Vannevar Bush's 1945 precursor; intellectual lineage for the LLM wiki pattern
 
 ---
 
