@@ -15,6 +15,9 @@ related:
 
 # Operation Log
 
+## [2026-04-18] compound | Progress Reporting Two-Role Model (issue #139, PR #150)
+- Pages updated: [[server-provider-wiring-patterns]] (added orchestrator-vs-producer section, LspBoundProgressReporter narrowing, title convention, intra-phase throttling pattern, test-determinism technique), [[hot]]
+
 ## [2026-04-18] compound | Multi-Root Workspace Per-Folder Config (issue #141, PR #149)
 - Pages created: [[multi-root-workspace-per-folder-config]]
 - Pages updated: [[concepts/_index]], [[index]], [[workspace-symbol-architecture]] (superseded "Known Limits" single-dialect-per-scan), [[hot]]
