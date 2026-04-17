@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Concepts Index"
-updated: 2026-04-07
+updated: 2026-04-17
 tags:
   - meta
   - index
@@ -22,7 +22,7 @@ related:
 
 # Concepts Index
 
-Navigation: [[index]] | [[entities/_index|Entities]] | [[sources/_index|Sources]]
+Navigation: [[index]] | [[entities/_index]] | [[sources/_index]]
 
 All concept pages — ideas, patterns, and frameworks extracted from sources.
 

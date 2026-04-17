@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Dashboard"
-updated: 2026-04-08
+updated: 2026-04-17
 tags:
   - meta
   - dashboard
@@ -12,6 +12,7 @@ related:
   - "[[log]]"
   - "[[concepts/_index]]"
   - "[[Compounding Knowledge]]"
+  - "[[lint-report-2026-04-17]]"
 ---
 
 # Wiki Dashboard
@@ -24,6 +25,25 @@ The dashboard uses **Obsidian Bases**. A core Obsidian feature shipped in v1.9.1
 > The interactive dashboard lives in [[dashboard.base]]. Open that file directly, or use the embed below.
 
 ![[dashboard.base]]
+
+---
+
+## Health Status (2026-04-17)
+
+**Lint audit completed.** Full report: [[lint-report-2026-04-17]]
+
+| Metric | Value | Status |
+|--------|-------|--------|
+| Pages scanned | 34 | ✓ Good |
+| Critical issues | 8 | ⚠ Fix wikilinks |
+| Warning issues | 15 | ⚠ Review empty sections |
+| Frontmatter complete | 100% | ✓ All pages OK |
+| Orphan pages | 1 | ⚠ Link or remove |
+
+**Action items:**
+1. Fix malformed wikilinks in index pages (pipe `|` syntax)
+2. Add content to empty entity "Key Innovations" sections
+3. Remove canvas reference that doesn't exist
 
 ---
 

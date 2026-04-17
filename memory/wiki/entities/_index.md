@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Entities Index"
-updated: 2026-04-07
+updated: 2026-04-17
 tags:
   - meta
   - index
@@ -16,7 +16,7 @@ related:
 
 # Entities Index
 
-Navigation: [[index]] | [[concepts/_index|Concepts]] | [[sources/_index|Sources]]
+Navigation: [[index]] | [[concepts/_index]] | [[sources/_index]]
 
 All entity pages — people, organizations, products, and tools.
 

@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Sources Index"
-updated: 2026-04-07
+updated: 2026-04-17
 tags:
   - meta
   - index
@@ -16,7 +16,7 @@ related:
 
 # Sources Index
 
-Navigation: [[index]] | [[concepts/_index|Concepts]] | [[entities/_index|Entities]]
+Navigation: [[index]] | [[concepts/_index]] | [[entities/_index]]
 
 All source pages — summaries of ingested documents, transcripts, articles, and data.
 
