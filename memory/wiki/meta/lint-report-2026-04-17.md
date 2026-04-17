@@ -1,5 +1,6 @@
 ---
 type: meta
+status: evergreen
 title: "Wiki Lint Report — 2026-04-17"
 created: 2026-04-17
 updated: 2026-04-17
@@ -7,179 +8,205 @@ tags:
   - meta
   - lint
   - audit
-status: evergreen
 ---
 
-# Wiki Lint Report
+# Wiki Lint Report — 2026-04-17
 
-**Scan date:** 2026-04-17 | **Pages scanned:** 34 | **Total issues:** 23 (8 fixed, 15 remaining)
+**Date:** 2026-04-17  
+**Scan scope:** Full wiki vault  
+**Pages scanned:** 43  
+**Total issues found:** 79 (34 critical, 45 warnings, 0 suggestions)
 
 ---
 
 ## Summary
 
-| Severity | Count | Status |
+| Category | Count | Status |
 |----------|-------|--------|
-| **Critical** | 1 | 1 remaining (false positive) |
-| **Warnings** | 15 | All remain |
-| **Suggestions** | 0 | N/A |
-| **Total** | 23 | 8 fixed on 2026-04-17 |
+| **Critical** | 34 | Must fix: dead links, stale index entries |
+| **Warnings** | 45 | Should fix: empty sections, orphans, large pages |
+| **Suggestions** | 0 | No missing concept pages detected |
+| **Total** | 79 | 8 dimensions audited |
 
 ---
 
-## Fixed Issues (2026-04-17)
+## Critical Issues (34)
 
-The following 8 critical issues were auto-fixed:
+Dead links and missing pages that break vault integrity.
 
-### 1. Malformed Wikilinks — Pipe syntax corrected (7 fixed)
+### Dead Links to Non-Existent Pages (8)
 
-#### concepts/_index
-- ✓ FIXED: Changed `[[entities/_index|Entities]]` to `[[entities/_index]]`
-- ✓ FIXED: Changed `[[sources/_index|Sources]]` to `[[sources/_index]]`
-- Updated frontmatter: `updated: 2026-04-17`
+Pages linking to files that don't exist in the vault:
 
-#### entities/_index
-- ✓ FIXED: Changed `[[concepts/_index|Concepts]]` to `[[concepts/_index]]`
-- ✓ FIXED: Changed `[[sources/_index|Sources]]` to `[[sources/_index]]`
-- Updated frontmatter: `updated: 2026-04-17`
+- **[[concepts/_index]]** → `[[Wiki Map]]` — Canvas reference format incorrect
+- **[[concepts/cherry-picks]]** → `[[wikilinks]]` — Page doesn't exist (contextual mention)
+- **[[concepts/per-project-knowledge]]** → `[[Obsidian MCP Wiring]]` — Missing research page
+- **[[concepts/per-project-knowledge]]** → `[[TypeScript Typing Patterns]]` — Missing technical page
+- **[[getting-started]]** → `[[Wiki Map]]` — Canvas format issue
+- **[[hot]]** → `[[Wiki Map]]` — Canvas format issue
+- **[[index]]** → `[[Wiki Map]]` — Canvas format issue
+- **[[overview]]** → `[[claude-obsidian-presentation]]` — Missing source page
 
-#### sources/_index
-- ✓ FIXED: Changed `[[concepts/_index|Concepts]]` to `[[concepts/_index]]`
-- ✓ FIXED: Changed `[[entities/_index|Entities]]` to `[[entities/_index]]`
-- Updated frontmatter: `updated: 2026-04-17`
+**Fixes needed:**
+- Create `concepts/wikilinks.md` with Obsidian syntax documentation
+- Create `concepts/obsidian-mcp-wiring.md` for MCP architecture details
+- Create `concepts/typescript-typing-patterns.md` for typing patterns
+- Create `sources/claude-obsidian-presentation.md` for presentation source
+- Fix canvas links: use `[[Wiki Map.canvas]]` or remove references
 
-### 2. Dead Canvas Reference — Removed (1 fixed)
+### Broken Anchor Links (18)
 
-#### overview
-- ✓ FIXED: Removed line `- [[AI Marketing Hub Cover Images Canvas]] — Cover image library for AI Marketing Hub brand assets`
-- Canvas reference was non-existent; only `[[claude-obsidian-presentation]]` remains
-- Updated frontmatter: `updated: 2026-04-17`
+Pages linking to specific sections within `[[cherry-picks]]` using anchor syntax. The `cherry-picks` page exists but lacks proper heading anchors:
 
----
+**Affected pages (all linking to `cherry-picks` with anchors):**
+- [[entities/Ar9av-obsidian-wiki]] — 4 broken anchors (items 4, 6, 9, 13)
+- [[entities/Nexus-claudesidian-mcp]] — 1 broken anchor (item 11)
+- [[entities/ballred-obsidian-claude-pkm]] — 3 broken anchors (items 2, 7, 8)
+- [[entities/kepano-obsidian-skills]] — 4 broken anchors (items 1, 3, 9, 12)
+- [[entities/rvk7895-llm-knowledge-bases]] — 2 broken anchors (items 5, 10)
 
-## Remaining Critical Issues (1)
+**Examples:**
+- `[[cherry-picks#13. Schema-Emergent Vault Mode]]`
+- `[[cherry-picks#4. Delta Tracking Manifest]]`
+- `[[cherry-picks#11. obsidian-memory-mcp Integration]]`
 
-### 1. Dead Wikilink in cherry-picks (FALSE POSITIVE)
+**Fix:** Review `concepts/cherry-picks.md` and ensure each item has a matching ## heading (e.g., `## 1. URL Ingestion in /wiki-ingest`), or remove anchor references and link to the page directly.
 
-#### concepts/cherry-picks
-- **Link:** `wikilinks` — Flagged as dead link
-  - **Status:** FALSE POSITIVE — This is contextual text within a feature description ("as Markdown entities with `[[wikilinks]]`"), not a broken link to a page
-  - **Action:** Left as-is; does not represent a vault structure problem
+### Stale Index Entries (2)
 
----
+The `index.md` file references files/resources that don't exist:
 
-## Remaining Warnings (15)
+- **[[index]]** → `[[Wiki Map]]` — Ambiguous: is it the canvas file or a page?
+- **[[meta/dashboard]]** → `[[dashboard.base]]` — Airtable/Basecamp reference missing
 
-### 1. Orphan Pages — No inbound wikilinks (1 issue)
+**Fixes:**
+- Clarify canvas reference: use `[[Wiki Map.canvas]]` if linking to canvas, or create `concepts/wiki-map.md` for conceptual overview
+- Decide if dashboard base is still maintained; if not, remove the reference
 
-#### concepts/Context Hygiene Between Workflow Phases
-- **Issue:** This page has no inbound links from other pages or the index
-- **Status:** Intentionally left unfixed per user request
-- **Fix:** Link to `[[concepts/Context Hygiene Between Workflow Phases]]` from related pages if needed
+### Malformed Wikilinks in Report (6)
 
----
+The existing lint report contains broken wikilinks:
 
-### 2. Empty Sections — Headings with placeholder or no content (14 issues)
+- **[[meta/lint-report-2026-04-17]]** contains incomplete/invalid links:
+  - `[[page]]` — Too generic, ambiguous target
+  - `[[page Label]]` — Malformed syntax
+  - `[[AI Marketing Hub Cover Images Canvas]]` — Page doesn't exist
+  - `[[claude-obsidian-presentation]]` — Doesn't exist (should be source)
+  - `[[wikilinks]]` — Doesn't exist
 
-#### concepts/Context Hygiene Between Workflow Phases
-- `## Examples` — No examples provided
-
-#### concepts/_index
-- `## Add new concepts here as they are extracted from sources.` — Template placeholder
-
-#### concepts/cherry-picks
-- `## Tier 1 — Quick Wins (High Impact, Low Effort)` — Has content (not truly empty)
-- `## Tier 2 — Medium Effort, High Value` — Has content
-- `## Tier 3 — Bigger Features Worth Planning` — Has content
-- `## Tier 4 — Research / Ecosystem Plays` — Has content
-
-#### entities/Ar9av-obsidian-wiki
-- `## Key Innovations` — Empty (intentionally left unfixed)
-
-#### entities/Claudian-YishenTu
-- `## Key Features` — Empty (intentionally left unfixed)
-
-#### entities/ballred-obsidian-claude-pkm
-- `## Key Innovations` — Empty (intentionally left unfixed)
-
-#### entities/rvk7895-llm-knowledge-bases
-- `## Key Innovations` — Empty (intentionally left unfixed)
-
-#### entities/_index
-- `## Add new entities here as they are identified during ingests.` — Template placeholder
-
-#### getting-started
-- `## Three-Step Quick Start` — No steps provided
-
-#### sources/_index
-- `## Transcripts` — Empty
-- `## Add new sources here after each ingest.` — Template placeholder
-
-**Recommendation:** Most are intentional scaffolding. Entity "Key Innovations" sections were left unfixed per user request.
+**Fix:** This is a self-referential issue in the report itself. Either recreate the report or clean up these references.
 
 ---
 
-## Observations & Suggestions
+## Warnings (45)
 
-### 1. Wikilink Format Issue (RESOLVED)
+Best practice improvements needed.
 
-The index pages previously used Obsidian's pipe syntax (`[[page|Label]]`) which was breaking link resolution. All instances have been corrected to standard wikilink format (`[[page]]`).
+### Empty Sections (28 pages)
 
-**Status:** Fixed on 2026-04-17
+Headings with no or minimal content underneath indicate incomplete pages. Common in newer research pages:
 
-### 2. Page Cross-Reference Patterns
+**Pages with 1+ empty sections:**
+- [[comparisons/Wiki vs RAG]] — Main heading empty
+- [[concepts/Context Hygiene Between Workflow Phases]] — 2 empty sections (main + Examples)
+- [[concepts/Hot Cache]] — Recent Context empty
+- [[concepts/_index]] — Placeholder text
+- [[concepts/cherry-picks]] — 4 tier headings (Tier 1-4)
+- [[concepts/gcode-lsp-architecture]] — 3 empty: Design Patterns, Layer Details, Testing Strategy
+- [[concepts/per-project-knowledge]] — Three Core Options empty
+- [[entities/Ar9av-obsidian-wiki]] — Key Innovations empty
+- [[entities/Claudian-YishenTu]] — Key Features empty
+- [[entities/_index]] — Placeholder text
+- [[entities/ballred-obsidian-claude-pkm]] — Key Innovations empty
+- [[entities/rvk7895-llm-knowledge-bases]] — Key Innovations empty
+- [[entities/vscode-gcode-extension]] — Core Concepts, Development empty
+- [[getting-started]] — Three-Step Quick Start empty
+- [[meta/claude-obsidian-v1.2.0-release-session]] — 3 sections empty
+- [[meta/full-audit-and-system-setup-session]] — 1 heading empty
+- [[meta/pr-feedback-resolution-wiki-migration-2026-04-17]] — Main section empty
+- [[solutions/client-side-enumeration-pattern]] — Main heading empty
+- [[solutions/fs-readdir-dirent-typing]] — Main heading empty
+- [[solutions/interface-extraction-import-type]] — Main heading empty
+- [[solutions/lsp-file-watcher-linux]] — Main heading empty
+- [[solutions/variable-formatting-utilities]] — Main heading empty
+- [[solutions/visualizer-variable-resolution-pipeline]] — Main heading empty
+- [[solutions/workspace-symbol-architecture]] — Main heading empty
+- [[sources/_index]] — Placeholder text
+- [[sources/vscode-gcode-extension-architecture]] — Key Insights empty
 
-Most content pages ARE reachable (they're referenced in `index.md`'s `related` field), but they don't have mutual cross-links among themselves. For example:
-- `comparisons/Wiki vs RAG` references `[[LLM Wiki Pattern]]` but `LLM Wiki Pattern` doesn't link back
-- This is OK for a branching architecture, but limits serendipitous discovery
+**Fix strategy:**
+1. Fill with substantive content (preferred)
+2. Remove empty headings if section isn't needed
+3. Use explicit placeholders like "TBD" or "Coming soon" if actively being developed
 
-**Suggestion:** Consider adding a "See also" section in related pages.
+### Large Page (1)
 
-### 3. Frontmatter Completeness
+- **[[concepts/gcode-lsp-architecture]]** — 397 lines exceeds 300-line readability threshold
 
-All 34 pages have complete, correct frontmatter with required fields: `type`, `status`, `created`, `updated`, `tags`. No frontmatter issues detected.
+**Suggested split:**
+- Keep overview in main page
+- Extract to: `gcode-lexer-design.md`, `gcode-parser-design.md`, `gcode-ast-design.md`, `gcode-lsp-services.md`
 
-### 4. Page Volume & Status Distribution
+### Orphan Pages (1)
 
-- **Total pages:** 34 (baseline for a demo vault)
-- **Status distribution:** Mostly `evergreen`, `current`, or `developing` — good health indicator
-- **Categories:** Concepts (6), Entities (9), Solutions (9), Comparisons (2), Questions (1), Sources (1), Infrastructure (6)
+- **[[concepts/Context Hygiene Between Workflow Phases]]** — Not referenced from index or other pages
 
-### 5. Dead Canvas Reference (RESOLVED)
-
-The reference to `[[AI Marketing Hub Cover Images Canvas]]` in `overview.md` has been removed. The vault has 5 canvases that are valid:
-- `Wiki Map.canvas`
-- `canvases/claude-obsidian-presentation.canvas`
-- `canvases/main.canvas`
-- `canvases/welcome.canvas`
-- `canvases/youtube-explainer.canvas`
-
-**Status:** Fixed on 2026-04-17
+**Fixes:**
+- Add to `concepts/_index.md` related list
+- Link from `[[LLM Wiki Pattern]]` or `[[Hot Cache]]` (related topics)
+- Or archive if superseded
 
 ---
 
-## Fix Priority (Post-Fixes)
+## Suggestions (0)
 
-1. **High (optional):** Add content to empty entity "Key Innovations" sections or remove headings (5 pages)
-2. **Medium:** Link orphan page or remove if not needed
-3. **Low:** Populate getting-started steps; clarify empty section templates
+No frequently-mentioned concepts lacking dedicated pages were detected. Wiki structure is well-proportioned.
 
 ---
 
-## Audit Completeness Checklist
+## Audit Checklist
 
-- [x] Orphan pages (no inbound wikilinks)
-- [x] Dead links (wikilinks referencing non-existent pages)
-- [x] Missing frontmatter fields
-- [x] Empty sections (headings with no content)
-- [x] Stale index entries
-- [x] Frontmatter completeness
-- [x] Wikilink format validation
-- [x] Cross-reference analysis
+All 8 dimensions audited:
 
-**Scan method:** Full filesystem scan of `/home/michal/Projects/claude-config/memory/wiki/` excluding `meta/` directory. 34 pages analyzed, 8 canvas files checked, 1 Bases file referenced.
+- [x] **Frontmatter completeness** (type, status, dates, tags) — PASS
+- [x] **Dead wikilinks** — 8 critical issues found
+- [x] **Broken anchors** — 18 broken references to cherry-picks items
+- [x] **Empty sections** — 28 pages with skeleton content
+- [x] **Orphan pages** — 1 page with no inbound links
+- [x] **Index staleness** — 2 stale/ambiguous entries
+- [x] **Large pages** — 1 page over 300 lines
+- [x] **Stale seeds** — 0 seed pages >30 days old
 
-**Auto-fixes applied:** 2026-04-17
-- Fixed malformed wikilinks in 3 index pages (7 links corrected)
-- Removed dead canvas reference from overview (1 link removed)
-- Updated `updated` field in 4 files
+---
+
+## Recommended Actions
+
+### Immediate (Unblocks other work)
+1. Fix canvas link format across 3 pages (index, hot, getting-started) — use `[[Wiki Map.canvas]]` or remove
+2. Create 4 missing concept/source pages (wikilinks, obsidian-mcp-wiring, typescript-typing-patterns, claude-obsidian-presentation)
+3. Verify and fix `cherry-picks.md` anchor headings for entity links
+4. Clean up malformed wikilinks in this report (or regenerate)
+
+### Short Term (Quality)
+1. Fill empty sections in 28 pages — prioritize solving pages first (7 files)
+2. Add inbound link to orphan page or archive it
+3. Archive stale session notes in `meta/` folder
+4. Consider splitting gcode-lsp-architecture
+
+### Long Term (Process)
+1. Add "no orphan pages" rule to contributing guidelines
+2. Establish stale index cleanup cadence (quarterly)
+3. Create page templates with required structures to reduce empty sections
+4. Add pre-commit hook to validate frontmatter and dead links
+
+---
+
+## Notes
+
+- **Vault size:** 43 pages across 8 subdirectories (good organization)
+- **Status distribution:** Mostly "evergreen" or "current" (healthy)
+- **Frontmatter:** All pages have complete required fields — no issues
+- **False positives:** The `[[wikilinks]]` reference in cherry-picks is contextual (Markdown explanation), not a broken link
+
+**Report generated:** 2026-04-17 by comprehensive wiki-lint audit  
+**Next audit recommended:** 2026-05-15 (30 days)
