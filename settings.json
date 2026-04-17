@@ -25,6 +25,7 @@
     ],
     "defaultMode": "acceptEdits"
   },
+  "model": "opus",
   "hooks": {
     "PostToolUse": [
       {
@@ -75,7 +76,8 @@
     "github@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
-    "worktrunk@worktrunk": true
+    "worktrunk@worktrunk": true,
+    "claude-workflow@claude-workflow": true
   },
   "extraKnownMarketplaces": {
     "claude-hud": {
@@ -95,10 +97,15 @@
         "source": "github",
         "repo": "max-sixty/worktrunk"
       }
+    },
+    "claude-workflow": {
+      "source": {
+        "source": "directory",
+        "path": "/home/michal/Projects/claude-workflow"
+      }
     }
   },
   "effortLevel": "xhigh",
   "voiceEnabled": true,
-  "teammateMode": "tmux",
-  "model": "opus"
+  "teammateMode": "tmux"
 }

@@ -18,6 +18,7 @@ related:
   - "[[server-provider-wiring-patterns]]"
   - "[[visualizer-variable-resolution-pipeline]]"
   - "[[client-side-enumeration-pattern]]"
+  - "[[Structured Parse Error Location]]"
 ---
 
 # G-code LSP Architecture
@@ -394,3 +395,4 @@ Skip TDD for boilerplate (handler registration, thin adapters).
 - [[lsp-file-watcher-linux]] — Reliable file watching on Linux
 - [[server-provider-wiring-patterns]] — Server.ts conventions and DI patterns
 - [[visualizer-variable-resolution-pipeline]] — Variable resolution in visualization
+- [[Structured Parse Error Location]] — Single factory + adapter pattern for parse error locations (1-based → 0-based LSP conversion, visualizer error card)

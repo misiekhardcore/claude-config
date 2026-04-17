@@ -15,6 +15,10 @@ related:
 
 # Operation Log
 
+## [2026-04-17] compound | Structured Parse Error Location (issue #146)
+- Pages created: [[Structured Parse Error Location]]
+- Pages updated: [[G-code LSP Architecture]] (added reference to new errors module), [[hot]]
+
 ## [2026-04-17] compound | Plugin Root Variable in Skills
 - Pages created: [[Plugin Root Variable in Skills]]
 - Pages updated: [[concepts/_index]], [[index]], [[hot]]
