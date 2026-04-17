@@ -11,13 +11,14 @@ related:
   - "[[index]]"
   - "[[hot]]"
   - "[[log]]"
+  - "[[dashboard]]"
   - "[[LLM Wiki Pattern]]"
 sources:
 ---
 
 # Wiki Overview
 
-Navigation: [[index]] | [[hot]] | [[log]]
+Navigation: [[index]] | [[hot]] | [[log]] | [[dashboard]]
 
 ---
 

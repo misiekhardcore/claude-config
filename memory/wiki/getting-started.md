@@ -12,6 +12,8 @@ related:
   - "[[overview]]"
   - "[[LLM Wiki Pattern]]"
   - "[[Wiki vs RAG]]"
+  - "[[Wiki Map]]"
+  - "[[dashboard]]"
 ---
 
 # Getting Started with claude-obsidian
@@ -88,10 +90,12 @@ After 3–5 ingests, the graph starts to look like a real knowledge network. Cro
 
 ## Navigate the Vault
 
+- **[[Wiki Map]]** — visual Fibonacci graph of all wiki pages
 - **[[index]]** — master catalog, all pages by type
 - **[[overview]]** — executive summary of vault contents
 - **[[LLM Wiki Pattern]]** — the pattern this vault is built on
 - **[[Wiki vs RAG]]** — why a wiki beats RAG at human scale
+- **[[dashboard]]** — live Dataview queries (requires Dataview plugin)
 
 ---
 

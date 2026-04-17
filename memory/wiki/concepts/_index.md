@@ -11,6 +11,8 @@ domain: knowledge-management
 status: evergreen
 related:
   - "[[index]]"
+  - "[[dashboard]]"
+  - "[[Wiki Map]]"
   - "[[Hot Cache]]"
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"
