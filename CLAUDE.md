@@ -22,9 +22,23 @@ Pick the lightest path that fits the task:
 ### Canonical example — medium feature
 
 > User: "Add a CSV export button to the reports page."
+>
 > 1. `/discovery` — interview the user, write the issue with acceptance criteria, get explicit approval.
 > 2. `/implement` — `/build` codes against the issue with TDD, `/review` runs specialist reviewers, `/verify` checks each criterion, then PR.
 
 Skill descriptions (loaded with the skills themselves) cover the building blocks: `/describe`, `/specify`, `/architecture`, `/design`, `/build`, `/review`, `/verify`, `/grill-me`, `/wrap-up`, `/prune`, `/compound`.
 
 @plugins-reference.md
+
+## Wiki Knowledge Base
+
+Path: ~/.claude/memory
+
+When you need context not already in this project:
+
+1. Read wiki/hot.md first (recent context cache)
+2. If not enough, read wiki/index.md
+3. If you need domain details, read the relevant domain sub-index
+4. Only then drill into specific wiki pages
+
+Do NOT read the wiki for general coding questions or tasks unrelated to [domain].
