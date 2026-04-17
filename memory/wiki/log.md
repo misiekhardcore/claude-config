@@ -25,6 +25,15 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-17] research | Per-Project Knowledge Management Strategies
+- Type: research
+- Query: How should per-project knowledge be managed in Andrej Karpathy's LLM Wiki / claude-obsidian integration pattern?
+- Sources: 6 web searches covering Karpathy's original pattern, multi-vault Obsidian architecture, and 16+ ecosystem implementations
+- Pages created: [[per-project-knowledge]]
+- Pages updated: [[index]], [[log]], [[hot]]
+- Key finding: Hybrid pattern (shared reusable patterns + per-project isolated knowledge) recommended for multi-project ecosystems; pure centralization works <500 pages with homogeneous domains; per-project isolation ideal for privacy/proprietary work
+- Decision: Hybrid starting point for vscode-gcode-extension (keep shared wiki, add `.claude/wiki/` for project-specific future knowledge)
+
 ## [2026-04-17] save | PR Feedback Resolution + Wiki Migration — vscode-gcode-extension #145
 - Type: session
 - Location: wiki/meta/pr-feedback-resolution-wiki-migration-2026-04-17.md
