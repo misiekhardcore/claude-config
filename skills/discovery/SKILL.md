@@ -50,7 +50,6 @@ Classify the task before dispatching:
    **(a) Problem statement preamble** — `/discovery`-only, not part of the handoff field order. From /describe output: what the user is trying to do, why the current state is inadequate, who is affected. This is the framing the rest of the issue depends on. Subsequent phases do not update this section.
 
    **(b) Handoff block** — the five fields below, in this order, matching `skills/_shared/handoff-artifact.md`. Field order is uniform across all phases so the next session can scan-read it.
-
    - **Title** — concise feature description
    - **Acceptance criteria** — from /specify output, as a numbered list of testable scenarios
    - **Constraints** — explicit in/out scope boundaries, non-negotiable decisions surfaced during discovery
@@ -67,5 +66,5 @@ Classify the task before dispatching:
 - **Require explicit full approval** before creating the issue. Partial feedback is NOT approval.
 - Every feature has at least one issue and at least one PR closing it
 - Epics get sub-issues linked with GitHub issue relationships (parent/child)
-- The user must approve the issue before any implementation begins
-- All interactions should be visual and interactive — show, don't just tell
+- The user must approve the issue
+- See `skills/_shared/interviewing-rules.md` for the questioning protocol — apply it throughout all user interactions.

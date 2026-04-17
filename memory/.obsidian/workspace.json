@@ -4,41 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "477f1cf965ca606e",
+        "id": "8fd682ddb04030c5",
         "type": "tabs",
         "children": [
           {
-            "id": "a31de1b302cdc5cf",
+            "id": "6e0dd838da44636f",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
-            "id": "1ddf905423a8598d",
-            "type": "leaf",
-            "state": {
-              "type": "thino_view",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "thino_view"
-            }
-          },
-          {
-            "id": "61749825e48e4b66",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "ATTRIBUTION.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ATTRIBUTION"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -208,25 +191,31 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "61749825e48e4b66",
+  "active": "6e0dd838da44636f",
   "lastOpenFiles": [
-    "wiki/meta/lint-report-2026-04-17.md.tmp.169478.1776438537047",
-    "wiki/concepts/_index.md.tmp.169478.1776438518973",
-    "wiki/concepts/Obsidian MCP Wiring.md",
-    "wiki/concepts/Obsidian MCP Wiring.md.tmp.169478.1776438505641",
-    "wiki/concepts/TypeScript Typing Patterns.md",
-    "wiki/concepts/TypeScript Typing Patterns.md.tmp.169478.1776438499123",
-    "wiki/overview.md.tmp.169478.1776438490618",
-    "wiki/concepts/cherry-picks.md.tmp.169478.1776438481515",
-    "wiki/concepts/Memex.md.tmp.169478.1776438448592",
-    "wiki/concepts/LLM Wiki Pattern.md.tmp.169478.1776438441803",
-    "wiki/getting-started.md.tmp.169478.1776438403313",
-    "wiki/hot.md.tmp.169478.1776438384094",
-    "wiki/index.md.tmp.169478.1776438361986",
+    "wiki/Wiki Map.canvas",
+    "wiki/log.md.tmp.169478.1776442324392",
+    "wiki/concepts/_index.md.tmp.169478.1776442319976",
+    "wiki/concepts/Wiki Lint False Positives on Non-MD Files.md",
+    "wiki/concepts/Wiki Lint False Positives on Non-MD Files.md.tmp.169478.1776442311999",
     "wiki/sources/llm-wiki-karpathy-gist.md",
     "wiki/entities/qmd.md",
     "wiki/entities/Vannevar Bush.md",
+    "wiki/concepts/TypeScript Typing Patterns.md",
+    "wiki/concepts/Obsidian MCP Wiring.md",
     "wiki/concepts/Memex.md",
+    "wiki/overview.md.tmp.169478.1776439402217",
+    "wiki/getting-started.md.tmp.169478.1776439402141",
+    "wiki/overview.md.tmp.169478.1776439393106",
+    "wiki/concepts/_index.md.tmp.169478.1776439392918",
+    "wiki/canvases/youtube-explainer.canvas",
+    "wiki/overview.md",
+    "wiki/getting-started.md",
+    "wiki/index.md.tmp.169478.1776439125466",
+    "wiki/hot.md.tmp.169478.1776439121626",
+    "wiki/index.md.tmp.169478.1776439121509",
+    "wiki/meta/dashboard.md",
+    "wiki/comparisons/Wiki vs RAG.md",
     "GEMINI.md",
     "wiki/sources/vscode-gcode-extension-architecture.md",
     "wiki/solutions/workspace-symbol-architecture.md",
@@ -241,15 +230,9 @@
     "wiki/meta/pr-feedback-resolution-wiki-migration-2026-04-17.md",
     "wiki/meta/lint-report-2026-04-17.md",
     "wiki/entities/vscode-gcode-extension.md",
-    "wiki/concepts/per-project-knowledge.md",
-    "wiki/concepts/gcode-lsp-architecture.md",
-    "AGENTS.md",
-    "wiki/Wiki Map.canvas",
     "wiki/meta/claude-obsidian-cover.gif",
     "wiki/meta/image-example-wiki-map-view.png",
     "wiki/meta/image-example-graph-view.png",
-    "ATTRIBUTION.md",
-    "wiki/overview.md",
     "Untitled 2.canvas",
     "wiki/meta/claude-obsidian-gif-cover-16x9.gif",
     "wiki/meta/cover.gif",

@@ -45,6 +45,7 @@ A GitHub issue with problem statement and acceptance criteria (from /discovery).
 ## Output
 
 Architecture decisions formatted as issue comments:
+
 - Component diagram showing the overall structure
 - Key interfaces and data flow
 - Sub-issues with GitHub relationships if the work decomposes
@@ -53,11 +54,8 @@ Architecture decisions formatted as issue comments:
 
 ## Rules
 
-- Ask questions one at a time
-- Always recommend an answer for each question
-- If a question can be answered by exploring the codebase, explore it instead of asking
 - Never propose architecture without reading the existing code first
-- Default to producing visuals — architecture without diagrams is just hand-waving
 - Respect existing patterns unless there's a strong reason to deviate
 - Never leave vague placeholders — every section must have concrete decisions or be explicitly marked as needing user input
 - Research agents run first; architecture team builds on their findings
+- See `skills/_shared/interviewing-rules.md` for the questioning protocol — apply it throughout all user interactions.

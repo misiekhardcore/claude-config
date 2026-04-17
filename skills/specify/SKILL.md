@@ -35,8 +35,5 @@ A numbered list of acceptance criteria, each as a testable scenario. These will 
 
 ## Rules
 
-- Ask questions one at a time
-- Always recommend an answer for each question
-- If a question can be answered by exploring the codebase, explore it instead of asking
 - Every criterion must be testable — no vague language ("should be fast", "user-friendly")
-- Default to producing visuals for complex requirement relationships
+- See `skills/_shared/interviewing-rules.md` for the questioning protocol — apply it throughout all user interactions.

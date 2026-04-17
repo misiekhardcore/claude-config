@@ -27,7 +27,7 @@ A GitHub issue number from /discovery (or provided by the user).
 
 4. The architecture specialist goes first. Once technical decisions are approved by the user, the design specialist (if applicable) works within those constraints.
 
-5. **Update the GitHub issue body** with decisions. The body is the handoff artifact — always update it in place, never post handoff state as a comment:
+5. **Update the GitHub issue body** with decisions. The body is the handoff artifact, single source of truth — always update it in place, never post handoff state as a comment:
    - If the body already has a `## /define` section, edit it. If not, append one.
    - Record architecture decisions and design decisions (with visuals) inside that section.
    - Create sub-issues with GitHub relationships if the work decomposes.
@@ -42,6 +42,5 @@ A GitHub issue number from /discovery (or provided by the user).
 
 - **Require explicit full approval** before finalizing. Partial feedback is NOT approval.
 - For complex tasks, spawn a second team to critique the plan before finalizing
-- All interactions should be visual and interactive — diagrams, tables, code structure previews
 - Respect existing codebase patterns unless there's a strong reason to deviate
-- Update the issue body to keep it as the single source of truth
+- See `skills/_shared/interviewing-rules.md` for the questioning protocol — apply it throughout all user interactions.

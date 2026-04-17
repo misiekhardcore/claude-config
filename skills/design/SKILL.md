@@ -30,6 +30,7 @@ A GitHub issue with architecture decisions (from /define).
 ## Output
 
 Design decisions formatted as issue comments:
+
 - Visual mockups or prototypes
 - Component hierarchy
 - Interaction flow diagram
@@ -41,8 +42,5 @@ This skill applies when the task has visual aspects (UI, webview, frontend). Ski
 
 ## Rules
 
-- Ask questions one at a time
-- Always recommend an answer for each question
-- If a question can be answered by exploring the codebase, explore it instead of asking
-- Default to producing visuals — show, don't describe
 - Follow existing design system and component patterns unless explicitly diverging
+- See `skills/_shared/interviewing-rules.md` for the questioning protocol — apply it throughout all user interactions.
