@@ -25,6 +25,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-17] compound | Wiki Lint False Positives on Non-MD Files
+- Pages created: [[Wiki Lint False Positives on Non-MD Files]]
+- Pages updated: [[concepts/_index]]
+- Key insight: wiki-lint checks only .md targets; .canvas and .base files are valid wikilink targets in Obsidian and must not be removed
+
 ## [2026-04-17] research | Per-Project Knowledge Management Strategies
 - Type: research
 - Query: How should per-project knowledge be managed in Andrej Karpathy's LLM Wiki / claude-obsidian integration pattern?

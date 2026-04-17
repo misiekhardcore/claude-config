@@ -61,4 +61,10 @@ All concept pages — ideas, patterns, and frameworks extracted from sources.
 
 ---
 
+## Wiki Maintenance
+
+- [[Wiki Lint False Positives on Non-MD Files]] — lint agent incorrectly flags .canvas/.base links as dead; check all extensions before removing
+
+---
+
 ## Add new concepts here as they are extracted from sources.
