@@ -2,6 +2,7 @@
 type: meta
 title: "Entities Index"
 updated: 2026-04-17
+created: 2026-04-17
 tags:
   - meta
   - index
@@ -10,6 +11,8 @@ status: evergreen
 related:
   - "[[index]]"
   - "[[Andrej Karpathy]]"
+  - "[[Vannevar Bush]]"
+  - "[[qmd]]"
   - "[[hot]]"
   - "[[LLM Wiki Pattern]]"
 ---
@@ -25,6 +28,7 @@ All entity pages — people, organizations, products, and tools.
 ## People
 
 - [[Andrej Karpathy]] — AI researcher, educator; originated the LLM Wiki pattern
+- [[Vannevar Bush]] — engineer who proposed the Memex (1945); intellectual ancestor of the pattern
 
 ---
 
@@ -36,7 +40,7 @@ All entity pages — people, organizations, products, and tools.
 
 ## Products & Tools
 
-<!-- Add tool and product pages here -->
+- [[qmd]] — local hybrid BM25/vector search for markdown files (CLI + MCP); Karpathy's recommended scaling tool
 
 ---
 

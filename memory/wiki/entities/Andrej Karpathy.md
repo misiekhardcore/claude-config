@@ -5,7 +5,7 @@ entity_type: person
 role: "AI researcher, educator, founder"
 first_mentioned: "[[LLM Wiki Pattern]]"
 created: 2026-04-07
-updated: 2026-04-07
+updated: 2026-04-17
 tags:
   - entity
   - person
@@ -14,8 +14,11 @@ status: mature
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"
+  - "[[Memex]]"
+  - "[[Vannevar Bush]]"
   - "[[entities/_index]]"
 sources:
+  - "[[llm-wiki-karpathy-gist]]"
 ---
 
 # Andrej Karpathy
@@ -44,4 +47,6 @@ His framing: "The wiki is a persistent, compounding artifact. The cross-referenc
 
 - [[LLM Wiki Pattern]] — his core contribution to knowledge management
 - [[Compounding Knowledge]] — the central insight he articulated
+- [[Memex]] / [[Vannevar Bush]] — the intellectual lineage he explicitly invokes
+- [[llm-wiki-karpathy-gist]] — the canonical source (2026-04-04, 5,000+ stars)
 - claude-obsidian plugin — this repo is a production implementation of his pattern

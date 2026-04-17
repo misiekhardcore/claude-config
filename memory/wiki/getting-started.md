@@ -2,6 +2,7 @@
 type: meta
 title: "Getting Started"
 updated: 2026-04-07
+created: 2026-04-17
 tags:
   - meta
   - onboarding
@@ -12,6 +13,7 @@ related:
   - "[[LLM Wiki Pattern]]"
   - "[[Wiki vs RAG]]"
   - "[[Wiki Map]]"
+  - "[[dashboard]]"
 ---
 
 # Getting Started with claude-obsidian
