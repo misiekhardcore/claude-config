@@ -10,6 +10,7 @@ status: evergreen
 related:
   - "[[index]]"
   - "[[log]]"
+  - "[[Wiki Map]]"
   - "[[getting-started]]"
   - "[[llm-wiki-karpathy-gist]]"
   - "[[LLM Wiki Pattern]]"
