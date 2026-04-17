@@ -36,4 +36,10 @@ All concept pages — ideas, patterns, and frameworks extracted from sources.
 
 ---
 
+## LSP & Language Tools
+
+- [[gcode-lsp-architecture]] — Strict five-layer Lexer → Parser → AST → Services → Adapters pipeline; visitor/factory/strategy patterns
+
+---
+
 ## Add new concepts here as they are extracted from sources.

@@ -25,6 +25,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-17] save | PR Feedback Resolution + Wiki Migration — vscode-gcode-extension #145
+- Type: session
+- Location: wiki/meta/pr-feedback-resolution-wiki-migration-2026-04-17.md
+- From: resolved 10 Copilot threads on PR #145 (parallel agents), migrated solution docs to wiki, discovered GraphQL is required to resolve threads (REST cannot)
+
 ## [2026-04-17] ingest | vscode-gcode-extension solution docs
 - Source: `.claude/docs/solutions/` (7 files from vscode-gcode-extension project)
 - Pages created: [[fs-readdir-dirent-typing]], [[interface-extraction-import-type]], [[variable-formatting-utilities]], [[workspace-symbol-architecture]], [[lsp-file-watcher-linux]], [[server-provider-wiring-patterns]], [[visualizer-variable-resolution-pipeline]], [[vscode-gcode-extension]]

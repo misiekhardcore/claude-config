@@ -22,6 +22,12 @@ All source pages — summaries of ingested documents, transcripts, articles, and
 
 ---
 
+## Architecture & Design
+
+- [[vscode-gcode-extension-architecture]] — 2026-04-17 | Codebase documentation | Five-layer LSP architecture, design patterns, dialect system, engineering rules
+
+---
+
 ## Transcripts
 
 

@@ -19,6 +19,8 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+2026-04-17: Ingested vscode-gcode-extension full architecture into wiki. Created [[gcode-lsp-architecture]] concept page, updated [[vscode-gcode-extension]] entity with full architecture details, created [[vscode-gcode-extension-architecture]] source summary.
+2026-04-17: Resolved 10 Copilot threads on PR #145 (parallel agents, commits 39e340a + 1cc5974), migrated solution docs to wiki/solutions/, discovered GraphQL is required to resolve threads (REST cannot). Session note: [[pr-feedback-resolution-wiki-migration-2026-04-17]].
 2026-04-17: Ingested 7 vscode-gcode-extension solution docs into wiki/solutions/
 2026-04-08: v1.4.1 hotfix shipped, plugin confirmed installed and enabled
 
