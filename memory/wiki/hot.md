@@ -21,11 +21,10 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+2026-04-17: **Autonomous research loop on Claude Code skills/slash commands creation.** Searched official Anthropic docs (code.claude.com/docs/en/slash-commands), reviewed installed skill-creator plugin (31KB SKILL.md), examined sample skills (brainstorming, verification-before-completion). Created 5 wiki pages: [[claude-skill-anatomy]] (file structure, directory locations, progressive disclosure), [[skill-invocation-model]] (manual vs. automatic triggering, description field mechanics, undertriggering bias), [[skill-creation-patterns]] (13 best practices: pushy descriptions, progressive disclosure, explain the why, bundle repeated work, etc.), [[skill-frontmatter-reference]] (complete YAML field reference), [[skill-creator-plugin]] (official plugin for interactive skill creation/evaluation). Key findings: Frontmatter fields are `name`, `description` (recommended), `disable-model-invocation`, `user-invocable`, `allowed-tools`, `context`, `agent`, `effort`, `model`, `paths`. Skill descriptions are the sole mechanism driving automatic invocation — must be explicit about trigger phrases and contexts. Claude tends to undertrigger; combat with "pushy" descriptions listing specific use cases. Skills follow Agent Skills open standard extended with Claude-specific lifecycle features.
+
 2026-04-17: Researched per-project knowledge management in LLM Wiki ecosystems. Created [[per-project-knowledge]] concept page analyzing three options (centralized, per-project, hybrid). Recommendation: hybrid pattern (shared reusable patterns in `~/Projects/claude-config/memory/wiki/`, project-specific knowledge in `.claude/wiki/` per repo) balances network effects with isolation. Implementation: keep current shared wiki structure, prepare for per-project vaults as projects grow.
 2026-04-17: Ingested vscode-gcode-extension full architecture into wiki. Created [[gcode-lsp-architecture]] concept page, updated [[vscode-gcode-extension]] entity with full architecture details, created [[vscode-gcode-extension-architecture]] source summary.
-2026-04-17: Resolved 10 Copilot threads on PR #145 (parallel agents, commits 39e340a + 1cc5974), migrated solution docs to wiki/solutions/, discovered GraphQL is required to resolve threads (REST cannot). Session note: [[pr-feedback-resolution-wiki-migration-2026-04-17]].
-2026-04-17: Ingested 7 vscode-gcode-extension solution docs into wiki/solutions/
-2026-04-17: Ingested Karpathy's canonical LLM Wiki gist ([[llm-wiki-karpathy-gist]]). Added [[Memex]]/[[Vannevar Bush]] as the historical lineage, [[qmd]] as the recommended scaling-search tool. Refreshed [[LLM Wiki Pattern]] concept page with a Tools & Extensions section.
 2026-04-08: v1.4.1 hotfix shipped, plugin confirmed installed and enabled
 
 ## Last Ingest
@@ -57,7 +56,7 @@ There is no `claude plugin install github:owner/repo` shortcut. Both steps are r
 
 ## Key Lessons (Recent)
 1. Plugin install is always two-step: `marketplace add` then `install plugin@marketplace`
-2. `allowed-tools` is NOT valid in skill frontmatter. Use only `name` and `description` (kepano convention).
+2. `allowed-tools` is NOT valid in **Obsidian/kepano** skill frontmatter (only `name` + `description`). For **Claude Code** CLI skills, the full frontmatter spec applies: `name`, `description`, `allowed-tools`, `model`, `effort`, `context`, `agent`, `hooks`, etc.
 3. Obsidian Bases uses `filters/views/formulas`, not Dataview `from/where`
 4. Canvas edges have asymmetric defaults: `fromEnd="none"`, `toEnd="arrow"`
 5. Hook-injected context does not survive compaction. PostCompact hook is required to restore hot cache.

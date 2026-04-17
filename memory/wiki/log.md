@@ -25,6 +25,16 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-17] research | Claude Code Skills Creation Patterns
+- Type: autonomous research loop
+- Query: How are Claude Code skills / slash commands created and structured? Authoritative sources, patterns, conventions.
+- Sources: 3 search rounds covering official Anthropic docs (code.claude.com), installed skill-creator plugin (31KB), sample skills from ecosystem
+- Pages created: [[claude-skill-anatomy]], [[skill-invocation-model]], [[skill-creation-patterns]], [[skill-frontmatter-reference]], [[skill-creator-plugin]]
+- Pages updated: [[index]], [[hot]]
+- Confidence: High (official Anthropic docs + official skill-creator plugin)
+- Key findings: Frontmatter is YAML with `name`, `description` (recommended), `disable-model-invocation`, `user-invocable`, `allowed-tools`, `context`, `agent`, `effort`, `model`, `paths` fields. Descriptions are the sole invocation trigger — must list specific use cases. Claude undertriggers; make descriptions "pushy". Skills follow Agent Skills standard + Claude extensions. skill-creator plugin provides interactive draft → test → improve → optimize loop with eval viewer and benchmark automation.
+- Open questions: None; full coverage of creation patterns, anatomy, invocation model, frontmatter reference, and tool.
+
 ## [2026-04-17] compound | Wiki Lint False Positives on Non-MD Files
 - Pages created: [[Wiki Lint False Positives on Non-MD Files]]
 - Pages updated: [[concepts/_index]]
