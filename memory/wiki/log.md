@@ -15,6 +15,20 @@ related:
 
 # Operation Log
 
+## [2026-04-19] autoresearch | allowed-tools best practice for multi-agent workflow plugins
+- Rounds: 2 | Searches: 4 | Fetches: 3
+- Sources found: 2 official (code.claude.com/skills, platform.claude.com best-practices) + anthropics/skills repo confirmation
+- Pages created: [[allowed-tools-semantics]], [[skill-vs-subagent-tool-fields]], [[allowed-tools-for-multi-agent-plugins]], [[agent-skills-best-practices-anthropic]]
+- Synthesis: [[Research: allowed-tools best practice for multi-agent workflow plugins]]
+- Pages updated: [[index]], [[hot]]
+- Key finding: `allowed-tools` in SKILL.md pre-approves (not restricts); omit by default for orchestrator/specialist skills; declare only for side-effect skills paired with `disable-model-invocation: true`. claude-workflow's existing 17 skills correctly omit it, but `_templates/AUTHORING.md` describes the field incorrectly as "restricts" — fix needed.
+
+## [2026-04-19] compound | AskUserQuestion in Skill Interviews
+- Pages created: [[AskUserQuestion-in-skill-interviews]]
+- Pages updated: [[index]], [[hot]]
+- From: applying `AskUserQuestion` tool to `/new-skill` and `/grill-me` skill Q&A flows
+- Key insights: bounded choices (2-4 options) → AskUserQuestion with header/options/multiSelect; free-text → plain prompt; "Other" auto-added; recommended option first with ` (Recommended)`; 4-option limit means multi-protocol selection splits into two sequential calls; multi-question calls only for independent questions
+
 ## [2026-04-19] compound | claude-workflow Composition Codification (issue #13, PR #14)
 - Pages created: [[claude-workflow-composition-codification]]
 - Pages updated: [[Research: Multiskill Workflow Structure in claude-workflow]] (closed G1 and G2 open questions), [[index]], [[hot]]

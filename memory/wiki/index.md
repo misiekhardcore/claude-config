@@ -27,7 +27,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-19 | Total pages: 71 | Sources ingested: 16
+Last updated: 2026-04-19 | Total pages: 77 | Sources ingested: 17
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -57,6 +57,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[hierarchical-agent-decomposition]] — Parent → feature leads → specialists; TeamCreate unlocks nested teams (status: current)
 - [[claude-workflow-phase-shape]] — Applied synthesis: discovery/define/implement phase shape in the claude-workflow plugin (status: current)
 - [[claude-workflow-composition-codification]] — Codifying wiki standards into a plugin; template-split strategy; scaffolder question ordering (status: current)
+- [[AskUserQuestion-in-skill-interviews]] — AskUserQuestion tool for bounded-choice Q&A in skill interviews; plain prompts for free-text; multiSelect for non-exclusive options (status: current)
+- [[allowed-tools-semantics]] — `allowed-tools` pre-approves, does not restrict; SDK ignores the frontmatter; use deny rules or subagent `tools:` for real restriction (status: current)
+- [[skill-vs-subagent-tool-fields]] — Skill `allowed-tools` (pre-approve) vs subagent `tools` (restrict) — same-looking fields, opposite semantics (status: current)
+- [[allowed-tools-for-multi-agent-plugins]] — Role-based best practice for claude-workflow and similar plugins; default is omission; declare only for side-effect skills (status: current)
 
 ---
 
@@ -114,6 +118,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Addy Osmani Code Agent Orchestra]] — 2026-04-19 | Addy Osmani blog 2026 | Princeton NLP 64% finding; hierarchical decomposition; domain ownership
 - [[ClaudeFast Agent Teams Guide]] — 2026-04-19 | ClaudeFast 2026 | Subagents + TeamCreate; CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS; file-based handoff
 - [[Superpowers GitHub]] — 2026-04-19 | obra/superpowers 2025-10 | Primary source for Superpowers framework
+- [[agent-skills-best-practices-anthropic]] — 2026-04-19 | platform.claude.com official docs | Skill authoring best practices; concision, progressive disclosure, evaluation-driven development
 
 ---
 
@@ -122,6 +127,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[How does the LLM Wiki pattern work]] — how the pattern works and why it outperforms RAG at human scale (status: developing)
 - [[Research VS Code Webview Testing and Screenshots]] — Synthesis: 3 frameworks, 9 deltas from raw plan, gotchas for vscode-gcode-extension (status: developing)
 - [[Research: Multiskill Workflow Structure in claude-workflow]] — Synthesis: how claude-workflow composes skills (phase-level sub-skills, seed briefs, two-level team hierarchy, artifact handoff) (status: developing)
+- [[Research: allowed-tools best practice for multi-agent workflow plugins]] — Synthesis: omit `allowed-tools` by default; pre-approve (not restrict); declare only for side-effect skills; fix claude-workflow AUTHORING.md (status: developing)
 
 ---
 
