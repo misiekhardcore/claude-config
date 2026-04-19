@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Hot Cache"
-updated: 2026-04-18T00:00:00
+updated: 2026-04-19T00:00:00
 created: 2026-04-17
 tags:
   - meta
@@ -21,6 +21,8 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+2026-04-19: **VS Code Webview Testing and Screenshots** (autoresearch for vscode-gcode-extension docs pipeline). User has a raw plan at `~/Downloads/vscode-webview-testing.md` proposing `wdio-vscode-service` for screenshot automation. Research validates that choice and surfaces 9 refinements: (1) pin exact `browserVersion` not `'stable'` — minor VS Code updates shift chrome; (2) Xvfb default is 1280×1024 — use `--server-args='-screen 0 1920x1080x24'`; (3) add D-Bus session + `disable-hardware-acceleration` in `argv.json` to preempt `ubuntu-latest` GPU/bus errors; (4) Welcome page is itself a webview — close all editors before `getAllWebviews()` or first hit binds to Welcome; (5) pin `editor.fontFamily` and install font as CI asset; (6) cache `.vscode-test` via `actions/cache@v4`; (7) for webview-only (chrome-free) shots, render webview HTML in plain Playwright via chained `frameLocator('iframe.webview').frameLocator('iframe[name="active-frame"]')` — cleaner than switching context inside wdio; (8) Electron has no true headless mode on Linux, Xvfb is mandatory; (9) WebGL (Three.js visualizer) may blank under Xvfb software GL — use `--use-gl=swiftshader` or render the webview in plain Playwright. See [[Research VS Code Webview Testing and Screenshots]].
+
 2026-04-18: **Progress Reporting Two-Role Model** (issue #139, PR #150). Two distinct roles exist for progress code: **orchestrator** (`ProgressReporter` -- stateful begin/report/done, owns the UI spinner) vs. **producer** (`ExtractorProgressCallback` -- stateless per-event callback from a hot loop). Producers must NOT implement `ProgressReporter` (fake begin/done). `LspBoundProgressReporter` extends the generic interface with `token` only for the one caller that forwards it (no interface widening). Intra-phase throttle: `Date.now()` per segment, 100ms wall-clock gate, segment-count message, no percentage (total unknown). CI test-determinism: freeze `Date.now()` with `mockReturnValue` rather than real timers. See [[server-provider-wiring-patterns]] (updated with full progress section).
 
 2026-04-18: **Multi-Root Workspace Per-Folder Config** (issue #141, PR #149). Three patterns: (1) `vscode.workspace.getConfiguration(undefined, scope)` with folder URI for per-folder reads; (2) `vscode.RelativePattern` + folder-scoped excludes so `findFiles` applies per-folder ignore rules; (3) **longest-prefix matching** (not first-match) when resolving which root owns a file — critical for nested/overlapping roots. Supersedes the "Known Limits: single dialect per scan" entry on [[workspace-symbol-architecture]]. E2E coverage via `src/e2e/fixtures-multiroot/` (folder-a fanuc, folder-b linuxcnc). See [[multi-root-workspace-per-folder-config]].

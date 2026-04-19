@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-04-17
+updated: 2026-04-19
 tags:
   - meta
   - log
@@ -14,6 +14,14 @@ related:
 ---
 
 # Operation Log
+
+## [2026-04-19] autoresearch | VS Code Webview Testing and Screenshots
+- Rounds: 2 | Searches: 8 | Pages created: 10
+- Sources: [[wdio-vscode-service-docs]], [[vscode-extension-tester-extester]], [[vscode-test-electron-cli]], [[playwright-electron-vscode-testing]], [[hakanson-vscode-actions-xvfb]]
+- Concepts: [[VS Code Webview Testing]], [[FrameLocator Chaining for Nested Iframes]], [[Electron Headless via Xvfb]], [[VS Code Screenshot Determinism]]
+- Entities: [[wdio-vscode-service]], [[vscode-extension-tester]], [[@vscode/test-electron]], [[Playwright]]
+- Synthesis: [[Research VS Code Webview Testing and Screenshots]]
+- Key finding: Raw plan's wdio-vscode-service choice is correct; 9 refinements identified (pin VS Code version, close Welcome editor, fix Xvfb resolution, add D-Bus/GPU workarounds, pin fontFamily, cache .vscode-test, use Playwright for webview-only shots, handle WebGL-in-Xvfb blank-canvas risk).
 
 ## [2026-04-18] compound | Progress Reporting Two-Role Model (issue #139, PR #150)
 - Pages updated: [[server-provider-wiring-patterns]] (added orchestrator-vs-producer section, LspBoundProgressReporter narrowing, title convention, intra-phase throttling pattern, test-determinism technique), [[hot]]

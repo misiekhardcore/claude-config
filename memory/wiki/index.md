@@ -27,7 +27,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-18 | Total pages: 46 | Sources ingested: 5
+Last updated: 2026-04-19 | Total pages: 58 | Sources ingested: 10
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -47,6 +47,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[skill-invocation-model]] — How Claude Code skills are triggered: user manual invocation vs. automatic Claude invocation (status: evergreen)
 - [[skill-creation-patterns]] — 13 patterns and best practices for writing effective, discoverable, maintainable skills (status: evergreen)
 - [[skill-frontmatter-reference]] — Complete reference for all valid YAML frontmatter fields in skills (status: evergreen)
+- [[VS Code Webview Testing]] — Three frameworks, nested-iframe structure, test pattern for vscode-gcode-extension (status: current)
+- [[FrameLocator Chaining for Nested Iframes]] — Playwright pattern for reaching nested iframes like VS Code webviews (status: current)
+- [[Electron Headless via Xvfb]] — Why Electron has no real headless mode and the xvfb-run recipe (status: current)
+- [[VS Code Screenshot Determinism]] — Five axes to pin for reproducible docs screenshots (status: current)
 
 ---
 
@@ -65,6 +69,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Claudian-YishenTu]] — native Obsidian plugin embedding Claude Code; plan mode, @mention (status: current)
 - [[vscode-gcode-extension]] — VSCode LSP extension for G-code, 4-dialect CNC support, 3D visualizer (status: current)
 - [[skill-creator-plugin]] — Official Anthropic plugin for interactive skill creation, testing, evaluation, and optimization (status: evergreen)
+- [[wdio-vscode-service]] — WebdriverIO service for VS Code extension E2E testing with workbench page objects (status: current)
+- [[vscode-extension-tester]] — Red Hat's Selenium-based VS Code extension UI tester (ExTester) (status: current)
+- [[@vscode/test-electron]] — Microsoft's official low-level test runner + @vscode/test-cli config wrapper (status: current)
+- [[Playwright]] — Microsoft browser automation; drives Electron for VS Code + cleaner webview-only shots (status: current)
 
 ---
 
@@ -87,12 +95,18 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[claude-obsidian-ecosystem-research]] — 2026-04-08 | web research across 16+ repos | 8 wiki pages created
 - [[vscode-gcode-extension-architecture]] — 2026-04-17 | codebase docs (CLAUDE.md, AGENTS.md, package.json) | architecture, patterns, rules
 - [[claude-code-skills-official-docs]] — 2026-04-17 | Anthropic official documentation (code.claude.com) | skill anatomy, invocation, frontmatter
+- [[wdio-vscode-service-docs]] — 2026-04-19 | WebdriverIO official docs + TypeDoc | WebView API, executeWorkbench, capabilities config
+- [[vscode-extension-tester-extester]] — 2026-04-19 | Red Hat ExTester repo + wiki | Welcome-page gotcha, WebView page object, v8.23
+- [[vscode-test-electron-cli]] — 2026-04-19 | Microsoft official | test-electron vs test-cli, config file, version pairing
+- [[playwright-electron-vscode-testing]] — 2026-04-19 | Broadcom Medium + Playwright docs | _electron launch, frameLocator chain, no-headless
+- [[hakanson-vscode-actions-xvfb]] — 2026-04-19 | Kevin Hakanson blog 2024 + dev.to 2025 | D-Bus fix, cache .vscode-test, argv.json
 
 ---
 
 ## Questions
 
 - [[How does the LLM Wiki pattern work]] — how the pattern works and why it outperforms RAG at human scale (status: developing)
+- [[Research VS Code Webview Testing and Screenshots]] — Synthesis: 3 frameworks, 9 deltas from raw plan, gotchas for vscode-gcode-extension (status: developing)
 
 ---
 
