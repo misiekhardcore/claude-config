@@ -15,6 +15,22 @@ related:
 
 # Operation Log
 
+## [2026-04-19] compound | claude-workflow Composition Codification (issue #13, PR #14)
+- Pages created: [[claude-workflow-composition-codification]]
+- Pages updated: [[Research: Multiskill Workflow Structure in claude-workflow]] (closed G1 and G2 open questions), [[index]], [[hot]]
+- From: `claude-workflow:implement 13` — codifying multi-skill composition standards in the plugin
+- Key insights: (1) when wiki standards are not in the repo, add a shared reference file (`_shared/composition.md`) — documentation-only fix; (2) split role-specific templates (orchestrator/specialist/primitive) to eliminate conditional logic in scaffolders; (3) scaffolder question dependency invariant: Description before Role so Role can recommend based on description; (4) `_shared/composition.md` is now canonical for seed-brief field names (supersedes wiki page prose)
+- Staleness flag: [[seed-brief-pattern]] field names differ from composition.md — update when next editing that page
+
+## [2026-04-19] autoresearch | Multiskill Workflow Structure in claude-workflow
+- Rounds: 1 | Searches: 4 + 2 fetches | Pages created: 12
+- Sources: [[MindStudio Skill Collaboration Pattern]], [[Beam Multi-Agent Orchestration Patterns]], [[Microsoft Agent Framework Handoff Workflows]], [[Addy Osmani Code Agent Orchestra]], [[ClaudeFast Agent Teams Guide]], [[Superpowers GitHub]]
+- Concepts: [[multiskill-workflow-patterns]], [[agent-handoff-artifact-pattern]], [[seed-brief-pattern]], [[hierarchical-agent-decomposition]], [[claude-workflow-phase-shape]]
+- Entities: [[Superpowers Plugin]], [[Microsoft Agent Framework]]
+- Synthesis: [[Research: Multiskill Workflow Structure in claude-workflow]]
+- Key finding: claude-workflow's structure aligns with the 2026 multi-agent consensus — durable artifact handoff between phases (GitHub issue body), seed briefs within phases (research team → specialists), two-level team hierarchy via TeamCreate, single-agent default (Princeton NLP: single agent beats multi on 64% of tasks). The recent Prior-Art Scout hoisting in `/discovery` matches the seed-brief pattern already used in `/define → /architecture`.
+- Open questions: TeamCreate env-var gating (`CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`) not documented in README; other specialist skills (`/architecture`, `/design`, `/specify`) lack explicit `## Input` sections for seed briefs.
+
 ## [2026-04-19] autoresearch | VS Code Webview Testing and Screenshots
 - Rounds: 2 | Searches: 8 | Pages created: 10
 - Sources: [[wdio-vscode-service-docs]], [[vscode-extension-tester-extester]], [[vscode-test-electron-cli]], [[playwright-electron-vscode-testing]], [[hakanson-vscode-actions-xvfb]]

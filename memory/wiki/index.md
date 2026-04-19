@@ -27,7 +27,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-19 | Total pages: 58 | Sources ingested: 10
+Last updated: 2026-04-19 | Total pages: 71 | Sources ingested: 16
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -51,6 +51,12 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[FrameLocator Chaining for Nested Iframes]] — Playwright pattern for reaching nested iframes like VS Code webviews (status: current)
 - [[Electron Headless via Xvfb]] — Why Electron has no real headless mode and the xvfb-run recipe (status: current)
 - [[VS Code Screenshot Determinism]] — Five axes to pin for reproducible docs screenshots (status: current)
+- [[multiskill-workflow-patterns]] — Four composition shapes (linear, branch, loop, parallel) + Claude-as-orchestrator default (status: current)
+- [[agent-handoff-artifact-pattern]] — Durable file/issue-body artifact between phases; fresh session per phase; two-store model (status: current)
+- [[seed-brief-pattern]] — Upstream research brief seeds downstream specialists; skip-own-research contract (status: current)
+- [[hierarchical-agent-decomposition]] — Parent → feature leads → specialists; TeamCreate unlocks nested teams (status: current)
+- [[claude-workflow-phase-shape]] — Applied synthesis: discovery/define/implement phase shape in the claude-workflow plugin (status: current)
+- [[claude-workflow-composition-codification]] — Codifying wiki standards into a plugin; template-split strategy; scaffolder question ordering (status: current)
 
 ---
 
@@ -73,6 +79,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[vscode-extension-tester]] — Red Hat's Selenium-based VS Code extension UI tester (ExTester) (status: current)
 - [[@vscode/test-electron]] — Microsoft's official low-level test runner + @vscode/test-cli config wrapper (status: current)
 - [[Playwright]] — Microsoft browser automation; drives Electron for VS Code + cleaner webview-only shots (status: current)
+- [[Superpowers Plugin]] — Jesse Vincent's (obra) agentic skills framework; structured dev methodology with TDD gates (status: current)
+- [[Microsoft Agent Framework]] — Microsoft's multi-agent orchestration framework; Handoff pattern with typed routing edges (status: current)
 
 ---
 
@@ -100,6 +108,12 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[vscode-test-electron-cli]] — 2026-04-19 | Microsoft official | test-electron vs test-cli, config file, version pairing
 - [[playwright-electron-vscode-testing]] — 2026-04-19 | Broadcom Medium + Playwright docs | _electron launch, frameLocator chain, no-headless
 - [[hakanson-vscode-actions-xvfb]] — 2026-04-19 | Kevin Hakanson blog 2024 + dev.to 2025 | D-Bus fix, cache .vscode-test, argv.json
+- [[MindStudio Skill Collaboration Pattern]] — 2026-04-19 | MindStudio blog 2026-03 | Claude-as-orchestrator; four-pattern taxonomy; sub-skill caveats
+- [[Beam Multi-Agent Orchestration Patterns]] — 2026-04-19 | Beam.ai 2026 | Six patterns; infinite-handoff failure mode; framework comparison
+- [[Microsoft Agent Framework Handoff Workflows]] — 2026-04-19 | Microsoft Learn 2026 | Official Handoff orchestration docs; HandoffBuilder; typed edges
+- [[Addy Osmani Code Agent Orchestra]] — 2026-04-19 | Addy Osmani blog 2026 | Princeton NLP 64% finding; hierarchical decomposition; domain ownership
+- [[ClaudeFast Agent Teams Guide]] — 2026-04-19 | ClaudeFast 2026 | Subagents + TeamCreate; CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS; file-based handoff
+- [[Superpowers GitHub]] — 2026-04-19 | obra/superpowers 2025-10 | Primary source for Superpowers framework
 
 ---
 
@@ -107,6 +121,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 
 - [[How does the LLM Wiki pattern work]] — how the pattern works and why it outperforms RAG at human scale (status: developing)
 - [[Research VS Code Webview Testing and Screenshots]] — Synthesis: 3 frameworks, 9 deltas from raw plan, gotchas for vscode-gcode-extension (status: developing)
+- [[Research: Multiskill Workflow Structure in claude-workflow]] — Synthesis: how claude-workflow composes skills (phase-level sub-skills, seed briefs, two-level team hierarchy, artifact handoff) (status: developing)
 
 ---
 
