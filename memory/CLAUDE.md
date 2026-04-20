@@ -69,7 +69,7 @@ See `skills/wiki/references/mcp-setup.md` for setup instructions.
 
 This section defines what belongs where so every session makes the same structural decisions.
 
-### Entity Types
+### Page Types
 
 | Directory | Type value | What goes here | Naming convention |
 |-----------|-----------|----------------|-------------------|
@@ -111,10 +111,10 @@ domain: <domain>      # e.g. knowledge-management, testing, llm, tooling
 complexity: beginner | intermediate | advanced
 ```
 
-Source pages also include:
+Concept and entity pages also include:
 ```yaml
 sources:
-  - "[[source-slug]]"
+  - "[[source-slug]]"   # which source(s) this page was derived from
 ```
 
 ---
@@ -224,7 +224,7 @@ Every ingest, autoresearch, save, or significant update session writes one log e
 | Date | Yes | ISO 8601: `YYYY-MM-DD` |
 | Operation | Yes | `ingest` / `autoresearch` / `compound` / `save` / `query` / `lint` |
 | Description | Yes | Short phrase identifying the source or topic |
-| Key metrics | Conditional | For autoresearch: `Rounds: N \| Searches: N \| Fetches: N`. For ingest: `Pages created: N`. Omit for save/compound. |
+| Key metrics | Conditional | For autoresearch: `Rounds: N \| Searches: N \| Fetches: N`. For ingest: `Sources ingested: N`. Omit for save/compound. |
 | Trigger | Yes | What command or user action started the session |
 | Pages created | Yes | All new pages; use `[[WikiLinks]]`; write "none" if zero |
 | Pages updated | Yes | All modified existing pages; use `[[WikiLinks]]`; write "none" if zero |
@@ -235,7 +235,7 @@ Every ingest, autoresearch, save, or significant update session writes one log e
 
 ```markdown
 ## [2026-04-20] ingest | Karpathy LLM Wiki gist
-- Pages created: 1
+- Sources ingested: 1
 - Trigger: user ran `ingest llm-wiki-karpathy-gist.md`
 - Pages created: [[llm-wiki-karpathy-gist]], [[LLM Wiki Pattern]], [[Andrej Karpathy]]
 - Pages updated: [[index]], [[hot]], [[log]]
