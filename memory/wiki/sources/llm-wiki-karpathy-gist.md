@@ -85,7 +85,7 @@ The gist drew a mix of enthusiastic implementations and substantive critique:
 
 This source is the upstream origin of the pattern this vault embodies. No contradictions with existing pages — the gist is *less* prescriptive about directory structure than this vault's `memory/WIKI.md`, which is expected: the gist says "everything mentioned is optional and modular."
 
-One clarification the gist makes that wasn't explicit here: the LLM should **discuss takeaways with the user** during ingest ("What should I emphasize? How granular?") unless the user says "just ingest it." That matches the [[wiki-ingest]] skill's single-source flow step 2.
+One clarification the gist makes that wasn't explicit here: the LLM should **discuss takeaways with the user** during ingest ("What should I emphasize? How granular?") unless the user says "just ingest it." That matches the `wiki-ingest` skill's single-source flow step 2.
 
 ## Raw File
 

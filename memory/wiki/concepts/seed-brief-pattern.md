@@ -4,6 +4,7 @@ description: An upstream research team produces a structured brief that seeds do
 type: concept
 tags: [claude-code, skills, orchestration, claude-workflow]
 status: current
+updated: 2026-04-19
 created: 2026-04-19
 updated: 2026-04-20
 confidence: INFERRED
@@ -62,9 +63,12 @@ Parallel pattern at the discovery phase: a Prior-Art Scout runs at the discovery
 For the seed-brief contract to work:
 
 1. **The specialist skill must have a documented `## Input` section** describing what a brief looks like and how to incorporate it.
-2. **The brief must have a known shape** — fields, ordering, vocabulary. For claude-workflow:
-   - Research brief: `Technology stack`, `Module structure`, `Related implementations`, `Naming conventions`, `Existing patterns`, `Prior decisions`, `External references`.
-   - Prior-art brief: `Prior decisions`, `Prior attempts and outcomes`, `Related open/closed issues`, `Relevant patterns`.
+2. **The brief must have a known shape** — fields, ordering, vocabulary. The authoritative field contracts live in `_shared/composition.md` (claude-workflow plugin):
+   - Research brief: `tech_stack`, `module_map`, `patterns`, `prior_art`, `open_questions`.
+   - Prior-art brief: `problem_domain`, `existing_patterns`, `constraints`.
+   - Fix brief: `failing_ac`, `findings`, `prior_decisions`.
+
+   Older prose in this page used field names inherited from the `/define` SKILL.md exemplar (`Technology stack`, `Module structure`, etc.); `_shared/composition.md` is now canonical.
 3. **The orchestrating skill must document that it passes the brief** — e.g., "seeded with research output".
 
 Without these three, the specialist can't tell whether a brief is present or what to do with it.

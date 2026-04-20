@@ -4,6 +4,7 @@ description: Patterns and best practices for writing effective Claude Code skill
 type: concept
 tags: [claude-code, skills]
 status: evergreen
+updated: 2026-04-19
 created: 2026-04-17
 updated: 2026-04-20
 confidence: INFERRED

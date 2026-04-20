@@ -23,7 +23,7 @@ related:
   - "[[@vscode/test-electron]]"
   - "[[Playwright]]"
   - "[[vscode-gcode-extension]]"
-  - "[[Research: VS Code Webview Testing and Screenshots]]"
+  - "[[Research VS Code Webview Testing and Screenshots]]"
 sources:
   - "[[wdio-vscode-service-docs]]"
   - "[[vscode-extension-tester-extester]]"

@@ -1,6 +1,8 @@
 ---
 type: concept
 title: "G-code LSP Architecture"
+aliases:
+  - "G-code LSP Architecture"
 domain: lsp-architecture
 created: 2026-04-17
 updated: 2026-04-20
@@ -86,12 +88,14 @@ Each layer has a single responsibility and may only depend on the layer directly
 **Responsibility**: Tokenize G-code source into a stream of LexerToken objects.
 
 **Key components**:
+
 - `GCodeScanner` — Hand-written character scanner with lookahead and state tracking
 - `LexerFactory.create(dialect)` — Dialect-aware scanner factory
 - `TokenCategory` enum — Token types (Keyword, Number, Axis, Comment, etc.)
 - `KeywordType` enum — Specific keyword classification (MotionCommand, FlowControl, etc.)
 
 **Constraints**:
+
 - No parsing logic (e.g., no tree building)
 - No VS Code dependencies
 - Case-insensitive keyword matching
@@ -104,6 +108,7 @@ Each layer has a single responsibility and may only depend on the layer directly
 **Responsibility**: Consume token stream, build an immutable Abstract Syntax Tree (AST).
 
 **Key components**:
+
 - `BaseParser` — Abstract base with shared parsing logic (recovery, error handling)
 - `LinuxCNCParser`, `FanucParser`, `HaasParser`, `SiemensParser` — Dialect subclasses
 - `ParserFactory.create(dialect)` — Selects dialect parser
@@ -111,6 +116,7 @@ Each layer has a single responsibility and may only depend on the layer directly
 - `AstTraverser` — Walks AST tree and dispatches to a visitor
 
 **Constraints**:
+
 - No formatting logic in parser
 - No semantic analysis (scoping, type checking) — that's services' job
 - All AST nodes immutable after creation
@@ -123,6 +129,7 @@ Each layer has a single responsibility and may only depend on the layer directly
 **Responsibility**: Pure domain representation of G-code syntax.
 
 **Key node types**:
+
 - `ProgramNode` — Root node, contains all statements
 - `StatementNode` — Abstract base for all statement types
 - `MotionCommandNode` — G0, G1, G2, G3 motion commands
@@ -133,6 +140,7 @@ Each layer has a single responsibility and may only depend on the layer directly
 - `ErrorNode` — Parse error recovery; contains offset and expected tokens
 
 **Constraints**:
+
 - All properties `readonly`
 - No formatting, traversal, or VS Code logic
 - No mutation after creation
@@ -140,6 +148,7 @@ Each layer has a single responsibility and may only depend on the layer directly
 - Serializable for testing and debugging
 
 **Patterns**:
+
 - Composite pattern (ProgramNode → StatementNode → child nodes)
 - Visitor pattern support (each node accepts a visitor)
 
@@ -150,22 +159,26 @@ Each layer has a single responsibility and may only depend on the layer directly
 **Key service types**:
 
 #### Formatter (`src/formatter/`)
+
 - `BaseFormatter` — Extends `BaseAstVisitor<void>`, visitor pattern for traversal
 - `LinuxCNCFormatter`, `FanucFormatter`, `HaasFormatter`, `SiemensFormatter` — Dialect formatters
 - `FormatterFactory.create(dialect)` — Factory for dialect selection
 - `ExpressionFormatter` — Expression pretty-printing
 
 #### Databases (`src/databases/`)
+
 - `CommandDatabase` — G/M-code reference data per dialect
 - `FunctionDatabase` — Built-in functions (SIN, COS, etc.)
 - `OperatorDatabase` — Arithmetic and logical operators
 - `AxisParametersDatabase` — Axis ranges and constraints
 
 #### Visualizer (`src/visualizer/`)
+
 - `GCodePathExtractor` — Converts AST to 3D `PathSegment[]`
 - `types.ts` — Pure domain types (Position, Segment, etc.); VS-Code-free for testability
 
 #### Providers / Analysis (`src/providers/`)
+
 - `BaseProvider` — Abstract base; gives all providers access to `DocumentStateManager`
 - `DocumentStateManager` — Caches ASTs and analysis results per document URI
 - `AstAnalysisService` — Semantic analysis (scopes, definitions, references)
@@ -176,12 +189,14 @@ Each layer has a single responsibility and may only depend on the layer directly
 - `IDataProvider` + `DataProviderFactory` — Abstract per-dialect command/function/operator data
 
 **Constraints**:
+
 - Never mutate the AST
 - No formatting or hover logic in node classes
 - No `instanceof` chains — use visitor/polymorphism
 - All analysis is lazy and cached
 
 **Patterns**:
+
 - Visitor pattern (for AST traversal, analysis, formatting)
 - Factory pattern (for dialect-specific services)
 - Strategy pattern (for dialect implementations)
@@ -192,17 +207,20 @@ Each layer has a single responsibility and may only depend on the layer directly
 **Responsibility**: Integrate LSP and VS Code; delegate all logic to services.
 
 #### Server (`src/server/`)
+
 - Language Server Protocol (LSP) request handlers
 - Wires LSP handlers to provider instances
 - No business logic — all delegation to services
 
 #### Client (`src/client/`)
+
 - Extension entry point (`dist/client/index.js`)
 - `extension.ts` — Starts language client
 - `GCodeVisualizerPanel` — Manages 3D webview
 - `CommandProvider` — Registers VS Code commands
 
 **Constraints**:
+
 - No business logic
 - No AST manipulation
 - No parsing or analysis
@@ -237,6 +255,7 @@ class AstTraverser {
 ```
 
 **Benefits**:
+
 - No `instanceof` chains in services
 - Clean separation between traversal and logic
 - Easy to add new analysis passes
@@ -249,8 +268,10 @@ Dialect selection via factories:
 class ParserFactory {
   static create(dialect: DialectType): BaseParser {
     switch (dialect) {
-      case 'linuxcnc': return new LinuxCNCParser();
-      case 'fanuc': return new FanucParser();
+      case "linuxcnc":
+        return new LinuxCNCParser();
+      case "fanuc":
+        return new FanucParser();
       // ...
     }
   }
@@ -258,6 +279,7 @@ class ParserFactory {
 ```
 
 **Benefits**:
+
 - Centralized dialect strategy selection
 - Easy to add new dialects
 - No dialect-specific logic scattered across services
@@ -276,6 +298,7 @@ class FanucFormatter implements IFormatter { ... }
 ```
 
 **Benefits**:
+
 - Dialect logic isolated
 - Easy to test each dialect independently
 - New dialects can be added without modifying existing code
@@ -299,6 +322,7 @@ class BlockStatementNode extends StatementNode {
 ```
 
 **Benefits**:
+
 - Uniform tree operations
 - Visitor pattern naturally applies
 - Recursive traversal
@@ -308,6 +332,7 @@ class BlockStatementNode extends StatementNode {
 Four supported dialects: **LinuxCNC** (default), **Fanuc**, **Haas**, **Siemens**.
 
 Dialects affect:
+
 - Keyword syntax (THEN/DO/END variations)
 - Formatting conventions
 - Completions and hover docs
@@ -334,6 +359,7 @@ Parsing errors are **recoverable**:
 - Services can analyze partial ASTs and report diagnostics
 
 Benefits:
+
 - AST available even with syntax errors
 - Hover, completion, and formatting work on partial programs
 - Diagnostics include position info
@@ -345,9 +371,9 @@ Benefits:
 Test services in isolation:
 
 ```typescript
-const ast = new GCodeParser().parse('G0 X10 Y20');
+const ast = new GCodeParser().parse("G0 X10 Y20");
 const formatted = new LinuxCNCFormatter().format(ast, options);
-expect(formatted).toContain('G00'); // Pretty-print
+expect(formatted).toContain("G00"); // Pretty-print
 ```
 
 - Construct AST directly via parser
@@ -360,7 +386,10 @@ Test full LSP integration:
 
 ```typescript
 const doc = await vscode.workspace.openTextDocument(uri);
-const symbols = await commands.executeCommand('vscode.executeWorkspaceSymbolProvider', 'query');
+const symbols = await commands.executeCommand(
+  "vscode.executeWorkspaceSymbolProvider",
+  "query",
+);
 expect(symbols).toHaveLength(3);
 ```
 
@@ -371,6 +400,7 @@ expect(symbols).toHaveLength(3);
 ### TDD Rule
 
 Use TDD for logic-heavy code:
+
 1. Write failing test (derived from spec)
 2. Implement minimal code to pass
 3. Refactor while tests stay green

@@ -4,6 +4,7 @@ description: Definitive reference for all valid YAML frontmatter fields in Claud
 type: concept
 tags: [claude-code, skills, reference]
 status: evergreen
+updated: 2026-04-19
 created: 2026-04-17
 updated: 2026-04-20
 confidence: INFERRED

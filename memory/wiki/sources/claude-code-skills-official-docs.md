@@ -5,6 +5,7 @@ type: source
 tags: [claude-code, skills, official]
 status: evergreen
 confidence: EXTRACTED
+updated: 2026-04-19
 created: 2026-04-17
 related:
   - "[[claude-skill-anatomy]]"
@@ -53,33 +54,33 @@ Only `SKILL.md` is required. Other files are optional and loaded on demand to ke
 
 All fields in YAML frontmatter are optional except where recommended. Key fields:
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `name` | No | Skill identifier (lowercase, hyphens, max 64 chars). Defaults to directory name. Becomes the `/slash-command`. |
-| `description` | Recommended | What the skill does and when to use it. This is the primary triggering mechanism for automatic invocation. Must include both action and trigger contexts. |
-| `when_to_use` | No | Additional trigger context. Appended to description. |
-| `argument-hint` | No | Hint shown during `/` autocomplete (e.g., `[issue-number]`). |
-| `disable-model-invocation` | No | Set to `true` to prevent automatic invocation. Only user can invoke with `/`. |
-| `user-invocable` | No | Set to `false` to hide from user's `/` menu. Only Claude can invoke. |
-| `allowed-tools` | No | Space-separated or YAML list of tools Claude can use without asking permission while skill is active. |
-| `model` | No | Model to use when this skill is active. |
-| `effort` | No | Effort level (`low`, `medium`, `high`, `xhigh`, `max`) when skill is active. |
-| `context` | No | Set to `fork` to run skill in isolated subagent context. |
-| `agent` | No | Which subagent type to use when `context: fork`. Options: `Explore`, `Plan`, `general-purpose`, or custom. |
-| `hooks` | No | Hooks scoped to this skill's lifecycle. |
-| `paths` | No | Glob patterns limiting when skill auto-activates (e.g., only for certain file types). |
-| `shell` | No | Shell to use for inline commands: `bash` (default) or `powershell`. |
+| Field                      | Required    | Description                                                                                                                                               |
+| -------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`                     | No          | Skill identifier (lowercase, hyphens, max 64 chars). Defaults to directory name. Becomes the `/slash-command`.                                            |
+| `description`              | Recommended | What the skill does and when to use it. This is the primary triggering mechanism for automatic invocation. Must include both action and trigger contexts. |
+| `when_to_use`              | No          | Additional trigger context. Appended to description.                                                                                                      |
+| `argument-hint`            | No          | Hint shown during `/` autocomplete (e.g., `[issue-number]`).                                                                                              |
+| `disable-model-invocation` | No          | Set to `true` to prevent automatic invocation. Only user can invoke with `/`.                                                                             |
+| `user-invocable`           | No          | Set to `false` to hide from user's `/` menu. Only Claude can invoke.                                                                                      |
+| `allowed-tools`            | No          | Space-separated or YAML list of tools Claude can use without asking permission while skill is active.                                                     |
+| `model`                    | No          | Model to use when this skill is active.                                                                                                                   |
+| `effort`                   | No          | Effort level (`low`, `medium`, `high`, `xhigh`, `max`) when skill is active.                                                                              |
+| `context`                  | No          | Set to `fork` to run skill in isolated subagent context.                                                                                                  |
+| `agent`                    | No          | Which subagent type to use when `context: fork`. Options: `Explore`, `Plan`, `general-purpose`, or custom.                                                |
+| `hooks`                    | No          | Hooks scoped to this skill's lifecycle.                                                                                                                   |
+| `paths`                    | No          | Glob patterns limiting when skill auto-activates (e.g., only for certain file types).                                                                     |
+| `shell`                    | No          | Shell to use for inline commands: `bash` (default) or `powershell`.                                                                                       |
 
 ## String Substitutions
 
 Skills support dynamic substitution for arguments and environment variables:
 
-| Variable | Value |
-|----------|-------|
-| `$ARGUMENTS` | All arguments passed by user |
-| `$ARGUMENTS[N]` or `$N` | Nth argument (0-indexed) |
-| `${CLAUDE_SESSION_ID}` | Current session ID |
-| `${CLAUDE_SKILL_DIR}` | Path to skill directory |
+| Variable                | Value                        |
+| ----------------------- | ---------------------------- |
+| `$ARGUMENTS`            | All arguments passed by user |
+| `$ARGUMENTS[N]` or `$N` | Nth argument (0-indexed)     |
+| `${CLAUDE_SESSION_ID}`  | Current session ID           |
+| `${CLAUDE_SKILL_DIR}`   | Path to skill directory      |
 
 Example: `/migrate-component Foo React Vue` → `$0`="Foo", `$1`="React", `$2`="Vue"
 
@@ -87,12 +88,12 @@ Example: `/migrate-component Foo React Vue` → `$0`="Foo", `$1`="React", `$2`="
 
 Skills are discovered based on location:
 
-| Scope | Path | Who sees |
-|-------|------|----------|
-| Enterprise | Managed settings | All org users |
-| Personal | `~/.claude/skills/<name>/` | All user's projects |
-| Project | `.claude/skills/<name>/` | This repo only |
-| Plugin | `<plugin>/skills/<name>/` | Where plugin enabled |
+| Scope      | Path                       | Who sees             |
+| ---------- | -------------------------- | -------------------- |
+| Enterprise | Managed settings           | All org users        |
+| Personal   | `~/.claude/skills/<name>/` | All user's projects  |
+| Project    | `.claude/skills/<name>/`   | This repo only       |
+| Plugin     | `<plugin>/skills/<name>/`  | Where plugin enabled |
 
 Higher-priority scopes override lower ones. Plugin skills use namespacing (`plugin-name:skill-name`) to avoid conflicts.
 
@@ -108,11 +109,11 @@ Claude decides whether to invoke a skill based on its `description` field. The d
 
 ### Controlling Who Can Invoke
 
-| Setting | User Can Invoke | Claude Can Invoke | Description in Context |
-|---------|-----------------|-------------------|------------------------|
-| Default | Yes | Yes | Yes |
-| `disable-model-invocation: true` | Yes | No | No |
-| `user-invocable: false` | No | Yes | Yes |
+| Setting                          | User Can Invoke | Claude Can Invoke | Description in Context |
+| -------------------------------- | --------------- | ----------------- | ---------------------- |
+| Default                          | Yes             | Yes               | Yes                    |
+| `disable-model-invocation: true` | Yes             | No                | No                     |
+| `user-invocable: false`          | No              | Yes               | Yes                    |
 
 Use `disable-model-invocation: true` for side-effect operations (deploy, commit, delete) where timing/safety matters.
 
@@ -135,6 +136,7 @@ Use `` !`command` `` to run shell commands before the skill is sent to Claude:
 
 ```markdown
 ## PR Context
+
 - Diff: !`gh pr diff`
 - Comments: !`gh pr view --comments`
 ```

@@ -1,6 +1,8 @@
 ---
 type: entity
 title: "@vscode/test-electron + @vscode/test-cli"
+aliases:
+  - "@vscode/test-electron"
 entity_type: tool
 created: 2026-04-19
 updated: 2026-04-20

@@ -4,6 +4,7 @@ description: Four structural patterns for composing multiple Claude Code skills 
 type: concept
 tags: [claude-code, skills, orchestration, claude-workflow]
 status: current
+updated: 2026-04-19
 created: 2026-04-19
 updated: 2026-04-20
 confidence: INFERRED

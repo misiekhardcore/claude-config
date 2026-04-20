@@ -4,6 +4,7 @@ description: Claude Code agentic skills framework by Jesse Vincent (obra) — st
 type: entity
 tags: [claude-code, plugin, orchestration]
 status: current
+updated: 2026-04-19
 created: 2026-04-19
 updated: 2026-04-20
 confidence: INFERRED
