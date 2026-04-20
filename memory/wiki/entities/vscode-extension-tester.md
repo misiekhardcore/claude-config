@@ -3,14 +3,16 @@ type: entity
 title: "vscode-extension-tester (ExTester)"
 entity_type: tool
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - testing
   - vscode
   - selenium
   - redhat
 status: current
-confidence: high
+confidence: INFERRED
+evidence:
+  - "[[vscode-extension-tester-extester]]"
 related:
   - "[[VS Code Webview Testing]]"
   - "[[wdio-vscode-service]]"

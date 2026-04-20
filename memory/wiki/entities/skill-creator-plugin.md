@@ -5,6 +5,9 @@ type: entity
 tags: [claude-code, skills, plugin, official]
 status: evergreen
 created: 2026-04-17
+updated: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[claude-skill-anatomy]]"
   - "[[skill-creation-patterns]]"

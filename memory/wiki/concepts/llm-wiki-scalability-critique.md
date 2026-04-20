@@ -12,6 +12,11 @@ tags:
   - scalability
   - llm
 status: current
+confidence: INFERRED
+evidence:
+  - "[[llm-wiki-research-2026-04-20]]"
+contradicts:
+  - "[[LLM Wiki Pattern]]"
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[llm-wiki-v2-extensions]]"

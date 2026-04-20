@@ -8,12 +8,14 @@ aliases:
   - "Session Cache"
   - "Context Cache"
 created: 2026-04-07
-updated: 2026-04-07
+updated: 2026-04-20
 tags:
   - concept
   - knowledge-management
   - context
 status: mature
+confidence: INFERRED
+evidence: []
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"

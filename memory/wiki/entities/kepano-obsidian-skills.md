@@ -2,13 +2,16 @@
 type: entity
 title: "kepano/obsidian-skills"
 created: 2026-04-08
-updated: 2026-04-08
+updated: 2026-04-20
 tags:
   - github-repo
   - official
   - agent-skills
   - obsidian-creator
 status: current
+confidence: INFERRED
+evidence:
+  - "[[claude-obsidian-ecosystem-research]]"
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[cherry-picks]]"

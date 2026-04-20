@@ -7,11 +7,13 @@ aliases:
   - "Knowledge Compounding"
   - "Persistent Synthesis"
 created: 2026-04-07
-updated: 2026-04-07
+updated: 2026-04-20
 tags:
   - concept
   - knowledge-management
 status: mature
+confidence: INFERRED
+evidence: []
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Hot Cache]]"

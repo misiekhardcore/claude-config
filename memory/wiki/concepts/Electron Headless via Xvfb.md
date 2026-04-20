@@ -2,14 +2,17 @@
 type: concept
 title: "Electron Headless via Xvfb"
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - electron
   - xvfb
   - ci
   - headless
 status: current
-confidence: high
+confidence: INFERRED
+evidence:
+  - "[[playwright-electron-vscode-testing]]"
+  - "[[hakanson-vscode-actions-xvfb]]"
 related:
   - "[[VS Code Webview Testing]]"
   - "[[VS Code Screenshot Determinism]]"

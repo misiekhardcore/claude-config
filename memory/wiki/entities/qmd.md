@@ -5,7 +5,7 @@ entity_type: tool
 role: "Local search engine for markdown files"
 first_mentioned: "[[llm-wiki-karpathy-gist]]"
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - entity
   - tool
@@ -13,6 +13,11 @@ tags:
   - cli
   - mcp
 status: developing
+confidence: INFERRED
+evidence:
+  - "[[llm-wiki-karpathy-gist]]"
+uses:
+  - "[[LLM Wiki Pattern]]"
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[entities/_index]]"
