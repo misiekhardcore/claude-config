@@ -18,6 +18,8 @@ tags:
   - <domain-tag>
   - <type-tag>
 status: <seed|developing|mature|evergreen>
+tier: <transient|episodic|semantic|procedural>
+reviewed_at: 2026-04-07
 related:
   - "[[Other Page]]"
 sources:
@@ -34,6 +36,17 @@ sources:
 - `superseded`: replaced by a newer source; preserved but no longer canonical
 
 See `maintenance-rules.md` for promotion/demotion criteria.
+
+**tier values:**
+- `transient`: review cadence 7 days — bug reports, status updates, session observations, short-lived questions
+- `episodic`: review cadence 30 days — session summaries, ingestion records, what-was-done notes
+- `semantic`: review cadence 90 days — cross-session facts, patterns, concepts, entities, comparisons
+- `procedural`: review cadence 180 days — workflows, how-to guides, skill references
+
+See `CLAUDE.md` for type-to-tier default mapping. The `tier:` field is explicit (not computed), allowing per-page overrides.
+
+**reviewed_at:**
+ISO date (`YYYY-MM-DD`) of the most recent human verification. Update this field whenever you manually review and confirm a page's accuracy. `wiki-lint` will flag pages overdue for review based on their tier's cadence.
 
 ---
 

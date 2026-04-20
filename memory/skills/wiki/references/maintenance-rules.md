@@ -105,8 +105,42 @@ Pages carry a `status` field. See [`frontmatter.md`](frontmatter.md) for the ful
 - `current` → `mature`: second independent source confirms or significantly extends the claims
 - Any status → `superseded`: a newer source explicitly replaces this one
 
-### Demotion
+#### Demotion
 Demote from `mature` or `current` to `developing` only if a contradiction is found that removes a major section's basis.
+
+---
+
+## Consolidation Tiers and Review Cadences
+
+Each page belongs to a consolidation tier, determined by its `tier:` frontmatter field. Tiers define how often a page should be human-verified to maintain accuracy.
+
+| Tier | Cadence | Review Trigger | Examples |
+|------|---------|---|---|
+| **transient** | 7 days | Time-sensitive; quick to verify | Bug reports, status updates, session observations |
+| **episodic** | 30 days | Session-scoped; slow deprecation | Source ingestion records, what-was-done notes |
+| **semantic** | 90 days | Cross-session truths; stable but evolving | Concepts, entities, comparisons, facts |
+| **procedural** | 180 days | Workflows and recipes; rarely change | How-to guides, skill references, architectural patterns |
+
+### Staleness Detection
+
+`wiki-lint` will identify pages overdue for review and inject a `[!stale]` callout. A page is stale if:
+- Current date minus `reviewed_at` exceeds the page's tier cadence
+- `reviewed_at` is missing (assume stale)
+
+Example stale page warning:
+```
+> [!stale] This page was last reviewed on 2026-03-01 (50 days ago).
+> Tier: semantic (90-day cadence). Review by: 2026-06-29.
+```
+
+### Updating reviewed_at
+
+Whenever a human manually verifies a page's accuracy:
+1. Update the `reviewed_at:` field to today's date (`YYYY-MM-DD`)
+2. Re-save the page in Obsidian
+3. This resets the staleness timer for that page's tier
+
+No automatic staleness clearing — only human verification updates `reviewed_at`.
 
 ---
 
