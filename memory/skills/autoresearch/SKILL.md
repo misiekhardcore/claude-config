@@ -121,6 +121,24 @@ sources:
 
 ---
 
+## Autonomous Tier and Review Date Assignment
+
+When creating pages during autoresearch, autonomously assign `tier:` and `reviewed_at:` (no user prompt needed):
+
+- Determine `tier:` from the page's `type:` field using this table:
+  | Type | Tier |
+  |------|------|
+  | concept | semantic |
+  | synthesis | semantic |
+  | source | episodic |
+  | entity | semantic |
+  If type is unknown, default to `semantic`.
+- Set `reviewed_at:` to today's date (YYYY-MM-DD format)
+
+This is automatic — tier is a default that can be manually overridden per page if needed.
+
+---
+
 ## After Filing
 
 1. Update `wiki/index.md`. Add all new pages to the right sections

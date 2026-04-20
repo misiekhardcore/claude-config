@@ -108,14 +108,29 @@ Steps:
    - "Is there existing wiki context I should link against?"
    **Wait for the user's response before proceeding.** Do not assume defaults and do not skip ahead.
    **Skip this step only if** the user's original message included "just ingest it" or "auto-ingest".
-3. **Create** source summary in `wiki/sources/`. Use the source frontmatter schema from `references/frontmatter.md`.
-4. **Create or update** entity pages for every person, org, product, and repo mentioned. One page per entity.
-5. **Create or update** concept pages for significant ideas and frameworks.
-6. **Update** relevant domain page(s) and their `_index.md` sub-indexes.
-7. **Update** `wiki/overview.md` if the big picture changed.
-8. **Update** `wiki/index.md`. Add entries for all new pages.
-9. **Update** `wiki/hot.md` with this ingest's context.
-10. **Append** to `wiki/log.md` (new entries at the TOP):
+3. **Assign tier and review date autonomously** (no user prompt needed):
+   - Determine `tier:` from the page's `type:` field using this table:
+     | Type | Tier |
+     |------|------|
+     | concept | semantic |
+     | entity | semantic |
+     | source | episodic |
+     | comparison | semantic |
+     | question | transient |
+     | meta | semantic |
+     | overview | semantic |
+     | domain | semantic |
+     If type is unknown, default to `semantic`.
+   - Set `reviewed_at:` to today's date (YYYY-MM-DD format)
+   This is automatic — tier is a default that can be manually overridden per page if needed.
+4. **Create** source summary in `wiki/sources/`. Use the source frontmatter schema from `references/frontmatter.md`.
+5. **Create or update** entity pages for every person, org, product, and repo mentioned. One page per entity.
+6. **Create or update** concept pages for significant ideas and frameworks.
+7. **Update** relevant domain page(s) and their `_index.md` sub-indexes.
+8. **Update** `wiki/overview.md` if the big picture changed.
+9. **Update** `wiki/index.md`. Add entries for all new pages.
+10. **Update** `wiki/hot.md` with this ingest's context.
+11. **Append** to `wiki/log.md` (new entries at the TOP):
     ```markdown
     ## [YYYY-MM-DD] ingest | Source Title
     - Source: `.raw/articles/filename.md`
@@ -124,7 +139,7 @@ Steps:
     - Pages updated: [[Page 3]], [[Page 4]]
     - Key insight: One sentence on what is new.
     ```
-11. **Check for contradictions.** If new info conflicts with existing pages, add `> [!contradiction]` callouts on both pages.
+12. **Check for contradictions.** If new info conflicts with existing pages, add `> [!contradiction]` callouts on both pages.
 
 ---
 

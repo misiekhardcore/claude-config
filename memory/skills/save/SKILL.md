@@ -87,6 +87,25 @@ status: active
 
 ---
 
+## Autonomous Tier and Review Date Assignment
+
+When creating a new wiki page, autonomously assign `tier:` and `reviewed_at:` (no user prompt needed):
+
+- Determine `tier:` from the note's `type:` field using this table:
+  | Type | Tier |
+  |------|------|
+  | concept | semantic |
+  | synthesis | semantic |
+  | source | episodic |
+  | decision | semantic |
+  | session | semantic |
+  If type is unknown, default to `semantic`.
+- Set `reviewed_at:` to today's date (YYYY-MM-DD format)
+
+This is automatic — tier is a default that can be manually overridden per page if needed.
+
+---
+
 ## Writing Style
 
 - Declarative, present tense. Write the knowledge, not the conversation.
