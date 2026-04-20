@@ -6,13 +6,14 @@ author: Microsoft
 date_published: 2025-ongoing
 url: "https://code.visualstudio.com/api/working-with-extensions/testing-extension"
 date_accessed: 2026-04-19
-confidence: high
+source_reliability: high
 tags:
   - vscode
   - testing
   - mocha
   - official
 status: current
+confidence: EXTRACTED
 key_claims:
   - "@vscode/test-electron is the low-level runner; @vscode/test-cli is the config-file wrapper"
   - "test-cli reads .vscode-test.js/mjs/cjs for its configuration"
@@ -21,6 +22,7 @@ key_claims:
 related:
   - "[[@vscode/test-electron]]"
   - "[[Research: VS Code Webview Testing and Screenshots]]"
+evidence: []
 ---
 
 # @vscode/test-electron + @vscode/test-cli

@@ -6,7 +6,7 @@ source_type: guide
 author: ClaudeFast
 date_published: 2026
 url: https://claudefa.st/blog/guide/agents/agent-teams
-confidence: medium
+source_reliability: medium
 key_claims:
   - Subagents start fresh, isolated from main conversation context
   - Subagents cannot spawn other subagents (hard Anthropic limit)
@@ -15,11 +15,13 @@ key_claims:
   - Domain ownership between agents prevents merge conflicts
 tags: [claude-code, subagents, TeamCreate, orchestration]
 status: developing
+confidence: EXTRACTED
 created: 2026-04-19
 related:
   - "[[multiskill-workflow-patterns]]"
   - "[[hierarchical-agent-decomposition]]"
   - "[[agent-handoff-artifact-pattern]]"
+evidence: []
 ---
 
 # ClaudeFast — Agent Teams Guide

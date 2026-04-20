@@ -6,13 +6,14 @@ author: Red Hat Developer
 date_published: 2025-ongoing
 url: "https://github.com/redhat-developer/vscode-extension-tester"
 date_accessed: 2026-04-19
-confidence: high
+source_reliability: high
 tags:
   - vscode
   - testing
   - selenium
   - webview
 status: current
+confidence: EXTRACTED
 key_claims:
   - "ExTester is a Selenium WebDriver-based UI tester for VS Code extensions"
   - "Latest version 8.23.0 (March 2026)"
@@ -23,6 +24,7 @@ related:
   - "[[VS Code Webview Testing]]"
   - "[[wdio-vscode-service]]"
   - "[[Research: VS Code Webview Testing and Screenshots]]"
+evidence: []
 ---
 
 # ExTester (vscode-extension-tester)

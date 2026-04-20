@@ -2,7 +2,7 @@
 type: synthesis
 title: "Research: allowed-tools best practice for multi-agent workflow plugins"
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - research
   - claude-code
@@ -11,6 +11,7 @@ tags:
   - claude-workflow
   - permissions
 status: developing
+confidence: INFERRED
 related:
   - "[[allowed-tools-semantics]]"
   - "[[skill-vs-subagent-tool-fields]]"
@@ -22,6 +23,7 @@ related:
 sources:
   - "[[agent-skills-best-practices-anthropic]]"
   - "[[claude-code-skills-official-docs]]"
+evidence: []
 ---
 
 # Research: `allowed-tools` Best Practice for Multi-Agent Workflow Plugins

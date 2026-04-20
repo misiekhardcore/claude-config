@@ -6,13 +6,14 @@ author: Kevin Hakanson
 date_published: 2024-02-12
 url: "https://kevinhakanson.com/2024-02-12-testing-a-visual-studio-code-extension-inside-github-actions/"
 date_accessed: 2026-04-19
-confidence: high
+source_reliability: high
 tags:
   - github-actions
   - ci
   - vscode
   - xvfb
 status: current
+confidence: EXTRACTED
 key_claims:
   - "Cache .vscode-test to avoid re-downloading VS Code on every CI run"
   - "D-Bus session must be started before xvfb-run to avoid 'Failed to connect to the bus'"
@@ -21,6 +22,7 @@ key_claims:
 related:
   - "[[Electron Headless via Xvfb]]"
   - "[[Research: VS Code Webview Testing and Screenshots]]"
+evidence: []
 ---
 
 # GitHub Actions for VS Code extension tests
