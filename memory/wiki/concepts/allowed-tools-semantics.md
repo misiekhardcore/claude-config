@@ -5,6 +5,13 @@ type: concept
 tags: [claude-code, skills, frontmatter, permissions, security]
 status: current
 created: 2026-04-19
+updated: 2026-04-20
+confidence: INFERRED
+evidence:
+  - "[[agent-skills-best-practices-anthropic]]"
+  - "[[claude-code-skills-official-docs]]"
+uses:
+  - "[[skill-invocation-model]]"
 related:
   - "[[skill-frontmatter-reference]]"
   - "[[skill-vs-subagent-tool-fields]]"

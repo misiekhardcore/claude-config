@@ -3,14 +3,16 @@ type: entity
 title: "Playwright"
 entity_type: tool
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - testing
   - browser-automation
   - microsoft
   - electron
 status: current
-confidence: high
+confidence: INFERRED
+evidence:
+  - "[[playwright-electron-vscode-testing]]"
 related:
   - "[[VS Code Webview Testing]]"
   - "[[FrameLocator Chaining for Nested Iframes]]"

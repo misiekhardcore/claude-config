@@ -5,6 +5,9 @@ type: entity
 tags: [orchestration, multi-agent, framework]
 status: current
 created: 2026-04-19
+updated: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[multiskill-workflow-patterns]]"
   - "[[agent-handoff-artifact-pattern]]"

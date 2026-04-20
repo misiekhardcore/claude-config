@@ -2,13 +2,14 @@
 type: source
 title: "VSCode G-Code Extension Architecture & Development"
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - architecture
   - lsp
   - vscode-extension
   - typescript
 status: current
+confidence: EXTRACTED
 source_repo: "https://github.com/QuickBoyz/vscode-gcode-extension"
 source_files:
   - ".claude/CLAUDE.md"
@@ -18,6 +19,7 @@ related:
   - "[[vscode-gcode-extension]]"
   - "[[gcode-lsp-architecture]]"
   - "[[workspace-symbol-architecture]]"
+evidence: []
 ---
 
 # Source: VSCode G-Code Extension Architecture & Development

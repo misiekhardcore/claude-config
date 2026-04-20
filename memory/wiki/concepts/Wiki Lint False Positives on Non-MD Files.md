@@ -7,12 +7,14 @@ aliases:
   - "lint dead link false positive"
   - "canvas wikilink not found"
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - bug-fix
   - wiki-maintenance
   - wiki-lint
 status: mature
+confidence: INFERRED
+evidence: []
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[cherry-picks]]"

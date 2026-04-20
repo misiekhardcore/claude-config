@@ -5,13 +5,16 @@ entity_type: person
 role: "Engineer, science administrator (1890–1974)"
 first_mentioned: "[[llm-wiki-karpathy-gist]]"
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - entity
   - person
   - historical
   - knowledge-management
 status: developing
+confidence: INFERRED
+evidence:
+  - "[[llm-wiki-karpathy-gist]]"
 related:
   - "[[Memex]]"
   - "[[LLM Wiki Pattern]]"

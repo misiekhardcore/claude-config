@@ -6,13 +6,14 @@ author: WebdriverIO community
 date_published: 2025-ongoing
 url: "https://webdriver.io/docs/wdio-vscode-service/"
 date_accessed: 2026-04-19
-confidence: high
+source_reliability: high
 tags:
   - vscode
   - testing
   - webdriverio
   - screenshots
 status: current
+confidence: EXTRACTED
 key_claims:
   - "Service downloads VS Code + matching Chromedriver and launches it as an Electron app"
   - "Webview testing uses WebView.open() / close() to switch frame context"
@@ -22,6 +23,7 @@ related:
   - "[[wdio-vscode-service]]"
   - "[[VS Code Webview Testing]]"
   - "[[Research: VS Code Webview Testing and Screenshots]]"
+evidence: []
 ---
 
 # wdio-vscode-service official docs

@@ -12,7 +12,9 @@ tags:
   - composition-root
 status: current
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[variable-formatting-utilities]]"
   - "[[workspace-symbol-architecture]]"

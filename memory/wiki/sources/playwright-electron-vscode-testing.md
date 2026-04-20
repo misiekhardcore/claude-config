@@ -6,13 +6,14 @@ author: Azat Satklyčov (Broadcom Modern Mainframe) + Playwright docs + Kubeshop
 date_published: 2024-2025
 url: "https://medium.com/modern-mainframe/test-automation-with-playwright-for-vs-code-extensions-facilitating-the-growing-interest-in-dcc463f81efa"
 date_accessed: 2026-04-19
-confidence: medium
+source_reliability: medium
 tags:
   - vscode
   - playwright
   - electron
   - webview
 status: current
+confidence: EXTRACTED
 key_claims:
   - "Playwright's Electron API can launch VS Code as an Electron app and drive it"
   - "Webviews are reached via chained frameLocator() calls (nested iframes)"
@@ -24,6 +25,7 @@ related:
   - "[[FrameLocator Chaining for Nested Iframes]]"
   - "[[Electron Headless via Xvfb]]"
   - "[[Research: VS Code Webview Testing and Screenshots]]"
+evidence: []
 ---
 
 # Playwright + Electron for VS Code extension testing

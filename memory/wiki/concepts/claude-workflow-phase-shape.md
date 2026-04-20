@@ -5,6 +5,11 @@ type: concept
 tags: [claude-code, skills, orchestration, claude-workflow]
 status: current
 created: 2026-04-19
+updated: 2026-04-20
+confidence: INFERRED
+evidence: []
+implements:
+  - "[[multiskill-workflow-patterns]]"
 related:
   - "[[multiskill-workflow-patterns]]"
   - "[[agent-handoff-artifact-pattern]]"

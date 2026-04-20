@@ -2,7 +2,7 @@
 type: source
 title: "LLM Wiki — Karpathy Gist"
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - source
   - gist
@@ -10,6 +10,7 @@ tags:
   - knowledge-management
   - karpathy
 status: current
+confidence: EXTRACTED
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Andrej Karpathy]]"
@@ -21,6 +22,7 @@ related:
   - "[[qmd]]"
 raw_file: ".raw/articles/llm-wiki-karpathy-2026-04-04.md"
 source_url: "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f"
+evidence: []
 ---
 
 # Source: LLM Wiki — Karpathy Gist

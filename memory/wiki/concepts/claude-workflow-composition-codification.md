@@ -2,7 +2,7 @@
 type: concept
 title: "claude-workflow composition codification"
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - claude-workflow
   - pattern
@@ -10,6 +10,8 @@ tags:
   - skill-authoring
   - composition
 status: current
+confidence: INFERRED
+evidence: []
 related:
   - "[[multiskill-workflow-patterns]]"
   - "[[seed-brief-pattern]]"

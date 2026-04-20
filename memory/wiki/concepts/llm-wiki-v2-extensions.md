@@ -12,6 +12,13 @@ tags:
   - memory
   - knowledge-graph
 status: current
+confidence: INFERRED
+evidence:
+  - "[[llm-wiki-research-2026-04-20]]"
+implements:
+  - "[[LLM Wiki Pattern]]"
+uses:
+  - "[[LLM Wiki Pattern]]"
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"

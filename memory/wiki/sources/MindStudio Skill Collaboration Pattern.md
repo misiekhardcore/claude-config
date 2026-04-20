@@ -6,7 +6,7 @@ source_type: blog-post
 author: MindStudio
 date_published: 2026-03
 url: https://www.mindstudio.ai/blog/claude-code-skill-collaboration-pattern
-confidence: medium
+source_reliability: medium
 key_claims:
   - Claude is the coordinator; skills do not call each other directly
   - Structured I/O contracts (JSON schemas) enable reliable composition
@@ -14,10 +14,12 @@ key_claims:
   - Error handling via structured error objects, not exceptions
 tags: [claude-code, skills, orchestration]
 status: developing
+confidence: EXTRACTED
 created: 2026-04-19
 related:
   - "[[multiskill-workflow-patterns]]"
   - "[[skill-invocation-model]]"
+evidence: []
 ---
 
 # MindStudio — Claude Code Skill Collaboration Pattern

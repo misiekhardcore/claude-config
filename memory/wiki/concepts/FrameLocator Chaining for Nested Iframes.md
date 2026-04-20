@@ -2,13 +2,15 @@
 type: concept
 title: "FrameLocator Chaining for Nested Iframes"
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - playwright
   - iframe
   - testing
 status: current
-confidence: high
+confidence: INFERRED
+evidence:
+  - "[[playwright-electron-vscode-testing]]"
 related:
   - "[[VS Code Webview Testing]]"
   - "[[Playwright]]"

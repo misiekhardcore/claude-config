@@ -5,6 +5,9 @@ type: entity
 tags: [claude-code, plugin, orchestration]
 status: current
 created: 2026-04-19
+updated: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[claude-workflow-phase-shape]]"
   - "[[multiskill-workflow-patterns]]"

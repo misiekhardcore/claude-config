@@ -2,14 +2,19 @@
 type: concept
 title: "VS Code Webview Testing"
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - vscode
   - testing
   - webview
   - automation
 status: current
-confidence: high
+confidence: INFERRED
+evidence:
+  - "[[wdio-vscode-service-docs]]"
+  - "[[vscode-extension-tester-extester]]"
+  - "[[playwright-electron-vscode-testing]]"
+  - "[[vscode-test-electron-cli]]"
 related:
   - "[[FrameLocator Chaining for Nested Iframes]]"
   - "[[VS Code Screenshot Determinism]]"

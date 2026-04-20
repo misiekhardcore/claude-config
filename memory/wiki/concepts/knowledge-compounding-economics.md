@@ -12,6 +12,11 @@ tags:
   - knowledge-management
   - research
 status: current
+confidence: INFERRED
+evidence:
+  - "[[llm-wiki-research-2026-04-20]]"
+uses:
+  - "[[LLM Wiki Pattern]]"
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"

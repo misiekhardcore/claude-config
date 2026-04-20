@@ -3,12 +3,14 @@ type: meta
 title: "Solutions Index"
 project: "[[vscode-gcode-extension]]"
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - meta
   - solutions
   - index
 status: current
+confidence: EXTRACTED
+evidence: []
 related:
   - "[[index]]"
   - "[[vscode-gcode-extension]]"

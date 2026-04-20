@@ -3,7 +3,7 @@ type: entity
 title: "vscode-gcode-extension"
 kind: repo
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - entity
   - vscode
@@ -12,6 +12,8 @@ tags:
   - g-code
   - cnc
 status: current
+confidence: INFERRED
+evidence: []
 related:
   - "[[workspace-symbol-architecture]]"
   - "[[lsp-file-watcher-linux]]"

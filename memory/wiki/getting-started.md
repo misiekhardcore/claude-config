@@ -1,12 +1,14 @@
 ---
 type: meta
 title: "Getting Started"
-updated: 2026-04-07
+updated: 2026-04-20
 created: 2026-04-17
 tags:
   - meta
   - onboarding
 status: evergreen
+confidence: INFERRED
+evidence: []
 related:
   - "[[index]]"
   - "[[overview]]"

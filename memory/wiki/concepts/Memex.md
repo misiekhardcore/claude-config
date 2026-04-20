@@ -6,13 +6,16 @@ domain: knowledge-management
 aliases:
   - "memory extender"
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - concept
   - knowledge-management
   - historical
   - precursor
 status: developing
+confidence: INFERRED
+evidence:
+  - "[[llm-wiki-karpathy-gist]]"
 related:
   - "[[Vannevar Bush]]"
   - "[[LLM Wiki Pattern]]"

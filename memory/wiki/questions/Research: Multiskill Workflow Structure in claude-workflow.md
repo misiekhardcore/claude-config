@@ -2,13 +2,14 @@
 type: synthesis
 title: "Research: Multiskill Workflow Structure in claude-workflow"
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - research
   - claude-workflow
   - orchestration
   - skills
 status: developing
+confidence: INFERRED
 related:
   - "[[multiskill-workflow-patterns]]"
   - "[[agent-handoff-artifact-pattern]]"
@@ -25,6 +26,7 @@ sources:
   - "[[Addy Osmani Code Agent Orchestra]]"
   - "[[ClaudeFast Agent Teams Guide]]"
   - "[[Superpowers GitHub]]"
+evidence: []
 ---
 
 # Research: Multiskill Workflow Structure in claude-workflow

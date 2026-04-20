@@ -5,6 +5,12 @@ type: concept
 tags: [claude-code, skills, subagents, permissions, frontmatter]
 status: current
 created: 2026-04-19
+updated: 2026-04-20
+confidence: INFERRED
+evidence:
+  - "[[claude-code-skills-official-docs]]"
+uses:
+  - "[[allowed-tools-semantics]]"
 related:
   - "[[allowed-tools-semantics]]"
   - "[[allowed-tools-for-multi-agent-plugins]]"

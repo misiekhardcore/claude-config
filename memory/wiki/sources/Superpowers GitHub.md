@@ -6,7 +6,7 @@ source_type: github-repo
 author: Jesse Vincent (obra)
 date_published: 2025-10
 url: https://github.com/obra/superpowers
-confidence: high
+source_reliability: high
 key_claims:
   - Skills auto-activate on context, not manual invocation
   - TDD enforcement via test-driven-development skill (RED-GREEN-REFACTOR)
@@ -14,10 +14,12 @@ key_claims:
   - Gating philosophy — cannot build what you haven't designed
 tags: [claude-code, plugin, orchestration, TDD]
 status: developing
+confidence: EXTRACTED
 created: 2026-04-19
 related:
   - "[[Superpowers Plugin]]"
   - "[[claude-workflow-phase-shape]]"
+evidence: []
 ---
 
 # GitHub — obra/superpowers

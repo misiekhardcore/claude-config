@@ -12,18 +12,20 @@ dimensions:
   - "Scale limit"
 verdict: "Wiki wins at <1000 pages. RAG wins at enterprise scale."
 created: 2026-04-07
-updated: 2026-04-07
+updated: 2026-04-20
 tags:
   - comparison
   - llm-wiki
   - knowledge-management
 status: mature
+confidence: INFERRED
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"
   - "[[index]]"
   - "[[How does the LLM Wiki pattern work]]"
 sources: []
+evidence: []
 ---
 
 # Wiki vs RAG

@@ -4,11 +4,13 @@ description: Official Anthropic documentation on custom slash commands and skill
 type: source
 tags: [claude-code, skills, official]
 status: evergreen
+confidence: EXTRACTED
 created: 2026-04-17
 related:
   - "[[claude-skill-anatomy]]"
   - "[[skill-invocation-model]]"
   - "[[skill-creation-patterns]]"
+evidence: []
 ---
 
 # Claude Code Skills - Official Anthropic Documentation
