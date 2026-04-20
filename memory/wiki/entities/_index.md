@@ -1,13 +1,15 @@
 ---
 type: meta
 title: "Entities Index"
-updated: 2026-04-17
+updated: 2026-04-20
 created: 2026-04-17
 tags:
   - meta
   - index
   - entity
 status: evergreen
+confidence: EXTRACTED
+evidence: []
 related:
   - "[[index]]"
   - "[[Andrej Karpathy]]"
