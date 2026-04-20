@@ -8,7 +8,7 @@ aliases:
   - "Karpathy Wiki"
   - "Persistent Wiki"
 created: 2026-04-07
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - concept
   - knowledge-management
@@ -26,6 +26,7 @@ related:
   - "[[concepts/_index]]"
 sources:
   - "[[llm-wiki-karpathy-gist]]"
+  - "[[llm-wiki-research-2026-04-20]]"
 ---
 
 # LLM Wiki Pattern
@@ -91,6 +92,34 @@ At small scale (~100 sources, ~hundreds of pages), the index file is sufficient.
 | Cost | Tokens only | Ongoing compute + storage |
 | Maintenance | Run a lint | Re-embed when content changes |
 | Scale limit | Hundreds of pages | Millions of documents |
+
+---
+
+## Scale Limits
+
+The flat `index.md` approach works well to ~200 pages. Past ~1,000 files the index becomes too large and the pattern requires hybrid search. Production responses:
+
+- **[[qmd]]** — local BM25/vector search for markdown. Karpathy's recommended upgrade path.
+- **[[llm-wiki-v2-extensions]]** — full production architecture: confidence scoring, typed graph, hybrid search (BM25 + vector + graph traversal), event-driven automation.
+
+See [[llm-wiki-scalability-critique]] for the full failure-mode analysis.
+
+---
+
+## Academic Validation
+
+arXiv:2604.11243 (April 2026) provides empirical economics evidence: **84.6% token savings** (47K vs 305K tokens for a four-query test) vs. RAG baseline. The paper reframes LLM tokens as capital goods rather than consumables. See [[knowledge-compounding-economics]].
+
+---
+
+## Ecosystem (April 2026)
+
+The gist accumulated 5,000+ stars, 4,713 forks, 485+ comments within weeks of publication. Notable implementations and extensions:
+
+- **[[llm-wiki-v2-extensions]]** (rohitg00) — production memory lifecycle, typed graph, hybrid search
+- **[[Graphify]]** — confidence-tagged property graph (EXTRACTED/INFERRED/AMBIGUOUS)
+- **graphiti** (getzep) — real-time knowledge graph library for AI agents
+- **awesome-llm-wiki** (tjiahen) — curated list of tools and implementations
 
 ---
 
