@@ -58,6 +58,17 @@ Do NOT read the wiki for general coding questions or things already in this proj
 | `/autoresearch [topic]` | Autonomous research loop: search, fetch, synthesize, file |
 | `/canvas` | Visual layer: add images, PDFs, notes to Obsidian canvas |
 
+## Ingest Rules
+
+Single-source ingests via `wiki-ingest` require an interactive discussion before writing pages. After reading the source, Claude must ask:
+- What to emphasize
+- How granular to go
+- What existing wiki context to link against
+
+**Escape hatch:** Say "just ingest it" or "auto-ingest" to skip the discussion and proceed automatically.
+
+The `/autoresearch` pipeline is exempt — it is intentionally autonomous and skips the discussion by design.
+
 ## MCP (Optional)
 
 If you configured the MCP server, Claude can read and write vault notes directly.

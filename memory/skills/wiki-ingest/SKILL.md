@@ -102,7 +102,12 @@ Trigger: user drops a file into `.raw/` or pastes content.
 Steps:
 
 1. **Read** the source completely. Do not skim.
-2. **Discuss** key takeaways with the user. Ask: "What should I emphasize? How granular?" Skip this if the user says "just ingest it."
+2. **Discuss takeaways with the user — this step is required.** Before writing a single page, ask:
+   - "What should I emphasize from this source?"
+   - "How granular should I go?"
+   - "Is there existing wiki context I should link against?"
+   **Wait for the user's response before proceeding.** Do not assume defaults and do not skip ahead.
+   **Skip this step only if** the user's original message included "just ingest it" or "auto-ingest".
 3. **Create** source summary in `wiki/sources/`. Use the source frontmatter schema from `references/frontmatter.md`.
 4. **Create or update** entity pages for every person, org, product, and repo mentioned. One page per entity.
 5. **Create or update** concept pages for significant ideas and frameworks.
