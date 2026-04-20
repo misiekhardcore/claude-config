@@ -62,3 +62,11 @@ Do NOT read the wiki for general coding questions or things already in this proj
 
 If you configured the MCP server, Claude can read and write vault notes directly.
 See `skills/wiki/references/mcp-setup.md` for setup instructions.
+
+---
+
+## Maintenance Rules
+
+The schema (directory map, page types), ingest procedure, contradiction handling, quality standards, and log format are defined in [`skills/wiki/references/maintenance-rules.md`](skills/wiki/references/maintenance-rules.md).
+
+Read that file before any ingest, autoresearch, or significant wiki operation.
