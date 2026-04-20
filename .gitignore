@@ -1,4 +1,5 @@
 node_modules
+.worktrees/
 plugins/marketplaces
 plugins/installed_plugins.json
 plugins/known_marketplaces.json
