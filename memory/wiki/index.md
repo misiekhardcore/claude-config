@@ -1,12 +1,14 @@
 ---
 type: meta
 title: "Wiki Index"
-updated: 2026-04-17
+updated: 2026-04-20
 created: 2026-04-17
 tags:
   - meta
   - index
 status: evergreen
+confidence: EXTRACTED
+evidence: []
 related:
   - "[[overview]]"
   - "[[log]]"

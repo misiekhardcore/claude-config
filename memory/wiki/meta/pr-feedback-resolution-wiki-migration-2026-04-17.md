@@ -2,7 +2,7 @@
 type: session
 title: "PR Feedback Resolution + Wiki Migration — vscode-gcode-extension #145"
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - session
   - vscode-gcode-extension
@@ -11,6 +11,8 @@ tags:
   - lsp
   - typescript
 status: current
+confidence: EXTRACTED
+evidence: []
 related:
   - "[[vscode-gcode-extension]]"
   - "[[workspace-symbol-architecture]]"

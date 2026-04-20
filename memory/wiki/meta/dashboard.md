@@ -1,12 +1,14 @@
 ---
 type: meta
 title: "Dashboard"
-updated: 2026-04-17
+updated: 2026-04-20
 created: 2026-04-17
 tags:
   - meta
   - dashboard
 status: evergreen
+confidence: EXTRACTED
+evidence: []
 related:
   - "[[index]]"
   - "[[overview]]"
