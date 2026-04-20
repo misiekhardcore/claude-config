@@ -81,3 +81,28 @@ See `skills/wiki/references/mcp-setup.md` for setup instructions.
 The schema (directory map, page types), ingest procedure, contradiction handling, quality standards, and log format are defined in [`skills/wiki/references/maintenance-rules.md`](skills/wiki/references/maintenance-rules.md).
 
 Read that file before any ingest, autoresearch, or significant wiki operation.
+
+## Required Frontmatter Fields (New Pages)
+
+Every new wiki page must include these fields (in addition to the universal fields in `frontmatter.md`):
+
+- `confidence: EXTRACTED | INFERRED | AMBIGUOUS` — how the claims on this page were derived
+- `evidence:` — flat list of wikilinks to source pages supporting the claims
+
+See [`skills/wiki/references/frontmatter.md`](skills/wiki/references/frontmatter.md) for the full field schema.
+
+## Allowed Relationship Types
+
+Use these typed fields alongside `related:` when the semantic is unambiguous:
+
+- `supersedes:` — this page replaces the listed page(s)
+- `contradicts:` — this page's claims directly conflict with the listed page(s)
+- `uses:` — this page depends on or applies the listed page(s)
+- `depends_on:` — stronger dependency (cannot function without)
+- `caused:` — this page describes something that caused the listed outcome(s)
+- `fixed:` — this page describes a fix for the listed issue(s)
+- `implements:` — this page is an implementation of the listed spec/pattern(s)
+
+Note: `depends_on` uses underscore (not hyphen) for idiomatic YAML key naming.
+
+All typed relationship fields are optional flat lists. `related:` remains the catch-all for general links.

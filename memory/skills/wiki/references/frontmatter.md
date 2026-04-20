@@ -70,6 +70,8 @@ implements:
 
 Allowed relationship types: `supersedes`, `contradicts`, `uses`, `depends_on`, `caused`, `fixed`, `implements`.
 
+Note: `depends_on` uses underscore (not hyphen) for idiomatic YAML key naming.
+
 ---
 
 ## Type-Specific Additions

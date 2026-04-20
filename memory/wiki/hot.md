@@ -7,6 +7,8 @@ tags:
   - meta
   - hot-cache
 status: evergreen
+confidence: EXTRACTED
+evidence: []
 related:
   - "[[index]]"
   - "[[log]]"
@@ -25,7 +27,7 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
-2026-04-20: **Schema migration: typed relationships + confidence tagging** (issue #11). Added two new schema features: (1) **Confidence tagging** - every wiki page now has `confidence: EXTRACTED|INFERRED|AMBIGUOUS` (Graphify-style) and `evidence:` list. Source pages default to EXTRACTED; concept/entity/question/comparison pages default to INFERRED. Source-type pages had existing `confidence: high|medium|low` renamed to `source_reliability:` to avoid collision. (2) **Typed relationships** - seven new optional flat-list fields alongside `related:`: `supersedes`, `contradicts`, `uses`, `depends_on`, `caused`, `fixed`, `implements`. All 74 wiki pages migrated. See [[frontmatter]], [[maintenance-rules]]. 14 pages received typed relationships where semantics were unambiguous (e.g., `llm-wiki-v2-extensions` implements `LLM Wiki Pattern`; `Graphify` implements `llm-wiki-v2-extensions`; `llm-wiki-scalability-critique` contradicts `LLM Wiki Pattern`).
+2026-04-20: **Schema migration: typed relationships + confidence tagging** (issue #11). Added two new schema features: (1) **Confidence tagging** - every wiki page now has `confidence: EXTRACTED|INFERRED|AMBIGUOUS` (Graphify-style) and `evidence:` list. Source pages default to EXTRACTED; concept/entity/question/comparison pages default to INFERRED. Source-type pages had existing `confidence: high|medium|low` renamed to `source_reliability:` to avoid collision. (2) **Typed relationships** - seven new optional flat-list fields alongside `related:`: `supersedes`, `contradicts`, `uses`, `depends_on`, `caused`, `fixed`, `implements`. All 74 wiki pages migrated. See [[frontmatter]], [[maintenance-rules]]. 13 pages received typed relationships where semantics were unambiguous (e.g., `llm-wiki-v2-extensions` implements `LLM Wiki Pattern`; `Graphify` implements `[[llm-wiki-v2-extensions]]`; `allowed-tools-semantics` uses `[[skill-invocation-model]]`).
 
 2026-04-20: **LLM Wiki ecosystem post-publication research** (autoresearch on Karpathy gist). Four key findings not in the April 17 ingest: (1) **LLM Wiki v2** (rohitg00) extends the base pattern with memory lifecycle (confidence decay, Ebbinghaus forgetting curves, supersession), typed knowledge graph (EXTRACTED/INFERRED/AMBIGUOUS edges), hybrid search (BM25 + vector + graph traversal), and event-driven automation -- schema is now "the real product." (2) **arXiv:2604.11243** provides empirical economics: 84.6% token savings (47K vs 305K tokens) on a 4-query test vs RAG; 53.7-81.3% savings over 30 days depending on topic concentration; reframes tokens from consumables to capital goods. (3) **Graphify** implements the pattern with three confidence tiers: EXTRACTED (deterministic, conf=1.0), INFERRED (variable 0-1.0), AMBIGUOUS (triggers HITL review). (4) **Scalability critiques** quantified: ~1000-file collapse for flat index; hallucination compounding is a genuine failure mode; enterprise RAG (95K+ docs) still wins for full-corpus retrieval. Pattern best fits personal/small-team use (<1000 pages). Gist updated metrics: 4,713 forks (up from 4,360), 485+ comments. See [[llm-wiki-v2-extensions]], [[knowledge-compounding-economics]], [[Graphify]], [[llm-wiki-scalability-critique]].
 
