@@ -23,9 +23,10 @@ Work through these in order:
 3. **Stale claims**. Assertions on older pages that newer sources have contradicted or updated.
 4. **Missing pages**. Concepts or entities mentioned in multiple pages but lacking their own page.
 5. **Missing cross-references**. Entities mentioned in a page but not linked.
-6. **Frontmatter gaps**. Pages missing required fields (type, status, created, updated, tags).
+6. **Frontmatter gaps**. Pages missing required fields (type, status, created, updated, tags, tier, reviewed_at).
 7. **Empty sections**. Headings with no content underneath.
 8. **Stale index entries**. Items in `wiki/index.md` pointing to renamed or deleted pages.
+9. **Stale pages**. Pages whose `reviewed_at` is older than tier-specific cadence. Injects or removes `[!stale]` callout as appropriate.
 
 ---
 
@@ -68,6 +69,9 @@ status: developing
 
 ## Cross-Reference Gaps
 - [[Entity Name]] mentioned in [[Page A]] without a wikilink.
+
+## Stale Pages
+- [[Page Name]]: tier=semantic, last reviewed=2026-01-01, overdue by 30 days. Update `reviewed_at:` after verifying.
 ```
 
 ---
@@ -95,6 +99,31 @@ During lint, flag pages that violate the style guide:
 - Missing source citations where claims are made
 - Uncertainty not flagged with `> [!gap]`
 - Contradictions not flagged with `> [!contradiction]`
+
+---
+
+## Stale Page Detection (Check #9)
+
+For each wiki page, read `tier:` and `reviewed_at:` from frontmatter. Compare `reviewed_at` + tier cadence against today's date.
+
+**Review cadences by tier:**
+- **transient**: 7 days
+- **episodic**: 30 days
+- **semantic**: 90 days
+- **procedural**: 180 days
+
+**Behavior:**
+- If `reviewed_at` + cadence < today and no `[!stale]` callout exists, inject the callout immediately after the frontmatter closing `---` and before the first heading.
+- If `reviewed_at` + cadence < today and a `[!stale]` callout already exists, leave it as-is (no duplicates).
+- If `reviewed_at` is current (i.e., page is no longer overdue) and a `[!stale]` callout exists, remove it (idempotent).
+
+**Callout format (inject exactly as shown):**
+```
+> [!stale]
+> This page is overdue for review. Last verified: {{reviewed_at}}. Update `reviewed_at:` in frontmatter when verified.
+```
+
+Replace `{{reviewed_at}}` with the actual value from the page's frontmatter.
 
 ---
 
