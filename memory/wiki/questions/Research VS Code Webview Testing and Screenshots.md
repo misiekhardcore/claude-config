@@ -2,7 +2,7 @@
 type: synthesis
 title: "Research: VS Code Webview Testing and Screenshots"
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - research
   - vscode
@@ -12,6 +12,7 @@ tags:
 status: developing
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
 related:
   - "[[VS Code Webview Testing]]"
   - "[[FrameLocator Chaining for Nested Iframes]]"
@@ -28,6 +29,7 @@ sources:
   - "[[vscode-test-electron-cli]]"
   - "[[playwright-electron-vscode-testing]]"
   - "[[hakanson-vscode-actions-xvfb]]"
+evidence: []
 ---
 
 # Research: VS Code Webview Testing and Screenshots

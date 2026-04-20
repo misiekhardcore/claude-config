@@ -7,6 +7,9 @@ status: evergreen
 tier: semantic
 reviewed_at: 2026-04-20
 created: 2026-04-17
+updated: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[claude-skill-anatomy]]"
   - "[[skill-invocation-model]]"

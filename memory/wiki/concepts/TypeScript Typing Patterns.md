@@ -4,7 +4,7 @@ title: "TypeScript Typing Patterns"
 complexity: intermediate
 domain: typescript
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - concept
   - typescript
@@ -13,6 +13,8 @@ tags:
 status: seed
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[per-project-knowledge]]"
   - "[[gcode-lsp-architecture]]"

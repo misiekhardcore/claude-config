@@ -2,7 +2,7 @@
 type: concept
 title: "VS Code Screenshot Determinism"
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - vscode
   - screenshots
@@ -12,6 +12,10 @@ status: current
 tier: semantic
 reviewed_at: 2026-04-20
 confidence: high
+confidence: INFERRED
+evidence:
+  - "[[hakanson-vscode-actions-xvfb]]"
+  - "[[wdio-vscode-service-docs]]"
 related:
   - "[[VS Code Webview Testing]]"
   - "[[Electron Headless via Xvfb]]"

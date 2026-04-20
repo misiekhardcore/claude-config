@@ -2,7 +2,7 @@
 type: entity
 title: "kepano/obsidian-skills"
 created: 2026-04-08
-updated: 2026-04-08
+updated: 2026-04-20
 tags:
   - github-repo
   - official
@@ -11,6 +11,9 @@ tags:
 status: current
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence:
+  - "[[claude-obsidian-ecosystem-research]]"
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[cherry-picks]]"

@@ -2,7 +2,7 @@
 type: concept
 title: "claude-workflow composition codification"
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - claude-workflow
   - pattern
@@ -12,6 +12,8 @@ tags:
 status: current
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[multiskill-workflow-patterns]]"
   - "[[seed-brief-pattern]]"

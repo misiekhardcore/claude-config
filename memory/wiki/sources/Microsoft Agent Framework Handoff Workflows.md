@@ -6,7 +6,7 @@ source_type: official-documentation
 author: Microsoft
 date_published: 2026
 url: https://learn.microsoft.com/en-us/agent-framework/user-guide/workflows/orchestrations/handoff
-confidence: high
+source_reliability: high
 key_claims:
   - Handoff pattern enables dynamic delegation between specialists
   - Triage agent carries initial brief and routes
@@ -16,11 +16,13 @@ tags: [orchestration, multi-agent, handoff, official-docs]
 status: developing
 tier: episodic
 reviewed_at: 2026-04-20
+confidence: EXTRACTED
 created: 2026-04-19
 related:
   - "[[Microsoft Agent Framework]]"
   - "[[agent-handoff-artifact-pattern]]"
   - "[[seed-brief-pattern]]"
+evidence: []
 ---
 
 # Microsoft Learn — Agent Framework Handoff Workflows

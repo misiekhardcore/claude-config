@@ -8,6 +8,42 @@ Frontmatter field schemas live in [`frontmatter.md`](frontmatter.md) — this fi
 
 ## Schema
 
+### Confidence Tagging
+
+Every page carries a `confidence:` field with one of three values:
+
+| Value | Meaning | When to use |
+|-------|---------|-------------|
+| `EXTRACTED` | Claims sourced directly from a document | Source pages; entity/concept claims that are literally quoted |
+| `INFERRED` | Claims derived by the LLM from sources | Most concept and entity pages |
+| `AMBIGUOUS` | Conflicting signals; needs human review | Pages where sources contradict and resolution is unclear |
+
+`AMBIGUOUS` pages must also list the open conflict in the `open_questions` field or in a `## Perspectives` section.
+
+The `evidence:` field is a flat list of source wikilinks supporting the page's claims. Required for `INFERRED` and `AMBIGUOUS` pages.
+
+**Default assignments by page type:**
+- `source` pages → `EXTRACTED` (the page summarises what was directly found in the document)
+- `concept` pages → `INFERRED` (LLM synthesis from one or more sources)
+- `entity` pages → `INFERRED` (unless the entity's details are verbatim-quoted)
+- `meta` pages (index, log, hot) → `EXTRACTED` (mechanically generated, not inferred)
+
+### Typed Relationships
+
+Alongside `related:`, use typed fields when the semantic is unambiguous:
+
+| Field | Meaning |
+|-------|---------|
+| `supersedes:` | This page replaces the listed page(s) |
+| `contradicts:` | This page's claims conflict with the listed page(s) |
+| `uses:` | This page/concept applies or depends on the listed page(s) |
+| `depends_on:` | Stronger dependency — can't function without the listed page(s) |
+| `caused:` | This page describes something that caused the listed outcome(s) |
+| `fixed:` | This page describes a fix for the listed issue(s) |
+| `implements:` | This page is an implementation of the listed spec/pattern(s) |
+
+All typed relationship fields are optional flat lists. Keep `related:` for general or untyped links. Add typed fields only when the semantic is genuinely unambiguous.
+
 ### Directory Map
 
 | Directory | Type value | What goes here | Naming convention |

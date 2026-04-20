@@ -6,7 +6,7 @@ source_type: blog-post
 author: Beam.ai
 date_published: 2026
 url: https://beam.ai/agentic-insights/multi-agent-orchestration-patterns-production
-confidence: medium
+source_reliability: medium
 key_claims:
   - Infinite handoff loops are the number-one failure mode
   - Context loss compounds with every transfer
@@ -16,11 +16,13 @@ tags: [orchestration, multi-agent, failure-modes]
 status: developing
 tier: episodic
 reviewed_at: 2026-04-20
+confidence: EXTRACTED
 created: 2026-04-19
 related:
   - "[[multiskill-workflow-patterns]]"
   - "[[hierarchical-agent-decomposition]]"
   - "[[Microsoft Agent Framework]]"
+evidence: []
 ---
 
 # Beam.ai — 6 Multi-Agent Orchestration Patterns for Production (2026)

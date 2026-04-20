@@ -8,7 +8,7 @@ aliases:
   - "ParseError.createParseError"
   - "error range propagation"
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - pattern
   - architecture
@@ -17,6 +17,8 @@ tags:
 status: mature
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[G-code LSP Architecture]]"
   - "[[concepts/_index]]"

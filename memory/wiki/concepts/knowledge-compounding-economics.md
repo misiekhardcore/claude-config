@@ -14,6 +14,11 @@ tags:
 status: current
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence:
+  - "[[llm-wiki-research-2026-04-20]]"
+uses:
+  - "[[LLM Wiki Pattern]]"
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"

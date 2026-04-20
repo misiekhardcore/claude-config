@@ -1,13 +1,15 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-04-20
+updated: 2026-04-20T00:00:00
 tags:
   - meta
   - log
 status: evergreen
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: EXTRACTED
+evidence: []
 related:
   - "[[index]]"
   - "[[hot]]"
@@ -16,6 +18,13 @@ related:
 ---
 
 # Operation Log
+
+## [2026-04-20] schema-migration | Typed relationships + confidence tagging (issue #11)
+- Trigger: `/implement 11`
+- Pages created: none
+- Pages updated: [[frontmatter]], [[maintenance-rules]], 33 concept pages, 18 entity pages, 17 source pages, 2 comparison pages, 4 question pages
+- Contradictions resolved: none
+- Key findings: (1) added `confidence: EXTRACTED|INFERRED|AMBIGUOUS` as universal field to all 74 wiki pages; (2) added `evidence:` flat list to all pages; (3) source-type pages renamed `confidence: high|medium|low` to `source_reliability:`; (4) added 7 typed relationship fields (`supersedes`, `contradicts`, `uses`, `depends_on`, `caused`, `fixed`, `implements`) to frontmatter schema; (5) typed relationships applied to 14 pages where semantic is unambiguous
 
 ## [2026-04-20] autoresearch | Karpathy LLM Wiki gist ecosystem (2 rounds)
 - Rounds: 2 | Searches: 3 | Fetches: 3

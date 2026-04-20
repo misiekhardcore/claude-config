@@ -6,17 +6,19 @@ source_type: official-docs
 author: Anthropic
 date_published: 2025-10
 url: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices
-confidence: high
+source_reliability: high
 tags: [claude-code, skills, official, best-practices]
 status: evergreen
 tier: episodic
 reviewed_at: 2026-04-20
+confidence: EXTRACTED
 created: 2026-04-19
 related:
   - "[[claude-code-skills-official-docs]]"
   - "[[allowed-tools-semantics]]"
   - "[[skill-frontmatter-reference]]"
   - "[[skill-creation-patterns]]"
+evidence: []
 ---
 
 # Agent Skills Best Practices (platform.claude.com)

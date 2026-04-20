@@ -14,7 +14,9 @@ status: current
 tier: semantic
 reviewed_at: 2026-04-20
 created: 2026-04-18
-updated: 2026-04-18
+updated: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[client-side-enumeration-pattern]]"
   - "[[workspace-symbol-architecture]]"

@@ -3,7 +3,7 @@ type: entity
 title: "wdio-vscode-service"
 entity_type: tool
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - testing
   - vscode
@@ -12,6 +12,9 @@ status: current
 tier: semantic
 reviewed_at: 2026-04-20
 confidence: high
+confidence: INFERRED
+evidence:
+  - "[[wdio-vscode-service-docs]]"
 related:
   - "[[VS Code Webview Testing]]"
   - "[[vscode-extension-tester]]"

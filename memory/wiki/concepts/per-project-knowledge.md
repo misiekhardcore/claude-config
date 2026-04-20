@@ -2,7 +2,7 @@
 type: concept
 title: "Per-Project Knowledge Management"
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - concept
   - llm-wiki
@@ -12,6 +12,8 @@ tags:
 status: current
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"

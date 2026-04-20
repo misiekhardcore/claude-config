@@ -3,7 +3,7 @@ type: concept
 title: "G-code LSP Architecture"
 domain: lsp-architecture
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - concept
   - architecture
@@ -13,6 +13,8 @@ tags:
 status: current
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[vscode-gcode-extension]]"
   - "[[workspace-symbol-architecture]]"

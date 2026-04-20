@@ -108,4 +108,6 @@ See `skills/wiki/references/mcp-setup.md` for setup instructions.
 
 The schema (directory map, page types), ingest procedure, contradiction handling, quality standards, and log format are defined in [`skills/wiki/references/maintenance-rules.md`](skills/wiki/references/maintenance-rules.md).
 
-Read that file before any ingest, autoresearch, or significant wiki operation.
+The frontmatter field schema (universal fields, typed relationship fields, type-specific additions) is defined in [`skills/wiki/references/frontmatter.md`](skills/wiki/references/frontmatter.md).
+
+Read both files before any ingest, autoresearch, or significant wiki operation.

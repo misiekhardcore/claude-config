@@ -2,7 +2,7 @@
 type: comparison
 title: "Claude + Obsidian Ecosystem: Feature Matrix"
 created: 2026-04-08
-updated: 2026-04-08
+updated: 2026-04-20
 tags:
   - ecosystem
   - competitive-analysis
@@ -11,12 +11,14 @@ tags:
 status: current
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
 related:
   - "[[cherry-picks]]"
   - "[[LLM Wiki Pattern]]"
   - "[[Andrej Karpathy]]"
 sources:
   - "[[claude-obsidian-ecosystem-research]]"
+evidence: []
 ---
 
 # Claude + Obsidian Ecosystem: Feature Matrix

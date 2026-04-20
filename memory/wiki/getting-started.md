@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Getting Started"
-updated: 2026-04-07
+updated: 2026-04-20
 created: 2026-04-17
 tags:
   - meta
@@ -9,6 +9,8 @@ tags:
 status: evergreen
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[index]]"
   - "[[overview]]"

@@ -2,7 +2,7 @@
 type: entity
 title: "Ar9av/obsidian-wiki"
 created: 2026-04-08
-updated: 2026-04-08
+updated: 2026-04-20
 tags:
   - github-repo
   - llm-wiki-pattern
@@ -10,6 +10,11 @@ tags:
 status: current
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence:
+  - "[[claude-obsidian-ecosystem-research]]"
+implements:
+  - "[[LLM Wiki Pattern]]"
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[cherry-picks]]"

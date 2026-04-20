@@ -11,6 +11,7 @@ tags:
 status: current
 tier: episodic
 reviewed_at: 2026-04-20
+confidence: EXTRACTED
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[llm-wiki-karpathy-gist]]"
@@ -19,6 +20,7 @@ related:
   - "[[Graphify]]"
   - "[[llm-wiki-scalability-critique]]"
 source_url: "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f"
+evidence: []
 ---
 
 # Source: LLM Wiki Ecosystem Research 2026-04-20

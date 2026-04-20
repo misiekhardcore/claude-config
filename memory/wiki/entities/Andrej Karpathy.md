@@ -5,7 +5,7 @@ entity_type: person
 role: "AI researcher, educator, founder"
 first_mentioned: "[[LLM Wiki Pattern]]"
 created: 2026-04-07
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - entity
   - person
@@ -13,6 +13,9 @@ tags:
 status: mature
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence:
+  - "[[llm-wiki-karpathy-gist]]"
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"

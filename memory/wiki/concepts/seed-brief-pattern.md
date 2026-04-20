@@ -7,6 +7,11 @@ status: current
 tier: semantic
 reviewed_at: 2026-04-20
 created: 2026-04-19
+updated: 2026-04-20
+confidence: INFERRED
+evidence: []
+uses:
+  - "[[agent-handoff-artifact-pattern]]"
 related:
   - "[[multiskill-workflow-patterns]]"
   - "[[agent-handoff-artifact-pattern]]"

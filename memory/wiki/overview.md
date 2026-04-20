@@ -2,13 +2,15 @@
 type: overview
 title: "Wiki Overview"
 created: 2026-04-07
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - meta
   - overview
 status: developing
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[index]]"
   - "[[hot]]"

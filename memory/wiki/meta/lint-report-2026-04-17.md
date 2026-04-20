@@ -2,7 +2,7 @@
 type: meta
 title: "Wiki Lint Report — 2026-04-17"
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - meta
   - lint
@@ -10,6 +10,8 @@ tags:
 status: evergreen
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: EXTRACTED
+evidence: []
 ---
 
 # Wiki Lint Report — 2026-04-17 (Post-Fix)

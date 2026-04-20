@@ -6,11 +6,13 @@ tags: [claude-code, skills, official]
 status: evergreen
 tier: episodic
 reviewed_at: 2026-04-20
+confidence: EXTRACTED
 created: 2026-04-17
 related:
   - "[[claude-skill-anatomy]]"
   - "[[skill-invocation-model]]"
   - "[[skill-creation-patterns]]"
+evidence: []
 ---
 
 # Claude Code Skills - Official Anthropic Documentation

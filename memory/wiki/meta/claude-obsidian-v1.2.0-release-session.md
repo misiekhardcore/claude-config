@@ -2,7 +2,7 @@
 type: session
 title: "claude-obsidian v1.2.0 Release Session"
 created: 2026-04-07
-updated: 2026-04-07
+updated: 2026-04-20
 tags:
   - session
   - release
@@ -11,6 +11,8 @@ tags:
 status: evergreen
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: EXTRACTED
+evidence: []
 related:
   - "[[getting-started]]"
   - "[[index]]"

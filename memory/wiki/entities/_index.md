@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Entities Index"
-updated: 2026-04-17
+updated: 2026-04-20
 created: 2026-04-17
 tags:
   - meta
@@ -10,6 +10,8 @@ tags:
 status: evergreen
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: EXTRACTED
+evidence: []
 related:
   - "[[index]]"
   - "[[Andrej Karpathy]]"

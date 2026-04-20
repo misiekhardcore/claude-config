@@ -6,7 +6,7 @@ source_type: blog-post
 author: Addy Osmani
 date_published: 2026
 url: https://addyosmani.com/blog/code-agent-orchestra/
-confidence: medium
+source_reliability: medium
 key_claims:
   - Princeton NLP found single agent matched/beat multi-agent on 64% of tasks
   - Multi-agent adds ~2.1pp accuracy at ~2x cost
@@ -16,10 +16,12 @@ tags: [orchestration, multi-agent, cost-benefit]
 status: developing
 tier: episodic
 reviewed_at: 2026-04-20
+confidence: EXTRACTED
 created: 2026-04-19
 related:
   - "[[multiskill-workflow-patterns]]"
   - "[[hierarchical-agent-decomposition]]"
+evidence: []
 ---
 
 # Addy Osmani — The Code Agent Orchestra

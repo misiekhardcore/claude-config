@@ -3,7 +3,7 @@ type: meta
 title: "Solutions Index"
 project: "[[vscode-gcode-extension]]"
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - meta
   - solutions
@@ -11,6 +11,8 @@ tags:
 status: current
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: EXTRACTED
+evidence: []
 related:
   - "[[index]]"
   - "[[vscode-gcode-extension]]"

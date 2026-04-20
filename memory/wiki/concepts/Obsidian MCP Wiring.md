@@ -4,7 +4,7 @@ title: "Obsidian MCP Wiring"
 complexity: intermediate
 domain: obsidian
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-04-20
 tags:
   - concept
   - obsidian
@@ -14,6 +14,8 @@ tags:
 status: seed
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence: []
 related:
   - "[[per-project-knowledge]]"
   - "[[LLM Wiki Pattern]]"

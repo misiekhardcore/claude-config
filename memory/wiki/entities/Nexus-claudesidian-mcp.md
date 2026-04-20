@@ -2,7 +2,7 @@
 type: entity
 title: "Nexus (ProfSynapse/claudesidian-mcp)"
 created: 2026-04-08
-updated: 2026-04-08
+updated: 2026-04-20
 tags:
   - github-repo
   - obsidian-plugin
@@ -11,6 +11,9 @@ tags:
 status: current
 tier: semantic
 reviewed_at: 2026-04-20
+confidence: INFERRED
+evidence:
+  - "[[claude-obsidian-ecosystem-research]]"
 related:
   - "[[cherry-picks]]"
   - "[[claude-obsidian-ecosystem]]"
