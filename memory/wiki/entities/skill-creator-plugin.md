@@ -4,6 +4,7 @@ description: The official Anthropic skill-creator plugin for interactive skill c
 type: entity
 tags: [claude-code, skills, plugin, official]
 status: evergreen
+updated: 2026-04-19
 created: 2026-04-17
 updated: 2026-04-20
 confidence: INFERRED

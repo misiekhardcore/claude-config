@@ -14,6 +14,8 @@ tags:
   - webview
 status: current
 confidence: EXTRACTED
+updated: 2026-04-19
+created: 2026-04-19
 key_claims:
   - "Playwright's Electron API can launch VS Code as an Electron app and drive it"
   - "Webviews are reached via chained frameLocator() calls (nested iframes)"
@@ -35,19 +37,19 @@ Using Playwright's `_electron` API to launch VS Code directly is an **alternativ
 ## Launch pattern
 
 ```ts
-import { _electron as electron } from 'playwright';
+import { _electron as electron } from "playwright";
 
 const app = await electron.launch({
-  executablePath: '/path/to/vscode',
+  executablePath: "/path/to/vscode",
   args: [
-    '--extensionDevelopmentPath=' + path.resolve(__dirname, '..'),
-    '--disable-workspace-trust',
-    '--user-data-dir=/tmp/vscode-test-profile',
-    path.resolve(__dirname, 'fixtures'),
+    "--extensionDevelopmentPath=" + path.resolve(__dirname, ".."),
+    "--disable-workspace-trust",
+    "--user-data-dir=/tmp/vscode-test-profile",
+    path.resolve(__dirname, "fixtures"),
   ],
 });
 const window = await app.firstWindow();
-await window.screenshot({ path: 'shots/01.png' });
+await window.screenshot({ path: "shots/01.png" });
 await app.close();
 ```
 
@@ -66,10 +68,10 @@ VS Code renders webviews as **nested iframes**:
 Playwright pattern:
 
 ```ts
-const outer = window.frameLocator('iframe.webview');
+const outer = window.frameLocator("iframe.webview");
 const inner = outer.frameLocator('iframe[name="active-frame"]');
-await expect(inner.locator('#my-button')).toBeVisible();
-await window.screenshot({ path: 'shots/webview.png' });
+await expect(inner.locator("#my-button")).toBeVisible();
+await window.screenshot({ path: "shots/webview.png" });
 ```
 
 `frameLocator()` waits for the frame to load, which is the key advantage over `page.frame()`.
@@ -93,14 +95,14 @@ The Playwright VS Code extension itself has issues in devcontainers/SSH because 
 
 ## Tradeoffs vs wdio-vscode-service
 
-| | Playwright+Electron | wdio-vscode-service |
-|---|---|---|
-| Workbench page objects | None (roll your own) | Built in (command palette, sidebar, status bar) |
-| Frame locators | `frameLocator()` chain | `webview.open()` / `close()` |
-| Trace viewer / UI mode | Yes | No |
-| Codegen (`playwright codegen`) | Works on Electron | N/A |
-| Screenshot of webview-only | Easy via frame element | Switch context, screenshot, switch back |
-| Maturity for VS Code | Less — no official service | More — dedicated maintained service |
+|                                | Playwright+Electron        | wdio-vscode-service                             |
+| ------------------------------ | -------------------------- | ----------------------------------------------- |
+| Workbench page objects         | None (roll your own)       | Built in (command palette, sidebar, status bar) |
+| Frame locators                 | `frameLocator()` chain     | `webview.open()` / `close()`                    |
+| Trace viewer / UI mode         | Yes                        | No                                              |
+| Codegen (`playwright codegen`) | Works on Electron          | N/A                                             |
+| Screenshot of webview-only     | Easy via frame element     | Switch context, screenshot, switch back         |
+| Maturity for VS Code           | Less — no official service | More — dedicated maintained service             |
 
 **Recommendation in the raw plan:** Playwright is cleaner for **webview-only screenshots rendered outside IDE chrome** (just load the webview HTML in plain Chromium); wdio wins for **full-IDE flows with workbench affordances**. The research confirms this split.
 

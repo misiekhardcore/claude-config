@@ -14,6 +14,8 @@ tags:
   - webview
 status: current
 confidence: EXTRACTED
+updated: 2026-04-19
+created: 2026-04-19
 key_claims:
   - "ExTester is a Selenium WebDriver-based UI tester for VS Code extensions"
   - "Latest version 8.23.0 (March 2026)"
@@ -68,7 +70,9 @@ ExTester exposes raw Selenium APIs. Standard Selenium screenshot calls apply:
 
 ```ts
 const driver = VSBrowser.instance.driver;
-await driver.takeScreenshot().then(png => fs.writeFileSync('shot.png', png, 'base64'));
+await driver
+  .takeScreenshot()
+  .then((png) => fs.writeFileSync("shot.png", png, "base64"));
 ```
 
 No built-in `takeScreenshot` on the WebView page object — call through the driver instead.

@@ -15,6 +15,7 @@ key_claims:
 tags: [orchestration, multi-agent, handoff, official-docs]
 status: developing
 confidence: EXTRACTED
+updated: 2026-04-19
 created: 2026-04-19
 related:
   - "[[Microsoft Agent Framework]]"

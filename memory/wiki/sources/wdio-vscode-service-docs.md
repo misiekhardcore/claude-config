@@ -14,6 +14,8 @@ tags:
   - screenshots
 status: current
 confidence: EXTRACTED
+updated: 2026-04-19
+created: 2026-04-19
 key_claims:
   - "Service downloads VS Code + matching Chromedriver and launches it as an Electron app"
   - "Webview testing uses WebView.open() / close() to switch frame context"
@@ -52,11 +54,11 @@ From the generated TypeDoc at `webdriverio-community.github.io/wdio-vscode-servi
 Canonical webview test (`test/specs/webview.e2e.ts`):
 
 ```ts
-const webviews = await workbench.getAllWebviews()
-await webviews[0].open()
-expect(await browser.getPageSource()).toContain('My WebView')
-await expect($('h1')).toHaveText('Hello World!')
-await webviews[0].close()
+const webviews = await workbench.getAllWebviews();
+await webviews[0].open();
+expect(await browser.getPageSource()).toContain("My WebView");
+await expect($("h1")).toHaveText("Hello World!");
+await webviews[0].close();
 ```
 
 ## Screenshots

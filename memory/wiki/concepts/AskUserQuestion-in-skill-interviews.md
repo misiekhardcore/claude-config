@@ -16,17 +16,15 @@ evidence: []
 related:
   - "[[skill-creation-patterns]]"
   - "[[claude-workflow-composition-codification]]"
-  - "[[new-skill]]"
-  - "[[grill-me]]"
 ---
 
 # AskUserQuestion in Skill Interviews
 
 ## Context
 
-When a Claude Code skill needs to gather structured input from the user during an interview phase -- for example `/new-skill` asking which role, model, and target location to use -- two interaction modes are available: plain text prompts (for free-text input) and the `AskUserQuestion` tool (for bounded-choice questions). Choosing the wrong mode degrades UX: numbered text lists are harder to select from than a rendered picker, and open prompts are inappropriate for yes/no or enum choices.
+When a Claude Code skill needs to gather structured input from the user during an interview phase -- for example `new-skill` asking which role, model, and target location to use -- two interaction modes are available: plain text prompts (for free-text input) and the `AskUserQuestion` tool (for bounded-choice questions). Choosing the wrong mode degrades UX: numbered text lists are harder to select from than a rendered picker, and open prompts are inappropriate for yes/no or enum choices.
 
-Applies to: any skill with an interview or Q&A phase (`/new-skill`, `/grill-me`, discovery/define phase orchestrators).
+Applies to: any skill with an interview or Q&A phase (`new-skill`, `grill-me`, discovery/define phase orchestrators).
 
 ## Guidance
 
@@ -40,10 +38,10 @@ Use `AskUserQuestion` for every question with a **bounded set of distinct choice
 
 **When to fall back to plain prompts:**
 - Free-text fields: name, description, custom tool list
-- Genuinely open-ended exploration (brainstorming, grill-me discovery questions)
+- Genuinely open-ended exploration (brainstorming, `grill-me` discovery questions)
 - Tool unavailable
 
-**Applying to `/new-skill` interview (concrete mapping):**
+**Applying to `new-skill` interview (concrete mapping):**
 - Name (a) and Description (b): plain prompts
 - Role (c), Model (d), Effort (e), Tools (f): single-select AskUserQuestion
 - Shared protocols (g): multi-select AskUserQuestion (4-option limit forces splitting `composition.md` into a second call)
@@ -62,7 +60,7 @@ Use `AskUserQuestion` for every question with a **bounded set of distinct choice
 
 - Any skill step that presents 2-4 mutually exclusive choices
 - Protocol/feature selection with "pick all that apply" semantics (multiSelect)
-- Scaffolder interviews (e.g. `/new-skill`) where the option set is fully enumerated in the skill spec
+- Scaffolder interviews (e.g. `new-skill`) where the option set is fully enumerated in the skill spec
 
 Do NOT use when:
 - The option set is open-ended or domain-specific (user needs to type freely)
@@ -70,7 +68,7 @@ Do NOT use when:
 
 ## Examples
 
-Role question in `/new-skill`:
+Role question in `new-skill`:
 ```
 AskUserQuestion({
   questions: [{

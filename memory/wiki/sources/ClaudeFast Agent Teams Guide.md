@@ -16,6 +16,7 @@ key_claims:
 tags: [claude-code, subagents, TeamCreate, orchestration]
 status: developing
 confidence: EXTRACTED
+updated: 2026-04-19
 created: 2026-04-19
 related:
   - "[[multiskill-workflow-patterns]]"

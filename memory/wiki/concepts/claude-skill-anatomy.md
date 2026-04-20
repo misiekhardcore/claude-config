@@ -4,6 +4,7 @@ description: The structure of a Claude Code skill file - frontmatter fields, bod
 type: concept
 tags: [claude-code, skills]
 status: evergreen
+updated: 2026-04-19
 created: 2026-04-17
 updated: 2026-04-20
 confidence: INFERRED

@@ -14,6 +14,8 @@ tags:
   - official
 status: current
 confidence: EXTRACTED
+updated: 2026-04-19
+created: 2026-04-19
 key_claims:
   - "@vscode/test-electron is the low-level runner; @vscode/test-cli is the config-file wrapper"
   - "test-cli reads .vscode-test.js/mjs/cjs for its configuration"
@@ -31,10 +33,10 @@ Microsoft's official test runners for VS Code extensions. Supersedes the older `
 
 ## The two packages
 
-| Package | Role |
-|---|---|
+| Package                 | Role                                                                                                                         |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | `@vscode/test-electron` | Low-level. Downloads VS Code, launches it with the extension loaded, runs a Mocha entry point. Exposed via `runTests()` API. |
-| `@vscode/test-cli` | High-level. Config-file-driven wrapper over test-electron. Ships the `vscode-test` CLI. |
+| `@vscode/test-cli`      | High-level. Config-file-driven wrapper over test-electron. Ships the `vscode-test` CLI.                                      |
 
 Typical dependency setup installs both — `test-cli` depends on `test-electron`.
 
@@ -43,11 +45,11 @@ Typical dependency setup installs both — `test-cli` depends on `test-electron`
 `.vscode-test.mjs`:
 
 ```js
-import { defineConfig } from '@vscode/test-cli';
+import { defineConfig } from "@vscode/test-cli";
 export default defineConfig({
-  files: 'out/test/**/*.test.js',
-  workspaceFolder: './test-fixtures',
-  mocha: { ui: 'bdd', timeout: 60000 },
+  files: "out/test/**/*.test.js",
+  workspaceFolder: "./test-fixtures",
+  mocha: { ui: "bdd", timeout: 60000 },
 });
 ```
 

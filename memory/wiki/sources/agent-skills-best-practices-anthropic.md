@@ -10,6 +10,7 @@ source_reliability: high
 tags: [claude-code, skills, official, best-practices]
 status: evergreen
 confidence: EXTRACTED
+updated: 2026-04-19
 created: 2026-04-19
 related:
   - "[[claude-code-skills-official-docs]]"
