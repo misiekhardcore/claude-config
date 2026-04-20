@@ -28,8 +28,12 @@ sources:
 **status values:**
 - `seed`: exists, barely populated
 - `developing`: has real content, not yet complete
-- `mature`: comprehensive, well-linked
-- `evergreen`: unlikely to need updates
+- `current`: complete and useful, actively maintained
+- `mature`: comprehensive, well-linked, stable
+- `evergreen`: structural pages always up to date by definition
+- `superseded`: replaced by a newer source; preserved but no longer canonical
+
+See `maintenance-rules.md` for promotion/demotion criteria.
 
 ---
 
