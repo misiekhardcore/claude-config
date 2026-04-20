@@ -105,7 +105,7 @@ Pages carry a `status` field. See [`frontmatter.md`](frontmatter.md) for the ful
 - `current` → `mature`: second independent source confirms or significantly extends the claims
 - Any status → `superseded`: a newer source explicitly replaces this one
 
-#### Demotion
+### Demotion
 Demote from `mature` or `current` to `developing` only if a contradiction is found that removes a major section's basis.
 
 ---
@@ -127,10 +127,10 @@ Each page belongs to a consolidation tier, determined by its `tier:` frontmatter
 - Current date minus `reviewed_at` exceeds the page's tier cadence
 - `reviewed_at` is missing (assume stale)
 
-Example stale page warning:
+Example stale page warning (exact format injected by `wiki-lint`):
 ```
-> [!stale] This page was last reviewed on 2026-03-01 (50 days ago).
-> Tier: semantic (90-day cadence). Review by: 2026-06-29.
+> [!stale]
+> This page is overdue for review. Last verified: 2026-03-01. Update `reviewed_at:` in frontmatter when verified.
 ```
 
 ### Updating reviewed_at

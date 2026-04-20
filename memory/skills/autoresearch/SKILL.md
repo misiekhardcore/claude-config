@@ -125,14 +125,14 @@ sources:
 
 When creating pages during autoresearch, autonomously assign `tier:` and `reviewed_at:` (no user prompt needed):
 
-- Determine `tier:` from the page's `type:` field using this table:
+- Determine `tier:` from the page's `type:` field using this table (covers types commonly created by `/autoresearch`; any unlisted type defaults to `semantic`):
   | Type | Tier |
   |------|------|
   | concept | semantic |
   | synthesis | semantic |
   | source | episodic |
   | entity | semantic |
-  If type is unknown, default to `semantic`.
+  If type is unknown or not listed, default to `semantic`.
 - Set `reviewed_at:` to today's date (YYYY-MM-DD format)
 
 This is automatic — tier is a default that can be manually overridden per page if needed.
