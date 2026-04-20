@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-04-19
+updated: 2026-04-20
 tags:
   - meta
   - log
@@ -14,6 +14,14 @@ related:
 ---
 
 # Operation Log
+
+## [2026-04-20] autoresearch | Karpathy LLM Wiki gist ecosystem (2 rounds)
+- Rounds: 2 | Searches: 3 | Fetches: 3
+- Trigger: `/autoresearch https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f`
+- Prior ingest: [[llm-wiki-karpathy-gist]] (2026-04-17) — this session extends it with post-publication ecosystem
+- Pages created: [[llm-wiki-v2-extensions]], [[knowledge-compounding-economics]], [[Graphify]], [[llm-wiki-scalability-critique]], [[llm-wiki-research-2026-04-20]]
+- Pages updated: [[LLM Wiki Pattern]] (Scale Limits, Ecosystem, Academic Validation sections), [[index]], [[hot]], [[log]]
+- Key findings: (1) LLM Wiki v2 (rohitg00) adds memory lifecycle, typed graph, hybrid search; (2) arXiv:2604.11243 empirically validates 84.6% token savings vs RAG; (3) Graphify implements EXTRACTED/INFERRED/AMBIGUOUS confidence tagging; (4) ~1000-file collapse is the documented production failure mode; (5) Gist now at 4,713 forks, 485+ comments
 
 ## [2026-04-19] autoresearch | allowed-tools best practice for multi-agent workflow plugins
 - Rounds: 2 | Searches: 4 | Fetches: 3

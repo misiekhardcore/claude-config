@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Hot Cache"
-updated: 2026-04-19T00:00:00
+updated: 2026-04-20T00:00:00
 created: 2026-04-17
 tags:
   - meta
@@ -13,6 +13,10 @@ related:
   - "[[Wiki Map]]"
   - "[[getting-started]]"
   - "[[llm-wiki-karpathy-gist]]"
+  - "[[llm-wiki-v2-extensions]]"
+  - "[[knowledge-compounding-economics]]"
+  - "[[Graphify]]"
+  - "[[llm-wiki-scalability-critique]]"
   - "[[LLM Wiki Pattern]]"
 ---
 
@@ -21,6 +25,8 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+2026-04-20: **LLM Wiki ecosystem post-publication research** (autoresearch on Karpathy gist). Four key findings not in the April 17 ingest: (1) **LLM Wiki v2** (rohitg00) extends the base pattern with memory lifecycle (confidence decay, Ebbinghaus forgetting curves, supersession), typed knowledge graph (EXTRACTED/INFERRED/AMBIGUOUS edges), hybrid search (BM25 + vector + graph traversal), and event-driven automation -- schema is now "the real product." (2) **arXiv:2604.11243** provides empirical economics: 84.6% token savings (47K vs 305K tokens) on a 4-query test vs RAG; 53.7-81.3% savings over 30 days depending on topic concentration; reframes tokens from consumables to capital goods. (3) **Graphify** implements the pattern with three confidence tiers: EXTRACTED (deterministic, conf=1.0), INFERRED (variable 0-1.0), AMBIGUOUS (triggers HITL review). (4) **Scalability critiques** quantified: ~1000-file collapse for flat index; hallucination compounding is a genuine failure mode; enterprise RAG (95K+ docs) still wins for full-corpus retrieval. Pattern best fits personal/small-team use (<1000 pages). Gist updated metrics: 4,713 forks (up from 4,360), 485+ comments. See [[llm-wiki-v2-extensions]], [[knowledge-compounding-economics]], [[Graphify]], [[llm-wiki-scalability-critique]].
+
 2026-04-19: **`allowed-tools` best practice for multi-agent workflow plugins** (autoresearch). The SKILL.md `allowed-tools` field **pre-approves** tools during skill execution, it does NOT restrict them — every tool remains callable and falls through to normal permission settings. To actually block tools, use deny rules in `.claude/settings.json` or put the restriction on a subagent's `tools:` field (different field, opposite semantics). The Agent SDK ignores frontmatter `allowed-tools` entirely — use `allowedTools` query option + `permissionMode: "dontAsk"` for hard restriction there. Best practice for plugins like `claude-workflow`: (1) default to omission on orchestrator/specialist skills — respect user's permission config; (2) declare narrow list + `disable-model-invocation: true` only for side-effect skills (`/commit`, `/deploy`); (3) primitive skills with truly fixed surface (`/grill-me` → Read/Grep/Glob) may pre-approve for ergonomics. Current claude-workflow state: all 17 skills correctly omit the field. But `_templates/AUTHORING.md` and `SKILL.primitive.template.md` describe it as "restricts" — factually wrong per official docs. Fix needed: replace "restrict" with "pre-approve" and add pointer to deny rules / subagent `tools:` for real restriction. See [[Research: allowed-tools best practice for multi-agent workflow plugins]], [[allowed-tools-semantics]], [[skill-vs-subagent-tool-fields]], [[allowed-tools-for-multi-agent-plugins]].
 
 2026-04-19: **AskUserQuestion in skill interviews** (applied to `/new-skill` and `/grill-me`). Pattern: bounded choices (2-4 options) use `AskUserQuestion` with `header` (max 12 chars), `question`, `options` (label + description), `multiSelect: true` when non-exclusive. "Other" is auto-added. Recommended option goes first with ` (Recommended)` in label. Free-text questions (name, description) stay as plain prompts. 4-option cap per call: split protocols question into two sequential AskUserQuestion calls. Multi-question calls only when answers are independent. Applied to `_shared/interviewing-rules.md` (rule added), `skills/new-skill/SKILL.md` (steps c-h specified as AskUserQuestion), `skills/grill-me/SKILL.md` (guidance added). See [[AskUserQuestion-in-skill-interviews]], [[skill-creation-patterns]].
