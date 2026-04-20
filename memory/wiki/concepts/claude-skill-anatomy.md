@@ -4,6 +4,8 @@ description: The structure of a Claude Code skill file - frontmatter fields, bod
 type: concept
 tags: [claude-code, skills]
 status: evergreen
+tier: semantic
+reviewed_at: 2026-04-20
 created: 2026-04-17
 related:
   - "[[skill-invocation-model]]"

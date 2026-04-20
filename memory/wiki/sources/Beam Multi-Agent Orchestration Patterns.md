@@ -14,6 +14,8 @@ key_claims:
   - Framework architecture matters for tool execution and context, not handoff speed
 tags: [orchestration, multi-agent, failure-modes]
 status: developing
+tier: episodic
+reviewed_at: 2026-04-20
 created: 2026-04-19
 related:
   - "[[multiskill-workflow-patterns]]"

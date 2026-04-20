@@ -10,6 +10,8 @@ tags:
   - knowledge-management
   - karpathy
 status: current
+tier: episodic
+reviewed_at: 2026-04-20
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Andrej Karpathy]]"

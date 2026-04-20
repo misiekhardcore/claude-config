@@ -13,6 +13,8 @@ tags:
   - selenium
   - webview
 status: current
+tier: episodic
+reviewed_at: 2026-04-20
 key_claims:
   - "ExTester is a Selenium WebDriver-based UI tester for VS Code extensions"
   - "Latest version 8.23.0 (March 2026)"

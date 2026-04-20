@@ -4,6 +4,8 @@ description: Patterns and best practices for writing effective Claude Code skill
 type: concept
 tags: [claude-code, skills]
 status: evergreen
+tier: semantic
+reviewed_at: 2026-04-20
 created: 2026-04-17
 related:
   - "[[claude-skill-anatomy]]"

@@ -10,6 +10,8 @@ tags:
   - screenshots
   - webview
 status: developing
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[VS Code Webview Testing]]"
   - "[[FrameLocator Chaining for Nested Iframes]]"

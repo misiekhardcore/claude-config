@@ -9,6 +9,8 @@ url: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-prac
 confidence: high
 tags: [claude-code, skills, official, best-practices]
 status: evergreen
+tier: episodic
+reviewed_at: 2026-04-20
 created: 2026-04-19
 related:
   - "[[claude-code-skills-official-docs]]"

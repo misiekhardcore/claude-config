@@ -12,6 +12,8 @@ tags:
   - g-code
   - cnc
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[workspace-symbol-architecture]]"
   - "[[lsp-file-watcher-linux]]"

@@ -4,6 +4,8 @@ description: Claude Code agentic skills framework by Jesse Vincent (obra) — st
 type: entity
 tags: [claude-code, plugin, orchestration]
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 created: 2026-04-19
 related:
   - "[[claude-workflow-phase-shape]]"

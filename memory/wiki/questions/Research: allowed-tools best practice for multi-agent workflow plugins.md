@@ -11,6 +11,8 @@ tags:
   - claude-workflow
   - permissions
 status: developing
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[allowed-tools-semantics]]"
   - "[[skill-vs-subagent-tool-fields]]"

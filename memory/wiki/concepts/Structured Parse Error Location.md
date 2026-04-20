@@ -15,6 +15,8 @@ tags:
   - error-handling
   - coordinate-system
 status: mature
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[G-code LSP Architecture]]"
   - "[[concepts/_index]]"

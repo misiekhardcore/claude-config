@@ -11,6 +11,8 @@ tags:
   - layered-architecture
   - design-patterns
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[vscode-gcode-extension]]"
   - "[[workspace-symbol-architecture]]"

@@ -9,6 +9,8 @@ tags:
   - solutions
   - index
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[index]]"
   - "[[vscode-gcode-extension]]"

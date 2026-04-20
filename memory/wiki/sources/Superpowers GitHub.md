@@ -14,6 +14,8 @@ key_claims:
   - Gating philosophy — cannot build what you haven't designed
 tags: [claude-code, plugin, orchestration, TDD]
 status: developing
+tier: episodic
+reviewed_at: 2026-04-20
 created: 2026-04-19
 related:
   - "[[Superpowers Plugin]]"

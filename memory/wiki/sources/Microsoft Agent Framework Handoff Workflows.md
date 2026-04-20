@@ -14,6 +14,8 @@ key_claims:
   - Only one agent is active at a time; no central coordinator
 tags: [orchestration, multi-agent, handoff, official-docs]
 status: developing
+tier: episodic
+reviewed_at: 2026-04-20
 created: 2026-04-19
 related:
   - "[[Microsoft Agent Framework]]"

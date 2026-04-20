@@ -9,6 +9,8 @@ tags:
   - mcp-server
   - native-plugin
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[cherry-picks]]"
   - "[[claude-obsidian-ecosystem]]"

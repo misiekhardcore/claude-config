@@ -4,6 +4,8 @@ description: Official Anthropic documentation on custom slash commands and skill
 type: source
 tags: [claude-code, skills, official]
 status: evergreen
+tier: episodic
+reviewed_at: 2026-04-20
 created: 2026-04-17
 related:
   - "[[claude-skill-anatomy]]"

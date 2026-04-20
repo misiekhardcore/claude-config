@@ -10,6 +10,8 @@ tags:
   - microsoft
   - electron
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 confidence: high
 related:
   - "[[VS Code Webview Testing]]"

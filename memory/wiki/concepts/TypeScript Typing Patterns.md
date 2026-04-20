@@ -11,6 +11,8 @@ tags:
   - patterns
   - types
 status: seed
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[per-project-knowledge]]"
   - "[[gcode-lsp-architecture]]"

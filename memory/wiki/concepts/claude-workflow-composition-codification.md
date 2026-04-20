@@ -10,6 +10,8 @@ tags:
   - skill-authoring
   - composition
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[multiskill-workflow-patterns]]"
   - "[[seed-brief-pattern]]"

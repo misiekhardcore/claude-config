@@ -9,6 +9,8 @@ tags:
   - orchestration
   - skills
 status: developing
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[multiskill-workflow-patterns]]"
   - "[[agent-handoff-artifact-pattern]]"

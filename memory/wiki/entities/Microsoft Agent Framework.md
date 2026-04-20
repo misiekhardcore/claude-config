@@ -4,6 +4,8 @@ description: Microsoft's multi-agent orchestration framework with explicit hando
 type: entity
 tags: [orchestration, multi-agent, framework]
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 created: 2026-04-19
 related:
   - "[[multiskill-workflow-patterns]]"

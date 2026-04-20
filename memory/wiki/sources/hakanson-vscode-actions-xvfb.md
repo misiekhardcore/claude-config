@@ -13,6 +13,8 @@ tags:
   - vscode
   - xvfb
 status: current
+tier: episodic
+reviewed_at: 2026-04-20
 key_claims:
   - "Cache .vscode-test to avoid re-downloading VS Code on every CI run"
   - "D-Bus session must be started before xvfb-run to avoid 'Failed to connect to the bus'"

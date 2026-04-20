@@ -13,6 +13,8 @@ tags:
   - mocha
   - official
 status: current
+tier: episodic
+reviewed_at: 2026-04-20
 key_claims:
   - "@vscode/test-electron is the low-level runner; @vscode/test-cli is the config-file wrapper"
   - "test-cli reads .vscode-test.js/mjs/cjs for its configuration"

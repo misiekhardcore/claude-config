@@ -4,6 +4,8 @@ description: The `allowed-tools` field in SKILL.md pre-approves; the `tools:` fi
 type: concept
 tags: [claude-code, skills, subagents, permissions, frontmatter]
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 created: 2026-04-19
 related:
   - "[[allowed-tools-semantics]]"

@@ -9,6 +9,8 @@ tags:
   - claude-obsidian
   - cherry-picks
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[cherry-picks]]"
   - "[[LLM Wiki Pattern]]"

@@ -9,6 +9,8 @@ tags:
   - setup
   - plugin-install
 status: evergreen
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[claude-obsidian-v1.2.0-release-session]]"
   - "[[getting-started]]"

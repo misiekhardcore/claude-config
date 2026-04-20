@@ -12,6 +12,8 @@ tags:
   - architecture
   - integration
 status: seed
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[per-project-knowledge]]"
   - "[[LLM Wiki Pattern]]"

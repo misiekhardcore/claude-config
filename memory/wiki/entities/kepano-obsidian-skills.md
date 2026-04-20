@@ -9,6 +9,8 @@ tags:
   - agent-skills
   - obsidian-creator
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[cherry-picks]]"

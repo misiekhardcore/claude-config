@@ -13,6 +13,8 @@ tags:
   - wiki-maintenance
   - wiki-lint
 status: mature
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[cherry-picks]]"

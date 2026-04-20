@@ -13,6 +13,8 @@ tags:
   - webdriverio
   - screenshots
 status: current
+tier: episodic
+reviewed_at: 2026-04-20
 key_claims:
   - "Service downloads VS Code + matching Chromedriver and launches it as an Electron app"
   - "Webview testing uses WebView.open() / close() to switch frame context"

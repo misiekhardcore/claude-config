@@ -9,6 +9,8 @@ tags:
   - release
   - audit-response
 status: evergreen
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[claude-obsidian-ecosystem]]"
   - "[[cherry-picks]]"

@@ -13,6 +13,8 @@ tags:
   - historical
   - precursor
 status: developing
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[Vannevar Bush]]"
   - "[[LLM Wiki Pattern]]"

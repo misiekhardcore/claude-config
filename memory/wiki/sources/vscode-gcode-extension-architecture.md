@@ -9,6 +9,8 @@ tags:
   - vscode-extension
   - typescript
 status: current
+tier: episodic
+reviewed_at: 2026-04-20
 source_repo: "https://github.com/QuickBoyz/vscode-gcode-extension"
 source_files:
   - ".claude/CLAUDE.md"

@@ -8,6 +8,8 @@ tags:
   - ecosystem
   - competitive-analysis
 status: current
+tier: episodic
+reviewed_at: 2026-04-20
 related:
   - "[[claude-obsidian-ecosystem]]"
   - "[[cherry-picks]]"

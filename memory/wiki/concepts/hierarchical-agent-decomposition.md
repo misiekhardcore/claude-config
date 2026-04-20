@@ -4,6 +4,8 @@ description: Parent orchestrator spawns a few feature leads; each lead spawns it
 type: concept
 tags: [claude-code, skills, orchestration, claude-workflow]
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 created: 2026-04-19
 related:
   - "[[multiskill-workflow-patterns]]"

@@ -15,6 +15,8 @@ key_claims:
   - Domain ownership between agents prevents merge conflicts
 tags: [claude-code, subagents, TeamCreate, orchestration]
 status: developing
+tier: episodic
+reviewed_at: 2026-04-20
 created: 2026-04-19
 related:
   - "[[multiskill-workflow-patterns]]"

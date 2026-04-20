@@ -10,6 +10,8 @@ tags:
   - architecture
   - client-side-enumeration
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 created: 2026-04-17
 updated: 2026-04-18
 related:

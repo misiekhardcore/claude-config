@@ -9,6 +9,8 @@ tags:
   - webview
   - automation
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 confidence: high
 related:
   - "[[FrameLocator Chaining for Nested Iframes]]"

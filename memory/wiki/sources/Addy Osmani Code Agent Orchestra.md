@@ -14,6 +14,8 @@ key_claims:
   - Domain ownership prevents merge conflicts between agents
 tags: [orchestration, multi-agent, cost-benefit]
 status: developing
+tier: episodic
+reviewed_at: 2026-04-20
 created: 2026-04-19
 related:
   - "[[multiskill-workflow-patterns]]"

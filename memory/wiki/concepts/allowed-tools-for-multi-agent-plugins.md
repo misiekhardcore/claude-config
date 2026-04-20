@@ -4,6 +4,8 @@ description: Guidance for declaring `allowed-tools` in plugins like claude-workf
 type: concept
 tags: [claude-code, plugins, claude-workflow, skills, multi-agent, composition]
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 created: 2026-04-19
 related:
   - "[[allowed-tools-semantics]]"

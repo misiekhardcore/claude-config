@@ -9,6 +9,8 @@ tags:
   - product-roadmap
   - claude-obsidian
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[claude-obsidian-ecosystem]]"
   - "[[LLM Wiki Pattern]]"

@@ -12,6 +12,8 @@ tags:
   - scalability
   - llm
 status: current
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[llm-wiki-v2-extensions]]"

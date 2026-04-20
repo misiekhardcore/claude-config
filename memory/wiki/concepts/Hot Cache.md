@@ -14,6 +14,8 @@ tags:
   - knowledge-management
   - context
 status: mature
+tier: semantic
+reviewed_at: 2026-04-20
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"

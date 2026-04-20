@@ -13,6 +13,8 @@ tags:
   - electron
   - webview
 status: current
+tier: episodic
+reviewed_at: 2026-04-20
 key_claims:
   - "Playwright's Electron API can launch VS Code as an Electron app and drive it"
   - "Webviews are reached via chained frameLocator() calls (nested iframes)"

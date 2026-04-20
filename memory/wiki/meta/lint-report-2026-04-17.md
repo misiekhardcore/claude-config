@@ -8,6 +8,8 @@ tags:
   - lint
   - audit
 status: evergreen
+tier: semantic
+reviewed_at: 2026-04-20
 ---
 
 # Wiki Lint Report — 2026-04-17 (Post-Fix)
