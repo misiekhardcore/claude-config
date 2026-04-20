@@ -27,7 +27,12 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+
 2026-04-20: **Schema migration: typed relationships + confidence tagging** (issue #11). Added two new schema features: (1) **Confidence tagging** - every wiki page now has `confidence: EXTRACTED|INFERRED|AMBIGUOUS` (Graphify-style) and `evidence:` list. Source pages default to EXTRACTED; concept/entity/question/comparison pages default to INFERRED. Source-type pages had existing `confidence: high|medium|low` renamed to `source_reliability:` to avoid collision. (2) **Typed relationships** - seven new optional flat-list fields alongside `related:`: `supersedes`, `contradicts`, `uses`, `depends_on`, `caused`, `fixed`, `implements`. All 74 wiki pages migrated. See [[frontmatter]], [[maintenance-rules]]. 13 pages received typed relationships where semantics were unambiguous (e.g., `llm-wiki-v2-extensions` implements `LLM Wiki Pattern`; `Graphify` implements `[[llm-wiki-v2-extensions]]`; `allowed-tools-semantics` uses `[[skill-invocation-model]]`).
+
+2026-04-20: **Wiki Memory Lifecycle: Consolidation Tier Implementation Pattern** (compound from issue #12). Four design decisions for implementing consolidation tiers in an Obsidian wiki: (1) `tier:` is explicit in frontmatter, not computed from `type:` at runtime — allows per-page overrides; (2) type→tier tables are _intentionally scoped per skill_ (wiki-ingest has 8 types, save has 5, autoresearch has 4) — not a bug, each reflects that skill's page vocabulary; (3) migration sets `reviewed_at:` to _today_, not the page's created date — bootstraps the clock from the system introduction date; (4) canonical `[!stale]` callout format lives exclusively in wiki-lint — reference docs must quote it, not redefine it. wiki-lint check #9 injects/removes callout idempotently. See [[wiki-memory-lifecycle-tier-implementation]], [[llm-wiki-v2-extensions]].
+
+2026-04-20: **Wiki Frontmatter Schema Extension Pattern** (compound from issue #11). Six rules for extending Obsidian wiki frontmatter safely: (1) flat YAML only — nested `relationships:` blocks break Obsidian Properties UI; (2) rename field collisions before migrating — e.g. `confidence: high|medium|low` renamed to `source_reliability:` before adding universal `confidence: EXTRACTED|INFERRED|AMBIGUOUS`; (3) CLAUDE.md is a pointer — add brief required-fields section there, keep full spec in frontmatter.md; (4) `contradicts:` requires direct factual conflict, not critique; (5) universal fields apply to ALL page types including solutions, meta, \_index, structural files — grep for missing fields after migration; (6) use underscore over hyphen in YAML keys. See [[wiki-frontmatter-schema-extension]].
 
 2026-04-20: **LLM Wiki ecosystem post-publication research** (autoresearch on Karpathy gist). Four key findings not in the April 17 ingest: (1) **LLM Wiki v2** (rohitg00) extends the base pattern with memory lifecycle (confidence decay, Ebbinghaus forgetting curves, supersession), typed knowledge graph (EXTRACTED/INFERRED/AMBIGUOUS edges), hybrid search (BM25 + vector + graph traversal), and event-driven automation -- schema is now "the real product." (2) **arXiv:2604.11243** provides empirical economics: 84.6% token savings (47K vs 305K tokens) on a 4-query test vs RAG; 53.7-81.3% savings over 30 days depending on topic concentration; reframes tokens from consumables to capital goods. (3) **Graphify** implements the pattern with three confidence tiers: EXTRACTED (deterministic, conf=1.0), INFERRED (variable 0-1.0), AMBIGUOUS (triggers HITL review). (4) **Scalability critiques** quantified: ~1000-file collapse for flat index; hallucination compounding is a genuine failure mode; enterprise RAG (95K+ docs) still wins for full-corpus retrieval. Pattern best fits personal/small-team use (<1000 pages). Gist updated metrics: 4,713 forks (up from 4,360), 485+ comments. See [[llm-wiki-v2-extensions]], [[knowledge-compounding-economics]], [[Graphify]], [[llm-wiki-scalability-critique]].
 
@@ -56,12 +61,14 @@ Navigation: [[index]] | [[log]] | [[overview]]
 2026-04-08: v1.4.1 hotfix shipped, plugin confirmed installed and enabled
 
 ## Last Ingest
+
 - Source: `.raw/articles/llm-wiki-karpathy-2026-04-04.md` ([[llm-wiki-karpathy-gist]])
 - New pages: [[Memex]], [[Vannevar Bush]], [[qmd]], [[llm-wiki-karpathy-gist]]
 - Updated: [[LLM Wiki Pattern]] (added Tools & Extensions + Historical Lineage), [[Andrej Karpathy]] (linked gist as primary source)
 - Key takeaway: the gist explicitly frames the pattern as a Memex revival — LLMs finally solve the bookkeeping cost that killed human-maintained wikis.
 
 ## Plugin State
+
 - **Version**: 1.4.1 (installed, enabled, user scope)
 - **Install ID**: `claude-obsidian@claude-obsidian-marketplace`
 - **Releases**: v1.1, v1.4.0, v1.4.1 on GitHub
@@ -70,6 +77,7 @@ Navigation: [[index]] | [[log]] | [[overview]]
 - **Multi-agent**: bootstrap files for Codex, OpenCode, Gemini, Cursor, Windsurf, GitHub Copilot
 
 ## Install Command (Correct Two-Step Flow)
+
 ```bash
 claude plugin marketplace add AgriciDaniel/claude-obsidian
 claude plugin install claude-obsidian@claude-obsidian-marketplace
@@ -78,11 +86,13 @@ claude plugin install claude-obsidian@claude-obsidian-marketplace
 There is no `claude plugin install github:owner/repo` shortcut. Both steps are required. Full session note: [[pr-feedback-resolution-wiki-migration-2026-04-17]].
 
 ## Recent Release Cycle (v1.1 → v1.4.1)
+
 - **v1.1**: URL ingestion, vision ingestion, delta tracking manifest, 3 new skills (defuddle, obsidian-bases, obsidian-markdown), multi-depth query modes, PostToolUse auto-commit, removed invalid `allowed-tools` frontmatter field
 - **v1.4.0**: Dataview to Bases migration (new `wiki/meta/dashboard.base`), Canvas JSON 1.0 spec completeness, PostCompact hook, Obsidian CLI MCP option, 6 multi-agent bootstrap files, 249 em dashes scrubbed, security git history rewrite to remove placeholder email
 - **v1.4.1**: hotfix for wrong plugin install command syntax in README and install-guide.md
 
 ## Key Lessons (Recent)
+
 1. Plugin install is always two-step: `marketplace add` then `install plugin@marketplace`
 2. `allowed-tools` is NOT valid in **Obsidian/kepano** skill frontmatter (only `name` + `description`). For **Claude Code** CLI skills, the full frontmatter spec applies: `name`, `description`, `allowed-tools`, `model`, `effort`, `context`, `agent`, `hooks`, etc.
 3. Obsidian Bases uses `filters/views/formulas`, not Dataview `from/where`
@@ -91,14 +101,17 @@ There is no `claude plugin install github:owner/repo` shortcut. Both steps are r
 6. `git filter-repo` needs two passes: `--replace-text` for blobs, `--replace-message` for commit messages
 
 ## Style Preferences (Saved to Memory)
+
 - **No em dashes** (U+2014) or `--` as punctuation anywhere. Use periods, commas, colons, or parentheses. Hyphens in compound words are fine (auto-commit, multi-agent).
 - Keep responses short and direct. No trailing "here's what I did" summaries.
 - Parallel tool calls when independent.
 
 ## Ecosystem Research (Done 2026-04-08)
+
 16+ Claude + Obsidian projects mapped. Full feature matrix at [[claude-obsidian-ecosystem]]. Prioritized backlog at [[cherry-picks]]. Top competitors: [[Ar9av-obsidian-wiki]] (multi-agent + delta tracking), [[rvk7895-llm-knowledge-bases]] (multi-depth query), [[ballred-obsidian-claude-pkm]] (goal cascade + auto-commit), [[kepano-obsidian-skills]] (authoritative Obsidian skills from Obsidian's own creator).
 
 ## Active Threads
+
 - v1.5.0 backlog: `/adopt` command, vault graph analysis in wiki-lint, semantic search via qmd, Marp output
 - `community` remote (`avalonreset-pro/claude-obsidian`) still has pre-rewrite history. Force-push needed next time that remote is configured.
 
@@ -107,6 +120,7 @@ There is no `claude plugin install github:owner/repo` shortcut. Both steps are r
 Ingested 7 solution docs from vscode-gcode-extension project (a VSCode LSP extension for G-code/CNC). Covers TypeScript typing patterns (Dirent generic disambiguation, interface import cycles), LSP infrastructure (file watching on Linux, workspace symbol architecture with client-side enumeration), server wiring conventions, and visualizer composition patterns.
 
 ## Repo Locations
+
 - Working: `~/Desktop/claude-obsidian/`
 - Public: https://github.com/AgriciDaniel/claude-obsidian
 - Community (private): https://github.com/avalonreset-pro/claude-obsidian

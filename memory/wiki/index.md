@@ -39,6 +39,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 
 - [[LLM Wiki Pattern]] — the pattern for building persistent, compounding knowledge bases using LLMs (status: mature)
 - [[llm-wiki-v2-extensions]] — production extensions: memory lifecycle, typed graph, hybrid search, event-driven automation (status: current)
+- [[wiki-memory-lifecycle-tier-implementation]] — implementation pattern for four-tier consolidation lifecycle (tier:/reviewed_at: fields, stale detection, migration bootstrap) (status: current)
+- [[wiki-frontmatter-schema-extension]] — six design rules for extending Obsidian wiki frontmatter: flat YAML, collision handling, CLAUDE.md pointer pattern, contradicts semantics, universal field completeness (status: current)
 - [[knowledge-compounding-economics]] — arXiv empirical analysis: 84.6% token savings vs RAG; tokens as capital goods (status: current)
 - [[llm-wiki-scalability-critique]] — four critiques (1k-file collapse, hallucination compounding, enterprise RAG) with production responses (status: current)
 - [[Hot Cache]] — ~500-word session context file, updated after every ingest and session (status: mature)
