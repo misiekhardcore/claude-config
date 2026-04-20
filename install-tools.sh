@@ -32,31 +32,6 @@ else
 	fi
 fi
 
-# ── rudel (session analytics) ─────────────────────────────────────────────────
-if command -v rudel &>/dev/null; then
-	_ok "rudel already installed"
-else
-	if _confirm "Install rudel (session analytics dashboard)? Note: uploads full transcripts"; then
-		npm install -g rudel
-		_ok "rudel installed — run: rudel login && rudel enable"
-	else
-		_skip "rudel"
-	fi
-fi
-
-# ── pi-self-learning (recurring learnings promoted to CORE.md) ────────────────
-if command -v pi &>/dev/null; then
-	_ok "pi CLI already installed"
-else
-	if _confirm "Install pi-self-learning (promotes recurring learnings across sessions)?"; then
-		npm install -g @mariozechner/pi-coding-agent
-		pi install npm:pi-self-learning
-		_ok "pi-self-learning installed"
-		echo "      Commands: /learning-now (session), /learning-month (promote recurring to CORE.md)"
-	else
-		_skip "pi-self-learning"
-	fi
-fi
 
 echo ""
 echo "Setup complete"

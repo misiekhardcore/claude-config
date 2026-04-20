@@ -16,9 +16,6 @@ Additional techniques worth evaluating:
   rewritten but weren't. Run periodically to find missed token savings.
 - **`rtk gain --history`** — shows per-command savings breakdown. Useful for auditing which
   commands benefit most from compression.
-- **rudel** — session analytics dashboard. Uploads full transcripts for aggregate analysis
-  (cost per task type, agent efficiency, failure patterns). Caveat: uploads full transcripts,
-  so only use on non-sensitive projects.
 - **Context budget rule of thumb**: keep CLAUDE.md under 100 lines; use `@imports` for long
   reference docs. Every line is injected into every session (~20 tokens/line).
 
@@ -34,10 +31,6 @@ We have PreToolUse (RTK) and SessionEnd (cost logging). Additional hook patterns
     npx biome check "$TOOL_INPUT" 2>&1 | tail -10
   fi
   ```
-- **pi-self-learning** — persistent git-backed memory that tracks learnings per session.
-  Only promotes to `CORE.md` after a learning recurs across 3+ sessions — acts as a
-  signal-vs-noise filter on top of Claude's built-in memory.
-  Commands: `/learning-now` (session), `/learning-month` (promote recurring to CORE.md).
 
 ## Level 8 — Remote Setup
 
@@ -70,9 +63,6 @@ Additional patterns:
 | Tool | Purpose | Install | Status |
 |------|---------|---------|--------|
 | RTK | Token compression (60-90% savings) | `curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/master/install.sh \| sh` | Installed |
-| rudel | Session analytics dashboard | `npm i -g rudel` | Not installed |
-| pi-self-learning | Git-backed persistent memory (recurrence filter) | `npm i -g @mariozechner/pi-coding-agent && pi install npm:pi-self-learning` | Not installed |
-| DeepWiki MCP | Open-source project docs | MCP server (see mcp.json.template) | Added |
 
 ---
 
@@ -86,10 +76,10 @@ For context — where our setup sits:
 | 2 | Agent IDE | N/A (CLI-based) |
 | 3 | Context engineering | CLAUDE.md, RTK.md, project CLAUDE.md files |
 | 4 | Compounding engineering | Feature workflow (8 phases), agent teams |
-| 5 | MCP and Skills | context7, chrome-devtools, playwright, DeepWiki, superpowers skills |
+| 5 | MCP and Skills | context7, chrome-devtools, playwright, superpowers skills |
 | 6 | Harness engineering | RTK hooks, cost logging, linter hooks (partial) |
 | 7 | Background agents | Agent teams in tmux, teammate dispatch |
 | 8 | Autonomous agent teams | Research/QA/review team patterns (in CLAUDE.md workflow) |
 
-> Focus area: solidify level 6 (add rudel, run rtk discover regularly) and
-> level 7 (add PostToolUse lint hook, evaluate pi-self-learning for durable memory).
+> Focus area: solidify level 6 (run rtk discover regularly) and
+> level 7 (add vault-sync hooks for durable memory).
