@@ -53,7 +53,7 @@ See `maintenance-rules.md` for promotion/demotion criteria.
 - `semantic`: review cadence 90 days — cross-session facts, patterns, concepts, entities, comparisons
 - `procedural`: review cadence 180 days — workflows, how-to guides, skill references
 
-See `CLAUDE.md` for type-to-tier default mapping. The `tier:` field is explicit (not computed), allowing per-page overrides.
+See `maintenance-rules.md` for tier definitions, cadences, and type-to-tier defaults. The `tier:` field is explicit (not computed), allowing per-page overrides.
 
 **reviewed_at:**
 ISO date (`YYYY-MM-DD`) of the most recent human verification. Update this field whenever you manually review and confirm a page's accuracy. `wiki-lint` will flag pages overdue for review based on their tier's cadence.

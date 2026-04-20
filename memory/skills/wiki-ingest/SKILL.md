@@ -108,21 +108,7 @@ Steps:
    - "Is there existing wiki context I should link against?"
    **Wait for the user's response before proceeding.** Do not assume defaults and do not skip ahead.
    **Skip this step only if** the user's original message included "just ingest it" or "auto-ingest".
-3. **Assign tier and review date autonomously** (no user prompt needed):
-   - Determine `tier:` from the page's `type:` field using this table:
-     | Type | Tier |
-     |------|------|
-     | concept | semantic |
-     | entity | semantic |
-     | source | episodic |
-     | comparison | semantic |
-     | question | transient |
-     | meta | semantic |
-     | overview | semantic |
-     | domain | semantic |
-     If type is unknown, default to `semantic`.
-   - Set `reviewed_at:` to today's date (YYYY-MM-DD format)
-   This is automatic — tier is a default that can be manually overridden per page if needed.
+3. **Assign tier and review date** — set `tier:` using the type-to-tier defaults in `references/maintenance-rules.md`; set `reviewed_at:` to today's date. No user prompt needed.
 4. **Create** source summary in `wiki/sources/`. Use the source frontmatter schema from `references/frontmatter.md`.
 5. **Create or update** entity pages for every person, org, product, and repo mentioned. One page per entity.
 6. **Create or update** concept pages for significant ideas and frameworks.

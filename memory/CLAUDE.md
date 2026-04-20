@@ -48,31 +48,7 @@ Do NOT read the wiki for general coding questions or things already in this proj
 
 ## Consolidation Tiers
 
-Pages are classified into four tiers based on how often they need human verification:
-
-| Tier | Review Cadence | Examples |
-|------|---|---|
-| **transient** | 7 days | Bug reports, status updates, session observations, short-lived questions |
-| **episodic** | 30 days | Session summaries, source ingestion records, what-was-done notes |
-| **semantic** | 90 days | Cross-session facts, patterns, concepts, entities, comparisons |
-| **procedural** | 180 days | Workflows, how-to guides, skill references (reserved for future skill/workflow page types) |
-
-### Type-to-Tier Mapping
-
-Default tier assignments by page type:
-
-```
-concept    → semantic
-entity     → semantic
-source     → episodic
-comparison → semantic
-question   → transient
-meta       → semantic
-overview   → semantic
-domain     → semantic
-```
-
-**Important:** The `tier:` field is explicit on every page, not computed at runtime. This allows per-page overrides when a particular page's lifecycle differs from its type's default. For example, a rapidly-evolving concept might use `transient` instead of the typical `semantic`.
+Every page has a `tier:` and `reviewed_at:` frontmatter field. See `skills/wiki/references/maintenance-rules.md` for tier definitions, cadences, type-to-tier defaults, and staleness detection rules.
 
 ## Plugin Skills
 

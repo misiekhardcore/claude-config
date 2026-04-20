@@ -157,6 +157,23 @@ Each page belongs to a consolidation tier, determined by its `tier:` frontmatter
 | **semantic** | 90 days | Cross-session truths; stable but evolving | Concepts, entities, comparisons, facts |
 | **procedural** | 180 days | Workflows and recipes; rarely change | How-to guides, skill references, architectural patterns |
 
+### Type-to-Tier Defaults
+
+Assign `tier:` based on the page's `type:` field. The field is explicit (not computed) — override per page when needed.
+
+| Type | Default Tier |
+|------|-------------|
+| concept | semantic |
+| entity | semantic |
+| source | episodic |
+| comparison | semantic |
+| question | transient |
+| meta | semantic |
+| overview | semantic |
+| domain | semantic |
+
+If type is unknown or unlisted, default to `semantic`. Each ingest skill may use a subset of these types; the same defaulting rule applies.
+
 ### Staleness Detection
 
 `wiki-lint` will identify pages overdue for review and inject a `[!stale]` callout. A page is stale if:
