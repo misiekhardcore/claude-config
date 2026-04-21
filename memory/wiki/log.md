@@ -18,6 +18,13 @@ related:
 
 # Operation Log
 
+## [2026-04-21] save | Claude Plugin userConfig + Hook Template Variable Bugs
+
+- Type: concept (x2)
+- Location: wiki/concepts/claude-plugin-userconfig-schema.md, wiki/concepts/claude-hook-template-variable-expansion.md
+- From: /compound after migrating claude-obsidian plugin from AgriciDaniel to misiekhardcore (issue #17)
+- Two bugs hit during migration: (1) missing `title`+`type` in userConfig caused install failure; (2) `${user_config.vault_path}` in shell scripts never expands — must be passed as `$1` from hooks.json
+
 ## [2026-04-21] autoresearch | Claude Code Token Optimization
 
 - Rounds: 2 (broad + gap-fill)

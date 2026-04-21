@@ -73,6 +73,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 ---
 
 - [[Plugin Root Variable in Skills]] — where `${CLAUDE_PLUGIN_ROOT}` expands and the fallback pattern for shared protocol references in plugin skills (status: mature)
+- [[claude-plugin-userconfig-schema]] — Claude Code plugin `userConfig` fields require `title` + `type` + `description`; install fails without them (status: current)
+- [[claude-hook-template-variable-expansion]] — `${user_config.*}` expands in hooks.json command strings only, not in external scripts; pass as `$1` (status: current)
 - [[claude-code-system-prompt-composition]] — the stack that fills /context's system-prompt counter; layers and levers (status: current)
 - [[tool-search-tool-deferred-loading]] — Claude Code's on-demand MCP schema loader; ENABLE_TOOL_SEARCH tunables; 85% reported savings (status: current)
 - [[mcp-tool-overhead]] — per-server token costs; zero-default workflow; CLI-over-MCP preference (status: current)

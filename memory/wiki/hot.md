@@ -28,6 +28,8 @@ Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
 
+2026-04-21: **claude-obsidian plugin migration complete** (claude-config issue #17). Migrated from `AgriciDaniel/claude-obsidian` (`claude-obsidian-marketplace`) to `misiekhardcore/claude-obsidian` (`claude-obsidian`). Two bugs hit and fixed: (1) **userConfig schema** — `plugin.json` userConfig fields require `title` (string) AND `type` (`string|number|boolean|directory|file`) — omitting either causes install failure with cryptic errors. Fixed in claude-obsidian PR #28. (2) **Hook template variable expansion scope** — `${user_config.vault_path}` expands in hooks.json `command` strings only, NOT in external shell script bodies. Scripts must receive the value as `$1`. Fixed in claude-obsidian PR #29. Plugin State updated: install ID is now `claude-obsidian@claude-obsidian`, vault at `memory/`, `settings.local.json` holds the machine-specific `pluginConfigs`. GitHub plugin disabled (was causing /doctor error from missing PAT). Migration PR #28 merged. Pages filed: [[claude-plugin-userconfig-schema]], [[claude-hook-template-variable-expansion]].
+
 2026-04-21: **Claude Code token optimization autoresearch complete.** 10 pages filed. Headline: user's 20k baseline (9k system + 11k tools) can drop ~35-45% via P1 actions — trim `Projects/CLAUDE.md` 219→120 lines (official target <200), trim `wiki/hot.md` 133→30 lines (own spec says <500 words), disable `superpowers` when discipline skills unused (its SessionStart hook injects ~2.5k/session), disable one of redundant `chrome-devtools-mcp`/`claude-in-chrome`, set `ENABLE_TOOL_SEARCH=auto:5`. Structural wins: move project CLAUDE.md workflow content into on-demand skills; consider per-project vaults. Key insights: ToolSearch already deferred by default since late 2025 (tool names still cost bytes); Code Mode is emerging 50-90% reduction pattern; SessionStart hooks inject invisible per-session context. See [[Research Claude Code Token Optimization]], [[token-audit-misiekhardcore]].
 
 2026-04-21: **#23365 PR1 scaffolding delivered** — [[play-assertion-runner-architecture]] updated with actuals. PR plan corrected: PR1 (#23380) is standalone (no #3498 dependency), delivers `IAssertionEvaluator` types + `splitInstructions` + `assembleExecutionState` + `replay()` refactor with placeholder evaluator. Prototype comparison: prototype had the interface but never wired it — all integration pieces are greenfield. PR2 owns `ClientAssertionEvaluator` (~50% prototype port + ~50% greenfield for plural-aggregate and incident branches). Draft PR open at camunda-hub#23380.
@@ -78,7 +80,7 @@ Navigation: [[index]] | [[log]] | [[overview]]
 ## Plugin State
 
 - **Version**: 1.4.1 (installed, enabled, user scope)
-- **Install ID**: `claude-obsidian@claude-obsidian-marketplace`
+- **Install ID**: `claude-obsidian@claude-obsidian` (misiekhardcore fork)
 - **Releases**: v1.1, v1.4.0, v1.4.1 on GitHub
 - **Skills**: 10 (wiki, wiki-ingest, wiki-query, wiki-lint, save, autoresearch, canvas, defuddle, obsidian-bases, obsidian-markdown)
 - **Hooks**: 4 (SessionStart, PostCompact, PostToolUse, Stop)
@@ -87,11 +89,11 @@ Navigation: [[index]] | [[log]] | [[overview]]
 ## Install Command (Correct Two-Step Flow)
 
 ```bash
-claude plugin marketplace add AgriciDaniel/claude-obsidian
-claude plugin install claude-obsidian@claude-obsidian-marketplace
+claude plugin marketplace add misiekhardcore/claude-obsidian
+claude plugin install claude-obsidian@claude-obsidian
 ```
 
-There is no `claude plugin install github:owner/repo` shortcut. Both steps are required. Full session note: [[pr-feedback-resolution-wiki-migration-2026-04-17]].
+There is no `claude plugin install github:owner/repo` shortcut. Both steps are required. The `--name` flag does not exist on `marketplace add`. Full session note: [[pr-feedback-resolution-wiki-migration-2026-04-17]].
 
 ## Recent Release Cycle (v1.1 → v1.4.1)
 
