@@ -18,6 +18,13 @@ related:
 
 # Operation Log
 
+## [2026-04-21] save | Play Assertion Runner Architecture — PR1 actuals
+
+- Type: concept (update)
+- Location: wiki/concepts/play-assertion-runner-architecture.md
+- From: /compound after #23365 PR1 (#23380) implementation cycle
+- Changes: fixed stale PR plan (old plan had PR1 = CPT runner via #3498; actual PR1 is standalone scaffolding); added prototype comparison table; added PR1 deliverables detail; added new evidence files for PR1 artifacts
+
 ## [2026-04-20] schema-migration | Typed relationships + confidence tagging (issue #11)
 
 - Trigger: `/implement 11`
