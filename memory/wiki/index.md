@@ -47,6 +47,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Compounding Knowledge]] — why wiki knowledge grows more valuable over time, unlike RAG (status: mature)
 - [[Memex]] — Bush's 1945 precursor to the LLM wiki pattern; associative trails between documents (status: developing)
 - [[cherry-picks]] — prioritized feature backlog from ecosystem research; 13 features to add to claude-obsidian (status: current)
+- [[play-assertion-runner-architecture]] — two-system gap (Scenarios has runner, Acceptance Tests is CRUD-only); CPT type gaps; three Phase 1 runner options; IAssertionEvaluator interfaces (status: current)
 - [[gcode-lsp-architecture]] — Five-layer Lexer → Parser → AST → Services → Adapters pipeline for LSP extensions (status: current)
 - [[multi-root-workspace-per-folder-config]] — Per-folder `getConfiguration` scope, `RelativePattern` findFiles, longest-prefix root matching (status: current)
 - [[per-project-knowledge]] — centralized vs. per-project vault strategies for multi-project knowledge management (status: current)
