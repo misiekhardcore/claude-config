@@ -83,3 +83,19 @@ The schema (directory map, page types), ingest procedure, contradiction handling
 The frontmatter field schema (universal fields, typed relationship fields, type-specific additions) is defined in [`skills/wiki/references/frontmatter.md`](skills/wiki/references/frontmatter.md).
 
 Read both files before any ingest, autoresearch, or significant wiki operation.
+
+## Repository Awareness
+
+- ALWAYS verify the correct target repository before creating PRs, issues, or running cross-repo searches. When a user references a PR/issue number, confirm which repo it belongs to from the current working directory and recent context.
+- When the user says "this repo", confirm by running `git remote -v` or `pwd` first.
+
+## Scope Discipline
+
+- Do NOT add backwards-compatibility shims, dual-format support, or migration paths unless explicitly requested. Prefer the clean correct solution.
+- Do NOT include out-of-scope sections, stretch goals, or speculative features in proposals/docs unless asked.
+- When rebasing or migrating, only carry over the files explicitly in scope; flag unrelated files rather than silently including them.
+
+## Documentation Hygiene
+
+- Before adding content to CLAUDE.md or other docs, grep existing docs to avoid duplication. Prefer extracting long rule/schema blocks (>50 lines) into dedicated reference files and linking from CLAUDE.md.
+- After any commit, verify with `git status` that no expected files (especially in `.claude/`) remain untracked.
