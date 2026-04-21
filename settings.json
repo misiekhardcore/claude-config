@@ -76,8 +76,8 @@
     "skill-creator@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
     "worktrunk@worktrunk": true,
-    "claude-obsidian@claude-obsidian-marketplace": true,
-    "claude-workflow@claude-workflow": true
+    "claude-workflow@claude-workflow": true,
+    "claude-obsidian@claude-obsidian": true
   },
   "extraKnownMarketplaces": {
     "claude-hud": {
@@ -92,10 +92,10 @@
         "repo": "max-sixty/worktrunk"
       }
     },
-    "claude-obsidian-marketplace": {
+    "claude-obsidian": {
       "source": {
         "source": "github",
-        "repo": "AgriciDaniel/claude-obsidian"
+        "repo": "misiekhardcore/claude-obsidian"
       }
     }
   },
