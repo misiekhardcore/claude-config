@@ -29,7 +29,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-20 | Total pages: 81 | Sources ingested: 18
+Last updated: 2026-04-21 | Total pages: 90 | Sources ingested: 22
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -73,6 +73,11 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 ---
 
 - [[Plugin Root Variable in Skills]] — where `${CLAUDE_PLUGIN_ROOT}` expands and the fallback pattern for shared protocol references in plugin skills (status: mature)
+- [[claude-code-system-prompt-composition]] — the stack that fills /context's system-prompt counter; layers and levers (status: current)
+- [[tool-search-tool-deferred-loading]] — Claude Code's on-demand MCP schema loader; ENABLE_TOOL_SEARCH tunables; 85% reported savings (status: current)
+- [[mcp-tool-overhead]] — per-server token costs; zero-default workflow; CLI-over-MCP preference (status: current)
+- [[claude-md-sizing]] — under-200-line target; hierarchical compose; when to move content into skills (status: current)
+- [[sessionstart-hook-context-injection]] — hidden per-session token cost from plugin hooks; superpowers injects ~2.5k/session (status: current)
 
 ## Entities
 
@@ -107,6 +112,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[lsp-file-watcher-linux]] — RelativePattern watcher avoids parcel-watcher cold-start flake on Linux
 - [[server-provider-wiring-patterns]] — server.ts conventions: .catch() on async, apply at init+change, logger DI
 - [[visualizer-variable-resolution-pipeline]] — VisualizerService resolves variables, not callers
+- [[token-audit-misiekhardcore]] — concrete P1/P2/P3 plan to cut 9k+11k baseline by ~35-45% (trim CLAUDE.md, hot.md, disable redundant MCP, tune ENABLE_TOOL_SEARCH)
 
 ---
 
@@ -129,6 +135,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[ClaudeFast Agent Teams Guide]] — 2026-04-19 | ClaudeFast 2026 | Subagents + TeamCreate; CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS; file-based handoff
 - [[Superpowers GitHub]] — 2026-04-19 | obra/superpowers 2025-10 | Primary source for Superpowers framework
 - [[agent-skills-best-practices-anthropic]] — 2026-04-19 | platform.claude.com official docs | Skill authoring best practices; concision, progressive disclosure, evaluation-driven development
+- [[claude-code-costs-docs]] — 2026-04 | code.claude.com/docs/en/costs | official reference for cost tracking + token reduction
+- [[claude-code-token-optimization-2026]] — 2026-Q1 | buildtolaunch community guide | <500 token CLAUDE.md, context-rot threshold, March 2026 caching incident
+- [[mindstudio-mcp-token-overhead]] — 2026-Q1 | MindStudio blog | per-MCP-server cost ranges, zero-default policy
+- [[anthropic-tool-search-docs]] — 2025-11 | platform.claude.com | Tool Search Tool mechanism, defer_loading, 85% savings benchmark
 
 ---
 
@@ -138,6 +148,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Research VS Code Webview Testing and Screenshots]] — Synthesis: 3 frameworks, 9 deltas from raw plan, gotchas for vscode-gcode-extension (status: developing)
 - [[Research: Multiskill Workflow Structure in claude-workflow]] — Synthesis: how claude-workflow composes skills (phase-level sub-skills, seed briefs, two-level team hierarchy, artifact handoff) (status: developing)
 - [[Research: allowed-tools best practice for multi-agent workflow plugins]] — Synthesis: omit `allowed-tools` by default; pre-approve (not restrict); declare only for side-effect skills; fix claude-workflow AUTHORING.md (status: developing)
+- [[Research Claude Code Token Optimization]] — Synthesis: system-prompt is a stack; trim CLAUDE.md + hot.md + SessionStart hooks; MCP defer by default; 35-45% reduction achievable (status: current)
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Hot Cache"
-updated: 2026-04-20T00:00:00
+updated: 2026-04-21T00:00:00
 created: 2026-04-17
 tags:
   - meta
@@ -27,6 +27,8 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+
+2026-04-21: **Claude Code token optimization autoresearch complete.** 10 pages filed. Headline: user's 20k baseline (9k system + 11k tools) can drop ~35-45% via P1 actions — trim `Projects/CLAUDE.md` 219→120 lines (official target <200), trim `wiki/hot.md` 133→30 lines (own spec says <500 words), disable `superpowers` when discipline skills unused (its SessionStart hook injects ~2.5k/session), disable one of redundant `chrome-devtools-mcp`/`claude-in-chrome`, set `ENABLE_TOOL_SEARCH=auto:5`. Structural wins: move project CLAUDE.md workflow content into on-demand skills; consider per-project vaults. Key insights: ToolSearch already deferred by default since late 2025 (tool names still cost bytes); Code Mode is emerging 50-90% reduction pattern; SessionStart hooks inject invisible per-session context. See [[Research Claude Code Token Optimization]], [[token-audit-misiekhardcore]].
 
 2026-04-21: **#23365 PR1 scaffolding delivered** — [[play-assertion-runner-architecture]] updated with actuals. PR plan corrected: PR1 (#23380) is standalone (no #3498 dependency), delivers `IAssertionEvaluator` types + `splitInstructions` + `assembleExecutionState` + `replay()` refactor with placeholder evaluator. Prototype comparison: prototype had the interface but never wired it — all integration pieces are greenfield. PR2 owns `ClientAssertionEvaluator` (~50% prototype port + ~50% greenfield for plural-aggregate and incident branches). Draft PR open at camunda-hub#23380.
 

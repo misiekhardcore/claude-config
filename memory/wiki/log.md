@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-04-20T00:00:00
+updated: 2026-04-21T00:00:00
 tags:
   - meta
   - log
@@ -17,6 +17,14 @@ related:
 ---
 
 # Operation Log
+
+## [2026-04-21] autoresearch | Claude Code Token Optimization
+
+- Rounds: 2 (broad + gap-fill)
+- Sources found: 4 authoritative (code.claude.com/en/costs, buildtolaunch 2026, MindStudio MCP blog, Anthropic Tool Search docs) + local repo scans (claude-config, claude-workflow, claude-obsidian)
+- Pages created: [[claude-code-system-prompt-composition]], [[tool-search-tool-deferred-loading]], [[mcp-tool-overhead]], [[claude-md-sizing]], [[sessionstart-hook-context-injection]], [[token-audit-misiekhardcore]], [[claude-code-costs-docs]], [[claude-code-token-optimization-2026]], [[mindstudio-mcp-token-overhead]], [[anthropic-tool-search-docs]]
+- Synthesis: [[Research Claude Code Token Optimization]]
+- Key finding: system prompt is a stack (harness + SessionStart hooks + hierarchical CLAUDE.md + wiki bootstrap + auto-memory); superpowers SessionStart hook alone injects ~2.5k tokens/session; hot.md is 4x over its own spec; Projects/CLAUDE.md is 219 lines (official cap 200); combined P1 actions can cut ~5-6k off the 20k baseline.
 
 ## [2026-04-21] save | Play Assertion Runner Architecture — PR1 actuals
 
