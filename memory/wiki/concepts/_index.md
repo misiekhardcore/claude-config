@@ -78,4 +78,10 @@ Context-hygiene guidance for the multi-phase `/discovery → /define → /implem
 
 ---
 
+## Project Plans
+
+- [[3496-sub-issue-breakdown-plan]] — sub-issue decomposition plan for product-hub epic #3496 (Low-Code Test Assertions); nested Phase 1/3, flat Phase 2, /define routing for 1a/1c/3a/3b
+
+---
+
 ## Add new concepts here as they are extracted from sources.
