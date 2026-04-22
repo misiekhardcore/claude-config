@@ -18,6 +18,20 @@ related:
 
 # Operation Log
 
+## [2026-04-22] save | Out-of-Session Plugin Config Access via settings.local.json
+
+- Page created: [[out-of-session-plugin-config-access]]
+- Cross-linked: [[Claude Code Hook Template Variable Expansion Scope]] (updated with back-link)
+- Context: claude-obsidian issue #31, PR #32 — resolve-vault.sh cron fallback fix
+
+## [2026-04-22] autoresearch | Subagents vs TeamCreate Decision Rubric
+
+- Rounds: 2 (skipped Round 3 — Round 1+2 covered all gaps)
+- Sources found: 5 new + 3 cross-linked existing
+- Pages created: [[Research: Subagents vs TeamCreate Decision Rubric]], [[subagent-spawn-mechanics]], [[teamcreate-architecture]], [[agent-scaling-empirical-evidence]], [[subagent-vs-teamcreate-rubric]], [[claude-code-agent-teams-docs]], [[claude-code-sub-agents-docs]], [[mindstudio-agent-teams-vs-subagents]], [[charles-jones-agent-teams-when-beat-subagents]], [[google-deepmind-scaling-agent-systems]]
+- Synthesis: [[Research: Subagents vs TeamCreate Decision Rubric]]
+- Key finding: Verified Anthropic's ~7× multiplier for TeamCreate from official /en/costs; the primary pivot between subagents and teams is not scope size but whether workers need to **communicate mid-task**. Each teammate loads full CLAUDE.md + MCP + skills (lead's history does NOT carry). Sequential tasks degrade up to 70% under MAS (Google DeepMind); single agent matches MAS on 64% of benchmarks at half cost (Princeton NLP). Parallelism buys wall-clock, not tokens. Direct input for claude-workflow issue #30.
+
 ## [2026-04-21] save | Claude Plugin userConfig + Hook Template Variable Bugs
 
 - Type: concept (x2)

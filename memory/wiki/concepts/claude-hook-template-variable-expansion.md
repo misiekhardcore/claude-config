@@ -18,6 +18,7 @@ related:
   - "[[Plugin Root Variable in Skills]]"
   - "[[claude-plugin-userconfig-schema]]"
   - "[[claude-skill-anatomy]]"
+  - "[[out-of-session-plugin-config-access]]"
 ---
 
 # Claude Code Hook Template Variable Expansion Scope
