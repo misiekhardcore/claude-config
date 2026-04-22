@@ -39,3 +39,7 @@ Do NOT read the wiki for general coding questions or tasks unrelated to [domain]
 
 - Before adding content to CLAUDE.md or other docs, grep existing docs to avoid duplication. Prefer extracting long rule/schema blocks (>50 lines) into dedicated reference files and linking from CLAUDE.md.
 - After any commit, verify with `git status` that no expected files (especially in `.claude/`) remain untracked.
+
+## Compact instructions
+
+When compacting, preserve: test output, code changes, explicit architectural decisions, open questions, failing assertions. Drop: tool-call transcripts, file-read echoes, intermediate exploration.
