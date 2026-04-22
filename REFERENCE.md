@@ -45,3 +45,21 @@ Auto memory is opaque to user skills (the harness owns the directory). To captur
 The Obsidian vault provides richer structure than a flat solutions directory: a `hot.md` cache, an `index.md` router, an operation `log.md`, typed pages (`concepts/`, `entities/`, `sources/`), and cross-links that compound as new material is ingested. The `claude-obsidian@claude-obsidian-marketplace` plugin adds `/wiki`, `/save`, `/autoresearch`, `/canvas`, `wiki-ingest`, and `wiki-lint`. See `memory/WIKI.md` for the schema and `memory/CLAUDE.md` for vault-scoped instructions.
 
 Disable auto memory with `claude --bare` if you need a clean session.
+
+## Browser MCPs
+
+Two browser-automation MCPs exist; only one is active at a time to avoid duplicate tool-name overhead (~3-4k tokens/turn when both load):
+
+| MCP | Status | Strengths |
+|---|---|---|
+| `claude-in-chrome` | **Always on** (Chrome extension, built-in) | Page interaction, screenshots, JS execution, GIF recording, tab management |
+| `chrome-devtools-mcp` | Disabled (`settings.json`) | Performance tracing, Lighthouse audits, memory snapshots, CDP protocol access |
+
+**Toggle `chrome-devtools-mcp` on for a session** when you need performance profiling, Lighthouse, or memory inspection:
+
+```sh
+# In project .claude/settings.json:
+"chrome-devtools-mcp@claude-plugins-official": true
+```
+
+`claude-in-chrome` cannot be disabled via `settings.json` — it is part of the Chrome extension integration. To disable it, use Claude Code Settings → Claude in Chrome → uncheck "Enabled by default", or pass `--no-chrome` when starting a session.
