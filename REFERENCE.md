@@ -45,3 +45,9 @@ Auto memory is opaque to user skills (the harness owns the directory). To captur
 The Obsidian vault provides richer structure than a flat solutions directory: a `hot.md` cache, an `index.md` router, an operation `log.md`, typed pages (`concepts/`, `entities/`, `sources/`), and cross-links that compound as new material is ingested. The `claude-obsidian@claude-obsidian-marketplace` plugin adds `/wiki`, `/save`, `/autoresearch`, `/canvas`, `wiki-ingest`, and `wiki-lint`. See `memory/WIKI.md` for the schema and `memory/CLAUDE.md` for vault-scoped instructions.
 
 Disable auto memory with `claude --bare` if you need a clean session.
+
+## Browser MCP
+
+`claude-in-chrome` is the active browser-automation MCP — a Chrome extension with a native messaging host, built into Claude Code. It drives the real logged-in Chrome: page interaction, screenshots, JS execution, GIF recording, tab management, network/console reading.
+
+It is not managed via `settings.json`. To disable, use Claude Code Settings → Claude in Chrome → uncheck "Enabled by default", or pass `--no-chrome` when starting a session.

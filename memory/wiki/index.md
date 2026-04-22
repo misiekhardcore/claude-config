@@ -29,7 +29,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-21 | Total pages: 90 | Sources ingested: 22
+Last updated: 2026-04-22 | Total pages: 100 | Sources ingested: 27
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -51,6 +51,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[gcode-lsp-architecture]] — Five-layer Lexer → Parser → AST → Services → Adapters pipeline for LSP extensions (status: current)
 - [[multi-root-workspace-per-folder-config]] — Per-folder `getConfiguration` scope, `RelativePattern` findFiles, longest-prefix root matching (status: current)
 - [[per-project-knowledge]] — centralized vs. per-project vault strategies for multi-project knowledge management (status: current)
+- [[out-of-session-plugin-config-access]] — Pattern for reading plugin config from settings.local.json in cron/external invocations where ${user_config.*} is unavailable (status: current)
 - [[claude-skill-anatomy]] — Structure of Claude Code skills: frontmatter, markdown body, supporting files, directory layout (status: evergreen)
 - [[skill-invocation-model]] — How Claude Code skills are triggered: user manual invocation vs. automatic Claude invocation (status: evergreen)
 - [[skill-creation-patterns]] — 13 patterns and best practices for writing effective, discoverable, maintainable skills (status: evergreen)
@@ -80,6 +81,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[mcp-tool-overhead]] — per-server token costs; zero-default workflow; CLI-over-MCP preference (status: current)
 - [[claude-md-sizing]] — under-200-line target; hierarchical compose; when to move content into skills (status: current)
 - [[sessionstart-hook-context-injection]] — hidden per-session token cost from plugin hooks; superpowers injects ~2.5k/session (status: current)
+- [[subagent-spawn-mechanics]] — what loads into a Task-tool subagent at spawn; fresh context, prompt-string channel, one-message return (status: current)
+- [[teamcreate-architecture]] — lead/teammates/task-list/mailbox; each teammate loads CLAUDE.md + MCP + skills; experimental flag + constraints (status: current)
+- [[agent-scaling-empirical-evidence]] — Princeton NLP 64%, Google DeepMind up to −70% on sequential, wall-clock vs critical path, 3-6 agent sweet spot (status: current)
+- [[subagent-vs-teamcreate-rubric]] — applied decision framework: communication pivot, file disjointness, classifiable-parallel shape, ≥3× wall-clock payoff threshold (status: current)
 
 ## Entities
 
@@ -141,6 +146,11 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[claude-code-token-optimization-2026]] — 2026-Q1 | buildtolaunch community guide | <500 token CLAUDE.md, context-rot threshold, March 2026 caching incident
 - [[mindstudio-mcp-token-overhead]] — 2026-Q1 | MindStudio blog | per-MCP-server cost ranges, zero-default policy
 - [[anthropic-tool-search-docs]] — 2025-11 | platform.claude.com | Tool Search Tool mechanism, defer_loading, 85% savings benchmark
+- [[claude-code-agent-teams-docs]] — 2026-04 | code.claude.com/docs/en/agent-teams | official TeamCreate architecture, lead/teammates/mailbox, CLAUDE.md loads per teammate
+- [[claude-code-sub-agents-docs]] — 2026-04 | code.claude.com/docs/en/sub-agents | official subagent spec, default types, context inheritance rules
+- [[mindstudio-agent-teams-vs-subagents]] — 2026-03 | MindStudio blog | decision-rubric: teams for parallel pipelines, subagents for dynamic chains; 3-5x cheaper for batches
+- [[charles-jones-agent-teams-when-beat-subagents]] — 2026-02 | charlesjones.dev | communication bottleneck argument; 3-4x cost; /batch as alternative
+- [[google-deepmind-scaling-agent-systems]] — 2025-12 | arXiv 2512.08296 | 180-config study; sequential tasks degrade up to 70%; 87% predictive model
 
 ---
 
@@ -151,6 +161,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Research: Multiskill Workflow Structure in claude-workflow]] — Synthesis: how claude-workflow composes skills (phase-level sub-skills, seed briefs, two-level team hierarchy, artifact handoff) (status: developing)
 - [[Research: allowed-tools best practice for multi-agent workflow plugins]] — Synthesis: omit `allowed-tools` by default; pre-approve (not restrict); declare only for side-effect skills; fix claude-workflow AUTHORING.md (status: developing)
 - [[Research Claude Code Token Optimization]] — Synthesis: system-prompt is a stack; trim CLAUDE.md + hot.md + SessionStart hooks; MCP defer by default; 35-45% reduction achievable (status: current)
+- [[Research: Subagents vs TeamCreate Decision Rubric]] — Synthesis: verified 7× official multiplier; communication pivot is the primary decision criterion; sequential tasks degrade up to 70% under MAS; input for claude-workflow issue #30 (status: current)
 
 ---
 
