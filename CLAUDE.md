@@ -4,7 +4,7 @@ Guidance for Claude Code in this repository.
 
 ## Implementation Rules
 
-- **Default to single-agent.** Use `TeamCreate` only for parallelizable work across 3+ independent files or sub-issues.
+- **Default to single-agent.** Subagents (Task tool) for side tasks that would flood context. `TeamCreate` only when workers need to communicate mid-task — ~7× token cost (per Anthropic /en/costs), so require ≥3 genuinely parallel subtasks with disjoint files and ≥3× wall-clock payoff. See `memory/wiki/concepts/subagent-vs-teamcreate-rubric.md`.
 - **Use the cheapest viable model.** Skills set their own `model:` and `effortLevel:` — trust them.
 - **Just-in-time over preloading.** Read reference docs (`~/.claude/REFERENCE.md`, `~/.claude/RTK.md`, `~/.claude/plugins-reference.md`) only when the task needs them.
 - **Check existing memory first.** Before debugging or implementing, scan the Obsidian vault at `memory/wiki/` — read `memory/wiki/hot.md` first (recent context), then `memory/wiki/index.md`, then drill into `memory/wiki/concepts/`, `entities/`, or `sources/` as needed. Use `/wiki` to scaffold or route, `/save` to file a note, `wiki-lint` to audit. Auto-memory at `~/.claude/projects/<project>/memory/` is loaded by the harness automatically; the vault is not.

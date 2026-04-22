@@ -42,7 +42,7 @@ Curated memory is distinct from **in-flight working state**, which lives in `./.
 
 Auto memory is opaque to user skills (the harness owns the directory). To capture session findings deterministically, run `/compound` — it writes a structured note into `memory/wiki/concepts/` (or the appropriate subdirectory), deduplicates against existing notes, and is shared via git. To surface in-flight assumptions before context loss, run `/wrap-up` — its output stays in the conversation; persistence is left to auto memory.
 
-The Obsidian vault provides richer structure than a flat solutions directory: a `hot.md` cache, an `index.md` router, an operation `log.md`, typed pages (`concepts/`, `entities/`, `sources/`), and cross-links that compound as new material is ingested. The `claude-obsidian@claude-obsidian-marketplace` plugin adds `/wiki`, `/save`, `/autoresearch`, `/canvas`, `wiki-ingest`, and `wiki-lint`. See `memory/WIKI.md` for the schema and `memory/CLAUDE.md` for vault-scoped instructions.
+The Obsidian vault provides richer structure than a flat solutions directory: a `hot.md` cache, an `index.md` router, an operation `log.md`, typed pages (`concepts/`, `entities/`, `sources/`), and cross-links that compound as new material is ingested. The `claude-obsidian@claude-obsidian` plugin adds `/wiki`, `/save`, `/autoresearch`, `/canvas`, `wiki-ingest`, and `wiki-lint`. See `memory/WIKI.md` for the schema and `memory/CLAUDE.md` for vault-scoped instructions.
 
 Disable auto memory with `claude --bare` if you need a clean session.
 
