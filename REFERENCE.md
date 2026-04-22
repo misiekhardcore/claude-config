@@ -46,20 +46,14 @@ The Obsidian vault provides richer structure than a flat solutions directory: a 
 
 Disable auto memory with `claude --bare` if you need a clean session.
 
-## Browser MCPs
+## Browser MCP
 
-Two browser-automation MCPs exist; only one is active at a time to avoid duplicate tool-name overhead (~3-4k tokens/turn when both load):
+`claude-in-chrome` is the active browser-automation MCP — a Chrome extension with a native messaging host, built into Claude Code. It drives the real logged-in Chrome: page interaction, screenshots, JS execution, GIF recording, tab management, network/console reading.
 
-| MCP | Status | Strengths |
-|---|---|---|
-| `claude-in-chrome` | **Always on** (Chrome extension, built-in) | Page interaction, screenshots, JS execution, GIF recording, tab management |
-| `chrome-devtools-mcp` | Disabled (`settings.json`) | Performance tracing, Lighthouse audits, memory snapshots, CDP protocol access |
+It is not managed via `settings.json`. To disable, use Claude Code Settings → Claude in Chrome → uncheck "Enabled by default", or pass `--no-chrome` when starting a session.
 
-**Toggle `chrome-devtools-mcp` on for a session** when you need performance profiling, Lighthouse, or memory inspection:
+`chrome-devtools-mcp` (perf tracing, Lighthouse audits, memory snapshots) used to be enabled here but was removed to eliminate ~3-4k tokens/turn of duplicate browser-automation tool surface. Install per-project when actually needed:
 
 ```sh
-# In project .claude/settings.json:
-"chrome-devtools-mcp@claude-plugins-official": true
+claude plugin install chrome-devtools-mcp@claude-plugins-official
 ```
-
-`claude-in-chrome` cannot be disabled via `settings.json` — it is part of the Chrome extension integration. To disable it, use Claude Code Settings → Claude in Chrome → uncheck "Enabled by default", or pass `--no-chrome` when starting a session.
