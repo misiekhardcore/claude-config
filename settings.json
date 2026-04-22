@@ -97,6 +97,12 @@
         "source": "github",
         "repo": "misiekhardcore/claude-obsidian"
       }
+    },
+    "claude-workflow": {
+      "source": {
+        "source": "github",
+        "repo": "misiekhardcore/claude-workflow"
+      }
     }
   },
   "effortLevel": "high",
