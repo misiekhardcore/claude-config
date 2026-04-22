@@ -51,9 +51,3 @@ Disable auto memory with `claude --bare` if you need a clean session.
 `claude-in-chrome` is the active browser-automation MCP — a Chrome extension with a native messaging host, built into Claude Code. It drives the real logged-in Chrome: page interaction, screenshots, JS execution, GIF recording, tab management, network/console reading.
 
 It is not managed via `settings.json`. To disable, use Claude Code Settings → Claude in Chrome → uncheck "Enabled by default", or pass `--no-chrome` when starting a session.
-
-`chrome-devtools-mcp` (perf tracing, Lighthouse audits, memory snapshots) used to be enabled here but was removed to eliminate ~3-4k tokens/turn of duplicate browser-automation tool surface. Install per-project when actually needed:
-
-```sh
-claude plugin install chrome-devtools-mcp@claude-plugins-official
-```
