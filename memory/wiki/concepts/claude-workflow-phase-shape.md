@@ -4,9 +4,8 @@ description: Applied synthesis of multiskill patterns in the claude-workflow plu
 type: concept
 tags: [claude-code, skills, orchestration, claude-workflow]
 status: current
-updated: 2026-04-19
 created: 2026-04-19
-updated: 2026-04-20
+updated: 2026-04-22
 confidence: INFERRED
 evidence: []
 implements:
@@ -37,34 +36,38 @@ Each arrow crosses a **fresh-session boundary**. The GitHub issue body is the ha
 
 ### `/discovery`
 
-**Modes**: Lightweight / Standard / Deep (scope-triaged in Phase 0).
+**Scopes**: Lightweight / Standard / Deep (classified up front).
 
-**Standard team** (3 specialists):
-- Describe specialist — runs `/describe` to explore the problem space
-- Specify specialist — runs `/specify` to produce testable acceptance criteria
-- Prior-Art Scout — gathers institutional memory (vault → past issues/PRs → docs) in parallel
-
-**Deep team** (5 specialists): adds Flow analyst and Adversarial questioner.
+- **Lightweight** — single agent runs `/describe` (Lightweight) → minimal `/specify` → issue. No team.
+- **Standard** — team of 3 specialists:
+  - Describe specialist — runs `/describe` to explore the problem space
+  - Specify specialist — runs `/specify` to produce testable acceptance criteria
+  - Prior-Art Scout — gathers institutional memory (vault → past issues/PRs → docs) in parallel
+- **Deep** — 5 specialists: adds Flow analyst and Adversarial questioner.
 
 The Prior-Art Scout's brief seeds `/describe`, which skips its own nested prior-art search. See [[seed-brief-pattern]].
 
-**Output**: a GitHub issue with Problem statement + five-field handoff block.
+**Output**: a GitHub issue with Problem statement + handoff fields (see `_shared/handoff-artifact.md`).
 
 ### `/define`
 
-**Shape**: research team → definition team (two-stage).
+**Scopes**: Lightweight / Standard / Deep.
 
-**Research team** (parallel):
+- **Lightweight** — lead writes a 3–5 bullet architecture summary inline on the issue. No research team, no `/architecture` specialist.
+- **Standard** — research team → definition team (two-stage).
+- **Deep** — Standard + a second critique team that reviews the plan before finalizing (adversarial review, migration safety, rollout risks).
+
+**Research team** (Standard/Deep, parallel):
 - Codebase research agent — tech stack, modules, related implementations
 - Patterns/learnings agent — vault → project docs → external via Context7
 
 **Definition team** (sequential):
 - Architecture specialist — runs `/architecture`, seeded with research brief; architecture decisions go first.
-- Design specialist — runs `/design`, seeded with the same brief, working within architecture constraints.
+- Design specialist — runs `/design`, seeded with the same brief, working within architecture constraints. Added when the feature has visual aspects.
 
 The seed-brief contract is documented: specialists skip their own nested research when a brief is provided.
 
-**Output**: issue body updated with `## /define` section (architecture + design decisions + sub-issues if decomposed).
+**Output**: issue body updated with a `## Implementation plan` section (architecture + design decisions + sub-issues if decomposed). The section heading is human-readable, not the slash command name.
 
 ### `/implement`
 
@@ -100,7 +103,15 @@ From `~/Projects/claude-workflow/CLAUDE.md`:
 - **Use the cheapest viable model.** Skills set their own `model:` and `effortLevel:` — trust them.
 - **Respond concisely.** No filler, no preamble.
 
-The single-agent default aligns with the Princeton NLP finding: a well-built single agent matches multi-agent on 64% of tasks (Source: [[Addy Osmani Code Agent Orchestra]]).
+The canonical workflow paths from CLAUDE.md / README.md:
+
+| Size | Path |
+|---|---|
+| Trivial fix | `/implement` directly |
+| Medium feature | `/discovery` → `/implement` |
+| Large feature / epic | `/discovery` → `/define` → `/implement` |
+
+The single-agent default is supported by Anthropic's own guidance ("single session is more cost-effective for routine tasks") and Google DeepMind's 39–70% sequential-degradation finding. (The often-cited Princeton NLP 64% figure via [[Addy Osmani Code Agent Orchestra]] is currently unverified — see [[princeton-nlp-64-percent-unverified]].)
 
 ## Gating Rules
 

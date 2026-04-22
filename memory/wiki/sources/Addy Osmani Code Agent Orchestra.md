@@ -6,7 +6,7 @@ source_type: blog-post
 author: Addy Osmani
 date_published: 2026
 url: https://addyosmani.com/blog/code-agent-orchestra/
-source_reliability: medium
+source_reliability: low
 key_claims:
   - Princeton NLP found single agent matched/beat multi-agent on 64% of tasks
   - Multi-agent adds ~2.1pp accuracy at ~2x cost
@@ -37,7 +37,7 @@ Blog post by Google Chrome engineering lead Addy Osmani on multi-agent coding pa
 
 ## Confidence Notes
 
-> [!gap] The Princeton NLP citation is not directly linked in the post; would need to trace the original paper to verify the 64% / 2.1pp figures.
+> [!warning] The Princeton NLP citation is not linked in the post and a 2026-04-22 citation audit could not locate a primary Princeton NLP paper reporting this figure. A plausible lead is that 64.6% is PatchPilot's single-agent SWE-bench Verified score, misread as a MAS-vs-single comparison. Until resolved, treat the 64% and 2.1pp figures as unverified. See [[princeton-nlp-64-percent-unverified]].
 
 The domain-ownership and hierarchical decomposition claims are presented as patterns observed in practice, not as empirical results.
 

@@ -162,6 +162,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Research: allowed-tools best practice for multi-agent workflow plugins]] — Synthesis: omit `allowed-tools` by default; pre-approve (not restrict); declare only for side-effect skills; fix claude-workflow AUTHORING.md (status: developing)
 - [[Research Claude Code Token Optimization]] — Synthesis: system-prompt is a stack; trim CLAUDE.md + hot.md + SessionStart hooks; MCP defer by default; 35-45% reduction achievable (status: current)
 - [[Research: Subagents vs TeamCreate Decision Rubric]] — Synthesis: verified 7× official multiplier; communication pivot is the primary decision criterion; sequential tasks degrade up to 70% under MAS; input for claude-workflow issue #30 (status: current)
+- [[princeton-nlp-64-percent-unverified]] — Open: cannot locate primary Princeton NLP paper for the "64% of benchmarks" figure cited via Osmani's blog; downstream refs softened (status: seed)
 
 ---
 

@@ -108,7 +108,7 @@ Replace "3+ independent files" in `_shared/composition.md` with:
 
 ## Antipatterns (From Official Docs + Empirical Work)
 
-1. **Reflexive team spawning for any "complex" task** — single-agent matches MAS on 64% of benchmarks at half cost (Princeton NLP).
+1. **Reflexive team spawning for any "complex" task** — Anthropic's own guidance is that a single session is more cost-effective for routine tasks; MAS pays off only on genuinely parallelizable work. (The often-cited Princeton NLP "64% of benchmarks" figure is [unverified](../questions/princeton-nlp-64-percent-unverified.md) — see [[princeton-nlp-64-percent-unverified]].)
 2. **Deep cross-cutting refactors in a team** — the logic chain breaks across teammates.
 3. **Same-file edits in parallel** — no worktree isolation between subagents; teammates can clobber each other without explicit ownership.
 4. **Leaving teams running unattended** — idle teammates continue consuming tokens.

@@ -47,7 +47,7 @@ How should the claude-workflow plugin structure workflows where one skill invoke
 
 - **Hierarchical decomposition** prevents orchestrator context fragmentation. claude-workflow uses two levels: phase team → specialist's nested team. Only possible via TeamCreate (subagents can't spawn subagents). See [[hierarchical-agent-decomposition]].
 
-- **Single-agent is the default for good reason.** Princeton NLP: a well-built single agent matches multi-agent on 64% of tasks at half the cost (Source: [[Addy Osmani Code Agent Orchestra]]). claude-workflow's CLAUDE.md encodes this: TeamCreate only for parallelizable work across 3+ independent files or sub-issues.
+- **Single-agent is the default for good reason.** Anthropic's own guidance: "single session is more cost-effective for routine tasks." Google DeepMind: sequential tasks degrade 39–70% under MAS. The often-cited Princeton NLP 64% figure via [[Addy Osmani Code Agent Orchestra]] is unverified (see [[princeton-nlp-64-percent-unverified]]) but the conclusion stands on the other two. claude-workflow's CLAUDE.md encodes this: TeamCreate only for parallelizable work across 3+ independent files or sub-issues.
 
 - **Infinite handoff loops are the #1 failure mode** in multi-agent systems (Source: [[Beam Multi-Agent Orchestration Patterns]]). claude-workflow's linear phase DAG with explicit approval gates avoids this by design — no runtime routing back.
 

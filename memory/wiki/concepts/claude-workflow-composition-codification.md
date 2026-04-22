@@ -2,7 +2,7 @@
 type: concept
 title: "claude-workflow composition codification"
 created: 2026-04-19
-updated: 2026-04-20
+updated: 2026-04-22
 tags:
   - claude-workflow
   - pattern
@@ -88,6 +88,3 @@ Older wiki pages (including [[seed-brief-pattern]]) used different field names i
 - `_templates/SKILL.orchestrator.template.md` (45 lines), `SKILL.specialist.template.md` (33 lines), `SKILL.primitive.template.md` (30 lines)
 - `skills/new-skill/SKILL.md` — Description moved from step (c) to step (b), Role to step (c)
 
-## Staleness Flag
-
-[[seed-brief-pattern]] documents research-brief fields as `Technology stack`, `Module structure`, `Related implementations`, `Naming conventions`, `Existing patterns`, `Prior decisions`, `External references`. The authoritative fields are now those in `_shared/composition.md` (shorter, more condensed). Update [[seed-brief-pattern]] when next editing that page.

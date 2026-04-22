@@ -54,7 +54,7 @@ Claude Code offers four primitives for parallelism: single session (inline), sub
 
 4. **The primary subagent-vs-team pivot is communication.** Anthropic's comparison table: "Use subagents when you need quick, focused workers that report back. Use agent teams when teammates need to share findings, challenge each other, and coordinate on their own." This is the single most important criterion. (Source: [[claude-code-agent-teams-docs]])
 
-5. **Sequential tasks degrade dramatically under MAS.** Google DeepMind's 180-configuration study: "every multi-agent variant tested degraded performance by up to 70%" on sequential reasoning. Princeton NLP: single agent matches MAS on **64% of benchmarks** at half cost. (Source: [[google-deepmind-scaling-agent-systems]], [[Addy Osmani Code Agent Orchestra]])
+5. **Sequential tasks degrade dramatically under MAS.** Google DeepMind's 180-configuration study: "every multi-agent variant tested degraded performance by up to 70%" on sequential reasoning. A secondary-source figure attributed to Princeton NLP ("single agent matches MAS on 64% of benchmarks at half cost") is often cited as additional support but its primary Princeton paper has not been located — see [[princeton-nlp-64-percent-unverified]]. (Source: [[google-deepmind-scaling-agent-systems]], [[Addy Osmani Code Agent Orchestra]])
 
 6. **Parallelism buys wall-clock, not tokens.** Measured example: 4 parallel Explore subagents finished in 3:40 vs 14:00 sequentially (3.8×). Token cost scales roughly linearly with parallelism; the critical path — not aggregate compute — bounds latency. (Source: [[agent-scaling-empirical-evidence]])
 
@@ -104,7 +104,7 @@ Add a "Cost multiplier" subsection to `_shared/composition.md` citing the ~7× A
 Specifically propose:
 1. Verified quote from `https://code.claude.com/docs/en/costs` pinning the ~7×.
 2. Breakdown of what each teammate loads (CLAUDE.md + MCP + skills + spawn prompt) so readers understand where the tokens go.
-3. Empirical basis (Princeton NLP 64%, Google DeepMind up to −70% on sequential).
+3. Empirical basis (Google DeepMind up to −70% on sequential; Anthropic's own "single session is more cost-effective" guidance; the Princeton NLP 64% figure is unverified and should be flagged accordingly — see [[princeton-nlp-64-percent-unverified]]).
 4. Explicit failure modes: sequential work, same-file edits, small tasks, broadcast messaging.
 5. Cross-link from discovery/define/implement/build orchestrator skills that actually decide team-vs-subagent.
 

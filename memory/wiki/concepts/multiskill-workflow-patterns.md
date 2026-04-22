@@ -80,7 +80,7 @@ Return structured error objects, not exceptions. The orchestrator makes fallback
 
 ## Single-Agent Bias
 
-Princeton NLP: single agent matched or beat multi-agent on **64% of tasks** at half the cost. Multi-agent adds ~+2.1pp accuracy (Source: [[Addy Osmani Code Agent Orchestra]]). Reserve multi-skill orchestration for genuinely cross-domain or parallelizable work.
+Princeton NLP (as cited by Osmani): single agent matched or beat multi-agent on **64% of tasks** at half the cost; multi-agent adds ~+2.1pp accuracy. *Primary Princeton citation is unverified — see [[princeton-nlp-64-percent-unverified]].* The single-agent default is independently supported by Anthropic's own "single session is more cost-effective for routine tasks" guidance and Google DeepMind's sequential-degradation finding. Reserve multi-skill orchestration for genuinely cross-domain or parallelizable work.
 
 `claude-workflow`'s CLAUDE.md encodes this: "Default to single-agent. Use `TeamCreate` only for parallelizable work across 3+ independent files or sub-issues."
 

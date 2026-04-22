@@ -30,9 +30,9 @@ Quantitative findings from 2025–2026 research on when multi-agent (MAS) system
 
 | Finding | Value | Source |
 |---|---|---|
-| Tasks where single-agent matches MAS | **64%** of benchmarks | Princeton NLP (via [[Addy Osmani Code Agent Orchestra]]) |
-| Accuracy gain from MAS (avg) | +2.1 percentage points | Princeton NLP |
-| Cost multiplier for that gain | **~2× cost** | Princeton NLP |
+| Tasks where single-agent matches MAS | **64%** of benchmarks *(unverified, see [[princeton-nlp-64-percent-unverified]])* | Princeton NLP (via [[Addy Osmani Code Agent Orchestra]]) |
+| Accuracy gain from MAS (avg) | +2.1 percentage points *(same provenance; unverified)* | Princeton NLP |
+| Cost multiplier for that gain | **~2× cost** *(same provenance; unverified)* | Princeton NLP |
 | Performance degradation on sequential tasks | up to **70%** | [[google-deepmind-scaling-agent-systems]] (180-config study) |
 | Error amplification, independent parallel agents (no orchestrator) | **17×** | "Bag of Agents" failure-mode study |
 | Error amplification, centralized orchestrator | **4.4×** | Same study |
@@ -93,7 +93,7 @@ From practitioner data:
 
 ## Implication for claude-workflow
 
-The "default to single-agent" rule in claude-workflow's CLAUDE.md has empirical basis: Princeton NLP's 64% and Google DeepMind's 70%-degradation finding both argue against reflexive MAS spawning. The existing `_shared/composition.md` rule — "Never pay coordination overhead for work a single agent completes in under a minute" — aligns with this literature, though could cite specific numbers (see [[subagent-vs-teamcreate-rubric]] for the proposed update).
+The "default to single-agent" rule in claude-workflow's CLAUDE.md has empirical basis: Google DeepMind's 39–70% sequential-degradation finding and Anthropic's own "single session is more cost-effective for routine tasks" guidance both argue against reflexive MAS spawning. (The often-cited Princeton NLP 64% figure is currently [unverified](princeton-nlp-64-percent-unverified.md) — see [[princeton-nlp-64-percent-unverified]].) The existing `_shared/composition.md` rule — "Never pay coordination overhead for work a single agent completes in under a minute" — aligns with this literature, though could cite specific numbers (see [[subagent-vs-teamcreate-rubric]] for the proposed update).
 
 ## Related
 
