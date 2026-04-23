@@ -85,5 +85,13 @@ _attachments/images/skool-hub/
 # Archive of old versions (cosmic-brain, GIF assets)
 claude-obsidian-archive/
 
-# User-specific attachments
-_attachments/
+# User-specific content — symlinked to ../claude-memory/ (see README)
+# Patterns without trailing slash so they also match symlinks
+_attachments
+daily
+wiki
+.raw
+.obsidian
+
+# Session scratch log (personal)
+.session-scratch.log
