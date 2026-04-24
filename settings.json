@@ -106,13 +106,7 @@
     }
   },
   "effortLevel": "high",
-  "pluginConfigs": {
-    "claude-obsidian@claude-obsidian": {
-      "options": {
-        "vault_path": "/home/michal/Projects/misiekhardcore/claude-config/memory"
-      }
-    }
-  },
+  "teammateMode": "tmux",
   "voiceEnabled": true,
-  "teammateMode": "tmux"
+  "remoteControlAtStartup": true
 }
