@@ -7,3 +7,6 @@ plugins/**/*cache*
 
 # Per-worktree in-flight worklog — see skills/_shared/notes-md-protocol.md
 /.claude/NOTES.md
+
+# Local-only Claude Code settings (plugin configs, secrets)
+settings.local.json
