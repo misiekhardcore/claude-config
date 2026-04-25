@@ -76,8 +76,8 @@
     "skill-creator@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
     "worktrunk@worktrunk": true,
-    "claude-workflow@claude-workflow": true,
-    "claude-obsidian@claude-obsidian": true
+    "claude-obsidian@claude-obsidian": true,
+    "claude-workflow@claude-workflow": true
   },
   "extraKnownMarketplaces": {
     "claude-hud": {
@@ -106,7 +106,8 @@
     }
   },
   "effortLevel": "high",
+  "tui": "fullscreen",
   "teammateMode": "tmux",
-  "voiceEnabled": true,
-  "remoteControlAtStartup": true
+  "remoteControlAtStartup": true,
+  "voiceEnabled": true
 }
