@@ -89,6 +89,7 @@ claude-obsidian-archive/
 # Patterns without trailing slash so they also match symlinks
 _attachments
 daily
+notes
 wiki
 .raw
 .obsidian
