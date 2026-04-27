@@ -47,7 +47,6 @@ _Overrides the built-in Claude Code default (`## Summary` + `## Test plan`). Pro
 - Do NOT include out-of-scope sections, stretch goals, or speculative features in proposals/docs unless asked.
 - When rebasing or migrating, only carry over the files explicitly in scope; flag unrelated files rather than silently including them.
 - Do NOT bump versions, rename credentials, or edit configuration values beyond the literal request. Flag and ask before touching adjacent state.
-- Before any multi-file audit, refactor, or sweep, enumerate the full file list and proposed diff shape, then wait for confirmation.
 - When applying the same change across many files, extract shared content into a single source rather than repeating the change verbatim N times.
 
 ## Documentation Hygiene
