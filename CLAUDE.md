@@ -28,6 +28,8 @@ Do NOT read the wiki for general coding questions or tasks unrelated to [domain]
 
 - ALWAYS verify the correct target repository before creating PRs, issues, or running cross-repo searches. When a user references a PR/issue number, confirm which repo it belongs to from the current working directory and recent context.
 - When the user says "this repo", confirm by running `git remote -v` or `pwd` first.
+- In multi-repo sessions, pass `--repo owner/name` to every `gh` command and absolute paths to `git` and edit tools. Do not rely on inherited CWD for repo selection.
+- After a `cd`, treat parallel or background Bash calls as having a stale CWD — re-pass the path or re-`cd` inside each call. See `~/.claude/projects/-home-michal-Projects/memory/feedback_agent_cwd_enforcement.md` for the sub-agent variant.
 
 ## Pull Request Descriptions
 
@@ -44,6 +46,9 @@ _Overrides the built-in Claude Code default (`## Summary` + `## Test plan`). Pro
 - Do NOT add backwards-compatibility shims, dual-format support, or migration paths unless explicitly requested. Prefer the clean correct solution.
 - Do NOT include out-of-scope sections, stretch goals, or speculative features in proposals/docs unless asked.
 - When rebasing or migrating, only carry over the files explicitly in scope; flag unrelated files rather than silently including them.
+- Do NOT bump versions, rename credentials, or edit configuration values beyond the literal request. Flag and ask before touching adjacent state.
+- Before any multi-file audit, refactor, or sweep, enumerate the full file list and proposed diff shape, then wait for confirmation.
+- When applying the same change across many files, extract shared content into a single source rather than repeating the change verbatim N times.
 
 ## Documentation Hygiene
 
