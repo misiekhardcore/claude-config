@@ -34,10 +34,9 @@ for file in "${files[@]}"; do
 done
 
 # ── Symlink directories ──────────────────────────────────────────────────────
-# Note: `skills` is intentionally omitted — workflow skills now come from the
-# claude-workflow plugin (installed below). Any personal one-off skills can live
-# directly under ~/.claude/skills/.
-dirs=(hooks plugins memory)
+# `skills` contains personal repo-level skills (e.g. load-pr-guidelines, load-issue-guidelines).
+# Workflow skills come from the claude-workflow plugin installed below.
+dirs=(hooks plugins memory skills)
 
 for dir in "${dirs[@]}"; do
 	src="$SCRIPT_DIR/$dir"
