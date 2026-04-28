@@ -11,3 +11,4 @@ description: "Load issue description guidelines when creating, filing, opening, 
   - `## Acceptance Criteria` — numbered, testable scenarios that define done. Each item must be independently verifiable.
 - **Human-readable headings.** Use section names that describe content (e.g. `## Acceptance Criteria`, `## Implementation plan`). Never use slash-command names as headings (e.g. not `## /specify`).
 - **Write for the implementer.** Describe what is needed and why, not how to implement it. Do not pre-specify file paths, function names, or class hierarchies unless they are load-bearing constraints that must not change.
+- Screenshots are welcome for visual changes; placement at your discretion.
