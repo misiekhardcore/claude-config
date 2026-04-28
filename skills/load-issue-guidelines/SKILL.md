@@ -5,7 +5,7 @@ description: "Load issue description guidelines when creating, filing, opening, 
 
 ## Issue Descriptions
 
-- **Check for an issue template first.** Look at `.github/ISSUE_TEMPLATE/`, `.github/ISSUE_TEMPLATE.md`, root `ISSUE_TEMPLATE.md`. When a template exists, follow its structure and add no extra headings.
+- **Check for an issue template first.** Look at `.github/ISSUE_TEMPLATE/`, `.github/ISSUE_TEMPLATE.md`, root `ISSUE_TEMPLATE.md`. Read the file before writing anything. When a template exists: use it as the literal starting point — copy it verbatim, then fill each section by replacing HTML comment instructions and placeholder text with actual content. Do not add, remove, or rename any heading.
 - **When no template exists**, use these two sections in order:
   - `## Context` — what the user is trying to do; why the current state is inadequate. Opens with a problem statement, not a solution.
   - `## Acceptance Criteria` — numbered, testable scenarios that define done. Each item must be independently verifiable.
