@@ -31,15 +31,9 @@ Do NOT read the wiki for general coding questions or tasks unrelated to [domain]
 - In multi-repo sessions, pass `--repo owner/name` to every `gh` command and absolute paths to `git` and edit tools. Do not rely on inherited CWD for repo selection.
 - After a `cd`, treat parallel or background Bash calls as having a stale CWD — re-pass the path or re-`cd` inside each call. See `~/.claude/projects/-home-michal-Projects/memory/feedback_agent_cwd_enforcement.md` for the sub-agent variant.
 
-## Pull Request Descriptions
+## GitHub Authoring
 
-_Overrides the built-in Claude Code default (`## Summary` + `## Test plan`). Project-level `CLAUDE.md` may override further._
-
-- **Check for a PR template first.** Look at `.github/PULL_REQUEST_TEMPLATE.md`, `.github/pull_request_template.md`, root `PULL_REQUEST_TEMPLATE.md`, and any file under `.github/PULL_REQUEST_TEMPLATE/`. When a template exists, follow its structure and add no extra headings.
-- **When no template exists**, use these sections in order: `## Context`, `## Acceptance Criteria`, `## Testing`. Omit `## Testing` when there is nothing meaningful to verify.
-- **`## Context`** opens with `Closes #<n>` (or `Relates to #<n>` when the PR doesn't fully close the issue), a blank line, then prose framing.
-- **Write for the reviewer**: what changed, which issue it closes/relates to, which AC it satisfies, and how to verify. Do not enumerate modified files or function-level changes.
-- Screenshots are welcome for visual changes; placement at your discretion.
+When creating a PR, invoke `/load-pr-guidelines`; when creating an issue, invoke `/load-issue-guidelines`. Both skills activate automatically on relevant prompts — use the manual invocation as a fallback if auto-activation misses.
 
 ## Scope Discipline
 
