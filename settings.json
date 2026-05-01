@@ -69,11 +69,10 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "bash -c 'export COLUMNS=$(tput cols 2>/dev/null || echo ${COLUMNS:-120}); plugin_dir=$(ls -d \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"/plugins/cache/claude-hud/claude-hud/*/ 2>/dev/null | awk -F/ '\"'\"'{ print $(NF-1) \"\\t\" $(0) }'\"'\"' | sort -t. -k1,1n -k2,2n -k3,3n -k4,4n | tail -1 | cut -f2-); exec \"$(which bun)\" \"${plugin_dir}src/index.ts\"'"
+    "command": "bash $HOME/.claude/statusline.sh"
   },
   "enabledPlugins": {
     "claude-code-setup@claude-plugins-official": false,
-    "claude-hud@claude-hud": true,
     "claude-md-management@claude-plugins-official": false,
     "code-simplifier@claude-plugins-official": false,
     "context7@claude-plugins-official": true,
@@ -85,12 +84,6 @@
     "claude-workflow@claude-workflow": true
   },
   "extraKnownMarketplaces": {
-    "claude-hud": {
-      "source": {
-        "source": "github",
-        "repo": "jarrodwatts/claude-hud"
-      }
-    },
     "worktrunk": {
       "source": {
         "source": "github",

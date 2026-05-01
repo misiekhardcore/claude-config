@@ -11,7 +11,7 @@ TARGET_DIR="$HOME/.claude"
 mkdir -p "$TARGET_DIR"
 
 # ── Symlink static files ─────────────────────────────────────────────────────
-files=(CLAUDE.md settings.json RTK.md REFERENCE.md)
+files=(CLAUDE.md settings.json RTK.md REFERENCE.md statusline.sh)
 
 for file in "${files[@]}"; do
 	src="$SCRIPT_DIR/$file"
