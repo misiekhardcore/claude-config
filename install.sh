@@ -74,13 +74,11 @@ if command -v claude &>/dev/null; then
 	echo "Installing plugins..."
 
 	# Add custom marketplaces (idempotent — skips if already present)
-	claude plugin marketplace add jarrodwatts/claude-hud 2>/dev/null || true
 	claude plugin marketplace add max-sixty/worktrunk 2>/dev/null || true
 	claude plugin marketplace add misiekhardcore/claude-obsidian 2>/dev/null || true
 	claude plugin marketplace add misiekhardcore/claude-workflow 2>/dev/null || true
 
 	# Install plugins from custom marketplaces
-	claude plugin install claude-hud@claude-hud 2>/dev/null || true
 	claude plugin install worktrunk@worktrunk 2>/dev/null || true
 	claude plugin install claude-obsidian@claude-obsidian 2>/dev/null || true
 	claude plugin install claude-workflow@claude-workflow 2>/dev/null || true

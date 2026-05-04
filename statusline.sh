@@ -21,7 +21,7 @@ lines_added=$(echo "$input" | jq -r '.cost.total_lines_added // empty')
 lines_removed=$(echo "$input" | jq -r '.cost.total_lines_removed // empty')
 transcript_path=$(echo "$input" | jq -r '.transcript_path // empty')
 
-# Sum token usage from the session transcript (claude-hud-style: input, output, cache_creation+cache_read)
+# Sum token usage from the session transcript
 tok_in=0
 tok_out=0
 tok_cache=0
@@ -103,15 +103,15 @@ strip_ansi() {
 pct_color() {
 	local pct=$1
 	if [ "$pct" -ge 75 ]; then
-		printf '\033[31m'           # red
+		printf '\033[31m' # red
 	elif [ "$pct" -ge 50 ]; then
-		printf '\033[38;5;208m'     # orange
+		printf '\033[38;5;208m' # orange
 	elif [ "$pct" -ge 25 ]; then
-		printf '\033[33m'           # yellow
+		printf '\033[33m' # yellow
 	elif [ "$pct" -ge 10 ]; then
-		printf '\033[32m'           # green
+		printf '\033[32m' # green
 	else
-		printf '\033[92m'           # light green
+		printf '\033[92m' # light green
 	fi
 }
 
