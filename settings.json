@@ -26,7 +26,7 @@
     ],
     "defaultMode": "acceptEdits"
   },
-  "model": "opus",
+  "model": "sonnet",
   "hooks": {
     "PostToolUse": [
       {
@@ -76,7 +76,7 @@
     "code-simplifier@claude-plugins-official": false,
     "context7@claude-plugins-official": true,
     "github@claude-plugins-official": false,
-    "skill-creator@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": false,
     "superpowers@claude-plugins-official": true,
     "worktrunk@worktrunk": true,
     "claude-obsidian@claude-obsidian": true,
@@ -102,7 +102,6 @@
       }
     }
   },
-  "effortLevel": "high",
   "tui": "fullscreen",
   "teammateMode": "tmux",
   "remoteControlAtStartup": true,
