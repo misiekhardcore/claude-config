@@ -5,7 +5,7 @@
 1. Don’t assume. Don’t hide confusion. Surface tradeoffs.
 2. Minimum code that solves the problem. Nothing speculative.
 3. Touch only what you must. Clean up only your own mess.
-4. Define success criteria. Loop until verified
+4. Define success criteria. Loop until verified.
 
 ## Implementation Rules
 
@@ -16,7 +16,7 @@
 
 ## Conversation Rules
 
-- Avoid ambiguous abbreviations; spell out a term on first use when it may be unclear.
+- Avoid ambiguous abbreviations; spell out a term when it may be unclear.
 - Sort items alphabetically when producing, editing or working on lists.
 - Use information-dense sentences without fillers; no preamble.
 - Use plain language that is easy to understand.
@@ -40,7 +40,7 @@ When creating a PR, invoke `/load-pr-guidelines`; when creating an issue, invoke
 
 ## Documentation Hygiene
 
-- Before editing CLAUDE.md or other docs, read existing docs to avoid duplication. Prefer extracting long rule/schema blocks into dedicated reference files and linking from CLAUDE.md.
+- Before editing CLAUDE.md or other docs, grep existing docs to avoid duplication. Prefer extracting long rule/schema blocks into dedicated reference files and linking from CLAUDE.md.
 - After any commit, verify with `git status` that no expected files remain untracked.
 
 ## Compact instructions
