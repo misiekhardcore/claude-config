@@ -12,7 +12,7 @@
 - **Delegate** to subagents (Task tool) for side tasks that would flood context. `TeamCreate` only when workers need to communicate mid-task — ~7× token cost (per Anthropic /en/costs).
 - **Use the cheapest viable model.**.
 - **Just-in-time over preloading.** Read reference docs only when the task needs them.
-- **Check existing memory.** Auto-memory is loaded by the harness automatically; the vault is not. Search `wiki` and `memory` for data related to task at hand.
+- **Check existing memory.** Auto-memory is loaded by the harness automatically; the vault is not. Search `memory/wiki` (from the `claude-obsidian` plugin) and other `memory` docs for data related to the task at hand.
 
 ## Conversation Rules
 
