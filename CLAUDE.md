@@ -16,7 +16,7 @@
 
 ## Conversation Rules
 
-- Avoid ambiguous abbreviations; spell out the term on first use.
+- Avoid ambiguous abbreviations; spell out a term on first use when it may be unclear.
 - Sort items alphabetically when producing, editing or working on lists.
 - Use information-dense sentences without fillers; no preamble.
 - Use plain language that is easy to understand.
