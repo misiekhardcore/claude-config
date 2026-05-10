@@ -21,7 +21,7 @@ Guidance for Claude Code in this repository.
 ## Repository Awareness
 
 - Verify the target repo before any `gh` mutation: run `git remote -v` and `pwd`, and pass `--repo owner/name` explicitly when working across clones. When the user says "this repo", confirm with the same commands.
-- After a `cd`, treat parallel or background Bash calls as having stale CWD — re-pass the path or re-`cd` inside each call. See `~/.claude/projects/-home-michal-Projects/memory/feedback_agent_cwd_enforcement.md` for the sub-agent variant.
+- After a `cd`, treat parallel or background Bash calls as having stale CWD — re-pass the path or re-`cd` inside each call. See `~/.claude/projects/<project>/memory/feedback_agent_cwd_enforcement.md` for the sub-agent variant.
 
 ## GitHub Authoring
 
