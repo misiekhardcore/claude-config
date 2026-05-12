@@ -1,6 +1,7 @@
 ---
 name: load-issue-guidelines
 description: "Load issue description guidelines when creating, filing, opening, or writing a GitHub issue or bug report. Trigger phrases: creating an issue, filing a bug, opening a ticket, open an issue, create an issue, file a bug, write an issue, issue description, new issue, report a bug, add an issue."
+when_to_use: "Use when filing a bug, creating a GitHub issue, or writing issue descriptions. Loads templates and structure rules. Does NOT create the issue itself."
 ---
 
 ## Issue Descriptions

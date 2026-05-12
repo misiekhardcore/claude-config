@@ -1,6 +1,7 @@
 ---
 name: load-pr-guidelines
 description: "Load PR description guidelines when creating, opening, drafting, or writing a pull request. Trigger phrases: creating a PR, opening a pull request, drafting a PR, open a PR, create a PR, submit a PR, write a PR, PR description, pull request description, make a pull request."
+when_to_use: "Use when creating or drafting a GitHub PR. Loads templates and structure rules. Does NOT create the PR itself."
 ---
 
 ## Pull Request Descriptions

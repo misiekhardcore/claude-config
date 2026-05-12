@@ -48,43 +48,6 @@ Untitled.base
 # Track our committed dashboard.base (Bases dashboard shipped with the vault)
 !wiki/meta/dashboard.base
 
-# Scratch canvases and personal vault files
-Banana Images.canvas
-Demo Images.canvas
-*Images.canvas
-
-# Daily notes created by Calendar plugin
-????-??-??.md
-
-# Video and large media files
-*.mkv
-*.mp4
-*.mov
-*.avi
-
-# Transcripts (copyright — do not commit)
-*Trascipt*.txt
-*Transcript*.txt
-
-# Personal images dropped in vault root
-cosmic code.png
-_attachments/code-genesis.png
-_attachments/neural-voyager.png
-_attachments/the-frontier.png
-
-# Excalidraw drawings (personal, user-specific)
-Excalidraw/
-
-# Loose brand/personal GIFs and images in vault root (not _attachments/)
-Claude SEO*.gif
-Claude SEO*.png
-
-# Private Skool Hub assets — not for public repos
-_attachments/images/skool-hub/
-
-# Archive of old versions (cosmic-brain, GIF assets)
-claude-obsidian-archive/
-
 # User-specific content — symlinked to ../claude-memory/ (see README)
 # Patterns without trailing slash so they also match symlinks
 _attachments
@@ -93,6 +56,7 @@ notes
 wiki
 .raw
 .obsidian
+Excalidraw
 
 # Session scratch log (personal)
 .session-scratch.log
