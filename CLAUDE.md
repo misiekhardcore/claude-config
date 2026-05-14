@@ -31,6 +31,10 @@
 
 The descriptions should be easy to understand by a reviewer who is not familiar with the topic. Focus on behavior instead of technical details.
 
+## PR Feedback Resolution
+
+Replying to a review thread is incomplete until the thread is resolved via the GitHub API. Before declaring feedback work done, query `gh pr view <N> --json reviewThreads` and confirm zero unresolved threads.
+
 ## Scope Discipline
 
 - Don't add backwards-compatibility shims, dual-format support, or migration paths unless asked. Do rewrite the affected call sites cleanly when they're already in the diff.
