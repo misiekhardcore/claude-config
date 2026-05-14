@@ -38,7 +38,7 @@ The descriptions should be easy to understand by a reviewer who is not familiar 
 - When rebasing or migrating, only carry over the files explicitly in scope; flag unrelated files rather than silently including them.
 - Don't bump versions, rename credentials, or edit configuration values beyond the literal request. Flag and ask before touching adjacent state.
 - Follow DRY, SOLID and KISS principles.
-- Before writing any doc or multi-file deliverable longer than ~30 lines, declare a one-line target length and a 3-bullet outline up front. If the draft exceeds the target by more than 50%, stop and compact before continuing.
+- Before writing any doc or multi-file deliverable longer than ~30 lines, write a one-line target length and a 3-bullet outline to `NOTES.md` (or inline at the top of your response when no `NOTES.md` is present). If the draft exceeds the target by more than 50%, stop and compact before continuing.
 
 ## Documentation Hygiene
 
