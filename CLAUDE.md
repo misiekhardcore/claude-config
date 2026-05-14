@@ -27,6 +27,13 @@
 - Verify the target repo before any `gh` mutation: run `git remote -v` and `pwd`, and pass `--repo owner/name` explicitly when working across clones. When the user says "this repo", confirm with the same commands.
 - After a `cd`, treat parallel or background Bash calls as having stale CWD — re-pass the path or re-`cd` inside each call.
 
+## Scope & Exploration Discipline
+
+- At the start of a session or task spanning repos/worktrees, run `pwd && git branch --show-current && git remote -v && git worktree list`; name the target repo/worktree for each upcoming action.
+- For audit or refactor work: enumerate all candidate files matching the criterion before proposing scope; never narrow scope before the full list is in hand.
+- During `/define` or analogous exploration: time-box codebase reading to ~3–5 tool calls, then ask a focused question.
+- When implementing across many files: factor shared content into a single source before writing any file; post-hoc deduplication is the failure mode.
+
 ## GitHub Authoring
 
 The descriptions should be easy to understand by a reviewer who is not familiar with the topic. Focus on behavior instead of technical details.
