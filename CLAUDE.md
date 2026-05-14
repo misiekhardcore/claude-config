@@ -9,6 +9,7 @@
 
 ## Implementation Rules
 
+- **Always read files before editing.**
 - **Delegate** to subagents (Task tool) for side tasks that would flood context. `TeamCreate` only when workers need to communicate mid-task — ~7× token cost (per Anthropic /en/costs).
 - **Use the cheapest viable model.**
 - **Just-in-time over preloading.** Read reference docs only when the task needs them.
@@ -28,20 +29,19 @@
 
 ## GitHub Authoring
 
-When creating a PR, invoke `/load-pr-guidelines`; when creating an issue, invoke `/load-issue-guidelines`. Both skills activate automatically on relevant prompts — use the manual invocation as a fallback if auto-activation misses. Keep in mind the descriptions should be easy to understand by a reviewer who is not familiar with the topic. Focus on behavior instead of technical details.
+The descriptions should be easy to understand by a reviewer who is not familiar with the topic. Focus on behavior instead of technical details.
 
 ## Scope Discipline
 
 - Don't add backwards-compatibility shims, dual-format support, or migration paths unless asked. Do rewrite the affected call sites cleanly when they're already in the diff.
-- Don't ship stretch goals or speculative features in proposal/doc PRs.
+- Don't ship stretch goals or speculative features in PRs. Do scope PRs to the explicit request only.
 - When rebasing or migrating, only carry over the files explicitly in scope; flag unrelated files rather than silently including them.
 - Don't bump versions, rename credentials, or edit configuration values beyond the literal request. Flag and ask before touching adjacent state.
 - Follow DRY, SOLID and KISS principles.
 
 ## Documentation Hygiene
 
-- Before editing CLAUDE.md or other docs, grep existing docs to avoid duplication. Prefer extracting long rule/schema blocks into dedicated reference files and linking from CLAUDE.md.
-- After any commit, verify with `git status` that no expected files remain untracked.
+- Before editing CLAUDE.md or other docs, grep existing docs to avoid duplication. Prefer extracting long rule/schema blocks into dedicated reference files and linking from CLAUDE.md. Build Claude configuration modularly (no monoblocks).
 
 ## Compact instructions
 
