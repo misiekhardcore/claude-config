@@ -58,6 +58,7 @@ wiki
 .obsidian
 Excalidraw
 
-# Session scratch log (personal)
+# Logs (personal)
 .session-scratch.log
+.obsidian-cli.log
 .wiki-lint.lastrun
