@@ -29,6 +29,8 @@
 - After a `cd`, treat parallel or background Bash calls as having stale CWD — re-pass the path or re-`cd` inside each call.
 - At the start of a session or task spanning repos/worktrees, run `pwd && git branch --show-current && git remote -v && git worktree list`; name the target repo/worktree for each upcoming action.
 - Verify the target repo before any `gh` mutation: run `git remote -v` and `pwd`, and pass `--repo owner/name` explicitly when working across clones. When the user says "this repo", confirm with the same commands.
+- When delegating a worktree task to a sub-agent (Agent tool) or parallel Bash call, pass an absolute target path; the sub-agent's first action is `cd <path> && pwd`, and verified CWD is echoed in its report.
+- When dispatching a sub-agent for bulk search, include in the prompt: bulk findings with count > 10 must include ≥3 verbatim sample matches. Reject or re-prompt results that omit them.
 
 ## GitHub Authoring
 
