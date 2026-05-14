@@ -42,6 +42,7 @@ The descriptions should be easy to understand by a reviewer who is not familiar 
 - Don't bump versions, rename credentials, or edit configuration values beyond the literal request. Flag and ask before touching adjacent state.
 - Don't ship stretch goals or speculative features in PRs. Do scope PRs to the explicit request only.
 - Follow DRY, SOLID and KISS principles.
+- Before writing any doc or multi-file deliverable longer than ~30 lines, write a one-line target length and a 3-bullet outline to `NOTES.md` (create it if not present). If the draft exceeds the target by more than 50%, stop and compact before continuing.
 - For audit or refactor work: enumerate all candidate files matching the criterion before proposing scope; never narrow scope before the full list is in hand.
 - When rebasing or migrating, only carry over the files explicitly in scope; flag unrelated files rather than silently including them.
 
