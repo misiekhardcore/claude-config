@@ -42,7 +42,7 @@ The descriptions should be easy to understand by a reviewer who is not familiar 
 ## Documentation Hygiene
 
 - Before editing CLAUDE.md or other docs, grep existing docs to avoid duplication. Prefer extracting long rule/schema blocks into dedicated reference files and linking from CLAUDE.md. Build Claude configuration modularly (no monoblocks).
-- In plugin repos: write for external users (no personal paths, internal vault refs, or assumed local plugins). Link official Anthropic docs; one sentence plus a link is enough context.
+- Write for external users (no personal paths, internal vault refs, or assumed local plugins). Link official Anthropic docs; one sentence plus a link is enough context.
 
 ## Compact instructions
 
