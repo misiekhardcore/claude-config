@@ -10,7 +10,7 @@
 ## Implementation Rules
 
 - **Always read files before editing.**
-- **Check existing memory.** Auto-memory is loaded by the harness automatically; the vault is not. Search `memory/wiki` (from the `claude-obsidian` plugin) and other `memory` docs for data related to the task at hand.
+- **Check existing memory.** Auto-memory is loaded by the harness automatically. For vault context, use the `/query` skill early in any task that might benefit from prior knowledge (prior decisions, research, project state). Skip for pure coding questions with no prior context dependency.
 - **Delegate** to subagents (Task tool) for side tasks that would flood context. `TeamCreate` only when workers need to communicate mid-task — ~7× token cost (per Anthropic /en/costs).
 - **Just-in-time over preloading.** Read reference docs only when the task needs them.
 - **Use the cheapest viable model.**
