@@ -88,36 +88,6 @@ else
 	echo "skip: claude CLI not found — install plugins manually with 'claude plugin install'"
 fi
 
-# ── Register Obsidian vault MCP server ────────────────────────────────────────
-if command -v claude &>/dev/null && [ -d "$VAULT_DIR" ]; then
-	echo ""
-	echo "Obsidian MCP setup:"
-	echo "  1. Open Obsidian → Settings → Community Plugins → turn off Restricted Mode"
-	echo "  2. Browse → search 'Local REST API' → Install → Enable"
-	echo "  3. Settings → Local REST API → copy the API key"
-	echo ""
-	printf "[?] Paste your Obsidian Local REST API key (leave blank to skip): "
-	read -r OBSIDIAN_API_KEY
-
-	if [ -n "$OBSIDIAN_API_KEY" ]; then
-		claude mcp add-json obsidian-vault "{
-  \"type\": \"stdio\",
-  \"command\": \"uvx\",
-  \"args\": [\"mcp-obsidian\"],
-  \"env\": {
-    \"OBSIDIAN_API_KEY\": \"$OBSIDIAN_API_KEY\",
-    \"OBSIDIAN_HOST\": \"127.0.0.1\",
-    \"OBSIDIAN_PORT\": \"27124\",
-    \"NODE_TLS_REJECT_UNAUTHORIZED\": \"0\"
-  }
-}" --scope user 2>/dev/null || true
-		echo "obsidian-vault MCP server registered (REST API mode)"
-		echo "  Verify: claude mcp get obsidian-vault"
-	else
-		echo "skip: no API key provided — run 'claude mcp add-json obsidian-vault ...' manually later"
-		echo "  See: memory/skills/wiki/references/mcp-setup.md"
-	fi
-fi
 
 # ── Generate templated configs ────────────────────────────────────────────────
 templates=(mcp.json.template)
