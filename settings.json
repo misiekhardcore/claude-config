@@ -1,10 +1,16 @@
 {
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "haiku",
     "DISABLE_TELEMETRY": "1",
     "ENABLE_TOOL_SEARCH": "auto:5",
-    "CLAUDE_CODE_SCROLL_SPEED": "3"
+    "CLAUDE_CODE_SCROLL_SPEED": "3",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "claude-haiku-4.5",
+    "ANTHROPIC_API+KEY": "dummy",
+    "ANTHROPIC_MODEL": "claude-sonnet-4.6",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4.7",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4.6",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4.5",
+    "ANTHROPIC_BASE_URL": "http://localhost:4141"
   },
   "attribution": {
     "commit": "",
@@ -27,7 +33,7 @@
     ],
     "defaultMode": "acceptEdits"
   },
-  "model": "sonnet",
+  "model": "claude-sonnet-4.6",
   "hooks": {
     "PostToolUse": [
       {
@@ -104,6 +110,7 @@
     }
   },
   "tui": "fullscreen",
+  "theme": "dark",
   "teammateMode": "tmux",
   "remoteControlAtStartup": true,
   "voiceEnabled": true
