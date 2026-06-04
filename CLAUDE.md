@@ -10,10 +10,9 @@
 
 ## Implementation Rules
 
-- **Always read files before editing.**
-- **Check existing memory.** Auto-memory is loaded by the harness automatically. For vault context, use the `/query` skill early in any task that might benefit from prior knowledge (prior decisions, research, project state). Skip for pure coding questions with no prior context dependency.
-- **Delegate** to subagents (Task tool) for side tasks that would flood context. `TeamCreate` only when workers need to communicate mid-task — ~7× token cost (per Anthropic /en/costs).
-- **Just-in-time over preloading.** Read reference docs only when the task needs them.
+- Before editing any file, read it first. Before modifyinf a function, grep for all callers. Research before you edit.
+- **Check existing memory.** Auto-memory is loaded by the harness automatically. Access wiki early in any task that might benefit from prior knowledge (prior decisions, research, project state). Skip for pure coding questions with no prior context dependency.
+- **Delegate** to subagents - breakdown tasks and dispatch sub-agents to complete them instead of doing everything in main conversation.
 - **Use the cheapest viable model.**
 - During open-ended exploration: time-box codebase reading to 3–5 tool calls, then ask a focused question.
 - When implementing across many files: factor shared content into a single source before writing any file; post-hoc deduplication is the failure mode.
@@ -43,8 +42,9 @@ The descriptions should be easy to understand by a reviewer who is not familiar 
 - Don't bump versions, rename credentials, or edit configuration values beyond the literal request. Flag and ask before touching adjacent state.
 - Don't ship stretch goals or speculative features in PRs. Do scope PRs to the explicit request only.
 - Follow DRY, SOLID and KISS principles.
-- Before writing any doc or multi-file deliverable longer than ~30 lines, write a one-line target length and a 3-bullet outline to `NOTES.md` (create it if not present). If the draft exceeds the target by more than 50%, stop and compact before continuing.
-- For audit or refactor work: enumerate all candidate files matching the criterion before proposing scope; never narrow scope before the full list is in hand.
+- Use `NOTES.md` as a live document to track progress, questions, decisions and next steps. Every task should have on or more entries in `NOTES.md`, and clear goals that are updated iteratively.
+- For audit or refactor work: enumerate all candidate files matching the criterion before proposing scope; never narrow scope before the full list is in hand. Prefer refactoring a few files well over touching many files lightly. When in doubt, ask for clarification on scope rather than making assumptions.
+- Write small, concise files instead of sprawling monoliths. If a file grows beyond ~300 lines, or mixes concerns, break it up.
 - When rebasing or migrating, only carry over the files explicitly in scope; flag unrelated files rather than silently including them.
 
 ## Documentation Hygiene
