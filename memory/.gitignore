@@ -48,7 +48,7 @@ Untitled.base
 # Track our committed dashboard.base (Bases dashboard shipped with the vault)
 !wiki/meta/dashboard.base
 
-# User-specific content — symlinked to ../claude-memory/ (see README)
+# User-specific content — symlinked to ../llm-memory/ (see README)
 # Patterns without trailing slash so they also match symlinks
 _attachments
 daily
